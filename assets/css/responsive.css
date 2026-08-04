@@ -46,7 +46,7 @@
 
   .service__image,
   .service__image img {
-    min-height: 50vh;
+    min-height: 0;
   }
 
   .service__image,
@@ -257,6 +257,11 @@
   .service__image,
   .service__image img {
     min-height: 50vh;
+  }
+
+  .service__image--platform {
+    min-height: 50vh;
+    padding: 16px;
   }
 
   .carousel__controls {
