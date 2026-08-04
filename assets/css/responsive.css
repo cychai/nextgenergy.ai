@@ -1,0 +1,255 @@
+@media (max-width: 1024px) {
+  .principles__layout,
+  .service,
+  .audience {
+    grid-template-columns: 1fr;
+  }
+
+  .principles__layout {
+    gap: 20px;
+  }
+
+  .principles__image {
+    min-height: 0;
+    aspect-ratio: 643 / 420;
+  }
+
+  .principles__image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .principles__content {
+    padding: 0;
+  }
+
+  .service__image,
+  .service__image img {
+    min-height: 50vh;
+  }
+
+  .service__image,
+  .audience__image {
+    min-width: 0;
+  }
+
+  .audience--reverse .audience__content {
+    order: 0;
+  }
+
+  .capabilities__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .analytics-consent,
+  .analytics-consent__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .analytics-consent {
+    gap: 14px;
+    padding: 18px 20px;
+  }
+
+  .analytics-consent__actions {
+    gap: 8px;
+  }
+
+  .shell {
+    width: min(100% - 40px, var(--max-width));
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 120px 15px 40px;
+    background-image: linear-gradient(rgb(0 0 0 / 93%), rgb(0 0 0 / 93%)),
+      url("../images/hero-bg.jpg");
+    background-image: linear-gradient(rgb(0 0 0 / 93%), rgb(0 0 0 / 93%)),
+      image-set(
+        url("../images/hero-bg.avif") type("image/avif"),
+        url("../images/hero-bg.webp") type("image/webp"),
+        url("../images/hero-bg.jpg") type("image/jpeg")
+      );
+    background-attachment: scroll;
+  }
+
+  .hero__content {
+    width: 100%;
+  }
+
+  .hero__logo {
+    width: 72%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  .hero__content > p {
+    max-width: none;
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .about {
+    padding: 60px 20px 0;
+    text-align: left;
+  }
+
+  .about .section-shell {
+    justify-items: start;
+  }
+
+  .about h2 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .principles {
+    padding: 20px;
+  }
+
+  .principles__image {
+    aspect-ratio: 643 / 500;
+  }
+
+  .principles__content {
+    grid-template-columns: 1fr;
+  }
+
+  .principles__content article:last-child {
+    grid-column: auto;
+  }
+
+  .principles__content article {
+    padding: 10px;
+  }
+
+  .principles p,
+  .principles li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .service {
+    min-height: 0;
+  }
+
+  .service__content {
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .service h2 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .service p,
+  .service li {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .service__image,
+  .service__image img {
+    min-height: 50vh;
+  }
+
+  .carousel__controls {
+    position: static;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .carousel__controls button {
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .carousel__controls [data-toggle] {
+    max-width: calc(100% - 120px);
+  }
+
+  .audiences {
+    padding: 30px 20px;
+  }
+
+  .audiences .section-header {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .audiences .section-header h2 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .audience__content {
+    padding: 10% 0;
+  }
+
+  .audience__image {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .capabilities {
+    padding: 60px 20px;
+  }
+
+  .capabilities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilities p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .footer {
+    display: block;
+    padding: 40px 20px;
+  }
+
+  .footer picture {
+    width: 60%;
+    margin-bottom: 24px;
+  }
+
+  .footer p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .privacy-choices {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero {
+    background-attachment: scroll;
+  }
+}
