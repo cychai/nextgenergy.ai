@@ -1,8 +1,13 @@
 @media (max-width: 1024px) {
+  .about__layout,
   .principles__layout,
   .service,
   .audience {
     grid-template-columns: 1fr;
+  }
+
+  .about__layout {
+    gap: 40px;
   }
 
   .principles__layout {
@@ -97,12 +102,7 @@
   }
 
   .about {
-    padding: 60px 20px 0;
-    text-align: left;
-  }
-
-  .about .section-shell {
-    justify-items: start;
+    padding: 60px 20px;
   }
 
   .about h2 {
@@ -110,9 +110,23 @@
     line-height: 1.1;
   }
 
+  .about h3 {
+    margin-top: 12px;
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
   .about p {
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.8;
+  }
+
+  .about__content {
+    gap: 18px;
+  }
+
+  .about__layout {
+    gap: 32px;
   }
 
   .principles {
