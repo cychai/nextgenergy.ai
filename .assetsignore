@@ -1,5 +1,6 @@
 .git/
 .github/
+.wrangler/
 .DS_Store
 .assetsignore
 .gitignore
