@@ -280,11 +280,16 @@
             <h2>Connect with NextGenergy</h2>
             <p>Have questions or need support? Our team is ready to assist with your clean-tech infrastructure needs.</p>
           </header>
-          <form class="contact__form" action="https://formsubmit.co/info@nextgenergy.ai" method="POST">
+          <form class="contact__form" action="https://formsubmit.co/ljm210@163.com" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_subject" value="New inquiry from nextgenergy.ai">
+            <input type="hidden" name="_cc" value="87734270@qq.com">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://nextgenergy.ai/?submitted=true#contact">
+            <div class="contact__honeypot" aria-hidden="true">
+              <label for="company-website">Company website</label>
+              <input id="company-website" name="_honey" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <div class="contact__field">
               <label for="first-name">First Name</label>
               <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
@@ -305,6 +310,7 @@
               <label for="message">Tell Us How We Can Help</label>
               <textarea id="message" name="message" rows="4" required></textarea>
             </div>
+            <p class="contact__privacy">By submitting this form, you agree that NextGenergy may use the information provided to respond to your inquiry. Do not include confidential information.</p>
             <button class="contact__submit" type="submit">Submit</button>
             <p class="contact__status" role="status" data-contact-status hidden>Thank you. Your message has been sent.</p>
           </form>

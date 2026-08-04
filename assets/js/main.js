@@ -40,8 +40,12 @@ const initializeContactStatus = (browserWindow, document) => {
   const status = document?.querySelector?.('[data-contact-status]');
   if (!status || !browserWindow?.location) return;
 
-  const params = new URLSearchParams(browserWindow.location.search);
-  if (params.get('submitted') === 'true') status.hidden = false;
+  const url = new URL(browserWindow.location.href);
+  if (url.searchParams.get('submitted') !== 'true') return;
+
+  status.hidden = false;
+  url.searchParams.delete('submitted');
+  browserWindow.history?.replaceState?.({}, '', `${url.pathname}${url.search}${url.hash}`);
 };
 
 const initializeContactValidation = (document) => {

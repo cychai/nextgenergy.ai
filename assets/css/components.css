@@ -617,6 +617,14 @@
   gap: 44px 48px;
 }
 
+.contact__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact__field {
   display: grid;
   gap: 8px;
@@ -679,6 +687,14 @@
 .contact__submit:hover {
   color: var(--navy);
   background: var(--yellow);
+}
+
+.contact__privacy {
+  align-self: center;
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .contact__status {

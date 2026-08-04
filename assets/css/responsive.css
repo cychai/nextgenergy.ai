@@ -355,6 +355,7 @@
   }
 
   .contact__field--message,
+  .contact__privacy,
   .contact__submit,
   .contact__status {
     grid-column: 1;
