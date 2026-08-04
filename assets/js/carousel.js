@@ -11,6 +11,7 @@ export const initCarousel = (root, environment = {}) => {
   const next = root.querySelector('[data-next]');
   const toggle = root.querySelector('[data-toggle]');
   const status = root.querySelector('[data-status]');
+  const shell = root.querySelector(':scope > .section-shell');
   const pageDocument = environment.document;
   const mediaQuery =
     typeof environment.matchMedia === 'function'
@@ -25,11 +26,51 @@ export const initCarousel = (root, environment = {}) => {
   let timer = null;
   let toggleFocused = false;
   let userPaused = false;
+  let resizeFrame = null;
 
   const listen = (target, type, listener) => {
     if (!target?.addEventListener) return;
     target.addEventListener(type, listener);
     listeners.push(() => target.removeEventListener(type, listener));
+  };
+
+  const syncHeight = () => {
+    if (!shell) return;
+
+    const width = shell.getBoundingClientRect().width;
+    if (!width) return;
+
+    const heights = slides.map((slide) => {
+      const clone = slide.cloneNode(true);
+      clone.hidden = false;
+      clone.removeAttribute('data-slide');
+      clone.setAttribute('aria-hidden', 'true');
+      Object.assign(clone.style, {
+        inset: '0 auto auto 0',
+        pointerEvents: 'none',
+        position: 'absolute',
+        visibility: 'hidden',
+        width: `${width}px`,
+      });
+      shell.append(clone);
+      const height = clone.getBoundingClientRect().height;
+      clone.remove();
+      return height;
+    });
+
+    const controlsHeight =
+      toggle && environment.getComputedStyle?.(toggle.parentElement).position === 'static'
+        ? toggle.parentElement.getBoundingClientRect().height
+        : 0;
+    shell.style.minHeight = `${Math.ceil(Math.max(...heights) + controlsHeight)}px`;
+  };
+
+  const scheduleHeightSync = () => {
+    if (!environment.requestAnimationFrame || resizeFrame !== null) return;
+    resizeFrame = environment.requestAnimationFrame(() => {
+      resizeFrame = null;
+      syncHeight();
+    });
   };
 
   const show = (index, announce = false) => {
@@ -129,6 +170,10 @@ export const initCarousel = (root, environment = {}) => {
     if (pageDocument.hidden) stopRotation();
     else startRotation();
   });
+  listen(environment, 'resize', scheduleHeightSync);
+  for (const image of root.querySelectorAll('.service__image img')) {
+    listen(image, 'load', scheduleHeightSync);
+  }
 
   const handleMotionChange = (event) => {
     reducedMotion = event.matches;
@@ -143,13 +188,16 @@ export const initCarousel = (root, environment = {}) => {
   }
 
   show(0);
+  syncHeight();
   updateToggle();
   startRotation();
 
   return {
     destroy() {
       stopRotation();
+      if (resizeFrame !== null) environment.cancelAnimationFrame?.(resizeFrame);
       listeners.splice(0).forEach((remove) => remove());
+      shell?.style.removeProperty('min-height');
     },
   };
 };

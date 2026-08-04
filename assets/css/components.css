@@ -320,6 +320,7 @@
 
 .services > .section-shell {
   position: relative;
+  background: var(--off-white);
 }
 
 .service {
@@ -396,41 +397,55 @@
 .carousel__controls {
   position: absolute;
   z-index: 2;
-  right: 40px;
-  bottom: 30px;
+  right: 24px;
+  bottom: 24px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  padding: 6px;
+  background: rgb(255 255 255 / 82%);
+  border: 1px solid rgb(8 29 58 / 12%);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgb(8 29 58 / 14%);
+  backdrop-filter: blur(10px);
 }
 
 .carousel__controls button {
-  min-width: 50px;
-  min-height: 50px;
-  padding: 10px 16px;
-  color: var(--white);
-  background: var(--navy);
-  border: 2px solid var(--navy);
+  min-width: 42px;
+  min-height: 42px;
+  padding: 8px 14px;
+  color: var(--navy);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 999px;
+  font-size: 13px;
   font-weight: 700;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
 .carousel__controls [data-prev],
 .carousel__controls [data-next] {
+  width: 42px;
   padding: 0;
   color: var(--navy);
-  background: var(--yellow);
-  font-size: 34px;
+  background: var(--white);
+  border-color: rgb(8 29 58 / 18%);
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
   line-height: 1;
+  box-shadow: 0 2px 8px rgb(8 29 58 / 10%);
 }
 
 .carousel__controls button:hover {
-  color: var(--navy);
-  background: var(--white);
+  color: var(--white);
+  background: var(--navy);
+  border-color: var(--navy);
 }
 
 .carousel__controls button:focus-visible {
-  outline-color: var(--yellow);
-  box-shadow: 0 0 0 2px var(--navy);
+  outline-color: var(--navy);
+  box-shadow: 0 0 0 3px rgb(255 255 255 / 90%);
 }
 
 .audiences {

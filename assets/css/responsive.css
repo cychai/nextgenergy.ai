@@ -268,16 +268,23 @@
     position: static;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 12px 20px 20px;
+    background: var(--off-white);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   .carousel__controls button {
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 42px;
+    min-height: 42px;
   }
 
   .carousel__controls [data-toggle] {
-    max-width: calc(100% - 120px);
+    max-width: calc(100% - 108px);
+    background: var(--white);
+    border-color: rgb(8 29 58 / 14%);
   }
 
   .audiences {
