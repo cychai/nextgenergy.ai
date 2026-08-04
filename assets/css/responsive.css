@@ -387,9 +387,12 @@
     line-height: 1.7;
   }
 
-  .privacy-choices {
-    width: 100%;
+  .footer__actions {
     margin-top: 20px;
+  }
+
+  .privacy-choices {
+    flex: 1;
   }
 }
 

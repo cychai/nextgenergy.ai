@@ -736,3 +736,34 @@
   width: 32%;
   flex: 0 0 32%;
 }
+
+.footer__actions {
+  display: flex;
+  align-items: center;
+  flex: none;
+  gap: 12px;
+}
+
+.footer__linkedin {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--white);
+  background: #0a66c2;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 10px;
+  box-shadow: 0 5px 14px rgb(0 0 0 / 18%);
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.footer__linkedin:hover {
+  background: #147bd1;
+  transform: translateY(-2px);
+}
+
+.footer__linkedin svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
