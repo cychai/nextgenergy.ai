@@ -6,6 +6,66 @@ const GA_SCRIPT_ID = 'nextgenergy-ga4-script';
 const GA_DISABLE_KEY = `ga-disable-${GA_MEASUREMENT_ID}`;
 const PRODUCTION_HOSTS = new Set(['nextgenergy.ai', 'www.nextgenergy.ai']);
 
+const initializeNavigation = (document) => {
+  const toggle = document?.querySelector?.('[data-nav-toggle]');
+  const navigation = document?.querySelector?.('[data-nav]');
+  if (!toggle || !navigation) return;
+
+  const closeNavigation = () => {
+    navigation.removeAttribute('data-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    const label = toggle.querySelector('.sr-only');
+    if (label) label.textContent = 'Open navigation';
+  };
+
+  toggle.addEventListener('click', () => {
+    const open = !navigation.hasAttribute('data-open');
+    if (open) navigation.setAttribute('data-open', '');
+    else navigation.removeAttribute('data-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    const label = toggle.querySelector('.sr-only');
+    if (label) label.textContent = open ? 'Close navigation' : 'Open navigation';
+  });
+
+  navigation.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeNavigation();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeNavigation();
+  });
+};
+
+const initializeContactStatus = (browserWindow, document) => {
+  const status = document?.querySelector?.('[data-contact-status]');
+  if (!status || !browserWindow?.location) return;
+
+  const params = new URLSearchParams(browserWindow.location.search);
+  if (params.get('submitted') === 'true') status.hidden = false;
+};
+
+const initializeContactValidation = (document) => {
+  const form = document?.querySelector?.('.contact__form');
+  if (!form) return;
+
+  const messages = {
+    email: 'Please enter a valid email address.',
+    first_name: 'Please enter your first name.',
+    last_name: 'Please enter your last name.',
+    message: 'Please tell us how we can help.',
+    phone: 'Please enter your phone number.',
+  };
+
+  for (const field of form.querySelectorAll('input[required], textarea[required]')) {
+    field.addEventListener('invalid', () => {
+      field.setCustomValidity(field.validity.typeMismatch
+        ? 'Please enter a valid email address.'
+        : messages[field.name] || 'Please complete this field.');
+    });
+    field.addEventListener('input', () => field.setCustomValidity(''));
+  }
+};
+
 export const isAnalyticsProductionHost = (hostname) => PRODUCTION_HOSTS.has(hostname);
 
 const readConsent = (storage) => {
@@ -238,6 +298,9 @@ export const createAnalyticsController = ({ window: browserWindow, document, sto
 };
 
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  initializeNavigation(document);
+  initializeContactStatus(window, document);
+  initializeContactValidation(document);
   let storage;
   try {
     storage = window.localStorage;

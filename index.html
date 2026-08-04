@@ -31,6 +31,31 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
   </head>
   <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="#hero" aria-label="NextGenergy home">
+          <picture>
+            <source srcset="assets/images/logo-main.avif" type="image/avif">
+            <source srcset="assets/images/logo-main.webp" type="image/webp">
+            <img src="assets/images/logo-main.png" width="1381" height="488" alt="NextGenergy">
+          </picture>
+        </a>
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+          <span class="sr-only">Open navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <nav id="primary-navigation" class="site-header__nav" aria-label="Primary navigation" data-nav>
+          <a href="#hero">Home</a>
+          <a href="#about">Company</a>
+          <a href="#audiences">Customers</a>
+          <a href="#support">Support</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
     <main>
       <section id="hero" class="hero">
         <picture class="hero__background">
@@ -58,7 +83,7 @@
             <p>NextGenergy enables high-performance, energy-efficient data centers designed for AI, HPC, and edge computing. Its modular liquid-cooling systems are built to operate reliably in extreme environments while helping operators modernize infrastructure without costly rebuilds.</p>
           </div>
           <div class="about__video">
-            <iframe src="https://www.youtube-nocookie.com/embed/0JEKjv9kkdI" title="NextGenergy introduction — modular liquid cooling for AI" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/0JEKjv9kkdI?hl=en&amp;cc_lang_pref=en" title="NextGenergy introduction — modular liquid cooling for AI" lang="en" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </section>
@@ -206,9 +231,13 @@
         </div>
       </section>
 
-      <section id="capabilities" class="capabilities" aria-label="Capabilities">
+      <section id="support" class="capabilities" aria-labelledby="support-title">
         <div class="section-shell">
-          <h2 class="sr-only">Platform Capabilities</h2>
+          <header class="capabilities__header">
+            <p class="eyebrow">SUPPORT</p>
+            <h2 id="support-title">Built for Reliable Deployment</h2>
+            <p>Technical capabilities designed to simplify integration, operation, and long-term support across demanding data center environments.</p>
+          </header>
           <div class="capabilities__grid">
             <article>
               <img src="assets/images/capability-modular.png" width="128" height="128" alt="" loading="lazy">
@@ -241,6 +270,43 @@
               <p>Antifreeze-enhanced coolant maintains high thermal conductivity down to -40 °C, preventing freeze-related failures and removing the need for external glycol loops or chillers in cold climates.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-shell">
+          <header class="contact__header">
+            <h2>Connect with NextGenergy</h2>
+            <p>Have questions or need support? Our team is ready to assist with your clean-tech infrastructure needs.</p>
+          </header>
+          <form class="contact__form" action="https://formsubmit.co/info@nextgenergy.ai" method="POST">
+            <input type="hidden" name="_subject" value="New inquiry from nextgenergy.ai">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://nextgenergy.ai/?submitted=true#contact">
+            <div class="contact__field">
+              <label for="first-name">First Name</label>
+              <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="contact__field">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="contact__field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="contact__field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="contact__field contact__field--message">
+              <label for="message">Tell Us How We Can Help</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="contact__submit" type="submit">Submit</button>
+            <p class="contact__status" role="status" data-contact-status hidden>Thank you. Your message has been sent.</p>
+          </form>
         </div>
       </section>
     </main>

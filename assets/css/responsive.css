@@ -1,4 +1,20 @@
 @media (max-width: 1024px) {
+  .site-header__inner {
+    width: min(100% - 48px, var(--max-width));
+  }
+
+  .site-header__brand {
+    width: 210px;
+  }
+
+  .site-header__nav {
+    gap: 24px;
+  }
+
+  .site-header__nav a {
+    font-size: 14px;
+  }
+
   .about__layout,
   .principles__layout,
   .service,
@@ -48,6 +64,69 @@
 }
 
 @media (max-width: 767px) {
+  #about,
+  #audiences,
+  #support,
+  #contact {
+    scroll-margin-top: 76px;
+  }
+
+  .site-header__inner {
+    position: relative;
+    width: calc(100% - 40px);
+    min-height: 76px;
+  }
+
+  .site-header__brand {
+    width: 172px;
+  }
+
+  .site-header__toggle {
+    display: grid;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    padding: 11px;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid rgb(255 255 255 / 36%);
+    border-radius: 4px;
+  }
+
+  .site-header__toggle span:not(.sr-only) {
+    display: block;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .site-header__nav {
+    position: absolute;
+    top: 76px;
+    right: -20px;
+    left: -20px;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 20px 18px;
+    background: rgb(3 4 5 / 98%);
+    border-top: 1px solid rgb(255 255 255 / 10%);
+  }
+
+  .site-header__nav[data-open] {
+    display: flex;
+  }
+
+  .site-header__nav a {
+    padding: 14px 4px;
+    font-size: 15px;
+  }
+
+  .site-header__nav a::after {
+    bottom: 8px;
+    transform-origin: left;
+  }
+
   .analytics-consent,
   .analytics-consent__actions {
     align-items: stretch;
@@ -69,7 +148,7 @@
 
   .hero {
     min-height: auto;
-    padding: 120px 15px 40px;
+    padding: 116px 15px 40px;
     background-image: linear-gradient(rgb(0 0 0 / 93%), rgb(0 0 0 / 93%)),
       url("../images/hero-bg.jpg");
     background-image: linear-gradient(rgb(0 0 0 / 93%), rgb(0 0 0 / 93%)),
@@ -223,13 +302,61 @@
     padding: 60px 20px;
   }
 
+  .capabilities__header {
+    margin-bottom: 38px;
+  }
+
+  .capabilities__header h2 {
+    font-size: 32px;
+  }
+
+  .capabilities__header > p:last-child {
+    font-size: 15px;
+  }
+
   .capabilities__grid {
     grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .capabilities h3 {
+    font-size: 24px;
   }
 
   .capabilities p {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .contact {
+    padding: 60px 20px 70px;
+  }
+
+  .contact__header {
+    margin-bottom: 44px;
+  }
+
+  .contact__header h2 {
+    font-size: 30px;
+  }
+
+  .contact__header p {
+    font-size: 18px;
+  }
+
+  .contact__form {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact__field--message,
+  .contact__submit,
+  .contact__status {
+    grid-column: 1;
+  }
+
+  .contact__submit {
+    justify-self: stretch;
   }
 
   .footer {
