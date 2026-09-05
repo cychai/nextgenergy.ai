@@ -8,35 +8,35 @@
 
 - [ ] Cloudflare、域名注册商、Google Workspace 管理员账号均已开启两步验证。
 
-- [ ] 确认 Cloudflare 项目名称为 `nextgenergy-ai`。
+- [x] 确认 Cloudflare 项目名称为 `nextgenergy-ai`。
 
-- [ ] 确认 GitHub 仓库为 `cychai/nextgenergy.ai`，生产分支为 `main`。
+- [x] 确认 GitHub 仓库为 `cychai/nextgenergy.ai`，生产分支为 `main`。
 
 - [ ] 确认本地 `main` 已推送至 `origin/main`，网站代码没有待提交变更。
 
-- [ ] 确认根目录为 `/`，构建命令留空。
+- [x] 确认根目录为 `/`，构建命令留空。
 
-- [ ] 确认部署命令为：
+- [x] 确认部署命令为：
 
 ```bash
 npx wrangler deploy
 ```
 
-- [ ] `wrangler.jsonc` 中 `name` 为 `nextgenergy-ai`，并配置 `assets.directory` 为 `.`。
+- [x] `wrangler.jsonc` 中 `name` 为 `nextgenergy-ai`，配置 `assets.directory` 为 `.`，并使用 `not_found_handling: "404-page"`。
 
-- [ ] 确认 `_headers`、`_redirects`、`404.html`、`.well-known/security.txt` 均包含在部署资产中。
+- [x] 确认 `_headers`、`_redirects`、`404.html`、`.well-known/security.txt` 均包含在部署资产中。
 
-- [ ] 确认 `.trae/`、`.wrangler/`、`.git/`、`node_modules/`、`.DS_Store` 不会上传。
+- [x] 确认 `.trae/`、`.wrangler/`、`.git/`、`node_modules/`、`.DS_Store` 不会上传。
 
 代码推送到 GitHub `main` 后，由 Cloudflare 自动拉取并执行部署命令。不要通过 Dashboard 手工上传本地文件夹。
 
 ## 二、GitHub 构建验收
 
-- [ ] 在 **Workers 和 Pages → nextgenergy-ai → 部署** 中找到目标 Git Commit。
+- [x] 在 **Workers 和 Pages → nextgenergy-ai → 部署** 中找到目标 Git Commit。
 
-- [ ] 确认初始化、克隆、安装、部署四个阶段全部成功。
+- [x] 确认初始化、克隆、安装、部署四个阶段全部成功。
 
-- [ ] 确认生产流量 100% 指向新版本。
+- [x] 确认生产流量 100% 指向新版本。
 
 - [ ] 点击 Dashboard 中的 **访问** 链接，确认预览域名首页正常。
 
@@ -63,13 +63,13 @@ npx wrangler deploy
 
 在 **Workers 和 Pages → nextgenergy-ai → 域** 中：
 
-- [ ] 添加 `nextgenergy.ai`。
+- [x] 添加 `nextgenergy.ai`。
 
-- [ ] 添加 `www.nextgenergy.ai`。
+- [x] 添加 `www.nextgenergy.ai`。
 
-- [ ] 确认两个域名的证书状态均为 Active。
+- [x] 确认两个域名的证书状态均为 Active。
 
-- [ ] 确认 `nextgenergy.ai` 是对外使用的主域名。
+- [x] 确认 `nextgenergy.ai` 是对外使用的主域名。
 
 ### 配置 www 跳转
 
@@ -79,31 +79,31 @@ npx wrangler deploy
 
 配置：
 
-- [ ] 规则名称：`www to apex`
+- [x] 规则名称：`www to apex`
 
-- [ ] 条件：`Hostname equals www.nextgenergy.ai`
+- [x] 条件：`Hostname equals www.nextgenergy.ai`
 
-- [ ] 类型：Dynamic redirect
+- [x] 类型：Dynamic redirect
 
-- [ ] 目标表达式：
+- [x] 目标表达式：
 
 ```text
 concat("https://nextgenergy.ai", http.request.uri.path)
 ```
 
-- [ ] 状态码：`301`
+- [x] 状态码：`301`
 
-- [ ] Preserve query string：开启
+- [x] Preserve query string：开启
 
 ## 四、SSL/TLS
 
 在 **SSL/TLS** 中：
 
-- [ ] Encryption mode 设置为 `Full (strict)`。
+- [x] Encryption mode 设置为 `Full (strict)`。
 
-- [ ] **Edge Certificates → Always Use HTTPS** 已开启。
+- [x] **Edge Certificates → Always Use HTTPS** 已开启。
 
-- [ ] **Minimum TLS Version** 设置为 `TLS 1.2`。
+- [x] **Minimum TLS Version** 设置为 `TLS 1.2`。
 
 - [ ] 确认证书自动续期正常。
 
@@ -115,7 +115,7 @@ concat("https://nextgenergy.ai", http.request.uri.path)
 
 ### DMARC
 
-- [ ] DNS 中添加 TXT 记录：
+- [x] DNS 中添加 TXT 记录：
 
 ```text
 Name: _dmarc
@@ -128,11 +128,11 @@ Value: v=DMARC1; p=none; rua=mailto:jim.li@nextgenergy.ai
 
 - [ ] 在 Google Workspace 管理后台确认 DKIM 已启用。
 
-- [ ] 检查现有 SPF 记录，确保只有一条有效 SPF TXT 记录。
+- [x] 检查现有 SPF 记录，确保只有一条有效 SPF TXT 记录。
 
 ### CAA
 
-- [ ] 添加以下四条 CAA 记录：
+- [x] 添加以下四条 CAA 记录：
 
 ```text
 0 issue "letsencrypt.org"
@@ -143,7 +143,7 @@ Value: v=DMARC1; p=none; rua=mailto:jim.li@nextgenergy.ai
 
 ### DNSSEC
 
-- [ ] 在 **DNS → Settings → DNSSEC** 中启用 DNSSEC。
+- [x] 在 **DNS → Settings → DNSSEC** 中启用 DNSSEC。
 
 - [ ] 将 Cloudflare 提供的 DS 记录填写到域名注册商。
 
@@ -167,7 +167,7 @@ Value: v=DMARC1; p=none; rua=mailto:jim.li@nextgenergy.ai
 
 ## 七、Google Analytics
 
-- [ ] Google Analytics 属性中的 Measurement ID 为 `G-SQ8WX1BMRW`。
+- [x] Google Analytics 属性中的 Measurement ID 为 `G-SQ8WX1BMRW`。
 
 - [ ] 打开站点后出现 Analytics consent 提示。
 
@@ -179,7 +179,7 @@ Value: v=DMARC1; p=none; rua=mailto:jim.li@nextgenergy.ai
 
 - [ ] 页脚的 **Analytics choices** 可以重新打开选择窗口。
 
-- [ ] 隐私页已准确说明 Google Analytics 和 Consent Mode。
+- [x] 隐私页已准确说明 Google Analytics 和 Consent Mode。
 
 ## 八、上线后命令验收
 
@@ -207,27 +207,27 @@ curl -sI https://nextgenergy.ai/insights/rss.xml | head -1
 
 预期结果：
 
-- [ ] HTTP 自动跳转 HTTPS。
+- [x] HTTP 自动跳转 HTTPS。
 
-- [ ] `www` 返回 301，并保留路径和查询参数。
+- [x] `www` 返回 301，并保留路径和查询参数。
 
-- [ ] `/approach` 返回 200。
+- [x] `/approach` 返回 200。
 
-- [ ] `/approach.html` 返回 308，跳转到 `/approach`。
+- [x] `/approach.html` 返回 307，跳转到 `/approach`（Workers Static Assets 默认 HTML handling 行为）。
 
-- [ ] 不存在的地址返回 404。
+- [x] 不存在的地址返回 HTTP 404。
 
-- [ ] CSP、HSTS、X-Frame-Options 等安全头存在。
+- [x] CSP、HSTS、X-Frame-Options 等安全头存在。
 
-- [ ] security.txt、sitemap 和 RSS 均返回 200。
+- [x] security.txt、sitemap 和 RSS 均返回 200。
 
 ## 九、上线记录
 
 - 部署时间：
 
-- Cloudflare Deployment ID：
+- Cloudflare Deployment ID：`81e667ef`（提交 `57f4482`，自定义 404 修复部署后更新）
 
-- 部署 Commit：
+- 部署 Commit：`57f4482`（自定义 404 修复部署后更新）
 
 - 操作人：
 
@@ -240,4 +240,3 @@ curl -sI https://nextgenergy.ai/insights/rss.xml | head -1
 - DMARC 策略复查日期：
 
 - 回滚版本：
-
