@@ -1,7 +1,10 @@
 .git/
 .github/
+.trae/
 .wrangler/
+node_modules/
 .DS_Store
 .assetsignore
 .gitignore
+DEPLOYMENT_CHECKLIST.md
 wrangler.jsonc

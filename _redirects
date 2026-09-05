@@ -1,0 +1,3 @@
+# Canonical host redirects must be configured in Cloudflare Redirect Rules.
+# Redirect the legacy file URL to the canonical root.
+/index.html / 301

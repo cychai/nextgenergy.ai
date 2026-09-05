@@ -1,0 +1,1 @@
+var e=document.querySelector(`[data-menu]`),t=document.getElementById(`mnav`);e?.addEventListener(`click`,()=>{let n=t?.classList.toggle(`open`);e.setAttribute(`aria-expanded`,String(!!n)),e.textContent=n?`Close`:`Menu`});
