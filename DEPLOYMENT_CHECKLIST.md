@@ -12,7 +12,7 @@
 
 - [x] 确认 GitHub 仓库为 `cychai/nextgenergy.ai`，生产分支为 `main`。
 
-- [ ] 确认本地 `main` 已推送至 `origin/main`，网站代码没有待提交变更。
+- [x] 确认本地 `main` 已推送至 `origin/main`，网站代码没有待提交变更。
 
 - [x] 确认根目录为 `/`，构建命令留空。
 
@@ -55,7 +55,7 @@ npx wrangler deploy
 
 - [ ] 检查 Contact 页面可以唤起本地邮件客户端。
 
-- [ ] 访问不存在的地址，确认返回自定义 404 页面和 HTTP 404 状态。
+- [x] 访问不存在的地址，确认返回自定义 404 页面和 HTTP 404 状态。
 
 - [ ] 浏览器控制台中没有 CSP、脚本或资源加载错误。
 
@@ -151,7 +151,7 @@ Value: v=DMARC1; p=none; rua=mailto:jim.li@nextgenergy.ai
 
 ## 六、Cloudflare 功能开关
 
-- [ ] Rocket Loader：关闭。
+- [x] Rocket Loader：关闭。
 
 - [ ] Auto Minify：关闭。
 
@@ -223,17 +223,19 @@ curl -sI https://nextgenergy.ai/insights/rss.xml | head -1
 
 ## 九、上线记录
 
-- 部署时间：
+- 部署时间：2026-09-05 17:58 UTC
 
-- Cloudflare Deployment ID：`81e667ef`（提交 `57f4482`，自定义 404 修复部署后更新）
+- Cloudflare Build ID：`6cc0ada8-ce85-43e0-b007-bb084d63806d`
 
-- 部署 Commit：`57f4482`（自定义 404 修复部署后更新）
+- Cloudflare Worker Version ID：`b18ed686-d2bd-44b5-a619-b820e7d6a5e8`
+
+- 部署 Commit：`d8315d4`
 
 - 操作人：
 
 - Worker 预览域名验收人：
 
-- 正式域名验收人：
+- 正式域名验收人：自动化 HTTP/DNS 验收
 
 - DNSSEC 生效时间：
 
