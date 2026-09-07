@@ -6,9 +6,8 @@
     { "pattern": "nextgenergy.ai", "custom_domain": true },
     { "pattern": "www.nextgenergy.ai", "custom_domain": true }
   ],
-  // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main.
-  // Wrangler runs this build command first, so the repo can hold the Astro source
-  // and the built site in ./dist is what gets uploaded as static assets.
-  "build": { "command": "npm ci && npm run build" },
+  // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main and
+  // uploads ./dist as static assets. dist/ is committed (rebuilt locally with
+  // `npm run build` before each push) so the deploy does not depend on the build image.
   "assets": { "directory": "./dist", "not_found_handling": "404-page" }
 }

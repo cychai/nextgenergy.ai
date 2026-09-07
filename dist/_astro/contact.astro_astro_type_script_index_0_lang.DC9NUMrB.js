@@ -1,0 +1,2 @@
+var e=document.querySelector(`[data-contact]`);e?.addEventListener(`submit`,t=>{t.preventDefault();let n=new FormData(e),r=e=>String(n.get(e)??``).trim(),i=`[nextgenergy.ai] ${r(`topic`)} — ${r(`name`)}${r(`org`)?`, `+r(`org`):``}`,a=`${r(`message`)}\n\n—\n${r(`name`)}${r(`org`)?`
+`+r(`org`):``}\n${r(`email`)}`;location.href=`mailto:${e.dataset.to}?subject=${encodeURIComponent(i)}&body=${encodeURIComponent(a)}`});

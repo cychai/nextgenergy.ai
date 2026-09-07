@@ -1,6 +1,6 @@
 # nextgenergy.ai
 
-Astro source for https://nextgenergy.ai. Deployed by **Cloudflare Workers Builds**: every push to `main` runs `npx wrangler deploy`; `wrangler.jsonc` tells Wrangler to run `npm ci && npm run build` first and upload `./dist` as static assets (Worker name `nextgenergy-ai`, custom domains nextgenergy.ai and www).
+Astro source for https://nextgenergy.ai. Deployed by **Cloudflare Workers Builds**: every push to `main` runs `npx wrangler deploy`, which uploads the committed `./dist` as static assets (Worker name `nextgenergy-ai`, custom domains nextgenergy.ai and www). **Run `npm run build` before every push** so `dist/` matches the source.
 
 ## Where things live
 - `src/pages/` one file per URL · `src/data/` copy and numbers (site.ts, sections.ts, claims.ts, leakPoints.ts) · `src/content/insights/` articles (Markdown, imported from Substack) · `src/components/`, `src/layouts/`, `src/styles/`

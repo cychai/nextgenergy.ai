@@ -1,0 +1,4 @@
+# One canonical host: www -> apex (301, path and query preserved)
+https://www.nextgenergy.ai/* https://nextgenergy.ai/:splat 301
+# Old single-page anchors from the previous site
+/index.html / 301
