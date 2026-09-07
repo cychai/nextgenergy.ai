@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/build.mjs",
     "preview": "astro preview",
-    "import:substack": "node scripts/import-substack.mjs"
+    "import:substack": "node scripts/import-substack.mjs",
+    "build:astro": "astro build"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -19,5 +20,8 @@
     "turndown": "^7.2.4",
     "typescript": "^5.6.0",
     "wrangler": "^4.129.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
