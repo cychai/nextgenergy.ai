@@ -15,7 +15,7 @@ const groups = [...new Set(leakPoints.map((l) => l.group))];
           <ul class="toc">
             {groups.map((g) => <li><a href={`#${g.toLowerCase().replace(/[^a-z]+/g, '-')}`}>{g}</a></li>)}
           </ul>
-          <p class="small muted" style="margin-top:1.5rem">First published by Jim Li on LinkedIn, September 2026. Kept here as a stable reference. The wording is deliberately vendor-neutral: it names practices, not people or products.</p>
+          <p class="small muted" style="margin-top:1.5rem">By Jim Li, first published September 2026. The list discusses practices, not specific vendors or products.</p>
           <a class="btn" href="/tools/leak-checklist">Score your last project</a>
         </div>
         <div>
@@ -42,7 +42,7 @@ const groups = [...new Set(leakPoints.map((l) => l.group))];
   <section class="section alt">
     <div class="wrap prose">
       <blockquote>The point is not that factory joints never leak. It is that a boundary made under controlled conditions can be tested, recorded and released against defined acceptance criteria. A boundary made in a live hall at 2 a.m. deserves exactly the same evidence.</blockquote>
-      <p>On your last liquid-cooling project, how many of the ten could you prove, not just say were checked?</p>
+      <p>Against your own project, how many of the ten have a record you can produce?</p>
       <Related items={[
         { href: '/tools/leak-checklist', label: 'Turnover self-check: ten boundaries, three questions', kind: 'tool' },
         { href: '/evidence/turnover', label: 'What the turnover package contains', kind: 'evidence' },
