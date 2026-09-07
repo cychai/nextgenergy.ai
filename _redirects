@@ -1,3 +1,4 @@
-# Canonical host redirects must be configured in Cloudflare Redirect Rules.
-# Redirect the legacy file URL to the canonical root.
+# One canonical host: www -> apex (301, path and query preserved)
+https://www.nextgenergy.ai/* https://nextgenergy.ai/:splat 301
+# Old single-page anchors from the previous site
 /index.html / 301
