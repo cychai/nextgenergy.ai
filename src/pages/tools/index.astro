@@ -1,0 +1,17 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Card from '@/components/Card.astro';
+---
+<Base title="Tools" description="Small engineering calculators for liquid cooling: return-water grade to feasible heat buyers, approach temperature to CDU sizing, and a turnover self-check.">
+  <PageHero eyebrow="Tools" title="Small calculators. No sign-up. No lead form." lede="Each tool does one thing a thermal engineer would otherwise do on the back of an envelope, and states the assumptions it makes. Use them to sharpen a question before you bring it to us or to anyone else." />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c3">
+        <Card href="/tools/return-water" num="01" title="Return-water grade → feasible heat buyers" more="Open">Enter the temperature your loop returns at. See which off-takers can physically use the heat, which need a heat-pump lift, and roughly how much.</Card>
+        <Card href="/tools/approach-temp" num="02" title="Approach temperature → CDU sizing" more="Open">See how the approach across the CDU heat exchanger moves facility supply temperature, and what that does to free-cooling hours in your climate.</Card>
+        <Card href="/tools/leak-checklist" num="03" title="Turnover self-check" more="Open">Ten boundaries, three questions each. Score a project honestly and get a number you can compare next time.</Card>
+      </div>
+    </div>
+  </section>
+</Base>

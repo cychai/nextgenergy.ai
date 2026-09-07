@@ -1,0 +1,40 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+const stages = [
+  { t: 'Before release from the factory', items: ['Pressure and leak test of every skid, manifold and CDU as shipped, with serials', 'Cleanliness class of wetted surfaces, verified by sample, not by statement', 'Material certificates for elastomers and wetted metals against the named fluid', 'Factory run of controls: pump staging, valve travel, sensor calibration'] },
+  { t: 'Before the loop is filled', items: ['Weld map complete; every field weld inspected and logged', 'Flush to cleanliness class; passivation confirmed separately from flushing', 'All fill, drain, vent and sample ports capped, tagged and logged', 'Pressure test of the assembled loop at the agreed factor and hold time'] },
+  { t: 'Before compute is energised', items: ['Fluid chemistry at fill matches specification: inhibitor, pH, conductivity, biocide', 'Flow balance across racks within tolerance, recorded per branch', 'CDU approach measured at available load and extrapolated with the method stated', 'Compute-and-liquid isolation sequence executed and timed, not just reviewed'] },
+  { t: 'Before handover', items: ['Baselines recorded: temperatures, pressures, flows, power, at a stated load', 'Metering boundary drawn on a single-line diagram and signed', 'Every disturbance since fill closed out in the connection log', 'Turnover package assembled in the ten-boundary structure and indexed'] },
+];
+---
+<Base title="Commissioning and acceptance criteria" description="How NextGenergy commissions liquid cooling: acceptance criteria written before the work, staged gates from factory release to handover, and records at each gate.">
+  <PageHero eyebrow="Evidence · Criteria" title="Powered on is not AI-ready. Commissioning is where the difference is written down." lede="A liquid-cooled hall can be powered on, pass a walk-through and still not be ready to carry a training run. The gap is a set of acceptance criteria that were agreed before the work and tested against, gate by gate." crumbs={[['/evidence', 'Evidence']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c2">
+        {stages.map((s, i) => (
+          <div class="card">
+            <span class="num">Gate {i + 1}</span>
+            <h3>{s.t}</h3>
+            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:0.95rem">{s.items.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Three principles behind the gates</h2>
+      <p><strong>Criteria are written before the work.</strong> An acceptance criterion agreed after the test is a description of what happened. One agreed before is a specification. We put the numbers in the contract, not in the closeout report.</p>
+      <p><strong>A boundary disturbed is a boundary re-tested.</strong> The loop does not pass once. Every quick disconnect mated after the pressure test, every port opened for a sample, resets that boundary's status until it is logged again.</p>
+      <p><strong>The boundary of every number is stated.</strong> Load level, ambient, metering point and period go into the record with the reading. A figure without them cannot be compared to anything, including to itself a year later.</p>
+      <Related items={[
+        { href: '/evidence/turnover', label: 'The turnover package the gates produce', kind: 'evidence' },
+        { href: '/approach/three-clocks', label: 'Why commissioning is its own clock', kind: 'approach' },
+        { href: '/services/commissioning', label: 'Commissioning as a standalone service', kind: 'approach' },
+      ]} />
+    </div>
+  </section>
+</Base>

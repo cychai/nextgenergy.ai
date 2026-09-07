@@ -1,0 +1,46 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+---
+<Base title="Contact" description="Talk to a NextGenergy engineer about a new build, a retrofit, a heat-reuse project, or a turnover package you would like verified.">
+  <PageHero eyebrow="Company" title="Talk to an engineer." lede="Tell us the situation and the number you are least sure you could defend. We will start there." crumbs={[['/company/about', 'Company']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p><strong>Email</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><strong>Location</strong><br />{site.location}</p>
+          <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
+          <p class="small muted">We answer within two working days. If you are sending a turnover package for review, a PDF export of the index page is enough to start.</p>
+        </div>
+        <form class="tool" data-contact data-to={site.email}>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="org">Organisation</label><input id="org" name="org" type="text" autocomplete="organization" /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+          <div class="field"><label for="topic">What is this about?</label>
+            <select id="topic" name="topic">
+              <option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option><option>Something else</option>
+            </select></div>
+          <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required></textarea></div>
+          <div class="btn-row" style="margin-top:0.5rem;align-items:center"><button class="btn primary" type="submit">Open in your email client</button><span class="small muted">or write to <a href={`mailto:${site.email}`}><span class="mono" data-copy>{site.email}</span></a></span></div>
+          <p class="small muted" style="margin:1rem 0 0">This form does not send anything to a server. It composes an email in your own mail client, addressed to us, so you keep a copy and we receive it directly. It needs a mail client configured on this device; if nothing opens, use the address above. See our <a href="/company/privacy">privacy notice</a> for how we handle what you send.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+<script>
+  const f = document.querySelector('[data-contact]');
+  f?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(f);
+    const g = (k) => String(d.get(k) ?? '').trim();
+    const subject = `[nextgenergy.ai] ${g('topic')} — ${g('name')}${g('org') ? ', ' + g('org') : ''}`;
+    const body = `${g('message')}\n\n—\n${g('name')}${g('org') ? '\n' + g('org') : ''}\n${g('email')}`;
+    location.href = `mailto:${f.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+<style>
+  .tool input[type="text"], .tool input[type="email"], .tool textarea { width: 100%; font: inherit; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); color: var(--ink); }
+</style>

@@ -1,0 +1,50 @@
+---
+import Base from '@/layouts/Base.astro';
+import Related from '@/components/Related.astro';
+import { getCollection, render } from 'astro:content';
+import { site } from '@/data/site';
+export async function getStaticPaths() {
+  const posts = await getCollection('insights', (p) => !p.data.draft);
+  return posts.map((p) => ({ params: { slug: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const { Content } = await render(p);
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+const defaults: Record<string, { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }> = {
+  '/evidence/leak-points': { href: '/evidence/leak-points', label: 'Ten leak points', kind: 'evidence' },
+  '/evidence/turnover': { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' },
+  '/evidence/commissioning': { href: '/evidence/commissioning', label: 'Commissioning and acceptance criteria', kind: 'evidence' },
+  '/tools/return-water': { href: '/tools/return-water', label: 'Return-water grade → heat buyers', kind: 'tool' },
+  '/tools/approach-temp': { href: '/tools/approach-temp', label: 'Approach temperature → CDU sizing', kind: 'tool' },
+  '/tools/leak-checklist': { href: '/tools/leak-checklist', label: 'Turnover self-check', kind: 'tool' },
+  '/approach/thermal-path': { href: '/approach/thermal-path', label: 'The thermal path', kind: 'approach' },
+  '/approach/return-water': { href: '/approach/return-water', label: 'Return-water grade', kind: 'approach' },
+  '/approach/three-clocks': { href: '/approach/three-clocks', label: 'Three clocks', kind: 'approach' },
+};
+const related = p.data.related.map((r) => defaults[r]).filter(Boolean);
+---
+<Base title={p.data.title} description={p.data.subtitle ?? site.description} canonical={p.data.canonical} type="article" published={p.data.date}>
+  <article>
+    <header class="hero">
+      <div class="narrow">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/insights">Insights</a></span></nav>
+        <div class="eyebrow">Every Watt Counts · {fmt(p.data.date)}</div>
+        <h1 style="font-size:clamp(2rem,4.5vw,3.4rem)">{p.data.title}</h1>
+        {p.data.subtitle && <p class="lede">{p.data.subtitle}</p>}
+        {p.data.tags.length > 0 && <div class="tags" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem">{p.data.tags.map((t) => <a class="tag-pill" href={`/insights/tag/${t}`}>{t}</a>)}</div>}
+      </div>
+    </header>
+    <div class="narrow prose article-body">
+      <Content />
+      <hr />
+      <p class="small muted">By Jim Li, founder of NextGenergy. {p.data.sourceUrl && <>First published on <a href={p.data.sourceUrl}>Substack</a>.</>} Discuss it there or on <a href={site.linkedin}>LinkedIn</a>.</p>
+      <Related items={related} />
+    </div>
+  </article>
+</Base>
+<style>
+  .article-body { padding-bottom: 3rem; font-size: 1.08rem; }
+  .article-body :global(h2) { font-size: 1.7rem; }
+  .article-body :global(h3) { font-size: 1.3rem; }
+  .article-body :global(p > em:only-child) { display: block; font-size: 0.85rem; color: var(--ink-3); margin-top: -0.8em; }
+</style>

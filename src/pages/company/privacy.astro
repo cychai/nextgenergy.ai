@@ -1,0 +1,27 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+---
+<Base title="Privacy notice" description="What nextgenergy.ai collects, which is very little, and how to reach us about it.">
+  <PageHero eyebrow="Company" title="Privacy notice" lede="This site is built to collect as little as possible. Here is exactly what happens when you visit, what happens when you write to us, and how to have anything removed." crumbs={[['/company/about', 'Company']]} />
+  <section class="section">
+    <div class="wrap prose">
+      <h2>When you visit</h2>
+      <ul>
+        <li><strong>Optional Google Analytics.</strong> Google Analytics uses Consent Mode and all advertising features are disabled. Until you accept, analytics storage is denied and Google receives only cookieless measurement signals. If you accept, Google may set analytics cookies such as <code>_ga</code> to distinguish visits. You can change your choice at any time using “Analytics choices” in the footer.</li>
+        <li><strong>Hosting logs.</strong> The site is served by Cloudflare. Like any web server, Cloudflare's edge records standard request logs (IP address, requested page, browser type, timestamp) for security and operations. We do not receive these as personal data and do not use them to identify visitors. Cloudflare's own privacy policy applies to that processing.</li>
+        <li><strong>Fonts and stylesheets</strong> are served from this domain. Apart from the optional Google Analytics tag above, no script is loaded from a third party.</li>
+        <li><strong>Images in articles</strong> under /insights are loaded from Substack's content network (substackcdn.com), because those articles are mirrored from our Substack publication. Loading an image sends a standard request, including your IP address, to Substack.</li>
+        <li><strong>The turnover self-check tool</strong> stores your tick marks in your own browser (local storage) so they survive a reload. Nothing is sent to us. Clearing your browser data removes it.</li>
+      </ul>
+      <h2>When you write to us</h2>
+      <p>The contact form does not submit to a server. It opens a new message in your own email client, addressed to {site.email}, with the fields you filled in. What we receive is an ordinary email, which we keep in our company mailbox (Google Workspace) for as long as the enquiry and any resulting relationship is active. We use it to reply to you and for nothing else. We do not sell, rent or share enquiry details with third parties.</p>
+      <h2>Your choices</h2>
+      <p>To have an email and its contents deleted, write to {site.email} and say so. We will confirm when it is done. If you are in the EU, UK or Canada you have the rights those jurisdictions give you over personal data, including access and erasure, and you may exercise them through the same address.</p>
+      <h2>Changes</h2>
+      <p>If we add a server-side form or any further third-party service that processes visitor data, this page will be updated first and the change will be dated here.</p>
+      <p class="small muted">Last updated 7 September 2026 (Google Analytics with Consent Mode added). Contact for this notice: {site.email}.</p>
+    </div>
+  </section>
+</Base>

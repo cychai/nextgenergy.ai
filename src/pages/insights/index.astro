@@ -1,0 +1,36 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { getCollection } from 'astro:content';
+import { site } from '@/data/site';
+const posts = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
+---
+<Base title="Insights" description="Every Watt Counts: long-form writing on power, liquid cooling and heat reuse for AI infrastructure, by Jim Li. Mirrored from Substack.">
+  <PageHero eyebrow="Insights" title="Every Watt Counts" lede="Long-form writing on power, liquid cooling and heat reuse for AI infrastructure. Published first on Substack and mirrored here, with links into the evidence and tools each piece points at.">
+    <div class="btn-row"><a class="btn" href={site.substack}>Subscribe on Substack</a><a class="btn" href="/insights/rss.xml">RSS</a></div>
+  </PageHero>
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <aside class="sticky">
+          {tags.length > 0 && <><div class="eyebrow">Topics</div><div class="tags" style="display:flex;flex-wrap:wrap;gap:0.4rem">{tags.map((t) => <a class="tag-pill" href={`/insights/tag/${t}`}>{t}</a>)}</div></>}
+          <p class="small muted" style="margin-top:1.5rem">{posts.length} articles since June 2026.</p>
+        </aside>
+        <div>
+          {posts.map((p) => (
+            <article class="post">
+              <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+              <div>
+                <h3><a href={`/insights/${p.id}`}>{p.data.title}</a></h3>
+                {p.data.subtitle && <p>{p.data.subtitle}</p>}
+                {p.data.tags.length > 0 && <div class="tags">{p.data.tags.map((t) => <a class="tag-pill" href={`/insights/tag/${t}`}>{t}</a>)}</div>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

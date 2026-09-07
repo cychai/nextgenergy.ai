@@ -1,0 +1,93 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+---
+<Base title="Approach temperature → CDU sizing" description="See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.">
+  <PageHero eyebrow="Tools · 02" title="What a few kelvin of approach costs you." lede="Work backwards from the coldest water the chips need to the warmest water the facility may supply. Every kelvin of approach across the CDU, and every kelvin across the dry cooler, pushes the required outdoor temperature down and takes free-cooling hours with it." crumbs={[['/tools', 'Tools']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="tool" data-at>
+          <div class="field"><label for="tsup">Required secondary supply to the racks (TCS)</label><div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="tsup" min="15" max="50" step="0.5" value="32" /><span class="mono muted">°C</span></div><p class="small muted" style="margin:0.4rem 0 0">ASHRAE liquid-cooling classes W32, W40 and W45 set an upper facility-water-supply limit of 32, 40 and 45 °C for equipment declared to that class; they are operating envelopes, not set-points. Enter the supply your racks actually require.</p></div>
+          <div class="field"><label for="cdu">CDU heat-exchanger approach at rated load</label><input type="range" id="cdu" min="1" max="10" step="0.5" value="4" /><div class="readout" style="font-size:1.8rem"><span data-out="cdu">4</span> K</div><p class="small muted" style="margin:0.2rem 0 0">Include the fouling allowance. Datasheet approach is usually clean-plate.</p></div>
+          <div class="field"><label for="dc">Dry-cooler approach to ambient dry-bulb</label><input type="range" id="dc" min="3" max="15" step="0.5" value="8" /><div class="readout" style="font-size:1.8rem"><span data-out="dc">8</span> K</div></div>
+          <div class="field"><label for="climate">Climate (for free-cooling hours)</label>
+            <select id="climate">
+              <option value="toronto">Toronto, ON</option><option value="montreal">Montréal, QC</option><option value="chicago">Chicago, IL</option><option value="dallas">Dallas, TX</option><option value="phoenix">Phoenix, AZ</option><option value="frankfurt">Frankfurt, DE</option><option value="stockholm">Stockholm, SE</option><option value="singapore">Singapore</option>
+            </select><p class="small muted" style="margin:0.4rem 0 0">Illustrative dry-bulb distributions only, shaped from typical-meteorological-year climate normals for each city in 5 K bins and scaled to 8,760 h. Not station data and not a design basis. Replace with a named station's TMY or bin data for design.</p></div>
+        </div>
+        <div>
+          <div class="eyebrow">Result</div>
+          <div class="tool">
+            <div class="row"><span>Facility supply required at the CDU</span><strong><span data-out="fws">—</span> °C</strong></div>
+            <div class="row"><span>Ambient dry-bulb at or below which dry rejection alone holds it</span><strong><span data-out="amb">—</span> °C</strong></div>
+            <div class="row"><span>Hours per year at or below that ambient</span><strong><span data-out="hrs">—</span> h</strong></div>
+            <div class="row"><span>Share of the year on full free cooling</span><strong><span data-out="pct">—</span> %</strong></div>
+            <div class="row"><span>Hours needing trim (adiabatic assist, chiller or reduced load)</span><strong><span data-out="trim">—</span> h</strong></div>
+          </div>
+          <div class="note" style="margin-top:1.5rem"><strong>Sensitivity.</strong> Tightening the CDU approach by one kelvin is worth <span data-out="sens">—</span> hours a year in this climate at these settings. That is the number to weigh against the larger heat exchanger.</div>
+          <details class="method" style="margin-top:1rem">
+            <summary>Method and limits</summary>
+            <ul>
+              <li>Facility supply required = secondary supply − CDU approach. Ambient threshold = facility supply − dry-cooler approach. Hours below threshold are read from the illustrative bin distribution with linear interpolation inside a bin.</li>
+              <li>Dry-bulb only. Adiabatic or evaporative assist, humidity, solar gain, wind, part load and redundancy staging are not modelled.</li>
+              <li>Approaches are single steady-state values. Real approaches vary with load, flow and fouling; use rated-load values with a fouling allowance.</li>
+              <li>Outputs are illustrative screening estimates, not equipment selections, guarantees or design hours. Verify with project-specific weather data, OEM limits and a rating from the equipment manufacturer.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div class="prose" style="margin-top:3rem">
+        <Related items={[
+          { href: '/platform/cdu', label: 'How we select CDUs', kind: 'approach' },
+          { href: '/approach/thermal-path', label: 'The six boundaries of the thermal path', kind: 'approach' },
+          { href: '/evidence/commissioning', label: 'Approach recorded at commissioning', kind: 'evidence' },
+        ]} />
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line-2); font-size: 0.95rem; }
+  .row:last-child { border-bottom: 0; }
+  .row strong { font-family: var(--serif); font-size: 1.3rem; white-space: nowrap; }
+</style>
+<script>
+  // Hours per year with dry-bulb in each 5 K bin, from -30 to 45 °C (bins: [-30,-25) ... [40,45)). Approximate TMY shapes.
+  const bins = [-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40];
+  const climates = {
+    toronto: [5, 40, 150, 350, 700, 1000, 1300, 1150, 1050, 1000, 1000, 700, 280, 35, 0],
+    montreal: [30, 120, 300, 500, 800, 950, 1150, 1050, 1000, 950, 950, 650, 280, 30, 0],
+    chicago: [10, 50, 150, 300, 600, 900, 1200, 1100, 1000, 1000, 1050, 850, 450, 90, 10],
+    dallas: [0, 0, 4, 27, 90, 269, 539, 808, 987, 1167, 1346, 1346, 1167, 763, 247],
+    phoenix: [0, 0, 0, 0, 5, 60, 250, 600, 900, 1100, 1200, 1300, 1400, 1300, 645],
+    frankfurt: [0, 5, 40, 150, 450, 900, 1500, 1500, 1400, 1300, 1000, 450, 60, 5, 0],
+    stockholm: [5, 40, 150, 350, 700, 1200, 1700, 1400, 1200, 1050, 700, 220, 40, 5, 0],
+    singapore: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 450, 5900, 2400, 10, 0],
+  };
+  const el = (s) => document.querySelector(s);
+  const out = (k, v) => document.querySelectorAll(`[data-out="${k}"]`).forEach((n) => (n.textContent = v));
+  const tsup = el('#tsup'), cdu = el('#cdu'), dc = el('#dc'), cl = el('#climate');
+  function hoursBelow(dist, T) {
+    let h = 0;
+    for (let i = 0; i < bins.length; i++) {
+      const lo = bins[i], hi = lo + 5;
+      if (T >= hi) h += dist[i];
+      else if (T > lo) h += dist[i] * (T - lo) / 5;
+    }
+    return h;
+  }
+  function run() {
+    const Ts = +tsup.value, a1 = +cdu.value, a2 = +dc.value;
+    out('cdu', a1); out('dc', a2);
+    const fws = Ts - a1, amb = fws - a2;
+    const dist = climates[cl.value];
+    const h = hoursBelow(dist, amb);
+    out('fws', fws.toFixed(1)); out('amb', amb.toFixed(1));
+    out('hrs', Math.round(h).toLocaleString('en-CA')); out('pct', (h / 87.6).toFixed(0)); out('trim', Math.round(8760 - h).toLocaleString('en-CA'));
+    out('sens', Math.round(hoursBelow(dist, amb + 1) - h).toLocaleString('en-CA'));
+  }
+  [tsup, cdu, dc, cl].forEach((i) => i.addEventListener('input', run));
+  run();
+</script>

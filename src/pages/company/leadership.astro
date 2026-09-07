@@ -1,0 +1,34 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+const people = [
+  { name: 'Jim (Junming) Li', role: 'Founder & CEO, NextGenergy Technology Inc.', linkedin: 'https://www.linkedin.com/in/junming-li-liquid-cooling/', photo: '/team/jim-li.jpg',
+    bio: 'Jim founded NextGenergy to move AI data centres beyond single-point equipment optimisation toward integrated system design across power, liquid cooling and heat recovery. He built and operated immersion and direct-to-chip liquid-cooled compute before founding the company, including deployments whose recovered heat was delivered into district heating, greenhouses and aquaculture. He writes Every Watt Counts, reviews and comments on open liquid-cooling specifications, and is the author of the three-clock model and the ten leak points.' },
+];
+---
+<Base title="Leadership" description="The people accountable for NextGenergy's work, by name, with their own public record.">
+  <PageHero eyebrow="Company" title="Who is accountable" lede="A technical buyer should know who is responsible for the work and be able to check that person's public record." crumbs={[['/company/about', 'Company']]} />
+  <section class="section">
+    <div class="wrap">
+      {people.map((p) => (
+        <article class="person">
+          <div class="photo"><img src={p.photo} alt={`Portrait of ${p.name}`} width="480" height="480" loading="eager" /></div>
+          <div>
+            <h2 style="margin-bottom:0.2rem">{p.name}</h2>
+            <p class="eyebrow plain" style="margin:0 0 1rem">{p.role}</p>
+            <p class="prose">{p.bio}</p>
+            <p><a href={p.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>
+          </div>
+        </article>
+      ))}
+      <p class="small muted" style="margin-top:2rem">Engineering staff and advisers will be listed here as they join.</p>
+    </div>
+  </section>
+</Base>
+<style>
+  .person { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 900px; }
+  @media (min-width: 700px) { .person { grid-template-columns: 220px 1fr; } }
+  .photo { width: 220px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+</style>

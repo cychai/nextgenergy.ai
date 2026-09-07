@@ -1,0 +1,58 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+import { leakPoints } from '@/data/leakPoints';
+const groups = [...new Set(leakPoints.map((l) => l.group))];
+---
+<Base title="Ten leak points" description="Ten places a liquid-cooling loop can leak, following the coolant from chip to facility. Not a ranking: a checklist every team should be able to score a project against.">
+  <PageHero eyebrow="Evidence · Reference" title="Ten leak points every liquid-cooling team should know." lede="Not a ranking. A checklist, following the coolant from chip to facility. For each of the ten, a turnover package should answer: was it tested, against what acceptance criteria, and where is the record." crumbs={[['/evidence', 'Evidence']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="sticky">
+          <div class="eyebrow">Grouped by position on the path</div>
+          <ul class="toc">
+            {groups.map((g) => <li><a href={`#${g.toLowerCase().replace(/[^a-z]+/g, '-')}`}>{g}</a></li>)}
+          </ul>
+          <p class="small muted" style="margin-top:1.5rem">First published by Jim Li on LinkedIn, September 2026. Kept here as a stable reference. The wording is deliberately vendor-neutral: it names practices, not people or products.</p>
+          <a class="btn" href="/tools/leak-checklist">Score your last project</a>
+        </div>
+        <div>
+          {groups.map((g) => (
+            <section id={g.toLowerCase().replace(/[^a-z]+/g, '-')} style="margin-bottom:2.5rem">
+              <h2 style="font-size:1.1rem;font-family:var(--mono);letter-spacing:0.1em;text-transform:uppercase;color:var(--heat)">{g}</h2>
+              <ol class="bounds" start={leakPoints.findIndex((l) => l.group === g) + 1}>
+                {leakPoints.filter((l) => l.group === g).map((l) => (
+                  <li style={`counter-increment: b; counter-set: b ${l.n}`}>
+                    <div>
+                      <h3>{l.t}</h3>
+                      <p>{l.p}</p>
+                      {l.r && <p class="q">→ {l.r}</p>}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <blockquote>The point is not that factory joints never leak. It is that a boundary made under controlled conditions can be tested, recorded and released against defined acceptance criteria. A boundary made in a live hall at 2 a.m. deserves exactly the same evidence.</blockquote>
+      <p>On your last liquid-cooling project, how many of the ten could you prove, not just say were checked?</p>
+      <Related items={[
+        { href: '/tools/leak-checklist', label: 'Turnover self-check: ten boundaries, three questions', kind: 'tool' },
+        { href: '/evidence/turnover', label: 'What the turnover package contains', kind: 'evidence' },
+        { href: '/approach/three-clocks', label: 'Three clocks: who owns each leak risk', kind: 'approach' },
+      ]} />
+    </div>
+  </section>
+</Base>
+<style>
+  .toc { list-style: none; padding: 0; margin: 0; }
+  .toc li { padding: 0.5rem 0; border-bottom: 1px solid var(--line-2); font-weight: 500; }
+  .toc a:hover { color: var(--heat); }
+</style>

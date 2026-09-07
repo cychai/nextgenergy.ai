@@ -1,0 +1,17 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Card from '@/components/Card.astro';
+import { platform as items } from '@/data/sections';
+---
+<Base title="Platform" description="We do not manufacture these components. We specify them, source them from qualified manufacturers, pre-assemble them where possible and take responsibility for how they perform together. Each page says what we require each component to prove.">
+  <PageHero eyebrow="Platform" title="Components we integrate, and what each one has to prove." lede="We do not manufacture these components. We specify them, source them from qualified manufacturers, pre-assemble them where possible and take responsibility for how they perform together. Each page says what we require each component to prove." />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c3">
+        {items.map((s, i) => <Card href={`/platform/${s.slug}`} num={String(i + 1).padStart(2, '0')} title={s.title}>{s.summary}</Card>)}
+      </div>
+      <div class="note" style="margin-top:2.5rem;max-width:70ch"><strong>On not being a manufacturer.</strong> Component makers optimise their box and warrant it at their flange. We optimise the line and are accountable for the system within the agreed scope and acceptance criteria. Both are needed. Only one of them looks at the whole thermal path.</div>
+    </div>
+  </section>
+</Base>

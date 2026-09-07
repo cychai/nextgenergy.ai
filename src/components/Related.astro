@@ -1,0 +1,23 @@
+---
+/** "Where this leads" strip: sends readers from articles/approach pages to evidence and tools. */
+interface Props { items: { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }[]; title?: string; }
+const { items, title = 'Where this leads' } = Astro.props;
+const kinds = { evidence: 'Evidence', tool: 'Tool', approach: 'Approach', insight: 'Insight' };
+---
+{items.length > 0 && (
+  <aside class="related">
+    <div class="eyebrow">{title}</div>
+    <ul>
+      {items.map((i) => (
+        <li><a href={i.href}><span class="k">{kinds[i.kind]}</span>{i.label} →</a></li>
+      ))}
+    </ul>
+  </aside>
+)}
+<style>
+  .related { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+  a { display: flex; gap: 0.8rem; align-items: baseline; font-weight: 500; text-decoration: none; color: var(--ink); }
+  a:hover { color: var(--heat); }
+  .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--water); min-width: 5.5rem; }
+</style>

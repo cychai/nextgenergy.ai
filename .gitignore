@@ -1,4 +1,6 @@
-.DS_Store
-.trae/
-.wrangler/
 node_modules/
+dist/
+.astro/
+.wrangler/
+.DS_Store
+.env

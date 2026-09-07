@@ -1,0 +1,65 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+import { leakPoints } from '@/data/leakPoints';
+const records: Record<number, [string, string, string]> = {
+  1: ['Factory pressure / helium test per plate', 'Manufacturer spec, traceable to serial', 'Supplier FAT certificate, indexed by rack position'],
+  2: ['Leak test after every mate/de-mate during install', 'Zero visible weep at test pressure, held time stated', 'Connection log: date, technician, QD serial, result'],
+  3: ['Crimp dimensional check, sample pull test', 'Assembler process spec: crimp diameter, concentricity', 'Batch record with crimp-tool calibration'],
+  4: ['Manifold pressure test as an assembly', 'Rated pressure × factor, hold time, decay limit', 'Rack integrator test sheet'],
+  5: ['Material certification, fluid compatibility statement', 'Named elastomer grade vs named fluid, temperature range', 'Material cert file, cross-referenced to BOM'],
+  6: ['Torque verification, thread sealant record', 'Torque table by size and material', 'Fitting log with torque wrench calibration'],
+  7: ['CDU FAT: pump seal, HX gasket, filter housing', 'Manufacturer FAT protocol', 'CDU FAT report with serial'],
+  8: ['Weld inspection, flush, passivation, sample', 'Weld procedure spec; cleanliness class; passivation confirmation', 'Weld map, flush log, lab sample result'],
+  9: ['Stem and body leak check under operating pressure', 'Zero weep, valve position recorded', 'Valve schedule with as-left positions'],
+  10: ['Cap and plug verification after every use', 'All ports capped, valves closed, tagged', 'Port log; last-disturbed date per port'],
+};
+---
+<Base title="The turnover package" description="What a liquid-cooling turnover package should contain: for each of ten boundaries, the test, the acceptance criterion and the record.">
+  <PageHero eyebrow="Evidence · Records" title="Ten boundaries. Three questions each. That is the turnover package." lede="Was it tested? Against what acceptance criteria? Where is the record? Below is the minimum we hand over for a liquid-cooled deployment, boundary by boundary. If a package cannot answer all three for all ten, it is a description, not evidence." crumbs={[['/evidence', 'Evidence']]} />
+  <section class="section">
+    <div class="wrap">
+      <p class="table-hint">Swipe sideways to see all columns.</p>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>#</th><th>Boundary</th><th>Was it tested?</th><th>Against what?</th><th>Where is the record?</th></tr></thead>
+          <tbody>
+            {leakPoints.map((l) => (
+              <tr>
+                <td class="mono muted">{String(l.n).padStart(2, '0')}</td>
+                <td><strong>{l.t}</strong><br /><span class="small muted">{l.group}</span></td>
+                <td>{records[l.n][0]}</td>
+                <td>{records[l.n][1]}</td>
+                <td>{records[l.n][2]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:1rem">Indicative structure. Test pressures, hold times and cleanliness classes are set per project in the acceptance criteria and are not published here.</p>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Beyond the joints: the system-level records</h2>
+      <p>The ten-boundary table covers leak risk. A complete package also carries the records that make the system's performance defensible later:</p>
+      <ul>
+        <li>IT power and facility power, metered separately, with the metering boundary drawn</li>
+        <li>Supply and return temperature with calibrated flow on each loop boundary</li>
+        <li>CDU approach at rated load, with the fouling allowance stated</li>
+        <li>Make-up and blowdown as separate water streams where evaporative rejection is used</li>
+        <li>Local dry-bulb and wet-bulb, from a station you can name</li>
+        <li>Delivered heat, where reuse exists: flow, supply and return, contract-grade meter</li>
+        <li>Equipment staging, bypass position and maintenance windows, as an event log</li>
+        <li>Tested compute-and-liquid isolation sequence, with the test date</li>
+      </ul>
+      <p>None of that is expensive at design time. All of it is close to impossible to reconstruct afterwards.</p>
+      <Related items={[
+        { href: '/tools/leak-checklist', label: 'Score your own package', kind: 'tool' },
+        { href: '/evidence/commissioning', label: 'How the acceptance criteria are written', kind: 'evidence' },
+        { href: '/services/commissioning', label: 'Commissioning as a service', kind: 'approach' },
+      ]} />
+    </div>
+  </section>
+</Base>

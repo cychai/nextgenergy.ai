@@ -1,0 +1,19 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+import { services } from '@/data/sections';
+export function getStaticPaths() { return services.map((s) => ({ params: { slug: s.slug }, props: { s } })); }
+const { s } = Astro.props;
+const rel = { design: [{ href: '/approach/thermal-path', label: 'The thermal path', kind: 'approach' }, { href: '/tools/approach-temp', label: 'Approach temperature tool', kind: 'tool' }], integration: [{ href: '/platform/skids', label: 'Factory-built skids', kind: 'approach' }], commissioning: [{ href: '/evidence/commissioning', label: 'Acceptance criteria, gate by gate', kind: 'evidence' }, { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' }], operations: [{ href: '/approach/three-clocks', label: 'Three clocks', kind: 'approach' }, { href: '/platform/coolants', label: 'Coolants and water chemistry', kind: 'approach' }] } as const;
+---
+<Base title={s.title} description={s.summary}>
+  <PageHero eyebrow="Services" title={s.title} lede={s.summary} crumbs={[['/services', 'Services']]} />
+  <section class="section">
+    <div class="wrap prose">
+      {s.body.map((p) => <p>{p}</p>)}
+      <div class="btn-row"><a class="btn primary" href="/company/contact">Talk to an engineer</a></div>
+      <Related items={[...rel[s.slug as keyof typeof rel]]} />
+    </div>
+  </section>
+</Base>

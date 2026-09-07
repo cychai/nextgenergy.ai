@@ -1,0 +1,24 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Card from '@/components/Card.astro';
+---
+<Base title="Approach" description="How NextGenergy thinks about liquid cooling: one thermal path with six boundaries, return-water grade as the number that matters, and three clocks for leak risk.">
+  <PageHero eyebrow="Approach" title="One thermal path. Six boundaries. Someone has to own the line." lede="Liquid cooling is bought as components and fails as a system. Our approach starts from that gap: we design and commission across the whole path from the facility water interface to the silicon, and we write down what each boundary was tested against." />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c3">
+        <Card href="/approach/thermal-path" num="01" title="The thermal path">From facility water interface to chip: six boundaries, who makes each one, and why the record has to travel with the heat.</Card>
+        <Card href="/approach/return-water" num="02" title="Return-water grade">The first number that decides whether waste heat has a buyer. Why we design to it before we design to PUE.</Card>
+        <Card href="/approach/three-clocks" num="03" title="Three clocks">Manufacturing, commissioning, service life. Three leak risks with three owners and three kinds of evidence.</Card>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Component vendors optimise their box. We optimise the line.</h2>
+      <p>A cold-plate maker will give you thermal resistance at a stated flow. A CDU maker will give you capacity at a stated approach. A facility designer will give you a supply temperature. Each number is honest inside its own boundary. The failures happen where the boundaries meet: the approach that eats your free-cooling hours, the quick disconnect that was never leak-tested after the last server swap, the 55 °C loop that was mixed down to 30 °C before it reached the fence and became worthless to the greenhouse next door.</p>
+      <p>We do not manufacture cold plates, CDUs or manifolds. We select them, integrate them into factory-built skids where that is possible, commission the whole path against written acceptance criteria, and stay through operation. The deliverable is a system that meets its acceptance criteria and a <a href="/evidence/turnover">turnover package</a> that shows it.</p>
+    </div>
+  </section>
+</Base>

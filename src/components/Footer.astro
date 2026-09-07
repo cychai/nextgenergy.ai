@@ -1,0 +1,26 @@
+---
+import { site, footerNav } from '@/data/site';
+const year = new Date().getFullYear();
+---
+<footer class="ftr">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="/" class="brand"><img src="/brand/logo.png" alt="NextGenergy" width="1380" height="470" /></a>
+        <p style="margin-top:1rem; max-width: 34ch;">We do not manufacture components. We take responsibility for the whole thermal path, and we hand over the evidence.</p>
+        <p class="small">{site.location}<br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p class="small"><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · <a href="/insights/rss.xml">RSS</a></p>
+      </div>
+      {footerNav.map((c) => (
+        <div>
+          <h4>{c.title}</h4>
+          <ul>{c.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="legal">
+      <span>© {year} NextGenergy Technology Inc. All rights reserved.</span>
+      <span><a href="/company/privacy">Privacy</a> · <a href="/company/contact">Contact</a> · <a href="/insights/rss.xml">RSS</a></span>
+    </div>
+  </div>
+</footer>

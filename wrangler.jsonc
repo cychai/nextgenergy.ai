@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nextgenergy-ai",
+  "compatibility_date": "2026-08-04",
+  "routes": [
+    { "pattern": "nextgenergy.ai", "custom_domain": true },
+    { "pattern": "www.nextgenergy.ai", "custom_domain": true }
+  ],
+  // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main.
+  // Wrangler runs this build command first, so the repo can hold the Astro source
+  // and the built site in ./dist is what gets uploaded as static assets.
+  "build": { "command": "npm ci && npm run build" },
+  "assets": { "directory": "./dist", "not_found_handling": "404-page" }
+}

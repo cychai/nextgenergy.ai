@@ -1,0 +1,50 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+const clocks = [
+  { n: 'Clock one', t: 'Manufacturing', who: 'Owner: the factory', ex: 'A weld or braze that escapes the factory. A void in a cold-plate seam. A crimp outside tolerance.', ev: 'Bounded factory acceptance test (FAT) leak-test records, traceable to serial number. Crimp process parameters. Material certificates for elastomers and wetted metals.' },
+  { n: 'Clock two', t: 'Commissioning', who: 'Owner: the integrator and the commissioning agent', ex: 'A quick disconnect disturbed during install. A field weld that was flushed but never passivated. A fitting that looked dry at handover.', ev: 'Connection records for every joint made or disturbed on site. Flushing and cleanliness results. Pressure tests against written acceptance criteria. Tested compute-and-liquid isolation sequences.' },
+  { n: 'Clock three', t: 'Service life', who: 'Owner: the operator', ex: 'A hose that ages out in year four. An elastomer that hardened. A fluid whose inhibitor package was never topped up.', ev: 'Fluid-quality trends. System-performance trends against commissioning baselines. Service logs for every disturbance of a boundary. Replacement intervals with a basis.' },
+];
+---
+<Base title="Three clocks" description="Leak risk in liquid cooling is three different failures on three different clocks: manufacturing, commissioning and service life. Each has a different owner and different evidence.">
+  <PageHero eyebrow="Approach · 03" title="A leak is one word hiding three different failures." lede="Liquid leaks have entered compute-availability management: NVIDIA Mission Control surfaces a detected leak as a compute-node state alongside node health, not only as a facilities alarm. Most project boundaries have not caught up. They still compress three risks into one checkbox: leak detection installed." crumbs={[['/approach', 'Approach']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c3">
+        {clocks.map((c) => (
+          <div class="card clock">
+            <span class="num">{c.n}</span>
+            <h3>{c.t}</h3>
+            <p class="small" style="color:var(--heat);font-weight:600">{c.who}</p>
+            <p><strong>What it looks like.</strong> {c.ex}</p>
+            <p><strong>What survives as evidence.</strong> {c.ev}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>A sensor tells you liquid has arrived. It cannot tell you who created the risk.</h2>
+      <p>Leak detection is necessary and it is late. By the time a rope sensor is wet, the question is no longer whether there is a leak but whether the response sequence works, whether the compute can be isolated from the liquid safely, and what evidence survives the incident. None of that is answered by the sensor. It is answered by a chain that was built before the first drop:</p>
+      <ul>
+        <li>bounded FAT leak-test records</li>
+        <li>connection and flushing records</li>
+        <li>fluid-quality and system-performance trends</li>
+        <li>tested compute-and-liquid isolation sequences</li>
+      </ul>
+      <h2>What gets documented can be priced</h2>
+      <p>Project owners, and increasingly their insurers and lenders, may ask which clock a project has covered. You can price evidence. You cannot price "the work was done carefully". A project that runs well for years and leaves no records has succeeded operationally and failed commercially the first time someone asks for proof.</p>
+      <p class="small muted">Reference: NVIDIA Mission Control Systems Administration Guide, <a href="https://docs.nvidia.com/mission-control/docs/systems-administration-guide/2.3.0/leak-detection.html">leak detection</a>.</p>
+      <p>We build the three clocks into the scope. The factory clock is covered by what we require of suppliers before a component is released. The commissioning clock is our own work and is recorded joint by joint. The service clock is handed to the operator as trended baselines, not as a binder.</p>
+      <Related items={[
+        { href: '/evidence/leak-points', label: 'Ten leak points, chip to facility', kind: 'evidence' },
+        { href: '/evidence/commissioning', label: 'Commissioning and acceptance criteria', kind: 'evidence' },
+        { href: '/insights/the-biggest-risk-in-liquid-cooling', label: 'The Biggest Risk in Liquid Cooling Is Not Whether It Leaks. It Is When.', kind: 'insight' },
+      ]} />
+    </div>
+  </section>
+</Base>
+<style>.clock p { font-size: 0.95rem; }</style>

@@ -1,0 +1,17 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Card from '@/components/Card.astro';
+import { solutions as items } from '@/data/sections';
+---
+<Base title="Solutions" description="The same approach, applied to the situations we are usually called into. Each page says what we design for, what we ask the project to decide early, and where the evidence lives.">
+  <PageHero eyebrow="Solutions" title="By situation, not by vertical." lede="The same approach, applied to the situations we are usually called into. Each page says what we design for, what we ask the project to decide early, and where the evidence lives." />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid c3">
+        {items.map((s, i) => <Card href={`/solutions/${s.slug}`} num={String(i + 1).padStart(2, '0')} title={s.title}>{s.summary}</Card>)}
+      </div>
+      
+    </div>
+  </section>
+</Base>

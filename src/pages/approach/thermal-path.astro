@@ -1,0 +1,51 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+const bounds = [
+  { t: 'Facility water interface', who: 'Facility mechanical contractor', p: 'Where the building hands water to the cooling system. Supply and return temperature, flow, pressure and water chemistry are set here, and so is the metering boundary that any energy-reuse figure will be judged against.', q: 'Metered flow and both temperatures on this boundary, from day one?' },
+  { t: 'Heat rejection and reuse', who: 'Dry cooler / tower / heat-pump vendor, or the heat buyer', p: 'Where the heat leaves the site: to air, to evaporation, or to a buyer. The return-water grade of the loop decides which of these are physically available. This is also where PUE, WUE and ERF stop agreeing with each other.', q: 'Which resource is actually being consumed, and on whose meter?' },
+  { t: 'CDU and secondary loop', who: 'CDU manufacturer, integrator', p: 'The heat exchanger between facility water and the technology-cooling loop. Its approach temperature sets how warm the secondary loop must run for a given facility supply, and therefore how many free-cooling hours the site gets. Pump seals, gaskets and filter housings are enclosed leak boundaries.', q: 'Approach at rated load, with fouling allowance, recorded at commissioning?' },
+  { t: 'Rack manifold and quick disconnects', who: 'Rack integrator, QD supplier', p: 'The highest count of removable joints in the system, and the ones disturbed every time a server is replaced. A disconnected QD is not automatically a sealed one. First-fill cleanliness is leak prevention, not housekeeping.', q: 'Leak test and cleanliness record after every disturbance, not just at handover?' },
+  { t: 'Hoses, crimps and fittings', who: 'Hose assembler, rack integrator', p: 'A crimp is a controlled manufacturing process, not an assembly step. Once the sleeve is on, most defects are invisible. Elastomer selection decides whether a dry joint stays dry in year four.', q: 'Crimp process record and elastomer specification, not "compatible with water"?' },
+  { t: 'Cold plate and chip', who: 'Cold-plate manufacturer, server OEM', p: 'Brazed seams, friction-stir welds, covers and ports, sitting directly upstream of the smallest flow passages in the system. Thermal performance here depends on everything upstream: flow, inlet temperature and fluid cleanliness.', q: 'Factory pressure-test record traceable to this serial number?' },
+];
+---
+<Base title="The thermal path" description="From the facility water interface to the chip: the six boundaries of a liquid-cooling system, who owns each, and the question every turnover package should answer for it.">
+  <PageHero eyebrow="Approach · 01" title="From the facility water interface to the chip: six boundaries." lede="Heat travels one way. Responsibility usually stops at each vendor's flange. This is the path as we draw it, with the maker of each boundary and the question we ask of it." crumbs={[['/approach', 'Approach']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="sticky">
+          <div class="eyebrow">Read this list downstream</div>
+          <p class="muted">Boundaries are numbered from the facility inward, the direction a commissioning team walks and the direction water chemistry travels. Each entry names the party that usually makes the boundary and the one question its record should answer.</p>
+          <p class="muted small">The list deliberately stops at six for the design conversation. For leak risk specifically we break the same path into <a href="/evidence/leak-points">ten leak points</a>.</p>
+        </div>
+        <ol class="bounds">
+          {bounds.map((b) => (
+            <li>
+              <div>
+                <h3>{b.t}</h3>
+                <p class="small muted" style="margin-bottom:0.4rem">Usually made by: {b.who}</p>
+                <p>{b.p}</p>
+                <p class="q">→ {b.q}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>Why the record has to travel with the heat</h2>
+      <p>The point is not that factory joints never leak. It is that a boundary made under controlled conditions can be tested, recorded and released against defined acceptance criteria. A boundary made in a live hall at two in the morning deserves exactly the same evidence. When the records are held by six different parties in six different formats, the operator inherits a system nobody can defend in public.</p>
+      <p>Our job is to hold the line, within a scope that is written down. We design across the six boundaries, we specify what each one has to prove, and we assemble the records into one <a href="/evidence/turnover">turnover package</a> that follows the system into service.</p>
+      <Related items={[
+        { href: '/evidence/leak-points', label: 'Ten leak points along the same path', kind: 'evidence' },
+        { href: '/evidence/turnover', label: 'What the turnover package contains', kind: 'evidence' },
+        { href: '/tools/approach-temp', label: 'Approach temperature and CDU sizing', kind: 'tool' },
+      ]} />
+    </div>
+  </section>
+</Base>

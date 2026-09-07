@@ -1,0 +1,25 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+import VideoEmbed from '@/components/VideoEmbed.astro';
+---
+<Base title="About" description="NextGenergy designs, integrates and commissions liquid cooling for AI data centres. We do not manufacture components. We take responsibility for the whole thermal path.">
+  <PageHero eyebrow="Company" title="We are not a manufacturer. That is the point." lede="NextGenergy is an engineering company based in Toronto. We design, integrate and commission liquid cooling for AI and high-density compute, from the facility water interface to the chip, and we hand over the evidence for every boundary." />
+  <section class="section">
+    <div class="wrap prose">
+      <h2>What we do</h2>
+      <p>Liquid cooling is bought as components and fails as a system. Cold-plate makers, CDU makers, rack integrators and facility contractors each warrant their own boundary. Nobody is accountable for the line. We are, within a written scope and written acceptance criteria. We specify the thermal path, source it from qualified manufacturers, pre-assemble it into factory-tested skids where possible, commission it against acceptance criteria written before the work, and stay through operation.</p>
+      <h2>Where we come from</h2>
+      <p>Our founding team built and operated liquid-cooled compute before it was called AI infrastructure: immersion first, then direct-to-chip at volume, in cold climates where free cooling was abundant and the fluid was the hard problem, and in places where the reject heat found buyers in district networks and greenhouses. Those years produced the three ideas this company is built around: the <a href="/approach/thermal-path">thermal path</a>, <a href="/approach/return-water">return-water grade</a> and the <a href="/approach/three-clocks">three clocks</a>.</p>
+      <p>They also produced a habit we now enforce on ourselves: a number goes out with its boundary attached, or it does not go out.</p>
+      <h2>How we work with partners</h2>
+      <p>We work with component manufacturers, rack integrators and mechanical contractors rather than competing with them. Our manufacturing partners build to our specifications and FAT protocols; our integration partners deploy with our commissioning plans. The customer gets one accountable engineering party for a system built by several hands. See <a href="/company/partners">Partners</a>.</p>
+      <h2>In three minutes</h2>
+      <VideoEmbed id="mspdoVebVyk" title="NextGenergy: liquid cooling for AI data centres" />
+      <p class="small muted">A short introduction to what we do.</p>
+      <h2>Contact</h2>
+      <p>{site.location}. <a href={`mailto:${site.email}`}>{site.email}</a>. Or bring us your last turnover package via the <a href="/company/contact">contact page</a>.</p>
+    </div>
+  </section>
+</Base>

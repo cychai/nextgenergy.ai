@@ -1,0 +1,113 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+---
+<Base title="Return-water grade → heat buyers" description="Enter your liquid-cooling loop's return temperature and see which heat off-takers can physically use it, which need a heat-pump lift, and how much.">
+  <PageHero eyebrow="Tools · 01" title="Who can buy your heat?" lede="Enter the temperature your loop returns at and the heat you have. The tool compares the temperature you can deliver, after the heat exchanger, with the supply window each class of off-taker typically wants, and tells you whether the temperature matches, whether a heat-pump lift would be needed, or whether it falls outside the screening range. Temperature is the first screen, not a feasibility verdict." crumbs={[['/tools', 'Tools']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split main">
+        <div class="tool" data-rw>
+          <div class="field">
+            <label for="tret">Return-water temperature at the hand-off point</label>
+            <input type="range" id="tret" min="20" max="80" value="55" step="1" />
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:0.4rem"><span class="readout"><span data-out="t">55</span> °C</span><span class="small muted">at the data-centre boundary, not at the chip</span></div>
+          </div>
+          <div class="field">
+            <label for="hx">Heat-exchanger approach at the hand-off</label>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="hx" min="0" max="15" step="0.5" value="3" /><span class="mono muted">K</span></div>
+            <p class="small muted" style="margin:0.4rem 0 0">Deducted from your return temperature. The buyer receives <span class="mono" data-out="tdel">—</span>.</p>
+          </div>
+          <div class="field">
+            <label for="mw">Continuous heat available</label>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="mw" min="0.1" max="500" step="0.1" value="5" /><span class="mono muted">MW<sub>th</sub></span></div>
+          </div>
+          <div class="field">
+            <label for="dt">Temperature drop the buyer can take (ΔT)</label>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="dt" min="3" max="40" step="1" value="15" /><span class="mono muted">K</span></div>
+            <p class="small muted" style="margin:0.4rem 0 0">Sets the water flow you must deliver: <span class="mono" data-out="flow">—</span> at the stated ΔT.</p>
+          </div>
+          <div class="field">
+            <label for="price">Value of delivered heat</label>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="price" min="0" max="200" step="1" value="35" /><span class="mono muted">$/MWh<sub>th</sub></span></div>
+            <p class="small muted" style="margin:0.4rem 0 0">Indicative only. Actual contracts price by season, availability and who owns the heat pump.</p>
+          </div>
+          <div class="result">
+            <div class="eyebrow plain">Annual heat, if a buyer takes it all year</div>
+            <div class="readout"><span data-out="gwh">—</span> GWh<sub>th</sub></div>
+            <p class="small muted" style="margin:0.3rem 0 0">≈ $<span data-out="rev">—</span> per year at the stated value, before pumping and lift costs, and only if a buyer takes the full output all year. Most heat loads are seasonal; use your buyer's load profile.</p>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow">Off-takers, by physical feasibility</div>
+          <div class="tool" style="padding:0.4rem 1.4rem" data-buyers></div>
+          <div class="note" style="margin-top:1.2rem">
+            <strong>What this tool does and does not do.</strong> It screens on delivered temperature only. Real feasibility also depends on the buyer's load profile and season, distance and pumping cost, availability and back-up, hydraulic design, and the commercial terms. Outputs are illustrative screening estimates, not equipment selections, guarantees or investment-grade forecasts.
+          </div>
+          <details class="method" style="margin-top:1rem">
+            <summary>Method and assumptions</summary>
+            <ul>
+              <li><strong>Delivered temperature</strong> = return-water temperature − heat-exchanger approach you enter.</li>
+              <li><strong>Temperature match</strong>: delivered temperature is at or above the lower edge of the off-taker's indicative supply window. <strong>Lift needed</strong>: within 25 K below it. <strong>Outside screening range</strong>: more than 25 K below it.</li>
+              <li><strong>Heat-pump lift</strong>: idealised, lift-only estimate at 50 % of Carnot between delivered temperature and the window's lower edge, capped at COP 8. It ignores exchanger approaches on the heat-pump side, part load, auxiliaries and seasonal performance.</li>
+              <li><strong>Water flow</strong> = heat ÷ (4.18 kJ/kg·K × ΔT), water properties at ~50 °C.</li>
+              <li><strong>Annual heat</strong> = continuous heat × 8760 h, i.e. full year-round off-take.</li>
+              <li><strong>Windows</strong> are indicative supply temperatures drawn from published engineering practice for each class: legacy 2nd/3rd-generation district heating, single-effect LiBr absorption chillers (hot-water machines are mostly rated at 90 °C, with a practical floor near 80 °C; check the maker's curve), industrial wash and pre-heat duties, 4th-generation district heating (some ultra-low-temperature networks run below 45 °C), greenhouse pipe-rail heating, aquaculture (species-specific), low-temperature building emitters, pools and domestic-hot-water pre-heat (final DHW temperature and legionella control need a separate top-up). Verify against the actual buyer's system.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div class="prose" style="margin-top:3rem">
+        <Related items={[
+          { href: '/approach/return-water', label: 'Why return-water grade decides whether heat has a buyer', kind: 'approach' },
+          { href: '/solutions/heat-reuse', label: 'Heat reuse and community licence', kind: 'approach' },
+          { href: '/insights/waste-heat-becomes-an-asset', label: 'Waste Heat Becomes an Asset', kind: 'insight' },
+        ]} />
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .result { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+</style>
+<script>
+  const buyers = [
+    { name: 'Legacy district heating (2nd/3rd gen)', min: 70, max: 95, why: 'Older networks and radiators sized for 70–90 °C supply; some run higher.' },
+    { name: 'Absorption cooling (single-effect LiBr)', min: 80, max: 95, why: 'Hot-water single-effect machines are mostly rated at 90 °C; some run down to about 80 °C. Check the maker\'s curve.' },
+    { name: 'Industrial wash and pre-heat duties', min: 55, max: 85, why: 'Process-dependent; many wash, CIP and pre-heat duties sit at 55–85 °C. Screen each process separately.' },
+    { name: 'Low-temperature district heating (4th gen)', min: 45, max: 70, why: 'Low-temperature networks typically want 45–70 °C supply, varying by season and building stock; some ultra-low-temperature networks run lower.' },
+    { name: 'Greenhouses', min: 35, max: 60, why: 'Pipe-rail heating runs at about 40 °C, fan-coil systems at 35–40 °C, water-curtain systems at 50–60 °C; load is seasonal and crop-dependent.' },
+    { name: 'Aquaculture', min: 30, max: 45, why: 'Tank water held at 20–30 °C depending on species; a 30–45 °C source through an exchanger is usually enough.' },
+    { name: 'Building heating, low-temperature emitters', min: 35, max: 55, why: 'Underfloor and oversized panel systems run 35–55 °C.' },
+    { name: 'Pools and domestic hot water pre-heat', min: 30, max: 45, why: 'Pools at 27–30 °C; DHW pre-heat only, final temperature and legionella control need a top-up.' },
+    { name: 'Heat-pump source (lifted to any of the above)', min: 10, max: 60, why: 'Almost any grade above 10 °C is a usable source; the economics move to whoever owns the heat pump.' },
+  ];
+  const el = (s) => document.querySelector(s);
+  const t = el('#tret'), hx = el('#hx'), mw = el('#mw'), dt = el('#dt'), price = el('#price'), list = el('[data-buyers]');
+  const out = (k, v) => { document.querySelectorAll(`[data-out="${k}"]`).forEach((n) => (n.textContent = v)); };
+  function run() {
+    const Tret = +t.value, P = +mw.value, dT = +dt.value, pr = +price.value, A = +hx.value;
+    out('t', Tret);
+    const T = Tret - A; out('tdel', `${T.toFixed(1)} °C`);
+    const flow = (P * 1e6) / (4180 * dT); // kg/s ≈ L/s
+    out('flow', `${flow.toFixed(1)} L/s (${(flow * 3.6).toFixed(0)} m³/h)`);
+    const gwh = P * 8760 / 1000;
+    out('gwh', gwh.toFixed(1));
+    out('rev', Math.round(gwh * 1000 * pr).toLocaleString('en-CA'));
+    list.innerHTML = buyers.map((b) => {
+      let cls, st, extra = '';
+      if (T >= b.min) { cls = 'ok'; st = 'Temperature match'; }
+      else if (T >= b.min - 25) {
+        cls = 'lift'; st = 'Lift needed';
+        const Th = b.min + 273.15, Tc = T + 273.15;
+        const cop = Math.min(8, 0.5 * Th / (Th - Tc));
+        const elec = P / cop;
+        extra = ` Lift of ${b.min - T} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub>.`;
+      } else { cls = 'no'; st = 'Outside screening range'; }
+      return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span></div>`;
+    }).join('');
+  }
+  [t, hx, mw, dt, price].forEach((i) => i.addEventListener('input', run));
+  run();
+</script>

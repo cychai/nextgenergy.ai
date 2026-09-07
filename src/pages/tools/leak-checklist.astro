@@ -1,0 +1,64 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+import { leakPoints } from '@/data/leakPoints';
+const qs = ['Was it tested?', 'Against written acceptance criteria?', 'Is the record retrievable now?'];
+---
+<Base title="Turnover self-check" description="Score a liquid-cooling turnover package: ten boundaries, three questions each. Runs entirely in your browser; nothing is sent anywhere.">
+  <PageHero eyebrow="Tools · 03" title="Ten boundaries. Three questions. Thirty points." lede="Tick only what you could hand to an auditor today, not what you believe was done. The score stays in your browser. Nothing is sent to us." crumbs={[['/tools', 'Tools']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="sticky">
+          <div class="tool">
+            <div class="eyebrow plain">Your score</div>
+            <div class="readout"><span data-score>0</span> / 30</div>
+            <p class="small muted" data-verdict style="margin:0.6rem 0 0">Start ticking.</p>
+            <div style="margin-top:1rem;height:6px;background:var(--line-2);border-radius:3px;overflow:hidden"><div data-bar style="height:100%;width:0;background:var(--heat);transition:width .2s"></div></div>
+            <button class="btn" type="button" data-reset style="margin-top:1.2rem">Reset</button>
+          </div>
+          <p class="small muted" style="margin-top:1rem">The same ten boundaries as the <a href="/evidence/leak-points">reference list</a>. Column headings: {qs.join(' · ')}</p>
+        </div>
+        <div>
+          <p class="table-hint">Swipe sideways to see all columns.</p>
+      <div class="table-wrap">
+            <table class="table" data-check>
+              <thead><tr><th>#</th><th>Boundary</th>{qs.map((q) => <th style="text-align:center">{q}</th>)}</tr></thead>
+              <tbody>
+                {leakPoints.map((l) => (
+                  <tr>
+                    <td class="mono muted">{String(l.n).padStart(2, '0')}</td>
+                    <td><strong>{l.t}</strong><br /><span class="small muted">{l.group}</span></td>
+                    {qs.map((q, j) => <td style="text-align:center"><input type="checkbox" data-k={`${l.n}-${j}`} aria-label={`${l.t}: ${q}`} style="width:1.2rem;height:1.2rem;accent-color:var(--heat)" /></td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="prose" style="margin-top:3rem">
+        <Related items={[
+          { href: '/evidence/turnover', label: 'What a complete package contains', kind: 'evidence' },
+          { href: '/services/commissioning', label: 'Have us verify a system someone else built', kind: 'approach' },
+        ]} />
+      </div>
+    </div>
+  </section>
+</Base>
+<script>
+  const boxes = [...document.querySelectorAll('[data-check] input[type=checkbox]')];
+  const score = document.querySelector('[data-score]'), bar = document.querySelector('[data-bar]'), verdict = document.querySelector('[data-verdict]');
+  const KEY = 'nge-turnover-check';
+  try { const saved = JSON.parse(localStorage.getItem(KEY) || '{}'); boxes.forEach((b) => (b.checked = !!saved[b.dataset.k])); } catch {}
+  function run() {
+    const n = boxes.filter((b) => b.checked).length;
+    score.textContent = n; bar.style.width = `${(n / 30) * 100}%`;
+    verdict.textContent = n === 0 ? 'Start ticking.' : n < 10 ? 'This is a description of work, not evidence of it.' : n < 20 ? 'Partly defensible. The gaps are where the next incident will be argued.' : n < 30 ? 'Strong. Close the last few before an insurer asks.' : 'Complete. We would like to see it.';
+    try { localStorage.setItem(KEY, JSON.stringify(Object.fromEntries(boxes.map((b) => [b.dataset.k, b.checked])))); } catch {}
+  }
+  boxes.forEach((b) => b.addEventListener('change', run));
+  document.querySelector('[data-reset]').addEventListener('click', () => { boxes.forEach((b) => (b.checked = false)); run(); });
+  run();
+</script>
