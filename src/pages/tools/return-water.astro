@@ -2,8 +2,14 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
+import Faq from '@/components/Faq.astro';
+import { faqs } from '@/data/geo';
+import { softwareLd, faqLd } from '@/lib/ld';
+const path = '/tools/return-water';
+const qa = faqs[path];
+const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', description: "Enter your liquid-cooling loop's return temperature and see which heat off-takers can physically use it, which need a heat-pump lift, and how much." }), faqLd(path, qa)];
 ---
-<Base title="Return-water grade → heat buyers" description="Enter your liquid-cooling loop's return temperature and see which heat off-takers can physically use it, which need a heat-pump lift, and how much.">
+<Base ld={ld} title="Return-water grade → heat buyers" description="Enter your liquid-cooling loop's return temperature and see which heat off-takers can physically use it, which need a heat-pump lift, and how much.">
   <PageHero eyebrow="Tools · 01" title="Who can buy your heat?" lede="Enter the temperature your loop returns at and the heat you have. The tool compares the temperature you can deliver, after the heat exchanger, with the supply window each class of off-taker typically wants, and tells you whether the temperature matches, whether a heat-pump lift would be needed, or whether it falls outside the screening range. Temperature is the first screen, not a feasibility verdict." crumbs={[['/tools', 'Tools']]} />
   <section class="section">
     <div class="wrap">
@@ -67,6 +73,7 @@ import Related from '@/components/Related.astro';
       </div>
     </div>
   </section>
+  <Faq items={qa} alt />
 </Base>
 <style>
   .result { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }

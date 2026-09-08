@@ -2,6 +2,10 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
+import Definition from '@/components/Definition.astro';
+import Faq from '@/components/Faq.astro';
+import { definitions, faqs } from '@/data/geo';
+import { definedTermLd, techArticleLd, faqLd } from '@/lib/ld';
 const bounds = [
   { t: 'Facility water interface', who: 'Facility mechanical contractor', p: 'Where the building hands water to the cooling system. Supply and return temperature, flow, pressure and water chemistry are set here, and so is the metering boundary that any energy-reuse figure will be judged against.', q: 'Metered flow and both temperatures on this boundary, from day one?' },
   { t: 'Heat rejection and reuse', who: 'Dry cooler / tower / heat-pump vendor, or the heat buyer', p: 'Where the heat leaves the site: to air, to evaporation, or to a buyer. The return-water grade of the loop decides which of these are physically available. This is also where PUE, WUE and ERF stop agreeing with each other.', q: 'Which resource is actually being consumed, and on whose meter?' },
@@ -10,9 +14,14 @@ const bounds = [
   { t: 'Hoses, crimps and fittings', who: 'Hose assembler, rack integrator', p: 'A crimp is a controlled manufacturing process, not an assembly step. Once the sleeve is on, most defects are invisible. Elastomer selection decides whether a dry joint stays dry in year four.', q: 'Crimp process record and elastomer specification, not "compatible with water"?' },
   { t: 'Cold plate and chip', who: 'Cold-plate manufacturer, server OEM', p: 'Brazed seams, friction-stir welds, covers and ports, sitting directly upstream of the smallest flow passages in the system. Thermal performance here depends on everything upstream: flow, inlet temperature and fluid cleanliness.', q: 'Factory pressure-test record traceable to this serial number?' },
 ];
+const path = '/approach/thermal-path';
+const d = definitions[path];
+const qa = faqs[path];
+const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'From the facility water interface to the chip: six boundaries', description: 'From the facility water interface to the chip: the six boundaries of a liquid-cooling system, who owns each, and the question every turnover package should answer for it.', about: 'term' }), faqLd(path, qa)];
 ---
-<Base title="The thermal path" description="From the facility water interface to the chip: the six boundaries of a liquid-cooling system, who owns each, and the question every turnover package should answer for it.">
+<Base ld={ld} title="The thermal path" description="From the facility water interface to the chip: the six boundaries of a liquid-cooling system, who owns each, and the question every turnover package should answer for it.">
   <PageHero eyebrow="Approach · 01" title="From the facility water interface to the chip: six boundaries" lede="Heat travels one way. Responsibility usually stops at each vendor's flange. This is the path as we draw it, with the maker of each boundary and the question we ask of it." crumbs={[['/approach', 'Approach']]} />
+  <Definition d={d} />
   <section class="section">
     <div class="wrap">
       <div class="split">
@@ -48,4 +57,5 @@ const bounds = [
       ]} />
     </div>
   </section>
+  <Faq items={qa} />
 </Base>

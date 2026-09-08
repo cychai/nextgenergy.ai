@@ -2,8 +2,14 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
+import Faq from '@/components/Faq.astro';
+import { faqs } from '@/data/geo';
+import { softwareLd, faqLd } from '@/lib/ld';
+const path = '/tools/approach-temp';
+const qa = faqs[path];
+const ld = [softwareLd(path, { name: 'Approach temperature → CDU sizing', description: 'See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.' }), faqLd(path, qa)];
 ---
-<Base title="Approach temperature → CDU sizing" description="See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.">
+<Base ld={ld} title="Approach temperature → CDU sizing" description="See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.">
   <PageHero eyebrow="Tools · 02" title="What a few kelvin of approach costs you." lede="Work backwards from the coldest water the chips need to the warmest water the facility may supply. Every kelvin of approach across the CDU, and every kelvin across the dry cooler, pushes the required outdoor temperature down and takes free-cooling hours with it." crumbs={[['/tools', 'Tools']]} />
   <section class="section">
     <div class="wrap">
@@ -47,6 +53,7 @@ import Related from '@/components/Related.astro';
       </div>
     </div>
   </section>
+  <Faq items={qa} alt />
 </Base>
 <style>
   .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line-2); font-size: 0.95rem; }

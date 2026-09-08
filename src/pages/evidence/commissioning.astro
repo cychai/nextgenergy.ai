@@ -2,15 +2,24 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
+import Definition from '@/components/Definition.astro';
+import Faq from '@/components/Faq.astro';
+import { definitions, faqs } from '@/data/geo';
+import { definedTermLd, techArticleLd, faqLd } from '@/lib/ld';
 const stages = [
   { t: 'Before release from the factory', items: ['Pressure and leak test of every skid, manifold and CDU as shipped, with serials', 'Cleanliness class of wetted surfaces, verified by sample, not by statement', 'Material certificates for elastomers and wetted metals against the named fluid', 'Factory run of controls: pump staging, valve travel, sensor calibration'] },
   { t: 'Before the loop is filled', items: ['Weld map complete; every field weld inspected and logged', 'Flush to cleanliness class; passivation confirmed separately from flushing', 'All fill, drain, vent and sample ports capped, tagged and logged', 'Pressure test of the assembled loop at the agreed factor and hold time'] },
   { t: 'Before compute is energised', items: ['Fluid chemistry at fill matches specification: inhibitor, pH, conductivity, biocide', 'Flow balance across racks within tolerance, recorded per branch', 'CDU approach measured at available load and extrapolated with the method stated', 'Compute-and-liquid isolation sequence executed and timed, not just reviewed'] },
   { t: 'Before handover', items: ['Baselines recorded: temperatures, pressures, flows, power, at a stated load', 'Metering boundary drawn on a single-line diagram and signed', 'Every disturbance since fill closed out in the connection log', 'Turnover package assembled in the ten-boundary structure and indexed'] },
 ];
+const path = '/evidence/commissioning';
+const d = definitions[path];
+const qa = faqs[path];
+const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Commissioning: where powered-on becomes AI-ready', description: 'How NextGenergy commissions liquid cooling: acceptance criteria written before the work, staged gates from factory release to handover, and records at each gate.', about: 'term' }), faqLd(path, qa)];
 ---
-<Base title="Commissioning and acceptance criteria" description="How NextGenergy commissions liquid cooling: acceptance criteria written before the work, staged gates from factory release to handover, and records at each gate.">
+<Base ld={ld} title="Commissioning and acceptance criteria" description="How NextGenergy commissions liquid cooling: acceptance criteria written before the work, staged gates from factory release to handover, and records at each gate.">
   <PageHero eyebrow="Evidence · Criteria" title="Commissioning: where powered-on becomes AI-ready" lede="A liquid-cooled hall can be powered on, pass a walk-through and still not be ready to carry a training run. The gap is a set of acceptance criteria that were agreed before the work and tested against, gate by gate." crumbs={[['/evidence', 'Evidence']]} />
+  <Definition d={d} />
   <section class="section">
     <div class="wrap">
       <div class="grid c2">
@@ -37,4 +46,5 @@ const stages = [
       ]} />
     </div>
   </section>
+  <Faq items={qa} />
 </Base>

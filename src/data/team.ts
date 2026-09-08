@@ -1,0 +1,10 @@
+/** Leadership roster. Used by /company/leadership, its Person JSON-LD and /llms-full.txt. */
+export interface Person { name: string; role: string; linkedin: string; photo: string; bio: string }
+export const people: Person[] = [
+  { name: 'Jim (Junming) Li', role: 'Founder & Chief Executive Officer', linkedin: 'https://www.linkedin.com/in/junming-li-liquid-cooling/', photo: '/team/jim-li.jpg',
+    bio: 'Jim founded NextGenergy to move AI data centres beyond single-point equipment optimisation toward integrated system design across power, liquid cooling and heat recovery. He is co-founder and vice president of Tsingchain Technology (Beijing), where he built and operated immersion and direct-to-chip liquid-cooled compute whose recovered heat was delivered into district heating, greenhouses and aquaculture. Earlier he was a senior product manager at Baidu. He holds an MBA and a bachelor\'s degree in international economics and trade, writes Every Watt Counts, reviews open liquid-cooling specifications, and is the author of the three-clock model and the ten leak points.' },
+  { name: 'Chenli Wang', role: 'Chief Strategy Officer', linkedin: '', photo: '/team/chenli-wang.jpg',
+    bio: 'Chenli leads strategy, partnerships and commercial operations, including the off-take side of heat-reuse projects: identifying heat buyers, structuring supply agreements and aligning them with the return-water grade the plant is designed for. She brings nineteen years of general and operational management, most recently in enterprise IT product management at Anhui Shangxin Information Technology, and holds an MBA.' },
+  { name: 'Ping (Richard) Li', role: 'Chief Operations Officer', linkedin: '', photo: '/team/richard-li.jpg',
+    bio: 'Richard runs delivery: supplier qualification, factory acceptance, site commissioning schedules and the long-term service programme behind the third clock. He brings twenty-five years of business development and IT management, including head of the AI business unit at NXAI, sales director at VideoSky and country manager for Vidyo in China. He holds a bachelor\'s degree in automation and control.' },
+];

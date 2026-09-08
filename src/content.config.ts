@@ -7,6 +7,7 @@ const insights = defineCollection({
     title: z.string(),
     subtitle: z.string().optional(),
     date: z.coerce.date(),
+    updated: z.coerce.date().optional(),
     source: z.enum(['substack', 'linkedin', 'site']).default('substack'),
     sourceUrl: z.string().url().optional(),
     canonical: z.string().url().optional(),

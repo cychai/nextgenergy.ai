@@ -3,10 +3,19 @@ import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
 import { leakPoints } from '@/data/leakPoints';
+import Definition from '@/components/Definition.astro';
+import Faq from '@/components/Faq.astro';
+import { definitions, faqs } from '@/data/geo';
+import { definedTermLd, techArticleLd, faqLd } from '@/lib/ld';
 const groups = [...new Set(leakPoints.map((l) => l.group))];
+const path = '/evidence/leak-points';
+const d = definitions[path];
+const qa = faqs[path];
+const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Ten leak points every liquid-cooling team should know.', description: 'Ten places a liquid-cooling loop can leak, following the coolant from chip to facility. Not a ranking: a checklist every team should be able to score a project against.', about: 'term' }), faqLd(path, qa)];
 ---
-<Base title="Ten leak points" description="Ten places a liquid-cooling loop can leak, following the coolant from chip to facility. Not a ranking: a checklist every team should be able to score a project against.">
+<Base ld={ld} title="Ten leak points" description="Ten places a liquid-cooling loop can leak, following the coolant from chip to facility. Not a ranking: a checklist every team should be able to score a project against.">
   <PageHero eyebrow="Evidence · Reference" title="Ten leak points every liquid-cooling team should know." lede="Not a ranking. A checklist, following the coolant from chip to facility. For each of the ten, a turnover package should answer: was it tested, against what acceptance criteria, and where is the record." crumbs={[['/evidence', 'Evidence']]} />
+  <Definition d={d} />
   <section class="section">
     <div class="wrap">
       <div class="split">
@@ -50,6 +59,7 @@ const groups = [...new Set(leakPoints.map((l) => l.group))];
       ]} />
     </div>
   </section>
+  <Faq items={qa} />
 </Base>
 <style>
   .toc { list-style: none; padding: 0; margin: 0; }

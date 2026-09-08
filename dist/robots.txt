@@ -1,3 +1,18 @@
+# nextgenergy.ai — crawler policy
+# Retrieval, search and answer engines are welcome to index and cite this site.
+# Content Signals (contentsignals.org): search and AI answers yes; use of this content to train models no.
+
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# Explicitly welcome (retrieval / citation): OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User,
+# ClaudeBot, Claude-SearchBot, Googlebot, Bingbot, DuckAssistBot, YouBot, Applebot,
+# Baiduspider, Sogou web spider, Bytespider, 360Spider, YisouSpider.
+
+# Machine-readable summaries for language models:
+# https://nextgenergy.ai/llms.txt
+# https://nextgenergy.ai/llms-full.txt
+# Every article also exists as Markdown at /insights/<slug>.md
+
 Sitemap: https://nextgenergy.ai/sitemap-index.xml

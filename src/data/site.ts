@@ -1,5 +1,6 @@
 export const site = {
   name: 'NextGenergy',
+  url: 'https://nextgenergy.ai',
   tagline: 'Liquid Cooling Solutions for AI Data Centers',
   headline: 'One-Stop Liquid Cooling Solutions for AI Data Centers',
   legalName: 'NextGenergy Technology Inc.',

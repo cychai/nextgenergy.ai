@@ -1,0 +1,47 @@
+# NextGenergy
+
+> One-Stop Liquid Cooling Solutions for AI Data Centers. NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.
+
+NextGenergy (NextGenergy Technology Inc.) is based in Toronto, Canada, founded 2025 by Jim (Junming) Li. It does not manufacture components; it designs, integrates and commissions liquid cooling across the whole thermal path and hands over a turnover package with a test, an acceptance criterion and a record for each of ten leak points. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: jim.li@nextgenergy.ai.
+
+Terms used consistently on this site: the whole thermal path; return-water grade; the three clocks (manufacturing / commissioning / service life); the ten leak points; the turnover package; numbers with boundaries.
+
+## Approach
+- [The whole thermal path](https://nextgenergy.ai/approach/thermal-path): Six boundaries from facility water interface to chip, who makes each and the question its record must answer.
+- [Return-water grade](https://nextgenergy.ai/approach/return-water): Why the temperature a loop returns at, not PUE, decides whether waste heat has a buyer.
+- [Three clocks](https://nextgenergy.ai/approach/three-clocks): Leak risk as three failures on three timelines: manufacturing, commissioning, service life.
+
+## Evidence
+- [Ten leak points](https://nextgenergy.ai/evidence/leak-points): The ten places a loop can leak, in coolant order, with the record each should have.
+- [The turnover package](https://nextgenergy.ai/evidence/turnover): Three questions for each of ten boundaries: tested, against what, where is the record.
+- [Commissioning and acceptance criteria](https://nextgenergy.ai/evidence/commissioning): Four gates from factory release to handover, with criteria written before the work.
+- [Standards work](https://nextgenergy.ai/evidence/standards): ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them.
+
+## Tools
+- [Return-water grade → heat buyers](https://nextgenergy.ai/tools/return-water): Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.
+- [Approach temperature → CDU sizing](https://nextgenergy.ai/tools/approach-temp): How CDU and dry-cooler approach move the facility supply temperature and free-cooling hours.
+- [Turnover self-check](https://nextgenergy.ai/tools/leak-checklist): Score a turnover package out of 30 in the browser; nothing is uploaded.
+
+## Company
+- [Solutions](https://nextgenergy.ai/solutions): Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse.
+- [Platform](https://nextgenergy.ai/platform): CDU, manifolds, cold plates, fluids and monitoring, chosen and integrated as one system.
+- [Services](https://nextgenergy.ai/services): Design, integration, commissioning and service-life programmes.
+- [About NextGenergy](https://nextgenergy.ai/company/about): Toronto-based; designs, integrates and commissions liquid cooling for AI data centres and does not manufacture components.
+- [Leadership](https://nextgenergy.ai/company/leadership): Jim (Junming) Li, Founder & CEO; Chenli Wang, CSO; Ping (Richard) Li, COO.
+- [Insights](https://nextgenergy.ai/insights): Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.
+
+## Insights (latest)
+- [The Biggest Risk in Liquid Cooling Is Not Whether It Leaks. It Is When.](https://nextgenergy.ai/insights/the-biggest-risk-in-liquid-cooling.md): 2026-08-23 — Manufacturing, delivery, and service life: one word—“leak”—hides three clocks, three owners, and three bodies of evidence.
+- [Liquid Cooling Is Running Ahead of Its Own Rulebook](https://nextgenergy.ai/insights/liquid-cooling-is-running-ahead-of.md): 2026-08-03 — The ten terms behind certification, interoperability — and the white space where project risk actually lives
+- [Open Weights Are Only the Beginning: Expensive Tokens and Scarce Megawatts](https://nextgenergy.ai/insights/open-weights-are-only-the-beginning.md): 2026-07-27 — Models Can Be Downloaded. The Compute, Power, and Cooling Needed to Make AI Broadly Accessible Cannot.
+- [From AMD Advancing AI 2026: Helios Is More Than a New Rack](https://nextgenergy.ai/insights/from-amd-advancing-ai-2026-helios.md): 2026-07-25 — It is a reordering of roles across the AI infrastructure industry
+- [The Stranded Compute Grid](https://nextgenergy.ai/insights/the-stranded-compute-grid.md): 2026-07-13 — The AI industry is obsessed with the data centers it has not built yet. The bigger story may lie in sites where the power position is already secured, but the compute capacity has yet to be unlocked.
+- [Power Is the Real Ceiling — and the Fastest Megawatt Is Already Plugged In](https://nextgenergy.ai/insights/power-is-the-real-ceiling-and-the.md): 2026-07-06 — Not for lack of capital — but because capital could not turn into usable megawatts fast enough.
+- [CoolIT Just Sold for $4.75B — and It Tells You Why Cold Plate Won the New-Build AI Rack](https://nextgenergy.ai/insights/coolit-just-sold-for-475b-and-it.md): 2026-07-03 — A water-and-chemistry giant just bought a cold-plate company. The number says less about who removes heat most aggressively — and more about where the real moat is moving.
+- [The Three Kinds of Liquid Cooling — and the Thousand Cabinets Nobody Wanted](https://nextgenergy.ai/insights/the-three-kinds-of-liquid-cooling.md): 2026-07-02 — Liquid cooling isn't one technology — it's three, with completely different temperaments. Let me explain them through a decision I still don't love talking about.
+
+## Optional
+- [Full text of the core pages and all articles](https://nextgenergy.ai/llms-full.txt)
+- [RSS](https://nextgenergy.ai/insights/rss.xml)
+- [Sitemap](https://nextgenergy.ai/sitemap-index.xml)
+- Every article has a Markdown twin at /insights/<slug>.md

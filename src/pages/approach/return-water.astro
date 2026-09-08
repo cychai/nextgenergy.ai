@@ -3,9 +3,18 @@ import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
 import Claim from '@/components/Claim.astro';
+import Definition from '@/components/Definition.astro';
+import Faq from '@/components/Faq.astro';
+import { definitions, faqs } from '@/data/geo';
+import { definedTermLd, techArticleLd, faqLd } from '@/lib/ld';
+const path = '/approach/return-water';
+const d = definitions[path];
+const qa = faqs[path];
+const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Return-water grade: the first number that decides whether your heat has a buyer.', description: 'Why the temperature a liquid-cooling loop returns at, not its PUE, is the first thing that decides whether the waste heat has a buyer.', about: 'term' }), faqLd(path, qa)];
 ---
-<Base title="Return-water grade" description="Why the temperature a liquid-cooling loop returns at, not its PUE, is the first thing that decides whether the waste heat has a buyer.">
+<Base ld={ld} title="Return-water grade" description="Why the temperature a liquid-cooling loop returns at, not its PUE, is the first thing that decides whether the waste heat has a buyer.">
   <PageHero eyebrow="Approach · 02" title="Return-water grade: the first number that decides whether your heat has a buyer." lede="Every liquid-cooled data centre produces warm water. Whether that water is an asset or a disposal problem is settled by one figure that rarely appears on a datasheet: the temperature it comes back at." crumbs={[['/approach', 'Approach']]} />
+  <Definition d={d} />
   <section class="section">
     <div class="wrap">
       <div class="split main">
@@ -50,6 +59,7 @@ import Claim from '@/components/Claim.astro';
       </div>
     </div>
   </section>
+  <Faq items={qa} alt />
 </Base>
 <style>
   .grades { display: grid; gap: 0.6rem; margin-top: 0.5rem; }

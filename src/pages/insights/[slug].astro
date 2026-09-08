@@ -3,6 +3,7 @@ import Base from '@/layouts/Base.astro';
 import Related from '@/components/Related.astro';
 import { getCollection, render } from 'astro:content';
 import { site } from '@/data/site';
+import { articleLd } from '@/lib/ld';
 export async function getStaticPaths() {
   const posts = await getCollection('insights', (p) => !p.data.draft);
   return posts.map((p) => ({ params: { slug: p.id }, props: { p } }));
@@ -22,13 +23,15 @@ const defaults: Record<string, { href: string; label: string; kind: 'evidence' |
   '/approach/three-clocks': { href: '/approach/three-clocks', label: 'Three clocks', kind: 'approach' },
 };
 const related = p.data.related.map((r) => defaults[r]).filter(Boolean);
+const path = `/insights/${p.id}`;
+const ld = [articleLd(path, { headline: p.data.title, description: p.data.subtitle, published: p.data.date, modified: p.data.updated, canonical: p.data.canonical, tags: p.data.tags })];
 ---
-<Base title={p.data.title} description={p.data.subtitle ?? site.description} canonical={p.data.canonical} type="article" published={p.data.date}>
+<Base ld={ld} mdAlternate={`${path}.md`} title={p.data.title} description={p.data.subtitle ?? site.description} canonical={p.data.canonical} type="article" published={p.data.date} modified={p.data.updated}>
   <article>
     <header class="hero">
       <div class="narrow">
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/insights">Insights</a></span></nav>
-        <div class="eyebrow">Every Watt Counts · {fmt(p.data.date)}</div>
+        <div class="eyebrow">Every Watt Counts · <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time>{p.data.updated && <> · Updated <time datetime={p.data.updated.toISOString().slice(0, 10)}>{fmt(p.data.updated)}</time></>}</div>
         <h1 style="font-size:clamp(2rem,4.5vw,3.4rem)">{p.data.title}</h1>
         {p.data.subtitle && <p class="lede">{p.data.subtitle}</p>}
         {p.data.tags.length > 0 && <div class="tags" style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem">{p.data.tags.map((t) => <a class="tag-pill" href={`/insights/tag/${t}`}>{t}</a>)}</div>}
@@ -37,7 +40,7 @@ const related = p.data.related.map((r) => defaults[r]).filter(Boolean);
     <div class="narrow prose article-body">
       <Content />
       <hr />
-      <p class="small muted">By Jim Li, founder of NextGenergy. {p.data.sourceUrl && <>First published on <a href={p.data.sourceUrl}>Substack</a>.</>} Discuss it there or on <a href={site.linkedin}>LinkedIn</a>.</p>
+      <p class="small muted">By Jim Li, founder of NextGenergy. {p.data.sourceUrl && <>First published on <a href={p.data.sourceUrl}>Substack</a>.</>} Discuss it there or on <a href={site.linkedin}>LinkedIn</a>. <a href={`${path}.md`}>Markdown version</a>.</p>
       <Related items={related} />
     </div>
   </article>

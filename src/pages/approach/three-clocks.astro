@@ -2,14 +2,23 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
+import Definition from '@/components/Definition.astro';
+import Faq from '@/components/Faq.astro';
+import { definitions, faqs } from '@/data/geo';
+import { definedTermLd, techArticleLd, faqLd } from '@/lib/ld';
 const clocks = [
   { n: 'Clock one', t: 'Manufacturing', who: 'Owner: the factory', ex: 'A weld or braze that escapes the factory. A void in a cold-plate seam. A crimp outside tolerance.', ev: 'Bounded factory acceptance test (FAT) leak-test records, traceable to serial number. Crimp process parameters. Material certificates for elastomers and wetted metals.' },
   { n: 'Clock two', t: 'Commissioning', who: 'Owner: the integrator and the commissioning agent', ex: 'A quick disconnect disturbed during install. A field weld that was flushed but never passivated. A fitting that looked dry at handover.', ev: 'Connection records for every joint made or disturbed on site. Flushing and cleanliness results. Pressure tests against written acceptance criteria. Tested compute-and-liquid isolation sequences.' },
   { n: 'Clock three', t: 'Service life', who: 'Owner: the operator', ex: 'A hose that ages out in year four. An elastomer that hardened. A fluid whose inhibitor package was never topped up.', ev: 'Fluid-quality trends. System-performance trends against commissioning baselines. Service logs for every disturbance of a boundary. Replacement intervals with a basis.' },
 ];
+const path = '/approach/three-clocks';
+const d = definitions[path];
+const qa = faqs[path];
+const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'A leak is one word hiding three different failures.', description: 'Leak risk in liquid cooling is three different failures on three different clocks: manufacturing, commissioning and service life. Each has a different owner and different evidence.', about: 'term' }), faqLd(path, qa)];
 ---
-<Base title="Three clocks" description="Leak risk in liquid cooling is three different failures on three different clocks: manufacturing, commissioning and service life. Each has a different owner and different evidence.">
+<Base ld={ld} title="Three clocks" description="Leak risk in liquid cooling is three different failures on three different clocks: manufacturing, commissioning and service life. Each has a different owner and different evidence.">
   <PageHero eyebrow="Approach · 03" title="A leak is one word hiding three different failures." lede="Liquid leaks have entered compute-availability management: NVIDIA Mission Control surfaces a detected leak as a compute-node state alongside node health, not only as a facilities alarm. Most project boundaries have not caught up. They still compress three risks into one checkbox: leak detection installed." crumbs={[['/approach', 'Approach']]} />
+  <Definition d={d} />
   <section class="section">
     <div class="wrap">
       <div class="grid c3">
@@ -46,5 +55,6 @@ const clocks = [
       ]} />
     </div>
   </section>
+  <Faq items={qa} />
 </Base>
 <style>.clock p { font-size: 0.95rem; }</style>
