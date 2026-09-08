@@ -22,7 +22,7 @@ const people = [
             <h2 style="margin-bottom:0.2rem">{p.name}</h2>
             <p class="eyebrow plain" style="margin:0 0 1rem">{p.role}</p>
             <p class="prose">{p.bio}</p>
-            <p>{p.linkedin && <><a href={p.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · </>}<a href={`mailto:${site.email}`}>{site.email}</a></p>
+            {p.linkedin && <p><a href={p.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>}
           </div>
         </article>
       ))}
