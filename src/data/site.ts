@@ -1,6 +1,9 @@
 export const site = {
   name: 'NextGenergy',
-  tagline: 'Responsible for the whole thermal path.',
+  tagline: 'Liquid Cooling Solutions for AI Data Centers',
+  headline: 'One-Stop Liquid Cooling Solutions for AI Data Centers',
+  legalName: 'NextGenergy Technology Inc.',
+  foundingDate: '2025',
   description:
     'NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.',
   email: 'jim.li@nextgenergy.ai',

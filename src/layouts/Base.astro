@@ -13,9 +13,17 @@ interface Props {
   published?: Date;
 }
 const { title, description = site.description, canonical, type = 'website', published } = Astro.props;
-const fullTitle = title === site.name ? `${site.name} — ${site.tagline}` : `${title} · ${site.name}`;
+const fullTitle = title === site.name ? `${site.name} | ${site.headline}` : `${title} | ${site.name} – ${site.tagline}`;
 const cleanPath = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const url = new URL(cleanPath, Astro.site);
+const jsonld = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': `${Astro.site}#org`, name: site.name, legalName: site.legalName, url: String(Astro.site), logo: new URL('/brand/emblem-512.png', Astro.site).href, description: site.headline, foundingDate: site.foundingDate, address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressRegion: 'ON', addressCountry: 'CA' }, email: site.email, founder: { '@type': 'Person', name: 'Jim Li', jobTitle: 'Founder & CEO', sameAs: ['https://www.linkedin.com/in/junming-li-liquid-cooling/'] }, sameAs: [site.linkedin, site.substack, 'https://tsingchain.ai'], knowsAbout: ['liquid cooling', 'direct-to-chip cooling', 'coolant distribution unit', 'data centre heat reuse', 'return-water grade', 'commissioning'] },
+    { '@type': 'WebSite', '@id': `${Astro.site}#website`, url: String(Astro.site), name: site.name, publisher: { '@id': `${Astro.site}#org` }, inLanguage: 'en' },
+    { '@type': 'WebPage', url: url.href, name: fullTitle, description, isPartOf: { '@id': `${Astro.site}#website` }, ...(published ? { datePublished: published.toISOString() } : {}) },
+  ],
+});
 ---
 <!doctype html>
 <html lang="en">
@@ -40,6 +48,7 @@ const url = new URL(cleanPath, Astro.site);
     <meta property="og:url" content={url.href} />
     {published && <meta property="article:published_time" content={published.toISOString()} />}
     <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={jsonld} />
   </head>
   <body>
     <a class="skip" href="#main">Skip to main content</a>
