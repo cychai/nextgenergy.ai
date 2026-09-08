@@ -1,4 +1,3 @@
-# One canonical host: www -> apex (301, path and query preserved)
-https://www.nextgenergy.ai/* https://nextgenergy.ai/:splat 301
+# www -> apex is handled by a Cloudflare Redirect Rule in the zone; Workers static assets only accept relative redirect URLs here.
 # Old single-page anchors from the previous site
 /index.html / 301
