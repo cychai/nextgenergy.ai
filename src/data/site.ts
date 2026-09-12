@@ -40,7 +40,7 @@ export const footerNav = [
       ['/evidence/turnover', 'The turnover package'],
       ['/evidence/leak-points', 'Ten leak points'],
       ['/evidence/standards', 'Standards work'],
-      ['/evidence/canada-principles', "Canada's Principles"],
+      ['/evidence/canada-principles', "Canada's principles"],
     ],
   },
   {

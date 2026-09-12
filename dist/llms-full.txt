@@ -163,9 +163,9 @@ A: The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy
 
 A: Not yet a complete one. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces; the record structure this site uses, three questions for each of ten leak points, fills the gap where those drafts are silent on what a turnover package must contain. (https://nextgenergy.ai/evidence/turnover)
 
-### Built to Canada's Principles
+### The numbers Canada's principles ask for
 
-What we measure, where and who signs, against Principles 3 and 4 of Canada's Responsible Data Centre Development Principles. (https://nextgenergy.ai/evidence/canada-principles)
+Principles 3 and 4 ask developers for measured, verifiable water, heat and power figures; what the supplier measures, where, and who signs. (https://nextgenergy.ai/evidence/canada-principles)
 
 **Q: What do Canada's Responsible Data Centre Development Principles require on water and heat?**
 

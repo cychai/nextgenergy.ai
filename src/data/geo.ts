@@ -107,7 +107,7 @@ export const corePages: { section: string; pages: [string, string, string][] }[]
     ['/evidence/turnover', 'The turnover package', 'Three questions for each of ten boundaries: tested, against what, where is the record.'],
     ['/evidence/commissioning', 'Commissioning and acceptance criteria', 'Four gates from factory release to handover, with criteria written before the work.'],
     ['/evidence/standards', 'Standards work', 'ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them.'],
-    ['/evidence/canada-principles', 'Built to Canada\'s Principles', 'What we measure, where and who signs, against Principles 3 and 4 of Canada\'s Responsible Data Centre Development Principles.'],
+    ['/evidence/canada-principles', 'The numbers Canada\'s principles ask for', 'Principles 3 and 4 ask developers for measured, verifiable water, heat and power figures; what the supplier measures, where, and who signs.'],
   ] },
   { section: 'Tools', pages: [
     ['/tools/return-water', 'Return-water grade → heat buyers', 'Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.'],
