@@ -8,7 +8,7 @@ import { techArticleLd, faqLd } from '@/lib/ld';
 const path = '/evidence/canada-principles';
 const qa = faqs[path];
 const rows = [
-  { t: 'Electricity', items: ['IT load and facility overhead at the point of connection', 'Metering boundary drawn on a single-line diagram', 'PUE measured over the year at that boundary, not designed on paper', 'Connection and upgrade costs, and who paid each line'] },
+  { t: 'Electricity', items: ['IT load and facility overhead at the point of connection', 'Metering boundary drawn on a single-line diagram', 'PUE measured over the year at that boundary, not designed on paper', 'Cooling power metered separately from IT, so the overhead is attributable'] },
   { t: 'Water', items: ['Litres withdrawn and consumed, by source', 'WUE in litres per kWh of IT, measured, with the year stated', 'For closed loops: make-up volume and peak-day withdrawal', 'Days per year any evaporative assist runs, and the electricity dry cooling uses instead'] },
   { t: 'Heat', items: ['MW available at the site boundary, and at what temperature', 'MWh actually delivered to a named receiver, metered at the boundary', 'What happens to the heat in months the receiver cannot take it', 'Zero is an honest number where no receiver exists yet, and we say so'] },
   { t: 'Method', items: ['Who measured, at what load, in what period', 'Which standard: ISO/IEC 30134 for PUE, WUE and ERF', 'Who signed: on our projects, the commissioning agent', 'Where the record lives: in the turnover package, indexed by boundary'] },
@@ -27,7 +27,8 @@ const ld = [techArticleLd(path, { headline: "The numbers Canada's data centre pr
   </section>
   <section class="section alt">
     <div class="wrap">
-      <h2 style="margin-bottom:1.5rem">What we hand over, per site, per year</h2>
+      <h2 style="margin-bottom:0.75rem">What we hand over, per site, per year</h2>
+      <p style="margin:0 0 1.5rem;max-width:54rem;color:var(--ink-2)">We install the meters and draw the boundary, so the first year starts from a commissioning baseline rather than an estimate. These are the lines we hand over; the operator reports against the same boundary in the years after.</p>
       <div class="grid c2">
         {rows.map((r) => (
           <div class="card">
