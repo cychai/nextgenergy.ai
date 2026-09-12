@@ -16,6 +16,7 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [The turnover package](https://nextgenergy.ai/evidence/turnover): Three questions for each of ten boundaries: tested, against what, where is the record.
 - [Commissioning and acceptance criteria](https://nextgenergy.ai/evidence/commissioning): Four gates from factory release to handover, with criteria written before the work.
 - [Standards work](https://nextgenergy.ai/evidence/standards): ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them.
+- [Built to Canada's Principles](https://nextgenergy.ai/evidence/canada-principles): What we measure, where and who signs, against Principles 3 and 4 of Canada's Responsible Data Centre Development Principles.
 
 ## Tools
 - [Return-water grade → heat buyers](https://nextgenergy.ai/tools/return-water): Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.

@@ -163,6 +163,22 @@ A: The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy
 
 A: Not yet a complete one. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces; the record structure this site uses, three questions for each of ten leak points, fills the gap where those drafts are silent on what a turnover package must contain. (https://nextgenergy.ai/evidence/turnover)
 
+### Built to Canada's Principles
+
+What we measure, where and who signs, against Principles 3 and 4 of Canada's Responsible Data Centre Development Principles. (https://nextgenergy.ai/evidence/canada-principles)
+
+**Q: What do Canada's Responsible Data Centre Development Principles require on water and heat?**
+
+A: Principle 3 asks projects to prioritize closed-loop or high-efficiency water technologies, waste heat recovery and low-emission energy, and to measure and report water use and environmental impacts to recognized standards. Principle 4 asks for independently verifiable information on local impacts, including power and water use. The principles are voluntary; 23 companies signed on 3 September 2026. (https://nextgenergy.ai/evidence/turnover)
+
+**Q: How can a municipality verify a data centre's water and heat claims?**
+
+A: Ask for measured values at a stated boundary, not design values: annual water withdrawn and consumed, WUE in litres per kWh of IT, heat delivered in MWh to a named receiver, and PUE over the year, each signed by a party independent of the proponent. Write the list into the development agreement so every proponent answers the same questions. (https://nextgenergy.ai/evidence/commissioning)
+
+**Q: Does closed-loop cooling mean a data centre uses no water?**
+
+A: No. Closed loops still take make-up water for leaks, sampling and fluid replacement, and some designs add evaporative assist on the hottest days. Ask for make-up volume, peak-day withdrawal and the days per year any evaporative assist runs, and ask for the electricity that dry cooling uses instead of water. (https://nextgenergy.ai/approach/return-water)
+
 ### Return-water grade → heat buyers
 
 Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly. (https://nextgenergy.ai/tools/return-water)
