@@ -1,0 +1,54 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+import Faq from '@/components/Faq.astro';
+import { faqs } from '@/data/geo';
+import { techArticleLd, faqLd } from '@/lib/ld';
+const path = '/evidence/canada-principles';
+const qa = faqs[path];
+const rows = [
+  { t: 'Electricity', items: ['IT load and facility overhead at the point of connection', 'Metering boundary drawn on a single-line diagram', 'PUE measured over the year at that boundary, not designed on paper', 'Connection and upgrade costs, and who paid each line'] },
+  { t: 'Water', items: ['Litres withdrawn and consumed, by source', 'WUE in litres per kWh of IT, measured, with the year stated', 'For closed loops: make-up volume and peak-day withdrawal', 'Days per year any evaporative assist runs, and the electricity dry cooling uses instead'] },
+  { t: 'Heat', items: ['MW available at the site boundary, and at what temperature', 'MWh actually delivered to a named receiver, metered at the boundary', 'What happens to the heat in months the receiver cannot take it', 'Zero is an honest number where no receiver exists yet, and we say so'] },
+  { t: 'Method', items: ['Who measured, at what load, in what period', 'Which standard: ISO/IEC 30134 for PUE, WUE and ERF', 'Who signed: on our projects, the commissioning agent', 'Where the record lives: in the turnover package, indexed by boundary'] },
+];
+const ld = [techArticleLd(path, { headline: "Built to Canada's Responsible Data Centre Development Principles", description: "What NextGenergy measures, where and who signs, against Principles 3 and 4 of Canada's Responsible Data Centre Development Principles: electricity, water, heat and method, per site, per year.", published: '2026-09-14' }), faqLd(path, qa)];
+---
+<Base ld={ld} title="Built to Canada's Principles" description="What NextGenergy measures, where and who signs, against Principles 3 and 4 of Canada's Responsible Data Centre Development Principles: electricity, water, heat and method, per site, per year.">
+  <PageHero eyebrow="Evidence · Canada" title="Built to Canada's Responsible Data Centre Development Principles" lede="On 3 September 2026 the Government of Canada and the Federation of Canadian Municipalities published five principles for data centre development, and 23 companies signed. Two of the five ask for measurement. This page says what we measure, where, and who signs, on every project we deliver in Canada." crumbs={[['/evidence', 'Evidence']]} />
+  <section class="section">
+    <div class="wrap prose">
+      <h2>The two principles that ask for numbers</h2>
+      <p><strong>Principle 3.</strong> Data centres must minimize water use and environmental impacts, prioritizing "closed-loop or high efficiency water technologies, waste heat recovery, and low-emission energy sources," with water consumption and environmental impacts "measured and transparently reported using recognized standards."</p>
+      <p><strong>Principle 4.</strong> Data centres must be transparent about local impacts, providing "clear, project-appropriate and independently verifiable information on expected local impacts, including power and water use, infrastructure requirements, sound and emissions."</p>
+      <p>The principles are voluntary and are addressed to developers and operators. We are a supplier. Our part is to make the numbers exist. Source: <a href="https://ised-isde.canada.ca/site/ised/en/canadas-responsible-data-centre-development-principles" rel="noopener">Innovation, Science and Economic Development Canada</a>.</p>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="wrap">
+      <h2 style="margin-bottom:1.5rem">What we hand over, per site, per year</h2>
+      <div class="grid c2">
+        {rows.map((r) => (
+          <div class="card">
+            <span class="num">{r.t}</span>
+            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:0.95rem">{r.items.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Why a supplier publishes this</h2>
+      <p>Municipalities are being asked to assess projects against the principles. Most have no sheet to read. We published one, for any proponent to use, and we hold ourselves to it on every project. A council, a utility or a heat receiver should be able to answer the four questions above from our records without us in the room.</p>
+      <p><strong>Guide for municipal staff.</strong> <a href="/downloads/reading-data-centre-numbers.pdf">Reading a Data Centre's Power, Water and Heat Numbers</a>: four pages, with a fourteen-line evidence schedule. Free to copy and adapt.</p>
+      <Related items={[
+        { href: '/evidence/turnover', label: 'The turnover package the numbers live in', kind: 'evidence' },
+        { href: '/evidence/commissioning', label: 'Who signs, and at which gate', kind: 'evidence' },
+        { href: '/approach/return-water', label: 'Why the loop temperature decides who can take the heat', kind: 'approach' },
+      ]} />
+    </div>
+  </section>
+  <Faq items={qa} />
+</Base>

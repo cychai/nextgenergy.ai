@@ -40,6 +40,11 @@ export const definitions: Record<string, Definition> = {
 };
 
 export const faqs: Record<string, FaqItem[]> = {
+  '/evidence/canada-principles': [
+    { q: 'What do Canada\'s Responsible Data Centre Development Principles require on water and heat?', a: 'Principle 3 asks projects to prioritize closed-loop or high-efficiency water technologies, waste heat recovery and low-emission energy, and to measure and report water use and environmental impacts to recognized standards. Principle 4 asks for independently verifiable information on local impacts, including power and water use. The principles are voluntary; 23 companies signed on 3 September 2026.', href: '/evidence/turnover', label: 'What our turnover package records' },
+    { q: 'How can a municipality verify a data centre\'s water and heat claims?', a: 'Ask for measured values at a stated boundary, not design values: annual water withdrawn and consumed, WUE in litres per kWh of IT, heat delivered in MWh to a named receiver, and PUE over the year, each signed by a party independent of the proponent. Write the list into the development agreement so every proponent answers the same questions.', href: '/evidence/commissioning', label: 'Who signs, and when' },
+    { q: 'Does closed-loop cooling mean a data centre uses no water?', a: 'No. Closed loops still take make-up water for leaks, sampling and fluid replacement, and some designs add evaporative assist on the hottest days. Ask for make-up volume, peak-day withdrawal and the days per year any evaporative assist runs, and ask for the electricity that dry cooling uses instead of water.', href: '/approach/return-water', label: 'Why the loop temperature matters' },
+  ],
   '/approach/return-water': [
     { q: 'Who can buy data-centre waste heat, and what temperature do they need?', a: 'Buyers are sorted by the supply temperature they need, not by how much heat you have. Greenhouses and fourth-generation district heating typically need 45 °C or more (4GDH is defined around 50–60 °C supply, up to 70 °C in winter); swimming pools, aquaculture and heat-pump sources can take less. A cold-plate loop returning around 55 °C at rated IT load can serve the first group directly; a 30 °C loop needs a heat pump for almost all of them.', href: '/tools/return-water', label: 'Check your own return temperature' },
     { q: 'Why can heat recovery make PUE worse?', a: 'PUE counts the export pump and heat exchanger as facility energy but gives no credit for the heat delivered, so a site that starts selling heat can see its PUE rise while its total energy system improves. Report the Energy Reuse Factor (ERF, ISO/IEC 30134-6) next to PUE and state the metering boundary for both.', href: '/evidence/standards', label: 'Which metrics and standards apply' },
@@ -102,6 +107,7 @@ export const corePages: { section: string; pages: [string, string, string][] }[]
     ['/evidence/turnover', 'The turnover package', 'Three questions for each of ten boundaries: tested, against what, where is the record.'],
     ['/evidence/commissioning', 'Commissioning and acceptance criteria', 'Four gates from factory release to handover, with criteria written before the work.'],
     ['/evidence/standards', 'Standards work', 'ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them.'],
+    ['/evidence/canada-principles', 'Built to Canada\'s Principles', 'What we measure, where and who signs, against Principles 3 and 4 of Canada\'s Responsible Data Centre Development Principles.'],
   ] },
   { section: 'Tools', pages: [
     ['/tools/return-water', 'Return-water grade → heat buyers', 'Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.'],
