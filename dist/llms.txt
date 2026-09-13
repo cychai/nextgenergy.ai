@@ -32,6 +32,7 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [Insights](https://nextgenergy.ai/insights): Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.
 
 ## Insights (latest)
+- [Three AI Rivals Called for a Slowdown. Here Is What Our Side of the Industry Owes.](https://nextgenergy.ai/insights/three-ai-rivals-called-for-a-slowdown.md): 2026-09-13 — The frontier safety debate reaches beyond the lab door. Energy responsibility, failure testing and fault containment belong on the infrastructure agenda now.
 - [The Biggest Risk in Liquid Cooling Is Not Whether It Leaks. It Is When.](https://nextgenergy.ai/insights/the-biggest-risk-in-liquid-cooling.md): 2026-08-23 — Manufacturing, delivery, and service life: one word—“leak”—hides three clocks, three owners, and three bodies of evidence.
 - [Liquid Cooling Is Running Ahead of Its Own Rulebook](https://nextgenergy.ai/insights/liquid-cooling-is-running-ahead-of.md): 2026-08-03 — The ten terms behind certification, interoperability — and the white space where project risk actually lives
 - [Open Weights Are Only the Beginning: Expensive Tokens and Scarce Megawatts](https://nextgenergy.ai/insights/open-weights-are-only-the-beginning.md): 2026-07-27 — Models Can Be Downloaded. The Compute, Power, and Cooling Needed to Make AI Broadly Accessible Cannot.
@@ -39,7 +40,6 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [The Stranded Compute Grid](https://nextgenergy.ai/insights/the-stranded-compute-grid.md): 2026-07-13 — The AI industry is obsessed with the data centers it has not built yet. The bigger story may lie in sites where the power position is already secured, but the compute capacity has yet to be unlocked.
 - [Power Is the Real Ceiling — and the Fastest Megawatt Is Already Plugged In](https://nextgenergy.ai/insights/power-is-the-real-ceiling-and-the.md): 2026-07-06 — Not for lack of capital — but because capital could not turn into usable megawatts fast enough.
 - [CoolIT Just Sold for $4.75B — and It Tells You Why Cold Plate Won the New-Build AI Rack](https://nextgenergy.ai/insights/coolit-just-sold-for-475b-and-it.md): 2026-07-03 — A water-and-chemistry giant just bought a cold-plate company. The number says less about who removes heat most aggressively — and more about where the real moat is moving.
-- [The Three Kinds of Liquid Cooling — and the Thousand Cabinets Nobody Wanted](https://nextgenergy.ai/insights/the-three-kinds-of-liquid-cooling.md): 2026-07-02 — Liquid cooling isn't one technology — it's three, with completely different temperaments. Let me explain them through a decision I still don't love talking about.
 
 ## Optional
 - [Full text of the core pages and all articles](https://nextgenergy.ai/llms-full.txt)
