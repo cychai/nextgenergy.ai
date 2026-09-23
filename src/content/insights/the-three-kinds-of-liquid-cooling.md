@@ -136,7 +136,7 @@ Next issue, we take that choice apart: water or oil, cold plate or immersion —
 
 ##### _Sources & Notes_
 
--   _This is a personal account. The scale figures — a thousand-plus units, ~200 MW deployed, ~2,000 tonnes of coolant in a year — are the author’s own operating history, shared as experience, not industry statistics._
+-   _This is a personal account of work done before NextGenergy was founded, on the product platform the author built at a previous company. The scale figures — a thousand-plus units, ~200 MW deployed, ~2,000 tonnes of coolant in a year — are the author’s own operating history from that period, shared as experience, not industry statistics, and not NextGenergy deployments._
     
 -   _Cold plate is mainstream for current AI racks: NVIDIA’s GB200 NVL72 is a rack-scale, liquid-cooled design; Lenovo’s GB300 NVL72 materials describe hybrid liquid-air cooling with roughly 90% liquid / 10% air at the rack level, with cold plates on CPU, GPU, NVSwitch and NIC._
     

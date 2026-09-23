@@ -66,7 +66,7 @@ Why the temperature a loop returns at, not PUE, decides whether waste heat has a
 
 **Q: Who can buy data-centre waste heat, and what temperature do they need?**
 
-A: Buyers are sorted by the supply temperature they need, not by how much heat you have. Greenhouses and fourth-generation district heating typically need 45 °C or more (4GDH is defined around 50–60 °C supply, up to 70 °C in winter); swimming pools, aquaculture and heat-pump sources can take less. A cold-plate loop returning around 55 °C at rated IT load can serve the first group directly; a 30 °C loop needs a heat pump for almost all of them. (https://nextgenergy.ai/tools/return-water)
+A: Buyers are sorted by the supply temperature they need, not by how much heat you have. Greenhouses and fourth-generation district heating typically need 45 °C or more (4GDH is defined around 50–60 °C supply, up to 70 °C in winter); swimming pools, aquaculture and heat-pump sources can take less. A cold-plate loop returning around 55 °C at rated IT load can serve the lower end of that window directly, once the export heat-exchanger approach is subtracted and if the network runs at fourth-generation temperatures; warmer networks and the winter end of the range need a heat pump for the last few kelvin. A 30 °C loop needs a heat pump for almost all of them. (https://nextgenergy.ai/tools/return-water)
 
 **Q: Why can heat recovery make PUE worse?**
 
@@ -237,7 +237,7 @@ Design, integration, commissioning and service-life programmes. (https://nextgen
 
 ### About NextGenergy
 
-Toronto-based; designs, integrates and commissions liquid cooling for AI data centres and does not manufacture components. (https://nextgenergy.ai/company/about)
+Toronto-based; designs, integrates and commissions liquid cooling for AI data centres, with components built to our specification by manufacturing partners. (https://nextgenergy.ai/company/about)
 
 ### Leadership
 
@@ -251,7 +251,7 @@ Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.
 
 Every performance number on the site is published with its condition and source. Items marked conditional appear on the site only together with their condition.
 
-- **≈55 °C** — Cold-plate loops we have delivered return water at roughly 55 °C. Condition: Secondary-loop return at rated IT load; direct-to-chip cold plate; facility-side approach not included. Source: Every Watt Counts, "Waste Heat Becomes an Asset" (June 2026).
+- **≈55 °C** — Cold-plate loops built on the product platform our founding team created return water at roughly 55 °C. Condition: Secondary-loop return at rated IT load; direct-to-chip cold plate; facility-side approach not included. Delivered by the founding team on their earlier product platform, before NextGenergy. Source: Every Watt Counts, "Waste Heat Becomes an Asset" (June 2026).
 - **50–60 °C** — Fourth-generation low-temperature district heating networks are defined by supply temperatures of roughly 50–60 °C, rising to about 70 °C in winter. Condition: Per the 4GDH definition (Lund et al., 2014: < 50–60 °C, 70 °C in winter); varies by network, season and building stock, and some ultra-low-temperature networks run below 45 °C. Source: Lund et al., 4th Generation District Heating (4GDH), Energy 2014; ScienceDirect topic review.
 - **≈2.4 MJ/kg** — A cooling tower rejects heat mainly by evaporation, at about 2.4 MJ per kilogram of water at tower temperatures. Condition: Latent heat at typical tower water temperature, not at boiling; latent share of rejection is typically 75–90 %. Source: Standard psychrometric data; worked through in "When Better PUE Makes the Energy System Worse".
 - **PUE 1.02** — Legacy headline from the previous site: "PUE as low as 1.02". Condition: Unknown. Ambient, wet-bulb, IT load level, measurement period and metering boundary were never recorded. Source: Previous nextgenergy.ai single-page site (2025). Status: under review; not used as a headline.
@@ -263,6 +263,7 @@ Every performance number on the site is published with its condition and source.
 - **Jim Li**, Founder & Chief Executive Officer. Jim founded NextGenergy to move AI data centres beyond single-point equipment optimisation toward integrated system design across power, liquid cooling and heat recovery. He is co-founder and vice president of Tsingchain Technology (Beijing), where he built and operated immersion and direct-to-chip liquid-cooled compute whose recovered heat was delivered into district heating, greenhouses and aquaculture. Earlier he was a senior product manager at Baidu. He holds an MBA and a bachelor's degree in international economics and trade, writes Every Watt Counts, reviews open liquid-cooling specifications, and is the author of the three-clock model and the ten leak points. LinkedIn: https://www.linkedin.com/in/junming-li-liquid-cooling/
 - **Chenli Wang**, Chief Strategy Officer. Chenli leads strategy, partnerships and commercial operations, including the off-take side of heat-reuse projects: identifying heat buyers, structuring supply agreements and aligning them with the return-water grade the plant is designed for. She brings nineteen years of general and operational management, most recently in enterprise IT product management at Anhui Shangxin Information Technology, and holds an MBA.
 - **Richard Li**, Chief Business Development Officer. Richard leads business development: the operator, developer and channel relationships behind NextGenergy's North American projects, and the qualification of the ones where the whole thermal path — not a single component — is what the customer actually needs. He brings twenty-five years of business development and IT management, including head of the AI business unit at NXAI, sales director at VideoSky and country manager for Vidyo in China. He holds a bachelor's degree in automation and control.
+- **Hui Wang**, Technical Director. Hui is responsible for the engineering judgement behind NextGenergy's thermal designs: coolant selection, approach temperature and the boundaries between cold plate, CDU and facility water. He founded Tsingchain Technology (Beijing) in 2018, among the earliest Chinese companies to commercialise server liquid cooling, and chairs it today. He is a named inventor on a utility model patent for a server liquid-cooling cabinet and led the research behind three more, covering scalable liquid-cooled containers, heat-dissipation cabinets and modular cooling systems. At Tsingchain he directed the development of immersion and direct-to-chip systems and the waste-heat programme that routed recovered heat into district heating, greenhouses and aquaculture. He writes on liquid cooling for the data centre industry and holds an M.S. in agricultural soil and water engineering from Shenyang Agricultural University.
 
 ## Articles
 
@@ -1614,7 +1615,7 @@ In 2022 I wrote a piece comparing “water cooling (cold plate) vs. oil cooling 
 
 — Flexibility: immersion is a tank — it holds servers by volume, and swapping in differently-shaped machines needs no re-engineering (within the tank’s volume); cold plate needs a custom plate per server, for life.
 
-— PUE: fully immersed, oil cooling needs almost no extra mechanical cooling — PUE under 1.1, even 1.02–1.04 in cold climates (in our deployments); cold plate, because memory/PSU/NIC heat can’t sit on a plate and still needs air, is a liquid-plus-air hybrid, with real-world PUE around 1.15–1.25.
+— PUE: fully immersed, oil cooling needs almost no extra mechanical cooling — PUE under 1.1 in the cold-climate immersion deployments the author worked on (the lower figures reported at the time were never recorded against a stated metering boundary, so they are not published here as a claim); cold plate, because memory/PSU/NIC heat can’t sit on a plate and still needs air, is a liquid-plus-air hybrid, with real-world PUE around 1.15–1.25.
 
 (These are field notes from 2022 brownfield-retrofit projects — not an industry average for 2026 new-build AI racks; see below.)
 
@@ -1831,7 +1832,7 @@ Next issue, we take that choice apart: water or oil, cold plate or immersion —
 
 ##### _Sources & Notes_
 
--   _This is a personal account. The scale figures — a thousand-plus units, ~200 MW deployed, ~2,000 tonnes of coolant in a year — are the author’s own operating history, shared as experience, not industry statistics._
+-   _This is a personal account of work done before NextGenergy was founded, on the product platform the author built at a previous company. The scale figures — a thousand-plus units, ~200 MW deployed, ~2,000 tonnes of coolant in a year — are the author’s own operating history from that period, shared as experience, not industry statistics, and not NextGenergy deployments._
     
 -   _Cold plate is mainstream for current AI racks: NVIDIA’s GB200 NVL72 is a rack-scale, liquid-cooled design; Lenovo’s GB300 NVL72 materials describe hybrid liquid-air cooling with roughly 90% liquid / 10% air at the rack level, with cold plates on CPU, GPU, NVSwitch and NIC._
     

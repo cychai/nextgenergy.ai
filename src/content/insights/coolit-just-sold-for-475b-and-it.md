@@ -46,7 +46,7 @@ In 2022 I wrote a piece comparing “water cooling (cold plate) vs. oil cooling 
 
 — Flexibility: immersion is a tank — it holds servers by volume, and swapping in differently-shaped machines needs no re-engineering (within the tank’s volume); cold plate needs a custom plate per server, for life.
 
-— PUE: fully immersed, oil cooling needs almost no extra mechanical cooling — PUE under 1.1, even 1.02–1.04 in cold climates (in our deployments); cold plate, because memory/PSU/NIC heat can’t sit on a plate and still needs air, is a liquid-plus-air hybrid, with real-world PUE around 1.15–1.25.
+— PUE: fully immersed, oil cooling needs almost no extra mechanical cooling — PUE under 1.1 in the cold-climate immersion deployments the author worked on (the lower figures reported at the time were never recorded against a stated metering boundary, so they are not published here as a claim); cold plate, because memory/PSU/NIC heat can’t sit on a plate and still needs air, is a liquid-plus-air hybrid, with real-world PUE around 1.15–1.25.
 
 (These are field notes from 2022 brownfield-retrofit projects — not an industry average for 2026 new-build AI racks; see below.)
 

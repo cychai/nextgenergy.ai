@@ -25,8 +25,8 @@ export const claims: Record<string, Claim> = {
   'supply-55c': {
     id: 'supply-55c',
     value: '≈55 °C',
-    statement: 'Cold-plate loops we have delivered return water at roughly 55 °C.',
-    condition: 'Secondary-loop return at rated IT load; direct-to-chip cold plate; facility-side approach not included.',
+    statement: 'Cold-plate loops built on the product platform our founding team created return water at roughly 55 °C.',
+    condition: 'Secondary-loop return at rated IT load; direct-to-chip cold plate; facility-side approach not included. Delivered by the founding team on their earlier product platform, before NextGenergy.',
     source: 'Every Watt Counts, "Waste Heat Becomes an Asset" (June 2026).',
     verifiedBy: 'Operating logs; not third-party audited.',
     status: 'conditional',

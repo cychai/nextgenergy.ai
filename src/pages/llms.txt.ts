@@ -11,7 +11,7 @@ export const GET: APIRoute = async () => {
     '',
     `> ${site.headline}. ${site.description}`,
     '',
-    `${site.name} (${site.legalName}) is based in ${site.location}, founded ${site.foundingDate} by Jim (Junming) Li. It does not manufacture components; it designs, integrates and commissions liquid cooling across the whole thermal path and hands over a turnover package with a test, an acceptance criterion and a record for each of ten leak points. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: ${site.email}.`,
+    `${site.name} (${site.legalName}) is based in ${site.location}, founded ${site.foundingDate} by Jim (Junming) Li. It designs, integrates and commissions liquid cooling across the whole thermal path, with components built to its specification by manufacturing partners, and hands over a turnover package with a test, an acceptance criterion and a record for each of ten leak points. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: ${site.email}.`,
     '',
     `Terms used consistently on this site: the whole thermal path; return-water grade; the three clocks (manufacturing / commissioning / service life); the ten leak points; the turnover package; numbers with boundaries.`,
     '',

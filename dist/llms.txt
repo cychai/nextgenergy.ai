@@ -2,7 +2,7 @@
 
 > One-Stop Liquid Cooling Solutions for AI Data Centers. NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.
 
-NextGenergy (NextGenergy Technology Inc.) is based in Toronto, Canada, founded 2025 by Jim (Junming) Li. It does not manufacture components; it designs, integrates and commissions liquid cooling across the whole thermal path and hands over a turnover package with a test, an acceptance criterion and a record for each of ten leak points. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: jim.li@nextgenergy.ai.
+NextGenergy (NextGenergy Technology Inc.) is based in Toronto, Canada, founded 2025 by Jim (Junming) Li. It designs, integrates and commissions liquid cooling across the whole thermal path, with components built to its specification by manufacturing partners, and hands over a turnover package with a test, an acceptance criterion and a record for each of ten leak points. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: sales@nextgenergy.ai.
 
 Terms used consistently on this site: the whole thermal path; return-water grade; the three clocks (manufacturing / commissioning / service life); the ten leak points; the turnover package; numbers with boundaries.
 
@@ -27,7 +27,7 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [Solutions](https://nextgenergy.ai/solutions): Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse.
 - [Platform](https://nextgenergy.ai/platform): CDU, manifolds, cold plates, fluids and monitoring, chosen and integrated as one system.
 - [Services](https://nextgenergy.ai/services): Design, integration, commissioning and service-life programmes.
-- [About NextGenergy](https://nextgenergy.ai/company/about): Toronto-based; designs, integrates and commissions liquid cooling for AI data centres and does not manufacture components.
+- [About NextGenergy](https://nextgenergy.ai/company/about): Toronto-based; designs, integrates and commissions liquid cooling for AI data centres, with components built to our specification by manufacturing partners.
 - [Leadership](https://nextgenergy.ai/company/leadership): Jim (Junming) Li, Founder & CEO; Chenli Wang, CSO; Ping (Richard) Li, COO.
 - [Insights](https://nextgenergy.ai/insights): Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.
 

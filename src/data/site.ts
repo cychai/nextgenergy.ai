@@ -7,7 +7,7 @@ export const site = {
   foundingDate: '2025',
   description:
     'NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.',
-  email: 'jim.li@nextgenergy.ai',
+  email: 'sales@nextgenergy.ai',
   linkedin: 'https://www.linkedin.com/company/nextgenergy',
   substack: 'https://everywattcounts.substack.com',
   location: 'Toronto, Canada',
