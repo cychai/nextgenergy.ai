@@ -3,15 +3,85 @@ import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Card from '@/components/Card.astro';
 import { platform as items } from '@/data/sections';
+const by = (slug: string) => items.find((s) => s.slug === slug)!;
+const families = [
+  { s: by('skids'), img: '/products/hero-skid.jpg', alt: 'Prefabricated liquid-cooling skid with racks, overhead supply and return headers and an integrated CDU', w: 1400, h: 933 },
+  { s: by('racks'), img: '/products/racks-family.jpg', alt: 'Three liquid-cooled racks: open frame with vertical manifold, populated rack with quick disconnects, and closed rack', w: 1200, h: 800 },
+  { s: by('cdu'), img: '/products/cdu-family.jpg', alt: 'Three coolant distribution units: in-rack, liquid-to-air and in-row', w: 1200, h: 800 },
+  { s: by('cooling-equipment'), img: '/products/cooling-equipment.jpg', alt: 'Dry cooler and water-cooled chiller', w: 627, h: 665, dark: true },
+];
+const components = ['manifolds', 'cold-plates', 'coolants'].map(by);
+const steps = [
+  { n: '01', t: 'Plan', d: 'Translate IT loads, site climate, facility water and heat demand into a system concept and a clear design basis.' },
+  { n: '02', t: 'Select and design', d: 'Coordinate rack, CDU and heat-rejection choices. Check temperatures, flow, interfaces, redundancy and service access.' },
+  { n: '03', t: 'Integrate and deliver', d: 'Work with manufacturing partners to prefabricate the package, then commission on site and support its lifecycle.' },
+];
 ---
-<Base title="Platform" description="We specify these components, source them from qualified manufacturers, pre-assemble them into factory-tested modules and take responsibility for how they perform together. Each page says what we require each component to prove.">
-  <PageHero eyebrow="Platform" title="Components we integrate, and what each one has to prove." lede="We specify these components, source them from qualified manufacturers, pre-assemble them into factory-tested modules and take responsibility for how they perform together. Each page says what we require each component to prove." />
+<Base title="Products" description="Four product families for liquid-cooled AI data centres, built to work together: prefabricated skids, ORv3 racks, CDUs and cooling equipment. Select individual products or a coordinated package, with interfaces and acceptance criteria agreed before manufacture.">
+  <PageHero eyebrow="Products" title="Four product families, built to work together." lede="Select individual products or a coordinated package, with interfaces and acceptance criteria agreed before manufacture. We plan the system, design and specify each product, have it built by manufacturing partners we qualify, and take responsibility for how the parts perform together." />
   <section class="section">
     <div class="wrap">
-      <div class="grid c3">
-        {items.map((s, i) => <Card href={`/platform/${s.slug}`} num={String(i + 1).padStart(2, '0')} title={s.title}>{s.summary}</Card>)}
+      <div class="fam">
+        {families.map(({ s, img, alt, w, h, dark }, i) => (
+          <a class="fam-card" href={`/platform/${s.slug}`}>
+            <div class:list={["fam-img", { dark }]}>
+              {img ? <img src={img} alt={alt} width={w} height={h} loading={i === 0 ? 'eager' : 'lazy'} /> : <div class="fam-ph"><span>Dry coolers</span><span>Adiabatic assist</span><span>Water-cooled chillers</span></div>}
+            </div>
+            <div class="fam-body">
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.title}</h3>
+              <p>{s.summary}</p>
+              <span class="more">Read →</span>
+            </div>
+          </a>
+        ))}
       </div>
-      <div class="note" style="margin-top:2.5rem;max-width:70ch"><strong>On not being a manufacturer.</strong> Component makers optimise their box and warrant it at their flange. We optimise the line and are accountable for the system within the agreed scope and acceptance criteria. Both are needed. Only one of them looks at the whole thermal path.</div>
+      <p class="small muted" style="margin-top:1rem">Illustrative configurations. Equipment selection and performance are confirmed for each project.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="eyebrow">From requirements to an integrated solution</div>
+      <div class="grid c3">
+        {steps.map((st) => (
+          <div class="card">
+            <span class="num">{st.n}</span>
+            <h3>{st.t}</h3>
+            <p>{st.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="muted" style="margin-top:1.4rem;max-width:70ch">One engineering scope connects product selection, system integration and delivery, with written interfaces and acceptance criteria. Explore how the parts interact before anything is built.</p>
+      <div class="btn-row" style="margin-top:0.6rem"><a class="btn primary" href="https://sim.nextgenergy.ai">Open the liquid cooling simulator</a><a class="btn" href="/tools">Engineering tools</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">Components we specify with them</div>
+      <h2>What each component has to prove.</h2>
+      <div class="grid c3" style="margin-top:1.5rem">
+        {components.map((s) => <Card href={`/platform/${s.slug}`} title={s.title}>{s.summary}</Card>)}
+      </div>
+      <div class="note" style="margin-top:2.5rem;max-width:70ch"><strong>Products and the line.</strong> Component makers optimise their box and warrant it at their flange. We design the products to work as one line and are accountable for the system within the agreed scope and acceptance criteria. Both are needed. Only one of them looks at the whole thermal path.</div>
     </div>
   </section>
 </Base>
+<style>
+  .fam { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .fam { grid-template-columns: 1fr 1fr; } }
+  .fam-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; color: inherit; }
+  .fam-card:hover { border-color: var(--ink-3); }
+  .fam-img { background: var(--white); aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line-2); padding: 1.5rem 2rem; }
+  .fam-img img { width: 100%; height: 100%; object-fit: contain; }
+  .fam-img.dark { background: rgb(3, 33, 61); }
+  .fam-ph { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0.3rem; padding: 1.6rem; font-family: var(--serif); font-size: 1.35rem; color: var(--ink-2); background: linear-gradient(135deg, var(--paper-2), #dfe7f2); }
+  .fam-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  .fam-body .num { font-family: var(--mono); font-size: 0.75rem; color: var(--heat); letter-spacing: 0.1em; }
+  .fam-body h3 { margin: 0; }
+  .fam-body p { margin: 0; color: var(--ink-2); }
+  .fam-body .more { margin-top: auto; padding-top: 0.8rem; font-size: 0.9rem; font-weight: 600; color: var(--water); }
+  @media (max-width: 600px) { .fam-body { padding: 1.5rem 1.5rem 1.6rem; } .fam-img { padding: 1rem 1.25rem; } }
+  .fam-card:hover .more { color: var(--heat); }
+</style>

@@ -4,23 +4,108 @@ import Card from '@/components/Card.astro';
 import Claim from '@/components/Claim.astro';
 import { getCollection } from 'astro:content';
 import { site } from '@/data/site';
+import { claims } from '@/data/claims';
 const posts = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
+const stats = [
+  { c: claims['founding-8-years'], label: 'of liquid-cooling focus in our founding team, immersion and direct-to-chip' },
+  { c: claims['deployed-1000mw'], label: 'of liquid cooling deployed on the product platform our founding team built' },
+];
+const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse heat'];
 ---
 <Base title={site.name}>
   <section class="hero home-hero">
     <div class="wrap">
-      <div class="eyebrow">Liquid cooling for AI data centres</div>
-      <h1>One team responsible for the whole thermal path. <br />From the facility water interface to the chip.</h1>
-      <p class="lede">From the facility water interface to the chip there are six boundaries. Each one has a maker, a test, and a record. NextGenergy designs, integrates and commissions across all of them, and hands over the evidence.</p>
-      <div class="btn-row">
-        <a class="btn primary" href="/evidence">See what we hand over</a>
-        <a class="btn" href="/tools/return-water">Check your return-water grade</a>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Liquid cooling for AI data centres · Toronto</div>
+          <h1>Prefabricated liquid cooling and heat reuse for AI data centres.</h1>
+          <p class="lede">We plan and design the liquid-cooled compute hall and deliver it as factory-built skids, CDUs, ORv3 racks and cooling plant. In Canada we also test, commission and maintain the liquid loop on site. Every boundary is handed over with its evidence.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="/platform">Products and systems</a>
+            <a class="btn" href="/services/field">Field testing and operations</a>
+          </div>
+        </div>
+        <figure class="hero-fig">
+          <img src="/products/hero-skid.jpg" alt="Prefabricated liquid-cooling skid: a row of liquid-cooled racks on a steel frame with overhead supply and return headers, cable trays and an integrated CDU" width="1400" height="933" fetchpriority="high" />
+          <figcaption>Illustrative prefabricated configuration. Equipment and performance are confirmed per project.</figcaption>
+        </figure>
+      </div>
+      <div class="chain" aria-label="What we do, in order">
+        {chain.map((s, i) => <span class="step"><span>{s}</span>{i < chain.length - 1 && <span class="arrow" aria-hidden="true">›</span>}</span>)}
       </div>
     </div>
   </section>
 
   <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">What we do</div>
+      <h2>Two things, and the records for both.</h2>
+      <div class="lines">
+        <a class="line" href="/platform">
+          <div class="line-img render"><img src="/products/cdu-family.jpg" alt="Three coolant distribution units: in-rack, liquid-to-air and in-row" loading="lazy" width="1200" height="800" /></div>
+          <div class="line-body">
+            <span class="num">01</span>
+            <h3>Prefabricated liquid cooling systems</h3>
+            <p>We plan and design liquid-cooled AI data centres and deliver the cooling system as a coordinated package of four product families, with interfaces and acceptance criteria agreed before manufacture.</p>
+            <ul class="chips">
+              <li>Prefabricated skids</li><li>ORv3 racks</li><li>CDUs</li><li>Cooling equipment</li>
+            </ul>
+            <span class="more">Four product families →</span>
+          </div>
+        </a>
+        <a class="line" href="/services/field">
+          <div class="line-img photo"><img src="/products/field-tech.jpg" alt="Technician with a tablet checking pressure gauges on liquid-cooling pipework" loading="lazy" width="621" height="658" /></div>
+          <div class="line-body">
+            <span class="num">02</span>
+            <h3>Field testing, verification and operations</h3>
+            <p>For liquid-cooled halls in Canada, on systems we supplied and on systems we did not: four commissioning gates with written criteria, then a three-tier operations programme for the cooling loop, not the servers.</p>
+            <ul class="chips">
+              <li>Four gates</li><li>Turnover package</li><li>Tiers 1–3</li><li>L0–L3 grading</li>
+            </ul>
+            <span class="more">Field services in Canada →</span>
+          </div>
+        </a>
+      </div>
+      <div class="stats">
+        {stats.map((s) => (
+          <div class="stat">
+            <span class="v">{s.c.value}</span>
+            <span class="l">{s.label}</span>
+            <span class="cond"><b>Condition:</b> {s.c.condition}</span>
+          </div>
+        ))}
+        <div class="stat">
+          <span class="v">Toronto</span>
+          <span class="l">engineering, sourcing and field coordination for North America</span>
+          <span class="cond">NextGenergy Technology Inc., Toronto, Ontario. Manufacturing by qualified partners; site work by licensed and insured partner companies.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ink sim">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="eyebrow">Plan the system before building it</div>
+          <h2>Simulate the whole thermal path, boundary by boundary.</h2>
+          <p class="lede">Selection, planning and design are informed by the whole loop: rack load, coolant temperatures, CDU approach, heat rejection and the heat you could reuse. Our concept simulator lets you pick a rack platform, a climate and a pipework layout, then watch junction temperature, flow, pressure drop and pPUE settle, and stress the design with load steps, pump loss or fouling.</p>
+          <div class="btn-row">
+            <a class="btn ghost" href="https://sim.nextgenergy.ai">Open the simulator</a>
+            <a class="btn ghost" href="/tools">All engineering tools</a>
+          </div>
+          <p class="small" style="color:#9fb0d0;margin-top:1.2rem">Concept model for planning and comparison. Not for equipment selection, acceptance or performance claims.</p>
+        </div>
+        <a class="laptop" href="https://sim.nextgenergy.ai" aria-label="Open the liquid cooling simulator">
+          <span class="screen"><img src="/products/simulator.jpg" alt="Liquid cooling simulator on a laptop: racks, CDU, dry cooler and trim chiller with live temperatures, flows and pPUE" width="1440" height="900" loading="lazy" /></span>
+          <span class="base" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
     <div class="wrap">
       <div class="split">
         <div>
@@ -37,7 +122,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month:
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section">
     <div class="wrap">
       <div class="split">
         <div class="sticky">
@@ -49,6 +134,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month:
           <Claim id="supply-55c" block />
           <Claim id="district-heat-50-70" block />
           <Claim id="cold-climate-minus-40" block />
+          <Claim id="rack-range" block />
         </div>
       </div>
     </div>
@@ -77,6 +163,25 @@ const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month:
 
   <section class="section">
     <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="eyebrow">Solutions</div>
+          <h2>By project type.</h2>
+          <p class="muted">The same product families and the same records, arranged for the constraints each kind of project actually has.</p>
+          <div class="btn-row"><a class="btn" href="/solutions">All solutions</a><a class="btn" href="/services">Services</a></div>
+        </div>
+        <div class="grid c2">
+          <Card href="/solutions/new-build" title="New-build AI data centre">Set the return-water grade and the acceptance criteria before the first rack lands.</Card>
+          <Card href="/solutions/retrofit" title="Retrofit">Liquid on an air-cooled floor without a chiller plant rebuild.</Card>
+          <Card href="/solutions/heat-reuse" title="Heat reuse and community licence">Turn reject heat into a metered product at the fence line.</Card>
+          <Card href="/solutions/cold-climate" title="Cold climate">Dry heat rejection and fluid selection for design ambients to −40 °C.</Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
       <div class="eyebrow">Tools</div>
       <h2>Three engineering calculators</h2>
       <div class="grid c3" style="margin-top:2rem">
@@ -87,7 +192,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month:
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section">
     <div class="wrap">
       <div class="split">
         <div>
@@ -111,35 +216,60 @@ const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month:
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="split even">
-        <div>
-          <div class="eyebrow">How we work</div>
-          <h2>Design, integrate, commission, operate. Same team, same records.</h2>
-          <p class="muted">We design the thermal path, build and test it with our manufacturing partners, commission it against written acceptance criteria, and stay through service. Custom racks, skids and manifolds are designed by us and built to our specification. One team is accountable for the whole line, within a written scope and written acceptance criteria.</p>
-          <div class="btn-row"><a class="btn" href="/services">Services</a><a class="btn" href="/platform">Platform and components</a></div>
-        </div>
-        <div class="grid c2">
-          <Card href="/solutions/new-build" title="New-build AI data centre">Set the return-water grade and the acceptance criteria before the first rack lands.</Card>
-          <Card href="/solutions/retrofit" title="Retrofit">Liquid on an air-cooled floor without a chiller plant rebuild.</Card>
-          <Card href="/solutions/heat-reuse" title="Heat reuse and community licence">Turn reject heat into a metered product at the fence line.</Card>
-          <Card href="/solutions/cold-climate" title="Cold climate">Dry heat rejection and fluid selection for design ambients to −40 °C.</Card>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section ink cta">
     <div class="wrap" style="text-align:center">
       <h2>Bring us your project.</h2>
-      <p class="lede" style="margin-inline:auto">A new build, a retrofit, a heat-reuse scheme, or a turnover package you would like verified.</p>
-      <div class="btn-row" style="justify-content:center"><a class="btn ghost" href="/company/contact">Talk to an engineer</a></div>
+      <p class="lede" style="margin-inline:auto">A new build, a retrofit, a heat-reuse scheme, a hall that needs commissioning, or a turnover package you would like verified. Start with your system diagram, equipment list and existing records.</p>
+      <div class="btn-row" style="justify-content:center"><a class="btn ghost" href="/company/contact">Talk to our team</a></div>
     </div>
   </section>
 </Base>
 <style>
-  .home-hero h1 { max-width: 22ch; }
+  .home-hero { padding-bottom: clamp(2rem, 4vw, 3rem); }
+  .hero.home-hero h1 { max-width: none; }
+  .hero-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 6fr); gap: 3.5rem; } }
+  .hero-fig { margin: 0; }
+  .hero-fig { background: var(--white); border: 1px solid var(--line-2); border-radius: var(--r); padding: clamp(1rem, 2.5vw, 2rem); }
+  .hero-fig img { width: 100%; height: auto; }
+  .hero-fig figcaption { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.6rem; }
+  .chain { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; margin-top: clamp(1.8rem, 3vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+  .chain .step { display: inline-flex; gap: 0.9rem; align-items: baseline; }
+  .chain .arrow { color: var(--heat); }
+
+  .lines { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 2rem; }
+  @media (min-width: 820px) { .lines { grid-template-columns: 1fr 1fr; } }
+  .line { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; color: inherit; }
+  .line:hover { border-color: var(--ink-3); }
+  .line-img { background: var(--white); aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line-2); }
+  .line-img img { width: 100%; height: 100%; object-fit: cover; }
+  .line-img.render { padding: 1.5rem 2rem; }
+  .line-img.render img { object-fit: contain; }
+  .line-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  @media (max-width: 600px) { .line-body { padding: 1.5rem 1.5rem 1.6rem; } .line-img.render { padding: 1rem 1.25rem; } }
+  .line-body .num { font-family: var(--mono); font-size: 0.75rem; color: var(--heat); letter-spacing: 0.1em; }
+  .line-body h3 { margin: 0; font-size: 1.3rem; }
+  .line-body p { margin: 0; color: var(--ink-2); font-size: 0.97rem; }
+  .chips { list-style: none; padding: 0; margin: auto 0 0; padding-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chips li { font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 999px; background: var(--paper-2); color: var(--ink); }
+  .line-body .more { margin-top: 0; padding-top: 0.9rem; font-size: 0.9rem; font-weight: 600; color: var(--water); }
+  .line:hover .more { color: var(--heat); }
+
+  .stats { display: grid; gap: 1.5rem 2.5rem; grid-template-columns: 1fr; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  @media (min-width: 720px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat .v { display: block; font-family: var(--serif); font-size: 1.7rem; line-height: 1; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .stat .l { display: block; color: var(--ink-2); font-size: 0.95rem; }
+  .stat .cond { display: block; font-size: 0.78rem; line-height: 1.45; color: var(--ink-3); margin-top: 0.45rem; }
+  .stat .cond b { color: var(--ink-2); font-weight: 600; }
+
+  .laptop { display: block; width: 100%; max-width: 680px; margin: 0 auto; padding: 0 5%; align-self: center; }
+  .laptop .screen { display: block; background: #0b0f17; border: 1px solid #36405a; border-bottom: 0; border-radius: 16px 16px 0 0; padding: 14px 14px 16px; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.7); }
+  .laptop .screen img { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .laptop .base { display: block; position: relative; height: 16px; margin: 0 -5%; background: linear-gradient(#e6eaf1, #b8c1d1 60%, #8f9ab0); border-radius: 3px 3px 14px 14px; }
+  .laptop .base::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 16%; height: 6px; background: #7c879d; border-radius: 0 0 8px 8px; }
+  .laptop:hover .screen { border-color: #6f7c9a; }
+  @media (min-width: 900px) { .sim .split { align-items: center; } }
+  .sim .lede { font-size: 1.05rem; line-height: 1.6; }
   .tenlist { border-top: 1px solid rgba(255,255,255,0.18); }
   .tenlist .row { display: grid; grid-template-columns: 2.4rem 1fr auto; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.18); align-items: baseline; font-size: 0.98rem; }
   .tenlist .n { font-family: var(--mono); color: var(--heat-2); font-size: 0.8rem; }

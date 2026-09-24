@@ -20,7 +20,7 @@ export const GET: APIRoute = async () => {
   for (const g of corePages) {
     for (const [path, title, summary] of g.pages) {
       const qa = faqs[path];
-      out.push(`### ${title}`, '', `${summary} (${site.url}${path})`, '');
+      out.push(`### ${title}`, '', `${summary} (${path.startsWith('http') ? path : site.url + path})`, '');
       if (path === '/evidence/leak-points') {
         for (const l of leakPoints) out.push(`${l.n}. **${l.t}** (${l.group}). ${l.p}${l.r ? ` Record: ${l.r}` : ''}`);
         out.push('');

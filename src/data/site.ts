@@ -1,12 +1,12 @@
 export const site = {
   name: 'NextGenergy',
   url: 'https://nextgenergy.ai',
-  tagline: 'Liquid Cooling Solutions for AI Data Centers',
-  headline: 'One-Stop Liquid Cooling Solutions for AI Data Centers',
+  tagline: 'Prefabricated liquid cooling and field services for AI data centres',
+  headline: 'Prefabricated Liquid Cooling and Field Services for AI Data Centres',
   legalName: 'NextGenergy Technology Inc.',
   foundingDate: '2025',
   description:
-    'NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.',
+    'NextGenergy plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant. In Canada it also provides field testing, commissioning and operations for the liquid cooling loop, with the evidence for every boundary.',
   email: 'sales@nextgenergy.ai',
   linkedin: 'https://www.linkedin.com/company/nextgenergy',
   substack: 'https://everywattcounts.substack.com',
@@ -14,11 +14,11 @@ export const site = {
 };
 
 export const nav = [
-  { href: '/approach', label: 'Approach' },
+  { href: '/platform', label: 'Products' },
+  { href: '/services', label: 'Field services' },
   { href: '/solutions', label: 'Solutions' },
-  { href: '/platform', label: 'Platform' },
   { href: '/evidence', label: 'Evidence', star: true },
-  { href: '/services', label: 'Services' },
+  { href: '/approach', label: 'Approach' },
   { href: '/tools', label: 'Tools' },
   { href: '/insights', label: 'Insights' },
   { href: '/company/about', label: 'Company' },
@@ -26,11 +26,12 @@ export const nav = [
 
 export const footerNav = [
   {
-    title: 'Approach',
+    title: 'What we do',
     links: [
-      ['/approach/thermal-path', 'The thermal path'],
-      ['/approach/return-water', 'Return-water grade'],
-      ['/approach/three-clocks', 'Three clocks'],
+      ['/platform', 'Products: skids, racks, CDUs, cooling plant'],
+      ['/services/field', 'Field testing and operations'],
+      ['/solutions', 'Solutions by project type'],
+      ['/approach', 'Our approach'],
     ],
   },
   {
@@ -46,6 +47,7 @@ export const footerNav = [
   {
     title: 'Tools',
     links: [
+      ['https://sim.nextgenergy.ai', 'Liquid cooling simulator'],
       ['/tools/return-water', 'Return-water → heat buyers'],
       ['/tools/approach-temp', 'Approach temperature'],
       ['/tools/leak-checklist', 'Turnover self-check'],

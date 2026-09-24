@@ -21,7 +21,7 @@ const { items, title = 'Questions this page answers', alt = false } = Astro.prop
 )}
 <style>
   .faq-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
-  dl { margin: 0; display: grid; gap: 0; max-width: 52rem; }
+  dl { margin: 0; display: grid; gap: 0; max-width: var(--measure); }
   .qa { padding: 1.1rem 0; border-top: 1px solid var(--line); }
   .qa:last-child { border-bottom: 1px solid var(--line); }
   dt h3 { margin: 0 0 0.4rem; font-size: 1.12rem; font-family: var(--sans); font-weight: 600; }

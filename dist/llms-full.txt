@@ -1,6 +1,6 @@
 # NextGenergy — full text for language models
 
-> One-Stop Liquid Cooling Solutions for AI Data Centers. NextGenergy designs, integrates and commissions liquid cooling for AI data centres, from the facility water interface to the chip, and hands over evidence for every boundary.
+> Prefabricated Liquid Cooling and Field Services for AI Data Centres. NextGenergy plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant. In Canada it also provides field testing, commissioning and operations for the liquid cooling loop, with the evidence for every boundary.
 
 Source: https://nextgenergy.ai · Generated at build time · Short index: https://nextgenergy.ai/llms.txt
 
@@ -161,7 +161,7 @@ A: The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy
 
 **Q: Is there an open specification for liquid-cooling commissioning evidence?**
 
-A: Not yet a complete one. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces; the record structure this site uses, three questions for each of ten leak points, fills the gap where those drafts are silent on what a turnover package must contain. (https://nextgenergy.ai/evidence/turnover)
+A: Not yet. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces, and in 2026 received its first CDU specification (Google's Project Deschutes), but none of them says what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, fills that gap. (https://nextgenergy.ai/evidence/turnover)
 
 ### The numbers Canada's principles ask for
 
@@ -178,6 +178,10 @@ A: Ask for measured values at a stated boundary, not design values: annual water
 **Q: Does closed-loop cooling mean a data centre uses no water?**
 
 A: No. Closed loops still take make-up water for leaks, sampling and fluid replacement, and some designs add evaporative assist on the hottest days. Ask for make-up volume, peak-day withdrawal and the days per year any evaporative assist runs, and ask for the electricity that dry cooling uses instead of water. (https://nextgenergy.ai/approach/return-water)
+
+### Liquid cooling simulator (sim.nextgenergy.ai)
+
+Transient model of the whole loop from chip junction to heat rejection: rack platform, climate, pipework, load steps, pump loss and fouling; concept model, not for acceptance or performance claims. (https://sim.nextgenergy.ai/)
 
 ### Return-water grade → heat buyers
 
@@ -227,17 +231,21 @@ A: Something you could hand to an auditor today: a test sheet with a date, a tec
 
 Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse. (https://nextgenergy.ai/solutions)
 
-### Platform
+### Products
 
-CDU, manifolds, cold plates, fluids and monitoring, chosen and integrated as one system. (https://nextgenergy.ai/platform)
+Four product families delivered as a coordinated package: prefabricated skids, ORv3 racks, CDUs and cooling equipment; plus the manifolds, cold plates and coolants specified with them. (https://nextgenergy.ai/platform)
+
+### Field testing, verification and operations (Canada)
+
+Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies. (https://nextgenergy.ai/services/field)
 
 ### Services
 
-Design, integration, commissioning and service-life programmes. (https://nextgenergy.ai/services)
+Thermal design and selection, integration, commissioning and long-term support. (https://nextgenergy.ai/services)
 
 ### About NextGenergy
 
-Toronto-based; designs, integrates and commissions liquid cooling for AI data centres, with components built to our specification by manufacturing partners. (https://nextgenergy.ai/company/about)
+Toronto-based; plans and designs liquid-cooled AI data centres, delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant, and provides field testing, commissioning and operations for the liquid loop in Canada. (https://nextgenergy.ai/company/about)
 
 ### Leadership
 
@@ -256,6 +264,9 @@ Every performance number on the site is published with its condition and source.
 - **≈2.4 MJ/kg** — A cooling tower rejects heat mainly by evaporation, at about 2.4 MJ per kilogram of water at tower temperatures. Condition: Latent heat at typical tower water temperature, not at boiling; latent share of rejection is typically 75–90 %. Source: Standard psychrometric data; worked through in "When Better PUE Makes the Energy System Worse".
 - **PUE 1.02** — Legacy headline from the previous site: "PUE as low as 1.02". Condition: Unknown. Ambient, wet-bulb, IT load level, measurement period and metering boundary were never recorded. Source: Previous nextgenergy.ai single-page site (2025). Status: under review; not used as a headline.
 - **−40 °C** — Our cold-climate designs are specified for ambient down to −40 °C. Condition: Design ambient for outdoor heat-rejection equipment and fluid selection; not a demonstrated continuous-operation record at that temperature. Source: NextGenergy design basis for cold-climate deployments.
+- **Nearly 1,000 MW** — Nearly 1,000 MW of liquid cooling has been deployed on the product platform our founding team built. Condition: Cumulative liquid-cooling capacity shipped on the product platform the founding team built at Tsingchain Technology, 2018–2026, before NextGenergy; company records of shipped capacity, not a NextGenergy installed base. Source: Founding team project records; see /company/leadership.
+- **8 years** — Our founding team has focused on liquid cooling for eight years, immersion first and then direct-to-chip. Condition: Counted from the founding of Tsingchain Technology (Beijing) in 2018, where the founding team built immersion and then direct-to-chip systems, to 2026. Describes the team's experience, not NextGenergy, which was incorporated in 2025. Source: Founding team history; see /company/leadership.
+- **≈24 %** — About a quarter of total data-centre loss cost in a fifteen-year FM review was liquid-related. Condition: All liquid-related loss categories in the review, across data centres generally; not a direct-to-chip liquid-cooling failure rate and not a NextGenergy measurement. Source: Swiss Re Institute, sigma insights 07/2026, citing FM loss data over fifteen years.
 - **10 kW – 1 MW** — The platform is engineered across a range from single high-density racks to megawatt-class pods. Condition: Range of thermal design points, not a single product rating. Each deployment is rated at its own supply temperature, flow and approach. Source: NextGenergy platform design envelope.
 
 ## Leadership

@@ -3,14 +3,61 @@ import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Card from '@/components/Card.astro';
 import { services } from '@/data/sections';
+const gates = ['Before dispatch: factory release', 'Before filling: fill preparation', 'Before compute: functional readiness', 'Before handover: system handover'];
+const tiers = ['Tier 1 · Routine care', 'Tier 2 · Verified readiness', 'Tier 3 · Lifecycle support'];
 ---
-<Base title="Services" description="NextGenergy services: thermal design and selection, integration and factory pre-assembly, commissioning and verification, operations and long-term support.">
-  <PageHero eyebrow="Services" title="Four services, one team, one set of records" lede="Each service can be engaged on its own. Commissioning is often the first engagement, for a system somebody else built." />
+<Base title="Services" description="Liquid cooling field testing, verification and operations in Canada, on systems we supplied and on systems we did not, plus thermal design, integration, commissioning and long-term support.">
+  <PageHero eyebrow="Services" title="Field testing, verification and operations for liquid cooling." lede="A liquid-cooled hall can be built by five suppliers and commissioned by none of them. We take the seam: from the facility water interface to the serviceable unit, on systems we supplied and on systems we did not." />
   <section class="section">
     <div class="wrap">
-      <div class="grid c2">
+      <a class="field" href="/services/field">
+        <div class="field-img"><img src="/products/field-tech.jpg" alt="Technician with a tablet checking pressure gauges on liquid-cooling pipework" width="621" height="658" loading="eager" /></div>
+        <div class="field-body">
+          <div class="eyebrow">Field services · Canada</div>
+          <h2>Commissioning gates and an operations programme for the cooling loop, not the servers.</h2>
+          <div class="cols">
+            <div>
+              <h4>Four gates, written criteria first</h4>
+              <ol>{gates.map((g) => <li>{g}</li>)}</ol>
+            </div>
+            <div>
+              <h4>Three operations tiers</h4>
+              <ul>{tiers.map((t) => <li>{t}</li>)}</ul>
+            </div>
+          </div>
+          <p>We write the test specification and the acceptance criteria, train and qualify the field teams, and hold the records. Licensed and insured partner companies perform the regulated site work to that specification.</p>
+          <span class="more">Field testing, verification and operations →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="eyebrow">Capabilities behind the service</div>
+      <h2>Each can be engaged on its own.</h2>
+      <p class="muted" style="max-width:60ch">Commissioning is often the first engagement, for a system somebody else built. Design and integration are how the product families on the <a href="/platform">products</a> page become one line.</p>
+      <div class="grid c2" style="margin-top:1.5rem">
         {services.map((s, i) => <Card href={`/services/${s.slug}`} num={String(i + 1).padStart(2, '0')} title={s.title}>{s.summary}</Card>)}
       </div>
     </div>
   </section>
 </Base>
+<style>
+  .field { display: grid; grid-template-columns: 1fr; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; color: inherit; }
+  @media (min-width: 820px) { .field { grid-template-columns: 4fr 8fr; } }
+  .field:hover { border-color: var(--ink-3); }
+  .field-img { background: var(--white); }
+  .field-img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 9; }
+  @media (min-width: 820px) { .field-img img { aspect-ratio: auto; } }
+  .field-body { padding: 2rem 2.4rem 2.4rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .field-body h2 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
+  .field-body .cols { display: grid; gap: 1rem 2rem; grid-template-columns: 1fr; margin: 0.4rem 0 0.6rem; }
+  @media (min-width: 600px) { .field-body .cols { grid-template-columns: 1fr 1fr; } }
+  .field-body h4 { margin: 0 0 0.4rem; }
+  .field-body ol, .field-body ul { margin: 0; padding-left: 1.2rem; color: var(--ink-2); font-size: 0.95rem; }
+  .field-body li { margin-bottom: 0.25rem; }
+  .field-body p { margin: 0; color: var(--ink-2); }
+  .field-body .more { margin-top: auto; padding-top: 0.9rem; font-size: 0.9rem; font-weight: 600; color: var(--water); }
+  .field:hover .more { color: var(--heat); }
+</style>

@@ -29,6 +29,6 @@ const ld = people.map((p) => personLd({ id: slug(p.name), name: p.name, jobTitle
   .person { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 900px; }
   @media (min-width: 700px) { .person { grid-template-columns: 220px 1fr; } }
   .photo { width: 220px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); }
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; color: transparent; }
   .person + .person { margin-top: 3rem; }
 </style>

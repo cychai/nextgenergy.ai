@@ -1,0 +1,197 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import Related from '@/components/Related.astro';
+
+const lines = [
+  {
+    k: 'A',
+    t: 'Commissioning',
+    s: 'Four gates, criteria agreed before the work, a turnover package at the end. Engageable gate by gate, including for loops somebody else built.',
+  },
+  {
+    k: 'B',
+    t: 'Annual operations',
+    s: 'Monthly pipework inspection, fluid sampling against the commissioning baseline, filter differential trending, quick-disconnect cycle records, annual re-verification.',
+  },
+  {
+    k: 'C',
+    t: 'Repair and response',
+    s: 'Call-out, labour and materials. Live-system repair is arranged through pre-qualified specialists under framework agreement, because the capability is scarce and cannot be found on the day.',
+  },
+  {
+    k: 'D',
+    t: 'Factory and receiving inspection',
+    s: 'Gate one executed at the manufacturer, including in China: pressure test, cleanliness release, torque records, quick-disconnect register, document check.',
+  },
+  {
+    k: 'E',
+    t: 'Advisory and records',
+    s: 'Rebuilding a turnover package for a system already in service, gap assessment against acceptance criteria and insurer requirements, subcontractor qualification review.',
+  },
+];
+
+const gates = [
+  { g: 'Gate 1', t: 'Before release from the factory', items: ['Pressure test of every prefabricated assembly, with serials', 'Cleanliness release of wetted surfaces, verified by sample', 'Torque record for every threaded and flanged joint, with the wrench calibration certificate', 'Quick-disconnect register opened at zero mate cycles'] },
+  { g: 'Gate 2', t: 'Before the loop is filled', items: ['Segmented pressure test, zone by zone, with the pressure–time record', 'Flush to a stated end point, measured rather than observed', 'Filter differential baseline recorded before fill', 'Fluid concentration, pH, inhibitor and conductivity verified against specification'] },
+  { g: 'Gate 3', t: 'Before compute is energised', items: ['Leak detection and automatic isolation proven by fault injection, zone by zone', 'Flow and differential measured at every rack, not only the one nearest the pump', 'CDU failover under load: single pump, single unit, primary-side interruption', 'Telemetry proven to reach the system that has to act on it'] },
+  { g: 'Gate 4', t: 'Before handover', items: ['Turnover package assembled and indexed against the boundary structure', 'Operating baselines recorded at a stated load', 'Open items listed, owned and dated, accepted in writing by the owner', 'Warranty boundary written per interface, with a start date'] },
+];
+
+const tiers = [
+  { n: 'Tier 1 · Routine care', p: 'Inspection, sampling and records', i: ['Monthly pipework inspection to the CDU or heat exchanger connection', 'Quarterly fluid sampling and laboratory analysis', 'Filter differential logged against baseline', 'Quick-disconnect register maintained', 'Annual report'] },
+  { n: 'Tier 2 · Verified readiness', p: 'Routine care plus annual functional re-verification', i: ['Everything in Tier 1', 'Annual leak detection and isolation proven by fault injection', 'Annual isolation drill with the operating team', 'Annual flow balance re-measurement', 'Root cause analysis and record update after every event'] },
+  { n: 'Tier 3 · Lifecycle support', p: 'For high-density, high-value or multi-vendor sites', i: ['Everything in Tier 2', 'Annual re-verification: sampled repeat of the Gate 3 tests', 'Baseline update and change management support', 'Priority scheduling', 'Scarce-capability partners held under framework agreement'] },
+];
+
+const levels = [
+  { l: 'L0', d: 'Liquid is escaping in the white space and automatic isolation has not contained it', a: 'Containment unsuccessful: activate the approved emergency procedure. Authorised isolation and electrical actions come before diagnosis.' },
+  { l: 'L1', d: 'A leak has been detected and isolated, or a CDU has failed and the loop has lost cooling', a: 'Protect the IT through the approved thermal response, then restore cooling to the loop.' },
+  { l: 'L2', d: 'A single point is weeping without spreading, a standby pump has taken over, or a rack is outside the flow tolerance', a: 'Assess the impact and schedule corrective work within the approved operating envelope.' },
+  { l: 'L3', d: 'Fluid chemistry drifting from baseline, filter differential climbing, a quick disconnect approaching its cycle limit', a: 'Investigate the trend and plan the intervention before limits are exceeded.' },
+];
+---
+
+<Base
+  title="Field testing, verification and operations in Canada"
+  description="Liquid cooling field testing, commissioning and operations in Canada, on systems we supplied and on systems we did not. Acceptance criteria agreed before the work, a turnover package at the end, and an operations programme for the cooling loop, not the servers."
+>
+  <PageHero
+    eyebrow="Services · Canada"
+    title="Field testing, verification and operations for liquid cooling"
+    lede="In a fifteen-year FM loss review cited by Swiss Re Institute, about 24 % of total data-centre loss cost was liquid-related (all liquid categories, not a direct-to-chip failure rate). This is the service that addresses that risk on site, in Canada: written criteria before the work, records at the end, and a maintenance programme for the cooling loop."
+    crumbs={[['/services', 'Services']]}
+  />
+
+  <section class="section">
+    <div class="wrap prose">
+      <p>
+        A liquid-cooled hall can be built by five suppliers and commissioned by none of them. Every party can prove its own segment and the seam between them remains untested. This service takes the seam: the loops, manifolds, hoses and connectors from the facility water interface to the serviceable unit, and the records that say who tested what, against which criterion, and where the evidence sits.
+      </p>
+      <p>
+        We work on systems we supplied and, more often, on systems we did not. A multi-vendor site is the one that most needs somebody accountable for the interfaces.
+      </p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2 class="sec-h">Five lines, engageable separately</h2>
+      <div class="grid c3">
+        {lines.map((l) => (
+          <div class="card">
+            <span class="num">{l.k}</span>
+            <h3>{l.t}</h3>
+            <p>{l.s}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="sec-h">Commissioning: four gates</h2>
+      <p class="sec-lede">A gate is a point of no return. Past it, the cost of going back rises sharply. The acceptance criteria for each gate are written and approved before that stage of work begins, never after it.</p>
+      <div class="grid c2">
+        {gates.map((s) => (
+          <div class="card">
+            <span class="num">{s.g}</span>
+            <h3>{s.t}</h3>
+            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:0.95rem">
+              {s.items.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <h2 class="sec-h">Operations: three tiers</h2>
+      <p class="sec-lede">The lowest tier is not a marketing floor. It is built around the practices property insurers publish for liquid-cooled halls: periodic inspection of the pipework in the equipment room, monitoring of coolant quality against its design range, and an operating team trained and authorised to isolate a leak at the nearest valve. Proposed frequencies are confirmed against OEM requirements, site risk and the contract or insurance conditions actually adopted; they are not universal insurer requirements.</p>
+      <div class="grid c3">
+        {tiers.map((t) => (
+          <div class="card">
+            <span class="num">{t.n}</span>
+            <h3>{t.p}</h3>
+            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:0.95rem">
+              {t.i.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="sec-lede" style="margin-top:1.2rem">Attendance commitments are priced separately from the tier. Four hours to site and next business day to site are different businesses, and bundling them hides which one you are buying.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>How we grade a fault</h2>
+      <p>
+        Liquid cooling cannot borrow the IT severity scale. The question is not how many nodes are affected. It is whether the system is causing, or about to cause, asset damage.
+      </p>
+      <div class="table-wrap">
+      <table class="tbl">
+        <thead><tr><th>Level</th><th>Definition</th><th>First principle</th></tr></thead>
+        <tbody>
+          {levels.map((r) => (
+            <tr><td><strong>{r.l}</strong></td><td>{r.d}</td><td>{r.a}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+      <p>Response and attendance times are agreed per contract against this scale, and are stated in the service agreement rather than advertised.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap prose">
+      <h2>How the work is delivered</h2>
+      <p>
+        <strong>We hold the criteria, the coordination and the records.</strong> We write the acceptance criteria, sequence the work, review the results, and assemble the turnover package. The owner or their authorised representative approves the criteria and accepts the delivery.
+      </p>
+      <p>
+        <strong>Site work is performed by qualified partners.</strong> Ontario has ample certified pipework capability and we qualify against it rather than duplicate it: certificate scope checked for shop versus field, code class checked against the one the project actually falls under, welder qualifications checked against the people attending rather than the roster, and insurance checked for pollution liability, because glycol is not covered by general liability.
+      </p>
+      <p>
+        <strong>Scarce capability is secured in advance.</strong> Live-system repair, sealing a leak under pressure or tapping a line in service, is held by a handful of firms in the province. That is arranged under framework agreement before it is needed, not on the day it is.
+      </p>
+      <p>
+        <strong>We do not take on regulated professional engineering in our own name and borrow a partner's seal for it.</strong> Qualification questions are settled before the quote, not worked around at delivery.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <h2>What you receive</h2>
+      <p>
+        A turnover package that answers three questions for every leak point on the thermal path: <strong>was it tested, against what, and where is the record.</strong> A point that cannot answer all three is an open item, not a pass.
+      </p>
+      <p>
+        The same records define the warranty boundary between the parties, and they are the evidence an insurer asks for. A documented leak detection and inspection regime is one of the few things that visibly changes how a liquid-cooled hall is underwritten.
+      </p>
+      <div class="btn-row"><a class="btn primary" href="/company/contact">Talk to our team</a></div>
+      <Related items={[
+        { href: '/evidence/commissioning', label: 'Acceptance criteria, gate by gate', kind: 'evidence' },
+        { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' },
+        { href: '/evidence/leak-points', label: 'Ten leak points', kind: 'evidence' },
+        { href: '/services/commissioning', label: 'Commissioning as a capability', kind: 'approach' },
+        { href: '/services/operations', label: 'Operations and long-term support', kind: 'approach' },
+      ]} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .sec-h { margin: 0 0 0.4rem; }
+  .sec-lede { color: var(--ink-2); max-width: 62ch; margin: 0 0 1.4rem; }
+  .tbl { width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem; font-size: 0.95rem; }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); }
+  .tbl th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); font-weight: 600; white-space: nowrap; }
+  .tbl td { color: var(--ink-2); }
+  .table-wrap { max-width: 56rem; }
+  @media (max-width: 640px) { .tbl { min-width: 36rem; } }
+</style>

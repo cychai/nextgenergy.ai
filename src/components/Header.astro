@@ -11,7 +11,7 @@ const isCurrent = (href: string) => path === href || (href !== '/' && path.start
         <a href={n.href} class:list={[{ star: n.star }]} aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
       ))}
     </nav>
-    <a href="/company/contact" class="btn hdr-cta">Talk to an engineer</a>
+    <a href="/company/contact" class="btn hdr-cta">Talk to our team</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="mnav" data-menu>Menu</button>
   </div>
   <div class="mnav" id="mnav">

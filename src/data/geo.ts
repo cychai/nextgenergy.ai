@@ -77,7 +77,7 @@ export const faqs: Record<string, FaqItem[]> = {
   ],
   '/evidence/standards': [
     { q: 'Which standards apply to liquid-cooling heat reuse and metering?', a: 'The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy Reuse Effectiveness (ERE) from The Green Grid, and the metering-boundary requirement in Commission Delegated Regulation (EU) 2024/1364 for EU data centres with at least 500 kW installed IT demand. For the thermal environment itself, ASHRAE\'s W-classes give the facility-water temperature envelopes.', href: '/approach/return-water', label: 'Return-water grade' },
-    { q: 'Is there an open specification for liquid-cooling commissioning evidence?', a: 'Not yet a complete one. The Open Compute Project\'s Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces; the record structure this site uses, three questions for each of ten leak points, fills the gap where those drafts are silent on what a turnover package must contain.', href: '/evidence/turnover', label: 'The turnover package' },
+    { q: 'Is there an open specification for liquid-cooling commissioning evidence?', a: 'Not yet. The Open Compute Project\'s Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces, and in 2026 received its first CDU specification (Google\'s Project Deschutes), but none of them says what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, fills that gap.', href: '/evidence/turnover', label: 'The turnover package' },
   ],
   '/tools/return-water': [
     { q: 'What supply temperature does each kind of heat buyer need?', a: 'Fourth-generation district heating typically wants 45–70 °C supply and legacy networks 70–95 °C; greenhouses 35–60 °C depending on the emitter; aquaculture, pools and low-temperature building heating a 30–55 °C source; a heat pump can use almost any grade above 10 °C. The tool compares the temperature you can deliver after the heat exchanger with each buyer\'s window.', href: '/approach/return-water', label: 'Why return-water grade comes first' },
@@ -110,15 +110,17 @@ export const corePages: { section: string; pages: [string, string, string][] }[]
     ['/evidence/canada-principles', 'The numbers Canada\'s principles ask for', 'Principles 3 and 4 ask developers for measured, verifiable water, heat and power figures; what the supplier measures, where, and who signs.'],
   ] },
   { section: 'Tools', pages: [
+    ['https://sim.nextgenergy.ai/', 'Liquid cooling simulator (sim.nextgenergy.ai)', 'Transient model of the whole loop from chip junction to heat rejection: rack platform, climate, pipework, load steps, pump loss and fouling; concept model, not for acceptance or performance claims.'],
     ['/tools/return-water', 'Return-water grade → heat buyers', 'Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.'],
     ['/tools/approach-temp', 'Approach temperature → CDU sizing', 'How CDU and dry-cooler approach move the facility supply temperature and free-cooling hours.'],
     ['/tools/leak-checklist', 'Turnover self-check', 'Score a turnover package out of 30 in the browser; nothing is uploaded.'],
   ] },
   { section: 'Company', pages: [
     ['/solutions', 'Solutions', 'Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse.'],
-    ['/platform', 'Platform', 'CDU, manifolds, cold plates, fluids and monitoring, chosen and integrated as one system.'],
-    ['/services', 'Services', 'Design, integration, commissioning and service-life programmes.'],
-    ['/company/about', 'About NextGenergy', 'Toronto-based; designs, integrates and commissions liquid cooling for AI data centres, with components built to our specification by manufacturing partners.'],
+    ['/platform', 'Products', 'Four product families delivered as a coordinated package: prefabricated skids, ORv3 racks, CDUs and cooling equipment; plus the manifolds, cold plates and coolants specified with them.'],
+    ['/services/field', 'Field testing, verification and operations (Canada)', 'Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies.'],
+    ['/services', 'Services', 'Thermal design and selection, integration, commissioning and long-term support.'],
+    ['/company/about', 'About NextGenergy', 'Toronto-based; plans and designs liquid-cooled AI data centres, delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant, and provides field testing, commissioning and operations for the liquid loop in Canada.'],
     ['/company/leadership', 'Leadership', 'Jim (Junming) Li, Founder & CEO; Chenli Wang, CSO; Ping (Richard) Li, COO.'],
     ['/insights', 'Insights', 'Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.'],
   ] },
