@@ -30,7 +30,7 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [Field testing, verification and operations (Canada)](https://nextgenergy.ai/services/field): Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies.
 - [Services](https://nextgenergy.ai/services): Thermal design and selection, integration, commissioning and long-term support.
 - [About NextGenergy](https://nextgenergy.ai/company/about): Toronto-based; plans and designs liquid-cooled AI data centres, delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant, and provides field testing, commissioning and operations for the liquid loop in Canada.
-- [Leadership](https://nextgenergy.ai/company/leadership): Jim (Junming) Li, Founder & CEO; Chenli Wang, CSO; Ping (Richard) Li, COO.
+- [Leadership](https://nextgenergy.ai/company/leadership): Jim (Junming) Li, Founder & CEO; Chenli Wang, Chief Strategy Officer; Richard Li, Chief Business Development Officer.
 - [Insights](https://nextgenergy.ai/insights): Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.
 
 ## Insights (latest)
