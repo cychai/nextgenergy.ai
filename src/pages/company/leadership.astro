@@ -18,7 +18,7 @@ const ld = people.map((p) => personLd({ id: slug(p.name), name: p.name, jobTitle
             <h2 style="margin-bottom:0.2rem">{p.name}</h2>
             <p class="eyebrow plain" style="margin:0 0 1rem">{p.role}</p>
             <p class="prose">{p.bio}</p>
-            {p.linkedin && <p><a href={p.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · <a href={`mailto:${site.email}`}>{site.email}</a></p>}
+            {(p.linkedin || p.email) && <p class="links">{p.linkedin && <><a href={p.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · </>}{p.email && <a href={`mailto:${p.email}`}>{p.email}</a>}</p>}
           </div>
         </article>
       ))}
@@ -28,7 +28,7 @@ const ld = people.map((p) => personLd({ id: slug(p.name), name: p.name, jobTitle
 <style>
   .person { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 900px; }
   @media (min-width: 700px) { .person { grid-template-columns: 220px 1fr; } }
-  .photo { width: 220px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--paper-2); border: 1px solid var(--line); }
+  .photo { width: 220px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--white); border: 1px solid var(--line); }
   .photo img { width: 100%; height: 100%; object-fit: cover; color: transparent; }
   .person + .person { margin-top: 3rem; }
 </style>
