@@ -1,6 +1,6 @@
 ---
 title: "The Three Ledgers of Liquid Cooling"
-subtitle: "CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost. Under high-density AI — at system-level CapEx, where the heat c"
+subtitle: "CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost."
 date: 2026-07-01
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/the-three-ledgers-of-liquid-cooling"

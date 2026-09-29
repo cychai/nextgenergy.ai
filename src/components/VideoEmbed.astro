@@ -11,7 +11,7 @@ const { id, title, poster = `/video/${id}.jpg` } = Astro.props;
   <button type="button" class="play" aria-label={`Play video: ${title}`}><span class="tri" aria-hidden="true"></span></button>
   <span class="cap">{title}</span>
   <noscript><a class="cap" href={`https://www.youtube-nocookie.com/embed/${id}`}>Watch on YouTube</a></noscript>
-  <p class="consent">Pressing play loads the video from YouTube (youtube-nocookie.com). Until then, nothing is sent to Google.</p>
+  <p class="consent">The YouTube player (youtube-nocookie.com) loads only after you press play. Site analytics are described in our privacy notice.</p>
 </div>
 <style>
   .yt { position: relative; aspect-ratio: 16/9; background: #000; border-radius: var(--r); overflow: hidden; margin: 1.5rem 0; }

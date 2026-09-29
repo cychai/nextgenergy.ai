@@ -76,6 +76,8 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
   <Faq items={qa} alt />
 </Base>
 <style>
+  .input-error { margin: 0 0 1rem; padding: 0.7rem 0.9rem; border-left: 3px solid #b42318; background: #fef3f2; color: #7a271a; font-size: 0.92rem; }
+  input[aria-invalid="true"] { border-color: #b42318 !important; }
   .result { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
 </style>
 <script>
@@ -93,7 +95,35 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
   const el = (s) => document.querySelector(s);
   const t = el('#tret'), hx = el('#hx'), mw = el('#mw'), dt = el('#dt'), price = el('#price'), list = el('[data-buyers]');
   const out = (k, v) => { document.querySelectorAll(`[data-out="${k}"]`).forEach((n) => (n.textContent = v)); };
+  const fields = [
+    [hx, 'Heat-exchanger approach', 0, 15, 'K'],
+    [mw, 'Continuous heat available', 0.1, 500, 'MWth'],
+    [dt, 'Temperature drop', 3, 40, 'K'],
+    [price, 'Value of delivered heat', 0, 200, '$/MWhth'],
+  ];
+  const errBox = document.createElement('p');
+  errBox.className = 'input-error'; errBox.setAttribute('role', 'alert'); errBox.hidden = true;
+  list.parentNode.insertBefore(errBox, list);
+  function invalid() {
+    const bad = [];
+    for (const [input, label, lo, hi, unit] of fields) {
+      const raw = input.value.trim(), v = Number(raw);
+      const ok = raw !== '' && Number.isFinite(v) && v >= lo && v <= hi;
+      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if (!ok) bad.push(`${label}: enter a value from ${lo} to ${hi} ${unit}.`);
+    }
+    return bad;
+  }
   function run() {
+    const bad = invalid();
+    if (bad.length) {
+      errBox.textContent = 'Please correct the inputs. ' + bad.join(' ');
+      errBox.hidden = false;
+      ['tdel', 'flow', 'gwh', 'rev'].forEach((k) => out(k, '—'));
+      list.innerHTML = '';
+      return;
+    }
+    errBox.hidden = true;
     const Tret = +t.value, P = +mw.value, dT = +dt.value, pr = +price.value, A = +hx.value;
     out('t', Tret);
     const T = Tret - A; out('tdel', `${T.toFixed(1)} °C`);
@@ -110,7 +140,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
         const Th = b.min + 273.15, Tc = T + 273.15;
         const cop = Math.min(8, 0.5 * Th / (Th - Tc));
         const elec = P / cop;
-        extra = ` Lift of ${b.min - T} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub>.`;
+        extra = ` Lift of ${(b.min - T).toFixed(1)} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub>.`;
       } else { cls = 'no'; st = 'Outside screening range'; }
       return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span></div>`;
     }).join('');

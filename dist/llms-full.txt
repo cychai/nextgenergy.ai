@@ -221,7 +221,7 @@ Score a turnover package out of 30 in the browser; nothing is uploaded. (https:/
 
 **Q: Where does my score go?**
 
-A: Nowhere. The checklist runs entirely in your browser; nothing is sent to NextGenergy or anyone else. Reloading the page clears it.
+A: Nowhere outside your browser. Your ticks are saved in this browser's local storage so they survive a reload; nothing is sent to NextGenergy or anyone else. Use Reset to clear them. They do not sync across devices.
 
 **Q: What counts as a record?**
 
@@ -1859,7 +1859,7 @@ Next issue, we take that choice apart: water or oil, cold plate or immersion —
 
 # The Three Ledgers of Liquid Cooling
 
-> CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost. Under high-density AI — at system-level CapEx, where the heat c
+> CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost.
 
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-01

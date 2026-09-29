@@ -1,6 +1,6 @@
 # The Three Ledgers of Liquid Cooling
 
-> CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost. Under high-density AI — at system-level CapEx, where the heat c
+> CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In the old low-density world, liquid cooling looks like an added cost.
 
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-01

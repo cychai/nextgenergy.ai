@@ -90,7 +90,7 @@ export const faqs: Record<string, FaqItem[]> = {
     { q: 'Why does the tool call its climate data illustrative?', a: 'Because it uses a normalised 8,760-hour temperature distribution for each climate type, not a measured file for your site. Use it to see the direction and rough size of the effect, then rerun the calculation with a TMY file for the actual location before sizing equipment.' },
   ],
   '/tools/leak-checklist': [
-    { q: 'Where does my score go?', a: 'Nowhere. The checklist runs entirely in your browser; nothing is sent to NextGenergy or anyone else. Reloading the page clears it.' },
+    { q: 'Where does my score go?', a: 'Nowhere outside your browser. Your ticks are saved in this browser\'s local storage so they survive a reload; nothing is sent to NextGenergy or anyone else. Use Reset to clear them. They do not sync across devices.' },
     { q: 'What counts as a record?', a: 'Something you could hand to an auditor today: a test sheet with a date, a technician and a result, a factory certificate indexed to a serial number, a connection log entry. A verbal assurance or a line in a schedule saying the test was planned does not count.', href: '/evidence/turnover', label: 'The turnover package, boundary by boundary' },
   ],
 };
