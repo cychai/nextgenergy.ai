@@ -21,7 +21,7 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Return-wate
         <div class="prose">
           <h2>Heat is not a quantity. It is a quantity at a temperature.</h2>
           <p>A megawatt of heat at 30 °C and a megawatt at 60 °C are not the same product. The first can warm a swimming pool or feed a heat pump. The second can go straight into a low-temperature district network, a greenhouse, an aquaculture farm or a laundry with little or no lift. Buyers do not want "as much heat as possible". They want the right grade, at the right time, at a temperature their own system was built for.</p>
-          <p>That is why we design to return-water grade before we design to PUE. A loop tuned for the lowest possible facility overhead often returns water too cool to sell. A loop designed to return warm water may cost a few tenths of PUE in pump energy, and turn a disposal cost into a metered revenue line at the fence.</p>
+          <p>That is why we design to return-water grade before we design to PUE. A loop tuned for the lowest possible facility overhead often returns water too cool to sell. A loop designed to return warm water may add pump and heat-exchanger energy to the facility overhead, and can turn a disposal cost into a metered revenue line at the fence.</p>
           <p>Temperature is the first screen, not the whole answer. Whether a buyer actually signs depends as much on load profile and seasonality, distance and pumping cost, availability and back-up, hydraulic design and heat-exchanger approach, and the commercial terms. Return-water grade decides which of those conversations are worth having.</p>
           <h2>What the grades look like</h2>
           <Claim id="supply-55c" block />
@@ -38,7 +38,7 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Return-wate
           <p>None of these metrics is wrong. The boundary is what is rarely stated. We state it.</p>
           <Related items={[
             { href: '/tools/return-water', label: 'Enter your return temperature, see who can buy the heat', kind: 'tool' },
-            { href: '/solutions/heat-reuse', label: 'Heat reuse and community licence', kind: 'approach' },
+            { href: '/solutions/heat-reuse', label: 'Heat reuse and community benefit', kind: 'approach' },
             { href: '/evidence/commissioning', label: 'How the boundary of every number is recorded at commissioning', kind: 'evidence' },
             { href: '/evidence/canada-principles', label: 'The heat figures Canada now asks developers to report', kind: 'evidence' },
           ]} />
@@ -48,10 +48,10 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Return-wate
             <div class="eyebrow plain">Quick read</div>
             <div class="grades">
               {[
-                ['≥ 70 °C', 'Legacy district heating, industrial pre-heat, absorption cooling'],
-                ['50–70 °C', '4th-generation district heating, greenhouses, aquaculture, laundries'],
-                ['35–50 °C', 'Pools, building heating with low-temperature emitters, heat-pump source'],
-                ['< 35 °C', 'Heat-pump source only; the buyer owns the lift'],
+                ['≥ 70 °C', 'Legacy district heating; single-effect absorption cooling from about 80 °C'],
+                ['45–70 °C', '4th-generation district heating, industrial wash and pre-heat, greenhouses'],
+                ['30–45 °C', 'Aquaculture, pools, low-temperature building heating, heat-pump source'],
+                ['< 30 °C', 'Heat-pump source only; the buyer owns the lift'],
               ].map(([g, b]) => <div class="g"><span class="mono">{g}</span><span>{b}</span></div>)}
             </div>
             <p class="small muted" style="margin:1rem 0 0">Indicative bands. Actual thresholds depend on the buyer's system, season and retrofit state. <a href="/tools/return-water">Run the tool</a> for your case.</p>

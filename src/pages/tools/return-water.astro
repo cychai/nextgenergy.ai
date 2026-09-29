@@ -36,13 +36,13 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
           </div>
           <div class="field">
             <label for="price">Value of delivered heat</label>
-            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="price" min="0" max="200" step="1" value="35" /><span class="mono muted">$/MWh<sub>th</sub></span></div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="price" min="0" max="200" step="1" value="35" /><span class="mono muted">CAD/MWh<sub>th</sub></span></div>
             <p class="small muted" style="margin:0.4rem 0 0">Indicative only. Actual contracts price by season, availability and who owns the heat pump.</p>
           </div>
           <div class="result">
             <div class="eyebrow plain">Annual heat, if a buyer takes it all year</div>
             <div class="readout"><span data-out="gwh">—</span> GWh<sub>th</sub></div>
-            <p class="small muted" style="margin:0.3rem 0 0">≈ $<span data-out="rev">—</span> per year at the stated value, before pumping and lift costs, and only if a buyer takes the full output all year. Most heat loads are seasonal; use your buyer's load profile.</p>
+            <p class="small muted" style="margin:0.3rem 0 0">≈ CAD $<span data-out="rev">—</span> per year at the stated value, before pumping and lift costs, and only if a buyer takes the full output all year. Most heat loads are seasonal; use your buyer's load profile.</p>
           </div>
         </div>
         <div>
@@ -67,7 +67,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
       <div class="prose" style="margin-top:3rem">
         <Related items={[
           { href: '/approach/return-water', label: 'Why return-water grade decides whether heat has a buyer', kind: 'approach' },
-          { href: '/solutions/heat-reuse', label: 'Heat reuse and community licence', kind: 'approach' },
+          { href: '/solutions/heat-reuse', label: 'Heat reuse and community benefit', kind: 'approach' },
           { href: '/insights/waste-heat-becomes-an-asset', label: 'Waste Heat Becomes an Asset', kind: 'insight' },
         ]} />
       </div>
@@ -99,7 +99,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
     [hx, 'Heat-exchanger approach', 0, 15, 'K'],
     [mw, 'Continuous heat available', 0.1, 500, 'MWth'],
     [dt, 'Temperature drop', 3, 40, 'K'],
-    [price, 'Value of delivered heat', 0, 200, '$/MWhth'],
+    [price, 'Value of delivered heat', 0, 200, 'CAD/MWhth'],
   ];
   const errBox = document.createElement('p');
   errBox.className = 'input-error'; errBox.setAttribute('role', 'alert'); errBox.hidden = true;

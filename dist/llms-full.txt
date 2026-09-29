@@ -161,7 +161,7 @@ A: The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy
 
 **Q: Is there an open specification for liquid-cooling commissioning evidence?**
 
-A: Not yet. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces, and in 2026 received its first CDU specification (Google's Project Deschutes), but none of them says what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, fills that gap. (https://nextgenergy.ai/evidence/turnover)
+A: Not yet. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces, and in 2026 received its first CDU specification (Google's Project Deschutes), but none of the documents we have reviewed specifies what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, fills that gap. (https://nextgenergy.ai/evidence/turnover)
 
 ### The numbers Canada's principles ask for
 
@@ -199,7 +199,7 @@ A: Yes. You enter the approach across the export heat exchanger, and the tool su
 
 A: Not on temperature alone. Temperature is the first screen; whether a contract closes depends on load profile and seasonality, distance and pumping cost, availability and back-up, and the commercial terms. The tool tells you which buyers are physically possible so those conversations start with the right ones. (https://nextgenergy.ai/solutions/heat-reuse)
 
-### Approach temperature → CDU sizing
+### CDU approach and free-cooling estimator
 
 How CDU and dry-cooler approach move the facility supply temperature and free-cooling hours. (https://nextgenergy.ai/tools/approach-temp)
 
@@ -226,6 +226,10 @@ A: Nowhere outside your browser. Your ticks are saved in this browser's local st
 **Q: What counts as a record?**
 
 A: Something you could hand to an auditor today: a test sheet with a date, a technician and a result, a factory certificate indexed to a serial number, a connection log entry. A verbal assurance or a line in a schedule saying the test was planned does not count. (https://nextgenergy.ai/evidence/turnover)
+
+### Resources
+
+Hub for the approach pages, evidence pages, engineering tools and latest articles. (https://nextgenergy.ai/resources)
 
 ### Solutions
 

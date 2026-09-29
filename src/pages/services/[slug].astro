@@ -5,7 +5,7 @@ import Related from '@/components/Related.astro';
 import { services } from '@/data/sections';
 export function getStaticPaths() { return services.map((s) => ({ params: { slug: s.slug }, props: { s } })); }
 const { s } = Astro.props;
-const rel = { design: [{ href: '/approach/thermal-path', label: 'The thermal path', kind: 'approach' }, { href: '/tools/approach-temp', label: 'Approach temperature tool', kind: 'tool' }], integration: [{ href: '/platform/skids', label: 'Factory-built skids', kind: 'approach' }], commissioning: [{ href: '/evidence/commissioning', label: 'Acceptance criteria, gate by gate', kind: 'evidence' }, { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' }], operations: [{ href: '/approach/three-clocks', label: 'Three clocks', kind: 'approach' }, { href: '/platform/coolants', label: 'Coolants and water chemistry', kind: 'approach' }] } as const;
+const rel = { design: [{ href: '/approach/thermal-path', label: 'The thermal path', kind: 'approach' }, { href: '/tools/approach-temp', label: 'CDU approach and free-cooling estimator', kind: 'tool' }], integration: [{ href: '/platform/skids', label: 'Factory-built skids', kind: 'approach' }], commissioning: [{ href: '/evidence/commissioning', label: 'Acceptance criteria, gate by gate', kind: 'evidence' }, { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' }], operations: [{ href: '/approach/three-clocks', label: 'Three clocks', kind: 'approach' }, { href: '/platform/coolants', label: 'Coolants and water chemistry', kind: 'approach' }] } as const;
 ---
 <Base title={s.title} description={s.summary}>
   <PageHero eyebrow="Services" title={s.title} lede={s.summary} crumbs={[['/services', 'Services']]} />

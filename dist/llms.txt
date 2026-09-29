@@ -21,10 +21,11 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 ## Tools
 - [Liquid cooling simulator (sim.nextgenergy.ai)](https://sim.nextgenergy.ai/): Transient model of the whole loop from chip junction to heat rejection: rack platform, climate, pipework, load steps, pump loss and fouling; concept model, not for acceptance or performance claims.
 - [Return-water grade → heat buyers](https://nextgenergy.ai/tools/return-water): Enter return temperature and heat-exchanger approach; see which off-takers can use the heat directly.
-- [Approach temperature → CDU sizing](https://nextgenergy.ai/tools/approach-temp): How CDU and dry-cooler approach move the facility supply temperature and free-cooling hours.
+- [CDU approach and free-cooling estimator](https://nextgenergy.ai/tools/approach-temp): How CDU and dry-cooler approach move the facility supply temperature and free-cooling hours.
 - [Turnover self-check](https://nextgenergy.ai/tools/leak-checklist): Score a turnover package out of 30 in the browser; nothing is uploaded.
 
 ## Company
+- [Resources](https://nextgenergy.ai/resources): Hub for the approach pages, evidence pages, engineering tools and latest articles.
 - [Solutions](https://nextgenergy.ai/solutions): Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse.
 - [Products](https://nextgenergy.ai/platform): Four product families delivered as a coordinated package: prefabricated skids, ORv3 racks, CDUs and cooling equipment; plus the manifolds, cold plates and coolants specified with them.
 - [Field testing, verification and operations (North America)](https://nextgenergy.ai/services/field): Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies.

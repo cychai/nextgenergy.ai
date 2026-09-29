@@ -13,15 +13,12 @@ export const site = {
   location: 'Toronto, Canada',
 };
 
-export const nav = [
+export const nav: { href: string; label: string; match?: string[] }[] = [
   { href: '/platform', label: 'Products' },
-  { href: '/services', label: 'Field services' },
+  { href: '/services', label: 'Services' },
   { href: '/solutions', label: 'Solutions' },
-  { href: '/evidence', label: 'Evidence', star: true },
-  { href: '/approach', label: 'Approach' },
-  { href: '/tools', label: 'Tools' },
-  { href: '/insights', label: 'Insights' },
-  { href: '/company/about', label: 'Company' },
+  { href: '/resources', label: 'Resources', match: ['/resources', '/approach', '/evidence', '/tools', '/insights'] },
+  { href: '/company/about', label: 'Company', match: ['/company'] },
 ];
 
 export const footerNav = [
@@ -31,7 +28,7 @@ export const footerNav = [
       ['/platform', 'Products: skids, racks, CDUs, cooling plant'],
       ['/services/field', 'Field testing and operations'],
       ['/solutions', 'Solutions by project type'],
-      ['/approach', 'Our approach'],
+      ['/resources', 'Resources: approach, evidence, tools, insights'],
     ],
   },
   {
@@ -49,7 +46,7 @@ export const footerNav = [
     links: [
       ['https://sim.nextgenergy.ai', 'Liquid cooling simulator'],
       ['/tools/return-water', 'Return-water → heat buyers'],
-      ['/tools/approach-temp', 'Approach temperature'],
+      ['/tools/approach-temp', 'CDU approach & free cooling'],
       ['/tools/leak-checklist', 'Turnover self-check'],
     ],
   },
