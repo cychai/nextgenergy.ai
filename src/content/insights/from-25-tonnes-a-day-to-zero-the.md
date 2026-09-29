@@ -4,9 +4,9 @@ subtitle: "The AI water panic gets the scale wrong, but the local constraint is 
 date: 2026-06-30
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/from-25-tonnes-a-day-to-zero-the"
-canonical: "https://everywattcounts.substack.com/p/from-25-tonnes-a-day-to-zero-the"
 tags: [water, metrics, evidence]
 related: [/approach/return-water]
+historyNote: true
 ---
 
 <!-- substack-body -->

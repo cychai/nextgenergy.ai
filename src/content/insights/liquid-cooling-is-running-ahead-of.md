@@ -4,7 +4,6 @@ subtitle: "The ten terms behind certification, interoperability — and the whit
 date: 2026-08-03
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/liquid-cooling-is-running-ahead-of"
-canonical: "https://everywattcounts.substack.com/p/liquid-cooling-is-running-ahead-of"
 tags: [liquid-cooling, standards, commissioning]
 related: [/evidence/standards, /evidence/commissioning, /evidence/turnover]
 ---

@@ -4,7 +4,6 @@ subtitle: "Models Can Be Downloaded. The Compute, Power, and Cooling Needed to M
 date: 2026-07-27
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/open-weights-are-only-the-beginning"
-canonical: "https://everywattcounts.substack.com/p/open-weights-are-only-the-beginning"
 tags: [power, ai-economics]
 related: [/approach/thermal-path]
 ---

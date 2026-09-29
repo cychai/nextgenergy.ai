@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-13
 - Web page: https://nextgenergy.ai/insights/the-stranded-compute-grid
-- First published: https://everywattcounts.substack.com/p/the-stranded-compute-grid
 - Tags: power, grid, siting
 
 ---

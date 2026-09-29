@@ -2,6 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "nextgenergy-ai",
   "compatibility_date": "2026-08-04",
+  // worker/index.js serves ./dist and handles POST /api/contact (see the header comment there for the secrets it needs).
+  "main": "worker/index.js",
   "routes": [
     { "pattern": "nextgenergy.ai", "custom_domain": true },
     { "pattern": "www.nextgenergy.ai", "custom_domain": true }
@@ -9,5 +11,5 @@
   // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main and
   // uploads ./dist as static assets. dist/ is committed (rebuilt locally with
   // `npm run build` before each push) so the deploy does not depend on the build image.
-  "assets": { "directory": "./dist", "not_found_handling": "404-page" }
+  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page" }
 }

@@ -4,7 +4,6 @@ subtitle: "The AI industry is obsessed with the data centers it has not built ye
 date: 2026-07-13
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/the-stranded-compute-grid"
-canonical: "https://everywattcounts.substack.com/p/the-stranded-compute-grid"
 tags: [power, grid, siting]
 related: [/solutions/heat-reuse]
 ---

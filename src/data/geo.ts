@@ -118,9 +118,9 @@ export const corePages: { section: string; pages: [string, string, string][] }[]
   { section: 'Company', pages: [
     ['/solutions', 'Solutions', 'Liquid cooling by deployment type, from retrofit halls to greenfield AI factories, and heat reuse.'],
     ['/platform', 'Products', 'Four product families delivered as a coordinated package: prefabricated skids, ORv3 racks, CDUs and cooling equipment; plus the manifolds, cold plates and coolants specified with them.'],
-    ['/services/field', 'Field testing, verification and operations (Canada)', 'Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies.'],
+    ['/services/field', 'Field testing, verification and operations (North America)', 'Four commissioning gates and a three-tier operations programme for the liquid cooling loop, on systems we supplied and on systems we did not; regulated site work is performed by licensed and insured partner companies.'],
     ['/services', 'Services', 'Thermal design and selection, integration, commissioning and long-term support.'],
-    ['/company/about', 'About NextGenergy', 'Toronto-based; plans and designs liquid-cooled AI data centres, delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant, and provides field testing, commissioning and operations for the liquid loop in Canada.'],
+    ['/company/about', 'About NextGenergy', 'Toronto-based; plans and designs liquid-cooled AI data centres, delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant, and provides field testing, commissioning and operations for the liquid loop across North America.'],
     ['/company/leadership', 'Leadership', 'Jim (Junming) Li, Founder & CEO; Chenli Wang, Chief Strategy Officer; Richard Li, Chief Business Development Officer.'],
     ['/insights', 'Insights', 'Articles from Every Watt Counts on liquid cooling, heat reuse and commissioning.'],
   ] },

@@ -4,7 +4,6 @@ subtitle: "Manufacturing, delivery, and service life: one word—“leak”—hi
 date: 2026-08-23
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/the-biggest-risk-in-liquid-cooling"
-canonical: "https://everywattcounts.substack.com/p/the-biggest-risk-in-liquid-cooling"
 tags: [liquid-cooling, leaks, commissioning, evidence]
 related: [/approach/three-clocks, /evidence/leak-points, /tools/leak-checklist]
 ---

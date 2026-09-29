@@ -4,7 +4,6 @@ subtitle: "Liquid cooling isn't one technology — it's three, with completely d
 date: 2026-07-02
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/the-three-kinds-of-liquid-cooling"
-canonical: "https://everywattcounts.substack.com/p/the-three-kinds-of-liquid-cooling"
 tags: [liquid-cooling, cold-plate, immersion]
 related: [/platform/cold-plates, /approach/return-water]
 ---

@@ -4,7 +4,6 @@ subtitle: "A water-and-chemistry giant just bought a cold-plate company. The num
 date: 2026-07-03
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/coolit-just-sold-for-475b-and-it"
-canonical: "https://everywattcounts.substack.com/p/coolit-just-sold-for-475b-and-it"
 tags: [liquid-cooling, market, cold-plate]
 related: [/platform/cold-plates, /approach/thermal-path]
 ---

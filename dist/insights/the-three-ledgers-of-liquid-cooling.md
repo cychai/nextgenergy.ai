@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-01
 - Web page: https://nextgenergy.ai/insights/the-three-ledgers-of-liquid-cooling
-- First published: https://everywattcounts.substack.com/p/the-three-ledgers-of-liquid-cooling
 - Tags: liquid-cooling, economics, heat-reuse
 
 ---

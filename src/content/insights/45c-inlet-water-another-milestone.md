@@ -4,7 +4,6 @@ subtitle: "Hotter than a hot tub — and one of the biggest efficiency leaps in 
 date: 2026-06-27
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/45c-inlet-water-another-milestone"
-canonical: "https://everywattcounts.substack.com/p/45c-inlet-water-another-milestone"
 tags: [liquid-cooling, free-cooling, cdu]
 related: [/tools/approach-temp, /platform/cdu]
 ---

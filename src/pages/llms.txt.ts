@@ -11,7 +11,7 @@ export const GET: APIRoute = async () => {
     '',
     `> ${site.headline}. ${site.description}`,
     '',
-    `${site.name} (${site.legalName}) is based in ${site.location}, founded ${site.foundingDate} by Jim (Junming) Li. It does two things: it plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, ORv3 racks, CDUs and cooling equipment, built to its specification by manufacturing partners it qualifies; and in Canada it provides field testing, commissioning and operations for the liquid cooling loop, with licensed and insured partner companies performing regulated site work. Every boundary is handed over with its evidence. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: ${site.email}.`,
+    `${site.name} (${site.legalName}) is based in ${site.location}, founded ${site.foundingDate} by Jim (Junming) Li. It does two things: it plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, ORv3 racks, CDUs and cooling equipment, built to its specification by manufacturing partners it qualifies; and across North America it provides field testing, commissioning and operations for the liquid cooling loop, with licensed and insured partner companies performing regulated site work. Every boundary is handed over with its evidence. Chinese sister site: 清链科技 (Tsingchain Global), https://tsingchain.ai. Contact: ${site.email}.`,
     '',
     `Terms used consistently on this site: the whole thermal path; return-water grade; the three clocks (manufacturing / commissioning / service life); the ten leak points; the turnover package; numbers with boundaries.`,
     '',

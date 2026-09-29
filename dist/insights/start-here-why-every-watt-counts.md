@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-06-26
 - Web page: https://nextgenergy.ai/insights/start-here-why-every-watt-counts
-- First published: https://everywattcounts.substack.com/p/start-here-why-every-watt-counts
 - Tags: about
 
 ---

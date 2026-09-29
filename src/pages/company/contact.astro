@@ -14,17 +14,20 @@ import { site } from '@/data/site';
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
           <p class="small muted">We answer within two working days. If you are sending a turnover package for review, a PDF export of the index page is enough to start.</p>
         </div>
-        <form class="tool" data-contact data-to={site.email}>
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
-          <div class="field"><label for="org">Organisation</label><input id="org" name="org" type="text" autocomplete="organization" /></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+        <form class="tool" data-contact data-to={site.email} novalidate>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required maxlength="120" autocomplete="name" /></div>
+          <div class="field"><label for="org">Organisation</label><input id="org" name="org" type="text" maxlength="160" autocomplete="organization" /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email" /></div>
           <div class="field"><label for="topic">What is this about?</label>
-            <select id="topic" name="topic">
-              <option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option><option>Something else</option>
+            <select id="topic" name="topic" required>
+              <option value="" selected disabled>Choose a topic</option>
+              <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option><option>Something else</option>
             </select></div>
-          <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required></textarea></div>
-          <div class="btn-row" style="margin-top:0.5rem;align-items:center"><button class="btn primary" type="submit">Open in your email client</button><span class="small muted">or write to <a href={`mailto:${site.email}`}><span class="mono" data-copy>{site.email}</span></a></span></div>
-          <p class="small muted" style="margin:1rem 0 0">This form does not send anything to a server. It composes an email in your own mail client, addressed to us, so you keep a copy and we receive it directly. It needs a mail client configured on this device; if nothing opens, use the address above. See our <a href="/company/privacy">privacy notice</a> for how we handle what you send.</p>
+          <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000"></textarea></div>
+          <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+          <p class="form-status" data-status role="status" hidden></p>
+          <div class="btn-row" style="margin-top:0.5rem;align-items:center"><button class="btn primary" type="submit" data-send>Send message</button><span class="small muted">or write to <a href={`mailto:${site.email}`}><span class="mono">{site.email}</span></a></span></div>
+          <p class="small muted" style="margin:1rem 0 0">Your message is sent to our team over HTTPS and used only to reply to you; it is not added to any mailing list. If the form cannot send, it opens the same message in your email app instead. See our <a href="/company/privacy">privacy notice</a>.</p>
         </form>
       </div>
     </div>
@@ -32,15 +35,41 @@ import { site } from '@/data/site';
 </Base>
 <script>
   const f = document.querySelector('[data-contact]');
-  f?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const d = new FormData(f);
-    const g = (k) => String(d.get(k) ?? '').trim();
-    const subject = `[nextgenergy.ai] ${g('topic')} — ${g('name')}${g('org') ? ', ' + g('org') : ''}`;
-    const body = `${g('message')}\n\n—\n${g('name')}${g('org') ? '\n' + g('org') : ''}\n${g('email')}`;
+  const status = f?.querySelector('[data-status]');
+  const btn = f?.querySelector('[data-send]');
+  const opened = Date.now();
+  const say = (msg, kind) => { if (!status) return; status.textContent = msg; status.dataset.kind = kind; status.hidden = false; };
+  const g = (d, k) => String(d.get(k) ?? '').trim();
+  function mailtoFallback(d) {
+    const subject = `[nextgenergy.ai] ${g(d, 'topic')} — ${g(d, 'name')}${g(d, 'org') ? ', ' + g(d, 'org') : ''}`;
+    const body = `${g(d, 'message')}\n\n—\n${g(d, 'name')}${g(d, 'org') ? '\n' + g(d, 'org') : ''}\n${g(d, 'email')}`;
     location.href = `mailto:${f.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+  f?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!f.checkValidity()) { f.reportValidity(); say('Please complete the highlighted fields.', 'error'); return; }
+    const d = new FormData(f);
+    const payload = { name: g(d, 'name'), org: g(d, 'org'), email: g(d, 'email'), topic: g(d, 'topic'), message: g(d, 'message'), website: g(d, 'website'), elapsed: Date.now() - opened };
+    btn.disabled = true; say('Sending…', 'info');
+    try {
+      const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.ok) { f.reset(); say('Thank you. Your message has reached our team; we reply within two working days.', 'ok'); return; }
+      if (j.error === 'validation') { say('Please check your name, email, topic and message, then send again.', 'error'); btn.disabled = false; return; }
+      say('The form could not send just now, so we have opened the message in your email app. Your text is kept there.', 'info');
+      mailtoFallback(d);
+    } catch {
+      say('The form could not send just now, so we have opened the message in your email app. Your text is kept there.', 'info');
+      mailtoFallback(d);
+    }
+    btn.disabled = false;
   });
 </script>
 <style>
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .form-status { margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--blue); background: var(--water-2); font-size: 0.95rem; }
+  .form-status[data-kind="ok"] { border-color: var(--green); background: #e7f6ea; }
+  .form-status[data-kind="error"] { border-color: #b42318; background: #fef3f2; color: #7a271a; }
+  .tool select:invalid { color: var(--ink-3); }
   .tool input[type="text"], .tool input[type="email"], .tool textarea { width: 100%; font: inherit; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); color: var(--ink); }
 </style>

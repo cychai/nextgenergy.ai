@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-06
 - Web page: https://nextgenergy.ai/insights/power-is-the-real-ceiling-and-the
-- First published: https://everywattcounts.substack.com/p/power-is-the-real-ceiling-and-the
 - Tags: power, grid, retrofit
 
 ---

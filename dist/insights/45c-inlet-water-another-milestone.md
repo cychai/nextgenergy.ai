@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-06-27
 - Web page: https://nextgenergy.ai/insights/45c-inlet-water-another-milestone
-- First published: https://everywattcounts.substack.com/p/45c-inlet-water-another-milestone
 - Tags: liquid-cooling, free-cooling, cdu
 
 ---

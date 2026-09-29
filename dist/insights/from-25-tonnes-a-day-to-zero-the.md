@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-06-30
 - Web page: https://nextgenergy.ai/insights/from-25-tonnes-a-day-to-zero-the
-- First published: https://everywattcounts.substack.com/p/from-25-tonnes-a-day-to-zero-the
 - Tags: water, metrics, evidence
 
 ---

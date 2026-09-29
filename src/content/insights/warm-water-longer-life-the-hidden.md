@@ -4,9 +4,9 @@ subtitle: "The industry argues about two numbers: dollars per GPU, and tokens pe
 date: 2026-06-28
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/warm-water-longer-life-the-hidden"
-canonical: "https://everywattcounts.substack.com/p/warm-water-longer-life-the-hidden"
 tags: [liquid-cooling, economics, heat-reuse]
 related: [/approach/return-water, /platform/coolants]
+historyNote: true
 ---
 
 <!-- substack-body -->

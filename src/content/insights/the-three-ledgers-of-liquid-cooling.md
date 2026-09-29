@@ -4,7 +4,6 @@ subtitle: "CapEx, OpEx, Reuse. How many times can one kilowatt-hour be sold? In 
 date: 2026-07-01
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/the-three-ledgers-of-liquid-cooling"
-canonical: "https://everywattcounts.substack.com/p/the-three-ledgers-of-liquid-cooling"
 tags: [liquid-cooling, economics, heat-reuse]
 related: [/approach/return-water, /tools/return-water]
 ---

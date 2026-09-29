@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-09-13
 - Web page: https://nextgenergy.ai/insights/three-ai-rivals-called-for-a-slowdown
-- First published: https://everywattcounts.substack.com/p/three-ai-rivals-called-for-a-slowdown
 - Tags: ai-safety, commissioning, heat-reuse, failure-testing, leak-containment
 
 ---

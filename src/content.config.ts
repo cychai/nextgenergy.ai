@@ -11,6 +11,7 @@ const insights = defineCollection({
     source: z.enum(['substack', 'linkedin', 'site']).default('substack'),
     sourceUrl: z.string().url().optional(),
     canonical: z.string().url().optional(),
+    historyNote: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
     related: z.array(z.string()).default([]),
     draft: z.boolean().default(false),

@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-06-29
 - Web page: https://nextgenergy.ai/insights/waste-heat-becomes-an-asset
-- First published: https://everywattcounts.substack.com/p/waste-heat-becomes-an-asset
 - Tags: heat-reuse, return-water, community
 
 ---

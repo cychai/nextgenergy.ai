@@ -4,7 +4,6 @@ subtitle: "Not for lack of capital — but because capital could not turn into u
 date: 2026-07-06
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/power-is-the-real-ceiling-and-the"
-canonical: "https://everywattcounts.substack.com/p/power-is-the-real-ceiling-and-the"
 tags: [power, grid, retrofit]
 related: [/solutions/retrofit]
 ---

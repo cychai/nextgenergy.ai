@@ -6,7 +6,7 @@ export const site = {
   legalName: 'NextGenergy Technology Inc.',
   foundingDate: '2025',
   description:
-    'NextGenergy plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant. In Canada it also provides field testing, commissioning and operations for the liquid cooling loop, with the evidence for every boundary.',
+    'NextGenergy plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant. Across North America it also provides field testing, commissioning and operations for the liquid cooling loop, with the evidence for every boundary.',
   email: 'sales@nextgenergy.ai',
   linkedin: 'https://www.linkedin.com/company/nextgenergyai',
   substack: 'https://everywattcounts.substack.com',

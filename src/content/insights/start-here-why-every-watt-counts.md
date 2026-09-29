@@ -4,7 +4,6 @@ subtitle: "AI compute creates heat. Smart systems give it a second life."
 date: 2026-06-26
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/start-here-why-every-watt-counts"
-canonical: "https://everywattcounts.substack.com/p/start-here-why-every-watt-counts"
 tags: [about]
 related: [/approach]
 ---

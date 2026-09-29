@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-27
 - Web page: https://nextgenergy.ai/insights/open-weights-are-only-the-beginning
-- First published: https://everywattcounts.substack.com/p/open-weights-are-only-the-beginning
 - Tags: power, ai-economics
 
 ---

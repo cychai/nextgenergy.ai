@@ -4,9 +4,9 @@ subtitle: "How warm-water AI data centers turn cooling from a cost into a revenu
 date: 2026-06-29
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/waste-heat-becomes-an-asset"
-canonical: "https://everywattcounts.substack.com/p/waste-heat-becomes-an-asset"
 tags: [heat-reuse, return-water, community]
 related: [/tools/return-water, /approach/return-water, /solutions/heat-reuse]
+historyNote: true
 ---
 
 <!-- substack-body -->

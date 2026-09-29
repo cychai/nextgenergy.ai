@@ -4,7 +4,6 @@ subtitle: "The frontier safety debate reaches beyond the lab door. Energy respon
 date: 2026-09-13
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/three-ai-rivals-called-for-a-slowdown"
-canonical: "https://everywattcounts.substack.com/p/three-ai-rivals-called-for-a-slowdown"
 tags: [ai-safety, commissioning, heat-reuse, failure-testing, leak-containment]
 related: [/evidence/commissioning, /evidence/turnover, /evidence/canada-principles]
 ---

@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-03
 - Web page: https://nextgenergy.ai/insights/coolit-just-sold-for-475b-and-it
-- First published: https://everywattcounts.substack.com/p/coolit-just-sold-for-475b-and-it
 - Tags: liquid-cooling, market, cold-plate
 
 ---

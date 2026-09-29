@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-06-28
 - Web page: https://nextgenergy.ai/insights/warm-water-longer-life-the-hidden
-- First published: https://everywattcounts.substack.com/p/warm-water-longer-life-the-hidden
 - Tags: liquid-cooling, economics, heat-reuse
 
 ---

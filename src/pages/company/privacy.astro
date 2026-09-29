@@ -16,12 +16,12 @@ import { site } from '@/data/site';
         <li><strong>The turnover self-check tool</strong> stores your tick marks in your own browser (local storage) so they survive a reload. Nothing is sent to us. Clearing your browser data removes it.</li>
       </ul>
       <h2>When you write to us</h2>
-      <p>The contact form does not submit to a server. It opens a new message in your own email client, addressed to {site.email}, with the fields you filled in. What we receive is an ordinary email, which we keep in our company mailbox (Google Workspace) for as long as the enquiry and any resulting relationship is active. We use it to reply to you and for nothing else. We do not sell, rent or share enquiry details with third parties.</p>
+      <p>The contact form sends your name, organisation, email, topic and message over HTTPS to our server, which forwards them as an email to {site.email}. The server does not store them. If the form cannot send, it opens the same message in your own email client instead. What we receive is an ordinary email, which we keep in our company mailbox (Google Workspace) for as long as the enquiry and any resulting relationship is active. We use it to reply to you and for nothing else. We do not sell, rent or share enquiry details with third parties.</p>
       <h2>Your choices</h2>
       <p>To have an email and its contents deleted, write to {site.email} and say so. We will confirm when it is done. If you are in the EU, UK or Canada you have the rights those jurisdictions give you over personal data, including access and erasure, and you may exercise them through the same address.</p>
       <h2>Changes</h2>
-      <p>If we add a server-side form or any further third-party service that processes visitor data, this page will be updated first and the change will be dated here.</p>
-      <p class="small muted">Last updated 7 September 2026 (Google Analytics with Consent Mode added). Contact for this notice: {site.email}.</p>
+      <p>If we add any further third-party service that processes visitor data, this page will be updated first and the change will be dated here.</p>
+      <p class="small muted">Last updated 30 September 2026 (contact form now sends over HTTPS). Contact for this notice: {site.email}.</p>
     </div>
   </section>
 </Base>

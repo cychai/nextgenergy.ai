@@ -4,7 +4,6 @@ subtitle: "It is a reordering of roles across the AI infrastructure industry"
 date: 2026-07-25
 source: substack
 sourceUrl: "https://everywattcounts.substack.com/p/from-amd-advancing-ai-2026-helios"
-canonical: "https://everywattcounts.substack.com/p/from-amd-advancing-ai-2026-helios"
 tags: [racks, liquid-cooling, power]
 related: [/approach/thermal-path, /tools/approach-temp]
 ---

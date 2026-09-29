@@ -77,7 +77,6 @@ subtitle: ${yaml(subtitle)}
 date: ${date.toISOString().slice(0, 10)}
 source: substack
 sourceUrl: ${yaml(link)}
-canonical: ${yaml(link)}
 tags: []
 related: []
 ---

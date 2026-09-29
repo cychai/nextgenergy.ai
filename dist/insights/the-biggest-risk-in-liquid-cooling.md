@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-08-23
 - Web page: https://nextgenergy.ai/insights/the-biggest-risk-in-liquid-cooling
-- First published: https://everywattcounts.substack.com/p/the-biggest-risk-in-liquid-cooling
 - Tags: liquid-cooling, leaks, commissioning, evidence
 
 ---

@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-07-25
 - Web page: https://nextgenergy.ai/insights/from-amd-advancing-ai-2026-helios
-- First published: https://everywattcounts.substack.com/p/from-amd-advancing-ai-2026-helios
 - Tags: racks, liquid-cooling, power
 
 ---

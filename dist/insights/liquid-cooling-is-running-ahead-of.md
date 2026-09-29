@@ -5,7 +5,6 @@
 - Author: Jim (Junming) Li, Founder & CEO, NextGenergy
 - Published: 2026-08-03
 - Web page: https://nextgenergy.ai/insights/liquid-cooling-is-running-ahead-of
-- First published: https://everywattcounts.substack.com/p/liquid-cooling-is-running-ahead-of
 - Tags: liquid-cooling, standards, commissioning
 
 ---
