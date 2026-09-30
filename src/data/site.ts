@@ -36,6 +36,7 @@ export const footerNav = [
     links: [
       ['/evidence/commissioning', 'Commissioning criteria'],
       ['/evidence/turnover', 'The turnover package'],
+      ['/evidence/samples', 'Sample records'],
       ['/evidence/leak-points', 'Ten leak points'],
       ['/evidence/standards', 'Standards work'],
       ['/evidence/canada-principles', "Canada's principles"],
@@ -55,6 +56,7 @@ export const footerNav = [
     links: [
       ['/company/about', 'About'],
       ['/company/leadership', 'Leadership'],
+      ['/company/track-record', 'Track record'],
       ['/company/partners', 'Partners'],
       ['/company/contact', 'Contact'],
       ['/company/privacy', 'Privacy'],

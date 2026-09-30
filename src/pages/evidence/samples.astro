@@ -1,0 +1,102 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { leakPoints } from '@/data/leakPoints';
+const blank = '';
+const fatRows = [
+  ['Hydrostatic pressure test', 'Procedure ref.', 'Test pressure ___ kPa held ___ min; no visible leak; pressure decay within ___ %'],
+  ['Leak test of joints and QDs', 'Procedure ref.', 'No weep at test pressure; method stated (bubble, tracer gas or decay)'],
+  ['Cleanliness of wetted surfaces', 'Sample ref.', 'Particle count at or below the agreed class, verified by sample'],
+  ['Torque of threaded and flanged joints', 'Torque table ref.', 'All joints to table; wrench calibration certificate attached'],
+  ['Quick-disconnect register', 'Register ref.', 'Every QD listed by serial with mate cycles made during factory testing'],
+  ['Controls function check', 'Checklist ref.', 'Pump staging, valve travel and sensor readings as specified'],
+  ['Document check', 'Index ref.', 'Drawings at stated revision, material certificates, test sheets signed'],
+];
+const flowCols = ['Rack', 'Design flow (L/min)', 'Measured flow (L/min)', 'Deviation (%)', 'Tolerance (%)', 'Supply T (°C)', 'Return T (°C)', 'ΔP (kPa)', 'Pass / fail'];
+const ncrCols = ['ID', 'Boundary', 'Finding', 'Raised by, date', 'Corrective action', 'Owner', 'Re-test result', 'Closed by, date'];
+const boundaries = [
+  ['Cold plate and chip', 'Cold-plate maker, server OEM'],
+  ['Hoses, crimps and fittings', 'Hose assembler, rack integrator'],
+  ['Rack manifold and quick disconnects', 'Rack integrator, QD supplier'],
+  ['CDU and secondary loop', 'CDU maker, integrator'],
+  ['Facility water interface', 'Facility mechanical contractor'],
+  ['Heat rejection and reuse', 'Heat-rejection vendor or heat buyer'],
+];
+---
+<Base title="Sample deliverables" description="Templates for the records NextGenergy hands over: a factory acceptance test record, a turnover package index, a system boundary diagram, a flow-balance test record with its conditions, and a non-conformance log. Templates only; no project data.">
+  <PageHero eyebrow="Evidence · Samples" title="What the records look like" lede="Five templates for the records we hand over. They show the structure and the acceptance questions; they contain no project data. Project records are shared with the owner, and with others only with the owner's permission." crumbs={[['/evidence', 'Evidence']]}>
+    <div class="btn-row"><a class="btn primary" href="/downloads/nextgenergy-record-templates.pdf">Download all five as PDF</a><a class="btn" href="/evidence/turnover">How the turnover package is structured</a></div>
+  </PageHero>
+
+  <section class="section">
+    <div class="wrap">
+      <article class="tpl">
+        <div class="tag">Template · not a project record</div>
+        <h2>1. Factory acceptance test record</h2>
+        <p class="muted">One sheet per prefabricated assembly (skid, rack manifold or CDU), completed at the factory before release. Gate 1 of <a href="/evidence/commissioning">commissioning</a>.</p>
+        <div class="hdr-fields"><span>Project</span><span>Assembly and serial</span><span>Drawing and revision</span><span>Date</span><span>Tested by</span><span>Witnessed by</span></div>
+        <div class="table-wrap"><table class="table">
+          <thead><tr><th>Test</th><th>Reference</th><th>Acceptance criterion</th><th>Result</th><th>Pass / fail</th></tr></thead>
+          <tbody>{fatRows.map(([t, r, c]) => <tr><td>{t}</td><td class="muted">{r}</td><td>{c}</td><td>{blank}</td><td>{blank}</td></tr>)}</tbody>
+        </table></div>
+      </article>
+
+      <article class="tpl">
+        <div class="tag">Template · not a project record</div>
+        <h2>2. Turnover package index</h2>
+        <p class="muted">The first page of the package. Three questions for each of the <a href="/evidence/leak-points">ten leak points</a>: was it tested, against what, and where is the record.</p>
+        <div class="table-wrap"><table class="table">
+          <thead><tr><th>#</th><th>Boundary</th><th>Was it tested?</th><th>Against what criterion?</th><th>Where is the record?</th><th>Status</th></tr></thead>
+          <tbody>{leakPoints.map((l) => <tr><td class="mono muted">{String(l.n).padStart(2, '0')}</td><td>{l.t}<br /><span class="small muted">{l.group}</span></td><td>{blank}</td><td>{blank}</td><td>{blank}</td><td class="small muted">Open / closed</td></tr>)}</tbody>
+        </table></div>
+      </article>
+
+      <article class="tpl">
+        <div class="tag">Template · not a project record</div>
+        <h2>3. System boundary diagram</h2>
+        <p class="muted">Drawn for each project, so every party can see where its responsibility starts and stops. The six boundaries follow <a href="/approach/thermal-path">the thermal path</a>.</p>
+        <div class="bd" role="img" aria-label="Six boundaries from cold plate to heat rejection, each with its usual maker">
+          {boundaries.map(([b, who], i) => (
+            <div class="bd-step"><span class="n">{i + 1}</span><strong>{b}</strong><span class="who">{who}</span><span class="rec">Record owner: ______</span></div>
+          ))}
+        </div>
+      </article>
+
+      <article class="tpl">
+        <div class="tag">Template · not a project record</div>
+        <h2>4. Flow-balance test record, with its conditions</h2>
+        <p class="muted">A reading without its conditions cannot be compared with anything. The conditions are recorded with the results. Gate 3 of commissioning.</p>
+        <div class="hdr-fields"><span>IT load at test (%)</span><span>Facility supply T (°C)</span><span>Ambient dry bulb (°C)</span><span>Date and time</span><span>Instruments and calibration</span><span>Witnessed by</span></div>
+        <div class="table-wrap"><table class="table">
+          <thead><tr>{flowCols.map((c) => <th>{c}</th>)}</tr></thead>
+          <tbody>{[1, 2, 3].map((n) => <tr><td class="mono muted">R{String(n).padStart(2, '0')}</td>{flowCols.slice(1).map(() => <td>{blank}</td>)}</tr>)}</tbody>
+        </table></div>
+      </article>
+
+      <article class="tpl">
+        <div class="tag">Template · not a project record</div>
+        <h2>5. Non-conformance and re-test log</h2>
+        <p class="muted">Every finding is raised, fixed, re-tested and closed in writing. Open items at handover are listed, owned and dated, and accepted by the owner. Gate 4 of commissioning.</p>
+        <div class="table-wrap"><table class="table">
+          <thead><tr>{ncrCols.map((c) => <th>{c}</th>)}</tr></thead>
+          <tbody>{[1, 2, 3].map((n) => <tr><td class="mono muted">NC-{String(n).padStart(3, '0')}</td>{ncrCols.slice(1).map(() => <td>{blank}</td>)}</tr>)}</tbody>
+        </table></div>
+      </article>
+    </div>
+  </section>
+</Base>
+<style>
+  .tpl { background: var(--white); border: 1px solid var(--line-2); border-radius: var(--r); padding: 2rem; margin-bottom: 2rem; }
+  .tpl h2 { font-size: 1.4rem; margin: 0.4rem 0 0.4rem; }
+  .tpl .tag { display: inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 999px; padding: 0.2rem 0.7rem; }
+  .tpl .table td { height: 2.2rem; }
+  .hdr-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 0.5rem 1rem; margin: 1rem 0; }
+  .hdr-fields span { font-size: 0.82rem; color: var(--ink-3); border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; }
+  .bd { display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin-top: 1rem; }
+  @media (min-width: 900px) { .bd { grid-template-columns: repeat(6, 1fr); } }
+  .bd-step { border: 1px solid var(--line); border-top: 3px solid var(--water); border-radius: var(--r); padding: 0.9rem; display: flex; flex-direction: column; gap: 0.3rem; background: var(--paper); }
+  .bd-step .n { font-family: var(--mono); color: var(--heat); font-size: 0.8rem; }
+  .bd-step strong { font-size: 0.95rem; }
+  .bd-step .who { font-size: 0.82rem; color: var(--ink-2); }
+  .bd-step .rec { font-size: 0.78rem; color: var(--ink-3); margin-top: auto; }
+</style>

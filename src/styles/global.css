@@ -248,3 +248,15 @@ details.method li { margin-bottom: 0.4rem; }
 
 /* Grid items must be allowed to shrink below their content, or a wide table stretches the whole page on phones. */
 .split > *, .grid > * { min-width: 0; }
+
+/* Print: record templates and other pages print without site chrome */
+@media print {
+  .hdr, .ftr, .crumbs, .btn-row, .analytics-consent, .analytics-manage, .mnav { display: none !important; }
+  body { background: #fff; }
+  .hero { padding: 0 0 1rem !important; }
+  .section { padding: 0 !important; background: #fff !important; }
+  .tpl { break-inside: avoid; }
+  .table-wrap { overflow: visible !important; background: none !important; }
+  .table-wrap .table { min-width: 0 !important; }
+  a { color: inherit !important; text-decoration: none !important; }
+}
