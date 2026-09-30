@@ -84,9 +84,9 @@ export const claims: Record<string, Claim> = {
   },
   'founding-8-years': {
     id: 'founding-8-years',
-    value: '8 years',
-    statement: 'Our founding team has focused on liquid cooling for eight years, immersion first and then direct-to-chip.',
-    condition: 'Counted from 2018, when the founding team set up the company where this work was done, to 2026; immersion first, then direct-to-chip. Describes the team\'s experience, not NextGenergy, which was incorporated in 2025.',
+    value: '6 years',
+    statement: 'Our founding team has worked on liquid cooling for six years, immersion first and then direct-to-chip.',
+    condition: 'Counted from 2020, when the founding team\'s company entered liquid cooling, to 2026; immersion first, then direct-to-chip. Describes the team\'s experience, not NextGenergy, which was incorporated in 2025.',
     source: 'Founding team history; see /company/leadership.',
     status: 'conditional',
   },
