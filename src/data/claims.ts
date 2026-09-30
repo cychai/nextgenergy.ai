@@ -77,7 +77,7 @@ export const claims: Record<string, Claim> = {
     id: 'deployed-1000mw',
     value: 'Nearly 1,000 MW',
     statement: 'Our founding team has delivered nearly 1,000 MW of liquid cooling.',
-    condition: 'Cumulative liquid-cooling capacity delivered by the founding team through the company they built before NextGenergy, counted to the first quarter of 2026; project delivery records, not a NextGenergy installed base; not third-party audited.',
+    condition: 'Cumulative capacity of liquid-cooling equipment (immersion and direct-to-chip systems, CDUs and heat-recovery units) delivered by the founding team through the company they built before NextGenergy, counted to the first quarter of 2026 and rated by the IT heat load it serves; equipment delivered, not capacity currently in operation, and not a NextGenergy installed base; not third-party audited.',
     source: 'Founding team project records; see /company/track-record.',
     verifiedBy: 'Internal records; not third-party audited.',
     status: 'conditional',

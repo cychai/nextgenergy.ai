@@ -39,10 +39,15 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
             <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="price" min="0" max="200" step="1" value="35" /><span class="mono muted">CAD/MWh<sub>th</sub></span></div>
             <p class="small muted" style="margin:0.4rem 0 0">Indicative only. Actual contracts price by season, availability and who owns the heat pump.</p>
           </div>
+          <div class="field">
+            <label for="hrs">Effective full-load hours of off-take per year</label>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="hrs" min="1" max="8760" step="100" value="8760" /><span class="mono muted">h/yr</span></div>
+            <p class="small muted" style="margin:0.4rem 0 0">The equivalent hours a year the buyer actually takes the full output. 8,760 means all year and is the theoretical ceiling; a buyer who only heats in winter is usually far below it.</p>
+          </div>
           <div class="result">
-            <div class="eyebrow plain">Annual heat, if a buyer takes it all year</div>
+            <div class="eyebrow plain">Annual heat · <span data-out="case">theoretical ceiling (full off-take all year)</span></div>
             <div class="readout"><span data-out="gwh">—</span> GWh<sub>th</sub></div>
-            <p class="small muted" style="margin:0.3rem 0 0">≈ CAD $<span data-out="rev">—</span> per year at the stated value, before pumping and lift costs, and only if a buyer takes the full output all year. Most heat loads are seasonal; use your buyer's load profile.</p>
+            <p class="small muted" style="margin:0.3rem 0 0">≈ CAD $<span data-out="rev">—</span> per year at the stated value, counted on the heat the data centre delivers: gross revenue, not profit, before pumping, heat-pump electricity and network costs. Temperature match is only the first screen; flow, temperature drop, capacity and seasonal demand all have to line up.</p>
           </div>
         </div>
         <div>
@@ -58,7 +63,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
               <li><strong>Temperature match</strong>: delivered temperature is at or above the lower edge of the off-taker's indicative supply window. <strong>Lift needed</strong>: within 25 K below it. <strong>Outside screening range</strong>: more than 25 K below it.</li>
               <li><strong>Heat-pump lift</strong>: idealised, lift-only estimate at 50 % of Carnot between delivered temperature and the window's lower edge, capped at COP 8. The heat entered is treated as heat absorbed on the heat-pump source side: electrical input = heat ÷ (COP − 1), delivered heat = heat + electrical input. It ignores exchanger approaches on the heat-pump side, part load, auxiliaries and seasonal performance.</li>
               <li><strong>Water flow</strong> = heat ÷ (4.18 kJ/kg·K × ΔT), water properties at ~50 °C.</li>
-              <li><strong>Annual heat</strong> = continuous heat × 8760 h, i.e. full year-round off-take.</li>
+              <li><strong>Annual heat</strong> = continuous heat × effective hours of off-take; the default 8,760 h means full off-take all year, the theoretical ceiling.</li>
               <li><strong>Windows</strong> are indicative supply temperatures drawn from published engineering practice for each class: legacy 2nd/3rd-generation district heating, single-effect LiBr absorption chillers (hot-water machines are mostly rated at 90 °C, with a practical floor near 80 °C; check the maker's curve), industrial wash and pre-heat duties, 4th-generation district heating (some ultra-low-temperature networks run below 45 °C), greenhouse pipe-rail heating, aquaculture (species-specific), low-temperature building emitters, pools and domestic-hot-water pre-heat (final DHW temperature and legionella control need a separate top-up). Verify against the actual buyer's system.</li>
             </ul>
           </details>
@@ -93,13 +98,14 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
     { name: 'Heat-pump source (lifted to any of the above)', min: 10, max: 60, why: 'Almost any grade above 10 °C is a usable source; the economics move to whoever owns the heat pump.' },
   ];
   const el = (s) => document.querySelector(s);
-  const t = el('#tret'), hx = el('#hx'), mw = el('#mw'), dt = el('#dt'), price = el('#price'), list = el('[data-buyers]');
+  const t = el('#tret'), hx = el('#hx'), mw = el('#mw'), dt = el('#dt'), price = el('#price'), hrs = el('#hrs'), list = el('[data-buyers]');
   const out = (k, v) => { document.querySelectorAll(`[data-out="${k}"]`).forEach((n) => (n.textContent = v)); };
   const fields = [
     [hx, 'Heat-exchanger approach', 0, 15, 'K'],
     [mw, 'Continuous heat available', 0.1, 500, 'MWth'],
     [dt, 'Temperature drop', 3, 40, 'K'],
     [price, 'Value of delivered heat', 0, 200, 'CAD/MWhth'],
+    [hrs, 'Effective hours of off-take', 1, 8760, 'h'],
   ];
   const errBox = document.createElement('p');
   errBox.className = 'input-error'; errBox.setAttribute('role', 'alert'); errBox.hidden = true;
@@ -129,7 +135,9 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
     const T = Tret - A; out('tdel', `${T.toFixed(1)} °C`);
     const flow = (P * 1e6) / (4180 * dT); // kg/s ≈ L/s
     out('flow', `${flow.toFixed(1)} L/s (${(flow * 3.6).toFixed(0)} m³/h)`);
-    const gwh = P * 8760 / 1000;
+    const H = +hrs.value;
+    out('case', H >= 8760 ? 'theoretical ceiling (full off-take all year)' : `at ${H.toLocaleString('en-CA')} effective hours a year`);
+    const gwh = P * H / 1000;
     out('gwh', gwh.toFixed(1));
     out('rev', Math.round(gwh * 1000 * pr).toLocaleString('en-CA'));
     list.innerHTML = buyers.map((b) => {
@@ -145,6 +153,6 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
       return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span></div>`;
     }).join('');
   }
-  [t, hx, mw, dt, price].forEach((i) => i.addEventListener('input', run));
+  [t, hx, mw, dt, price, hrs].forEach((i) => i.addEventListener('input', run));
   run();
 </script>
