@@ -12,9 +12,16 @@ import { site } from '@/data/site';
           <p><strong>Email</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
           <p><strong>Location</strong><br />{site.location}</p>
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
-          <p class="small muted">We answer within two working days. If you are sending a turnover package for review, a PDF export of the index page is enough to start.</p>
+          <div class="starts">
+            <p class="eyebrow plain" style="margin:0 0 0.6rem">Where to start</p>
+            <a class="start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
+            <a class="start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
+            <a class="start" href="?topic=heat#form" data-topic="heat"><strong>Assess heat-reuse potential</strong><span>Tell us the heat source, possible users, distance and temperatures.</span></a>
+          </div>
+          <p class="small muted" style="margin-top:1.2rem"><strong>Early-stage projects are welcome.</strong> If you do not yet have a system diagram or equipment list, tell us what you know and we will help define the next step.</p>
+          <p class="small muted"><strong>What happens next.</strong> We reply within two working days with questions or a suggested next step. A formal scope and quotation follow once the basic requirements are clear.</p>
         </div>
-        <form class="tool" data-contact data-to={site.email} novalidate>
+        <form id="form" class="tool" data-contact data-to={site.email} novalidate>
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required maxlength="120" autocomplete="name" /></div>
           <div class="field"><label for="org">Organisation</label><input id="org" name="org" type="text" maxlength="160" autocomplete="organization" /></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email" /></div>
@@ -38,6 +45,10 @@ import { site } from '@/data/site';
   const status = f?.querySelector('[data-status]');
   const btn = f?.querySelector('[data-send]');
   const opened = Date.now();
+  const TOPIC = { product: 'Product enquiry or quote', commissioning: 'Commissioning or verification of an existing system', field: 'Field testing or operations', heat: 'Heat reuse' };
+  const HINT = { product: 'IT load, site location, timeline and main constraints. A rough idea is fine.', commissioning: 'What system is installed, what records exist and what state it is in.', field: 'Site location, system size and the service you are looking for.', heat: 'Heat source and temperature, possible heat users, distance between them.' };
+  const pre = new URLSearchParams(location.search).get('topic');
+  if (pre && TOPIC[pre] && f) { f.topic.value = TOPIC[pre]; f.message.placeholder = HINT[pre]; }
   const say = (msg, kind) => { if (!status) return; status.textContent = msg; status.dataset.kind = kind; status.hidden = false; };
   const g = (d, k) => String(d.get(k) ?? '').trim();
   function mailtoFallback(d) {
@@ -66,6 +77,11 @@ import { site } from '@/data/site';
   });
 </script>
 <style>
+  .starts { margin-top: 1.6rem; }
+  .start { display: block; padding: 0.8rem 1rem; margin-bottom: 0.6rem; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--white); color: inherit; text-decoration: none; }
+  .start:hover { border-color: var(--water); }
+  .start strong { display: block; color: var(--ink); font-size: 0.98rem; }
+  .start span { display: block; color: var(--ink-3); font-size: 0.88rem; margin-top: 0.15rem; }
   .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
   .form-status { margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--blue); background: var(--water-2); font-size: 0.95rem; }
   .form-status[data-kind="ok"] { border-color: var(--green); background: #e7f6ea; }

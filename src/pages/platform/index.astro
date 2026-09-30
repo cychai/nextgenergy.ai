@@ -40,6 +40,18 @@ const steps = [
     </div>
   </section>
 
+  <section class="section buy-sec">
+    <div class="wrap">
+      <div class="eyebrow">What you can buy</div>
+      <div class="buy">
+        <div><h3>Individual products</h3><p>A skid, a rack, a CDU or cooling equipment on its own, specified to your interfaces.</p></div>
+        <div><h3>An integrated system</h3><p>Products selected and prefabricated as one package, with interfaces and acceptance criteria agreed before manufacture.</p></div>
+        <div><h3>Commissioning and verification</h3><p>Gate-by-gate testing and a turnover package, including for systems supplied by others. <a href="/services/field">Field services</a></p></div>
+        <div><h3>Operations</h3><p>A maintenance programme for the liquid loop after handover, in three tiers. <a href="/services/field">Field services</a></p></div>
+      </div>
+      <div class="btn-row" style="margin-top:1.5rem"><a class="btn primary" href="/company/contact?topic=product">Discuss a configuration</a></div>
+    </div>
+  </section>
   <section class="section alt">
     <div class="wrap">
       <div class="eyebrow">From requirements to an integrated solution</div>
@@ -64,11 +76,18 @@ const steps = [
       <div class="grid c3" style="margin-top:1.5rem">
         {components.map((s) => <Card href={`/platform/${s.slug}`} title={s.title}>{s.summary}</Card>)}
       </div>
-      <div class="note" style="margin-top:2.5rem;max-width:70ch"><strong>Products and the line.</strong> Component makers optimise their box and warrant it at their flange. We design the products to work as one line and are accountable for the system within the agreed scope and acceptance criteria. Both are needed. Only one of them looks at the whole thermal path.</div>
+      <div class="note" style="margin-top:2.5rem;max-width:70ch"><strong>Products and the line.</strong> Each manufacturer warrants its own equipment at its own flange. We coordinate the interfaces across suppliers and hold one integration scope with written acceptance criteria, so the parts are tested and handed over as one system.</div>
     </div>
   </section>
 </Base>
 <style>
+  .buy { display: grid; gap: 1.25rem; grid-template-columns: 1fr; margin-top: 1rem; }
+  @media (min-width: 700px) { .buy { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .buy { grid-template-columns: repeat(4, 1fr); } }
+  .buy > div { border-top: 2px solid var(--heat); padding-top: 1rem; }
+  .buy h3 { font-size: 1.1rem; margin: 0 0 0.4rem; }
+  .buy p { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+  .section.buy-sec { padding-top: 0; }
   .fam { display: grid; gap: 2rem; grid-template-columns: 1fr; }
   @media (min-width: 700px) { .fam { grid-template-columns: 1fr 1fr; } }
   .fam-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; color: inherit; }
