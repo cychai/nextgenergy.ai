@@ -10,7 +10,7 @@ const qa = faqs[path];
 const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', description: 'See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.' }), faqLd(path, qa)];
 ---
 <Base ld={ld} title="CDU approach and free-cooling estimator" description="See how the approach temperature across a CDU heat exchanger moves the facility supply temperature you need, and what that does to free-cooling hours.">
-  <PageHero eyebrow="Tools · 02" title="What a few kelvin of approach costs you." lede="Work backwards from the coldest water the chips need to the warmest water the facility may supply. Every kelvin of approach across the CDU, and every kelvin across the dry cooler, pushes the required outdoor temperature down and takes free-cooling hours with it." crumbs={[['/tools', 'Tools']]} />
+  <PageHero eyebrow="Tools · 02" title="What a few kelvin of approach costs you." lede="Start from the highest secondary supply temperature the IT equipment allows, subtract the CDU approach and the dry-cooler approach, and see the outdoor temperature below which dry free cooling can carry the load. Every kelvin of approach across the CDU, and every kelvin across the dry cooler, pushes the required outdoor temperature down and takes free-cooling hours with it." crumbs={[['/tools', 'Tools']]} />
   <section class="section">
     <div class="wrap">
       <div class="split">

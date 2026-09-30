@@ -56,7 +56,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
             <ul>
               <li><strong>Delivered temperature</strong> = return-water temperature − heat-exchanger approach you enter.</li>
               <li><strong>Temperature match</strong>: delivered temperature is at or above the lower edge of the off-taker's indicative supply window. <strong>Lift needed</strong>: within 25 K below it. <strong>Outside screening range</strong>: more than 25 K below it.</li>
-              <li><strong>Heat-pump lift</strong>: idealised, lift-only estimate at 50 % of Carnot between delivered temperature and the window's lower edge, capped at COP 8. It ignores exchanger approaches on the heat-pump side, part load, auxiliaries and seasonal performance.</li>
+              <li><strong>Heat-pump lift</strong>: idealised, lift-only estimate at 50 % of Carnot between delivered temperature and the window's lower edge, capped at COP 8. The heat entered is treated as heat absorbed on the heat-pump source side: electrical input = heat ÷ (COP − 1), delivered heat = heat + electrical input. It ignores exchanger approaches on the heat-pump side, part load, auxiliaries and seasonal performance.</li>
               <li><strong>Water flow</strong> = heat ÷ (4.18 kJ/kg·K × ΔT), water properties at ~50 °C.</li>
               <li><strong>Annual heat</strong> = continuous heat × 8760 h, i.e. full year-round off-take.</li>
               <li><strong>Windows</strong> are indicative supply temperatures drawn from published engineering practice for each class: legacy 2nd/3rd-generation district heating, single-effect LiBr absorption chillers (hot-water machines are mostly rated at 90 °C, with a practical floor near 80 °C; check the maker's curve), industrial wash and pre-heat duties, 4th-generation district heating (some ultra-low-temperature networks run below 45 °C), greenhouse pipe-rail heating, aquaculture (species-specific), low-temperature building emitters, pools and domestic-hot-water pre-heat (final DHW temperature and legionella control need a separate top-up). Verify against the actual buyer's system.</li>
@@ -139,8 +139,8 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
         cls = 'lift'; st = 'Lift needed';
         const Th = b.min + 273.15, Tc = T + 273.15;
         const cop = Math.min(8, 0.5 * Th / (Th - Tc));
-        const elec = P / cop;
-        extra = ` Lift of ${(b.min - T).toFixed(1)} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub>.`;
+        const elec = P / (cop - 1);
+        extra = ` Lift of ${(b.min - T).toFixed(1)} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub> of reject heat, delivering ≈ ${(P + elec).toFixed(2)} MW<sub>th</sub>.`;
       } else { cls = 'no'; st = 'Outside screening range'; }
       return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span></div>`;
     }).join('');
