@@ -1,7 +1,8 @@
 ---
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
-import { site } from '@/data/site';
+import { site, event, showEvent } from '@/data/site';
+const eventOn = showEvent();
 ---
 <Base title="Contact" description="Talk to the NextGenergy team about a new build, a retrofit, a heat-reuse project, or a turnover package you would like verified.">
   <PageHero eyebrow="Company" title="Talk to our team." lede="Tell us about your project, your cooling requirements and your timeline. We will come back with the right person." crumbs={[['/company/about', 'Company']]} />
@@ -14,6 +15,7 @@ import { site } from '@/data/site';
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
           <div class="starts">
             <p class="eyebrow plain" style="margin:0 0 0.6rem">Where to start</p>
+            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Tell us which day suits you and what you would like to discuss.</span></a>}
             <a class="start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
             <a class="start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
             <a class="start" href="?topic=heat#form" data-topic="heat"><strong>Assess heat-reuse potential</strong><span>Tell us the heat source, possible users, distance and temperatures.</span></a>
@@ -28,7 +30,7 @@ import { site } from '@/data/site';
           <div class="field"><label for="topic">What is this about?</label>
             <select id="topic" name="topic" required>
               <option value="" selected disabled>Choose a topic</option>
-              <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option><option>Something else</option>
+              <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option>{eventOn && <option>Meeting at GDCC Canada 2026</option>}<option>Something else</option>
             </select></div>
           <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000"></textarea></div>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
@@ -46,10 +48,10 @@ import { site } from '@/data/site';
   const status = f?.querySelector('[data-status]');
   const btn = f?.querySelector('[data-send]');
   const opened = Date.now();
-  const TOPIC = { product: 'Product enquiry or quote', commissioning: 'Commissioning or verification of an existing system', field: 'Field testing or operations', heat: 'Heat reuse' };
-  const HINT = { product: 'IT load, site location, timeline and main constraints. A rough idea is fine.', commissioning: 'What system is installed, what records exist and what state it is in.', field: 'Site location, system size and the service you are looking for.', heat: 'Heat source and temperature, possible heat users, distance between them.' };
+  const TOPIC = { product: 'Product enquiry or quote', commissioning: 'Commissioning or verification of an existing system', field: 'Field testing or operations', heat: 'Heat reuse', gdcc: 'Meeting at GDCC Canada 2026' };
+  const HINT = { product: 'IT load, site location, timeline and main constraints. A rough idea is fine.', commissioning: 'What system is installed, what records exist and what state it is in.', field: 'Site location, system size and the service you are looking for.', heat: 'Heat source and temperature, possible heat users, distance between them.', gdcc: 'Which day suits you (20 or 21 October), a rough time, and what you would like to discuss at booth A20.' };
   const pre = new URLSearchParams(location.search).get('topic');
-  if (pre && TOPIC[pre] && f) { f.topic.value = TOPIC[pre]; f.message.placeholder = HINT[pre]; }
+  if (pre && TOPIC[pre] && f && [...f.topic.options].some((o) => o.value === TOPIC[pre])) { f.topic.value = TOPIC[pre]; f.message.placeholder = HINT[pre]; }
   const say = (msg, kind) => { if (!status) return; status.textContent = msg; status.dataset.kind = kind; status.hidden = false; };
   const g = (d, k) => String(d.get(k) ?? '').trim();
   const COPIED = 'Copied';
@@ -95,6 +97,7 @@ import { site } from '@/data/site';
   .starts { margin-top: 1.6rem; }
   .start { display: block; padding: 0.8rem 1rem; margin-bottom: 0.6rem; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--white); color: inherit; text-decoration: none; }
   .start:hover { border-color: var(--water); }
+  .start.event { border-left: 3px solid var(--heat); }
   .start strong { display: block; color: var(--ink); font-size: 0.98rem; }
   .start span { display: block; color: var(--ink-3); font-size: 0.88rem; margin-top: 0.15rem; }
   .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }

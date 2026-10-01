@@ -45,6 +45,20 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'From the fa
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="wrap prose">
+      <h2>What the inner boundaries will cool next</h2>
+      <p>Boundaries four to six were drawn around compute trays: manifolds and quick disconnects feeding servers, hoses into them, cold plates on processors. At the 2026 OCP APAC Summit that assumption gave way in five places at once. The six boundaries still hold. What is changing is what sits on the far side of them: the rack manifold, the hoses and the cold plates will increasingly serve every component in the rack that connects to the technology-cooling loop, and each one brings its own joints, materials and test records.</p>
+      <ul class="next">
+        <li><strong>Optics.</strong> Front-panel pluggables have reached their thermal density limit; XPO is a liquid-cooled pluggable form factor with an integrated cold plate. <span class="src">Arista, XPO</span></li>
+        <li><strong>Switches.</strong> BMC management for liquid-cooled switches is now a SONiC work item. <span class="src">Microsoft and Nexthop AI, SONiC BMC for Liquid-Cooled Switches</span></li>
+        <li><strong>Storage.</strong> Liquid cooling for storage is expected from PCIe Gen7. <span class="src">Marvell, Silicon-Driven Storage</span></li>
+        <li><strong>Busbars.</strong> Air-cooled busbars scale poorly in size, weight and footprint as current rises; liquid-cooled busbars are the proposed answer. <span class="src">Microsoft, Busbar Cooling Challenges</span></li>
+        <li><strong>Power connectors and cables.</strong> Actively cooled power cables and connectors have been tested on a standard ORv3 busbar and power shelf. <span class="src">Molex, Actively-Cooled Power Cables</span></li>
+      </ul>
+      <p class="small muted">Sources are presentations at the OCP APAC Summit 2026. They describe directions and early tests, not shipping volumes.</p>
+    </div>
+  </section>
   <section class="section alt">
     <div class="wrap prose">
       <h2>Why the record has to travel with the heat</h2>
@@ -59,3 +73,8 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'From the fa
   </section>
   <Faq items={qa} />
 </Base>
+<style>
+  .next { list-style: none; padding: 0; margin: 1.2rem 0; }
+  .next li { padding: 0.75rem 0; border-bottom: 1px solid var(--line-2); overflow-wrap: break-word; }
+  .next .src { display: block; font-size: 0.8rem; color: var(--ink-3); margin-top: 0.2rem; }
+</style>

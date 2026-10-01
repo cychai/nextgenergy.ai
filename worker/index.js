@@ -15,7 +15,7 @@ import { sendMail } from './mail.js';
 const ALLOWED_HOSTS = /^(nextgenergy\.ai|www\.nextgenergy\.ai|[a-z0-9-]+\.workers\.dev|localhost(:\d+)?|127\.0\.0\.1(:\d+)?)$/i;
 const TOPICS = new Set([
   'Product enquiry or quote', 'Field testing or operations', 'New build', 'Retrofit', 'Heat reuse',
-  'Commissioning or verification of an existing system', 'Partnership', 'Something else',
+  'Commissioning or verification of an existing system', 'Partnership', 'Meeting at GDCC Canada 2026', 'Something else',
 ]);
 const MAX_BODY = 16 * 1024;
 const MIN_FILL_MS = 3000;

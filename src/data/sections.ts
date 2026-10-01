@@ -1,4 +1,4 @@
-export interface Sub { slug: string; title: string; summary: string; body: string[]; asks?: string[]; related?: { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }[]; }
+export interface Sub { slug: string; title: string; summary: string; body: string[]; asks?: string[]; claims?: string[]; related?: { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }[]; }
 
 export const solutions: Sub[] = [
   { slug: 'new-build', title: 'New-build AI data centre', summary: 'Fix the IT operating limits, the CDU approach and the acceptance criteria before the first rack lands, and plan heat reuse where a buyer exists.',
@@ -20,8 +20,11 @@ export const solutions: Sub[] = [
     body: [
       'Cold climates give liquid cooling its easiest thermodynamics and its hardest fluids problem. Free cooling is available most of the year. The heat rejection equipment, the outdoor piping and the fluid itself have to survive the rest of it.',
       'Our cold-climate designs use dry heat rejection sized for the summer design day and freeze-protected for the winter one, with fluid selection driven by the coldest surface in the system rather than by the average ambient. Glycol concentration, pump sizing and heat-exchanger derating are calculated together, because each of them costs something and they trade against each other.',
-      'The cold-climate advantage is real, and it is not the whole story. A cold-climate site often has a heat demand nearby that a warmer climate does not: greenhouses, buildings, process users. We screen demand and distance before fixing the rejection strategy, and design for reuse first and rejection second where a buyer exists.'],
-    asks: ['Design ambient, summer and winter, from a named station', 'Coldest exposed surface in the loop', 'Glycol concentration and its effect on heat-exchanger performance, stated'],
+      'The cold-climate advantage is real, and it is not the whole story. A cold-climate site often has a heat demand nearby that a warmer climate does not: greenhouses, buildings, process users. We screen demand and distance before fixing the rejection strategy, and design for reuse first and rejection second where a buyer exists.',
+      'Dry coolers are why cold climates suit liquid cooling, and their trade-offs should be stated with them. In Supermicro\'s published comparison of heat-rejection options, a dry cooler has a WUE of 0, higher energy use than evaporative options and low maintenance, and fits water-scarce sites and cool or mild climates. WUE 0 counts evaporation at the heat-rejection equipment only; make-up water for sampling, leaks and fluid replacement is small and counted separately.',
+      'Winter brings the opposite risk: overcooling. A dry cooler sized for the summer design day has far more capacity than the load needs in January, and left alone it will pull the supply temperature down, below the dew point of the room, where condensation forms on pipework and cold plates, and into the range where glycol viscosity rises and flow and heat transfer fall. We set a minimum supply temperature with margin above the room dew point, hold it with fan staging, bypass or three-way valve control, and check pump selection at the coldest fluid temperature, not only at the design one.'],
+    asks: ['Design ambient, summer and winter, from a named station', 'Coldest exposed surface in the loop', 'Glycol concentration and its effect on heat-exchanger performance, stated', 'Minimum supply temperature and the anti-condensation control logic that holds it'],
+    claims: ['dry-cooler-wue-0', 'cold-climate-minus-40'],
     related: [{ href: '/platform/coolants', label: 'Coolants and water chemistry', kind: 'approach' }, { href: '/solutions/heat-reuse', label: 'Heat reuse in cold climates', kind: 'approach' }] },
   { slug: 'heat-reuse', title: 'Heat reuse and community benefit', summary: 'Turn reject heat into a metered product at the fence line, and into a benefit the community can see when the next site is proposed.',
     body: [
@@ -57,8 +60,11 @@ export const platform: Sub[] = [
   { slug: 'cdu', title: 'CDU and secondary loop', summary: 'Selected against load, operating temperatures, flow, pressure drop, redundancy and serviceability, with the rating conditions stated.',
     body: [
       'A CDU\'s nameplate capacity is a number at one approach temperature. The approach is what matters: it sets how warm the secondary loop runs for a given facility supply, which sets your free-cooling hours and your return-water grade at the same time. A few kelvin of approach can be worth hundreds of hours a year in a temperate climate.',
+      'Published approach targets now cluster at 3–4 K. Google\'s Project Deschutes CDU specification, contributed to the Open Compute Project in 2026, lists 3 °C at a 2,000 kW thermal load with 500 gpm on both loops; KAORI, a heat-exchanger maker, cites 4 °C or less as a common design target, and AVC states its CDUs are designed to 4 °C. The last two are manufacturer statements, not independent tests. An approach figure is only comparable when it comes with the load fraction, the flow on both sides and the fluid, so we ask for all three.',
+      'Filtration has tightened with the cold plates it protects. One CDU maker now describes 25 µm full-flow filtration on the secondary loop as the new default, replacing 50 µm; another describes 25–50 µm full flow plus side-stream filtration below 5 µm on about a tenth of the flow, and Deschutes adds a 0.2 µm side-stream loop. We write the filter rating, the basis of that rating and the change-out pressure drop into the CDU specification.',
       'We select CDUs from several manufacturers against the project\'s approach, turndown and redundancy requirements, and we require the manufacturer\'s FAT for pump seals, heat-exchanger gaskets and filter housings, the enclosed boundaries that leak quietly.'],
-    asks: ['Approach at rated load, with fouling allowance', 'Turndown range and pump staging logic', 'FAT for internal boundaries'],
+    asks: ['Approach at rated load, with fouling allowance, stated with load fraction, both flows and fluid (published targets: 3–4 K)', 'Full-flow filter rating and its basis (25 µm is becoming the default on the secondary loop)', 'Turndown range and pump staging logic', 'FAT for internal boundaries'],
+    claims: ['cdu-approach-4k', 'tcs-filtration-25um'],
     related: [{ href: '/tools/approach-temp', label: 'CDU approach and free-cooling estimator', kind: 'tool' }] },
   { slug: 'cooling-equipment', title: 'Cooling equipment', summary: 'Dry coolers and water-cooled chillers matched to site climate, facility water and coolant temperatures.',
     body: [
@@ -69,8 +75,11 @@ export const platform: Sub[] = [
     related: [{ href: '/solutions/cold-climate', label: 'Cold-climate deployment', kind: 'approach' }, { href: '/tools/approach-temp', label: 'CDU approach and free-cooling estimator', kind: 'tool' }, { href: '/solutions/heat-reuse', label: 'Heat reuse', kind: 'approach' }] },
   { slug: 'manifolds', title: 'Rack manifolds and quick disconnects', summary: 'The highest-count removable boundary in the system, and the one disturbed most often.',
     body: [
-      'Every server adds two quick disconnects. Every server swap disturbs them again. A disconnected QD is not automatically a sealed one, and one particle on the poppet seat may be enough. We specify manifolds and QDs together, with the QD standard, the cleanliness class at first fill and the re-test procedure after any disturbance written into the operator\'s procedures, not left to the rack integrator.'],
-    asks: ['QD standard and interoperability stated', 'Cleanliness at first fill sampled', 'Re-test after every disturbance logged'] },
+      'Every server adds two quick disconnects. Every server swap disturbs them again. A disconnected QD is not automatically a sealed one, and one particle on the poppet seat may be enough. We specify manifolds and QDs together, with the QD standard, the cleanliness class at first fill and the re-test procedure after any disturbance written into the operator\'s procedures, not left to the rack integrator.',
+      'Interoperability is not yet settled across the industry. CPC, a quick-disconnect maker, has called for a common qualification and interoperability framework across QD specifications, and Microsoft and Nexthop AI list quick disconnects among the mechanical designs that still lack standardisation. Until that exists, the QD standard and the mating combinations actually tested are a project decision, and we write them down.',
+      'Headers and branches are sized to a stated design velocity. nVent\'s published design guidance targets about 3 m/s with 6 m/s as the ceiling, to limit erosion; whatever the project chooses, the velocity and the transient check belong in the design basis.'],
+    asks: ['QD standard and interoperability stated, with the mating combinations tested', 'Header and branch velocity stated (one published guide: 3 m/s target, 6 m/s ceiling)', 'Cleanliness at first fill sampled', 'Re-test after every disturbance logged'],
+    claims: ['design-velocity-3ms'] },
   { slug: 'cold-plates', title: 'Cold plates and direct-to-chip', summary: 'Selected with the server OEM, verified by factory pressure test traceable to serial.',
     body: [
       'Cold plates are usually specified by the server OEM and we rarely get to choose them. What we can do is require the evidence: a factory pressure or helium test traceable to the plate\'s serial, and a thermal performance figure stated at a flow and inlet temperature that match the loop we are designing, not the datasheet\'s best case.',
@@ -79,8 +88,10 @@ export const platform: Sub[] = [
   { slug: 'coolants', title: 'Coolants and water chemistry', summary: 'The fluid is a component with a service life. It is specified, sampled and trended like one.',
     body: [
       'Most secondary loops run treated water or a glycol solution. The inhibitor package, biocide, pH and conductivity windows are set against the wetted materials in the loop, and "compatible with water" is not a specification for any of them. In cold climates glycol concentration is set by the coldest exposed surface, and its penalty on heat-exchanger performance and pump power is calculated, not assumed.',
+      'There is now test evidence for why a rating is not a compatibility statement. UL Solutions notes that UL 62368-1 contains material-compatibility requirements but does not specify how to test for them. In its preliminary study, three SJ-type power cords, all rated 105 °C and oil-resistant, were aged in the same formulated coolant at 105 °C. After 12 weeks their elongation at break had fallen by 99 % (SJEOOW), 90 % (SJTOW) and 14 % (SJOOW): the same rating, and a nearly sevenfold difference in degradation. The study covers single-phase immersion fluids; materials in a cold-plate loop see water or glycol under different exposure conditions, so we cite it for the principle, not for how any one jacket will behave in your loop.',
       'Fluid quality is the third clock. We hand over a sampling schedule, the acceptance windows and the baseline result, so the operator is trending against something rather than waiting for a symptom.'],
-    asks: ['Fluid specification against the named wetted materials', 'Baseline sample at fill', 'Sampling schedule and acceptance windows in the operator\'s hands'] },
+    asks: ['Fluid specification against the named wetted materials', 'Baseline sample at fill', 'Sampling schedule and acceptance windows in the operator\'s hands'],
+    claims: ['ul-jacket-elongation'] },
 ];
 
 export const services: Sub[] = [

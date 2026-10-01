@@ -63,3 +63,19 @@ export const footerNav = [
     ],
   },
 ];
+
+/**
+ * Upcoming trade-show presence. Rendered on the home page and the contact page only while the
+ * build date is before `hideFrom`, so the banner disappears on the first build after the show.
+ * The site is static: after the show date someone must trigger one rebuild for it to go.
+ */
+export const event = {
+  name: 'GDCC Canada 2026',
+  fullName: 'Global Data Centre & Cloud Expo Canada 2026',
+  dates: '20–21 October 2026',
+  venue: 'International Centre, Mississauga (Toronto)',
+  booth: 'A20',
+  topic: 'gdcc',
+  hideFrom: new Date('2026-10-22T00:00:00-04:00'),
+};
+export const showEvent = () => Date.now() < event.hideFrom.getTime();

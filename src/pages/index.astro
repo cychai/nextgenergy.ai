@@ -1,13 +1,14 @@
 ---
 import Base from '@/layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import { site } from '@/data/site';
+import { site, event, showEvent } from '@/data/site';
 import { claims } from '@/data/claims';
 const latest = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 const stats = [
   { c: claims['founding-8-years'], label: 'of liquid-cooling focus in our founding team, immersion and direct-to-chip' },
   { c: claims['deployed-1000mw'], label: 'of liquid cooling delivered by our founding team' },
 ];
+const eventOn = showEvent();
 const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse heat'];
 ---
 <Base title={site.name}>
@@ -31,6 +32,12 @@ const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse
       <div class="chain" aria-label="What we do, in order">
         {chain.map((s, i) => <span class="step"><span>{s}</span>{i < chain.length - 1 && <span class="arrow" aria-hidden="true">›</span>}</span>)}
       </div>
+      {eventOn && (
+        <div class="event-bar">
+          <p><span class="event-tag">Meet us</span> <strong>{event.fullName}</strong> · {event.dates} · {event.venue} · <strong>Booth {event.booth}</strong></p>
+          <a class="btn" href={`/company/contact?topic=${event.topic}#form`}>Book a time at the booth</a>
+        </div>
+      )}
     </div>
   </section>
 
@@ -145,6 +152,9 @@ const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse
   .chain { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; margin-top: clamp(1.8rem, 3vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
   .chain .step { display: inline-flex; gap: 0.9rem; align-items: baseline; }
   .chain .arrow { color: var(--heat); }
+  .event-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.7rem 1.2rem; margin-top: 1.2rem; padding: 0.8rem 1rem; border: 1px solid var(--line-2); border-left: 3px solid var(--heat); border-radius: var(--r); background: var(--white); }
+  .event-bar p { margin: 0; font-size: 0.95rem; flex: 1 1 18rem; min-width: 0; overflow-wrap: break-word; }
+  .event-tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--heat); margin-right: 0.3rem; }
 
   .lines { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 2rem; }
   @media (min-width: 820px) { .lines { grid-template-columns: 1fr 1fr; } }
