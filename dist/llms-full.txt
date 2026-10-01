@@ -161,7 +161,7 @@ A: The Energy Reuse Factor (ERF) in ISO/IEC 30134-6 and EN 50600-4-6, the Energy
 
 **Q: Is there an open specification for liquid-cooling commissioning evidence?**
 
-A: Not in the documents we have reviewed. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces and white papers on liquid-cooling integration, and has received Google's Project Deschutes CDU specification (v1.0 released February 2026), but none of the documents we have reviewed fully specifies what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, supplements them; applicable standards, OEM documents and the project's acceptance criteria govern. (https://nextgenergy.ai/evidence/turnover)
+A: Not in the public documents we have read. The Open Compute Project's Cooling Environments workstream publishes drafts on rack, CDU and facility interfaces and white papers on liquid-cooling integration, and has received Google's Project Deschutes CDU specification (v1.0 released February 2026), but none of the public documents we have read fully specifies what a turnover package must contain. The record structure this site uses, three questions for each of ten leak points, supplements them; applicable standards, OEM documents and the project's acceptance criteria govern. (https://nextgenergy.ai/evidence/turnover)
 
 ### The numbers Canada's principles ask for
 
@@ -262,6 +262,10 @@ Representative projects delivered by the founding team before NextGenergy: immer
 ### Leadership
 
 Jim (Junming) Li, Founder & CEO; Chenli Wang, Chief Strategy Officer; Richard Li, Chief Business Development Officer. (https://nextgenergy.ai/company/leadership)
+
+### News
+
+Company announcements with dates: events (GDCC Canada 2026, booth A20), the liquid cooling simulator, the Liquid Cooling Academy and published guidance. (https://nextgenergy.ai/company/news)
 
 ### Insights
 
