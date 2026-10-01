@@ -4,6 +4,8 @@
 
 ## 2026-10-01
 
+- `57f59b2` Standards 页标题改为「Standards we follow」，页脚、Evidence 总览、Resources、geo 核心页与 llms.txt 的链接文字同步，网址不变。
+- `54107fc` 补记：新增本 CHANGELOG 的 10-01 条目，并重建 dist（News 栏目各页进入 dist、样式文件更新）。
 - `617d9d9` 首页 GDCC Canada 2026 展位 A20 横幅从首屏末尾移到页眉之上，改为全宽海军蓝通栏（右侧「Book a time」→ 联系页 topic=gdcc），只在首页显示，手机端精简为一行短文案，10-22 起自动隐藏。
 - `0d67b02` 新增 News 栏目：/company/news 列表和四条带日期的详情页（GDCC 展位、液冷学院开放报名、液冷仿真台上线、加拿大数据中心原则测量页），每条带 NewsArticle JSON-LD，并从 About、Resources、页脚 Company 栏和 llms.txt 加入口。
 - `c15f7e7` Standards 页、Evidence 总览与 FAQ 改为「我们跟踪 OCP 公开草案与已发布规范」，删除参与评审、提交意见、提供条文等说法。
