@@ -38,7 +38,7 @@ export const footerNav = [
       ['/evidence/turnover', 'The turnover package'],
       ['/evidence/samples', 'Sample records'],
       ['/evidence/leak-points', 'Ten leak points'],
-      ['/evidence/standards', 'Standards work'],
+      ['/evidence/standards', 'Standards we follow'],
       ['/evidence/canada-principles', "Canada's principles"],
     ],
   },
