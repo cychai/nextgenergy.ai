@@ -1,0 +1,40 @@
+---
+import Base from '@/layouts/Base.astro';
+import { news, newsDate, fmtNewsDate, type NewsItem } from '@/data/news';
+import { newsArticleLd } from '@/lib/ld';
+export function getStaticPaths() {
+  return news.map((n) => ({ params: { slug: n.slug }, props: { n } }));
+}
+const { n } = Astro.props as { n: NewsItem };
+const path = `/company/news/${n.slug}`;
+const published = newsDate(n.date);
+const plain = n.body.map((p) => p.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&')).join('\n\n');
+const ld = [newsArticleLd(path, { headline: n.title, description: n.summary, published, body: plain })];
+---
+<Base ld={ld} title={n.title} description={n.summary} type="article" published={published}>
+  <article>
+    <header class="hero">
+      <div class="narrow">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/company/about">Company</a></span><span><a href="/company/news">News</a></span></nav>
+        <div class="eyebrow">News · <time datetime={n.date}>{fmtNewsDate(n.date)}</time></div>
+        <h1 style="font-size:clamp(1.9rem,4vw,3rem)">{n.title}</h1>
+        <p class="lede">{n.summary}</p>
+      </div>
+    </header>
+    <div class="narrow prose news-body">
+      {n.body.map((p) => <p set:html={p} />)}
+      {n.links && n.links.length > 0 && (
+        <>
+          <h2>Links</h2>
+          <ul>{n.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
+        </>
+      )}
+      <hr />
+      <p class="small muted">NextGenergy Technology Inc., Toronto. Media and other enquiries: <a href="mailto:sales@nextgenergy.ai">sales@nextgenergy.ai</a>. <a href="/company/news">All news</a>.</p>
+    </div>
+  </article>
+</Base>
+<style>
+  .news-body { padding-bottom: 3rem; font-size: 1.05rem; }
+  .news-body h2 { font-size: 1.3rem; }
+</style>

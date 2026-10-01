@@ -2,6 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import { getCollection } from 'astro:content';
+import { news } from '@/data/news';
 const posts = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const groups = [
   { href: '/approach', title: 'Approach', lede: 'How we decide what to build, what to test and what to write down.', links: [
@@ -25,10 +26,11 @@ const groups = [
     ['/tools/leak-checklist', 'Turnover self-check'],
   ] },
   { href: '/insights', title: 'Insights', lede: 'Every Watt Counts: long-form writing on power, liquid cooling and heat reuse.', links: posts.map((p) => [`/insights/${p.id}`, p.data.title]) },
+  { href: '/company/news', title: 'News', lede: 'Company announcements: events, new tools and training, published guidance.', links: news.slice(0, 3).map((n) => [`/company/news/${n.slug}`, n.title]) },
 ];
 ---
 <Base title="Resources" description="NextGenergy resources: our approach to liquid cooling, the evidence we hand over, engineering tools and long-form articles.">
-  <PageHero eyebrow="Resources" title="Approach, evidence, tools and insights." lede="The thinking and the records behind our products and field services, and the tools we use ourselves." />
+  <PageHero eyebrow="Resources" title="Approach, evidence, tools and insights." lede="The thinking and the records behind our products and field services, the tools we use ourselves, and company news." />
   <section class="section">
     <div class="wrap">
       <div class="hub">

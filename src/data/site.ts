@@ -18,7 +18,7 @@ export const nav: { href: string; label: string; match?: string[] }[] = [
   { href: '/services', label: 'Services' },
   { href: '/solutions', label: 'Solutions' },
   { href: '/resources', label: 'Resources', match: ['/resources', '/approach', '/evidence', '/tools', '/insights'] },
-  { href: '/company/about', label: 'Company', match: ['/company'] },
+  { href: '/company/about', label: 'Company', match: ['/company', '/company/news'] },
 ];
 
 export const footerNav = [
@@ -57,6 +57,7 @@ export const footerNav = [
       ['/company/about', 'About'],
       ['/company/leadership', 'Leadership'],
       ['/company/track-record', 'Track record'],
+      ['/company/news', 'News'],
       ['/company/partners', 'Partners'],
       ['/company/contact', 'Contact'],
       ['/company/privacy', 'Privacy'],

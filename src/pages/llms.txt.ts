@@ -3,6 +3,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '@/data/site';
 import { corePages } from '@/data/geo';
+import { news } from '@/data/news';
 
 export const GET: APIRoute = async () => {
   const posts = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -23,6 +24,9 @@ export const GET: APIRoute = async () => {
   }
   lines.push('## Insights (latest)');
   for (const p of posts.slice(0, 8)) lines.push(`- [${p.data.title}](${site.url}/insights/${p.id}.md): ${p.data.date.toISOString().slice(0, 10)}${p.data.subtitle ? ` — ${p.data.subtitle}` : ''}`);
+  lines.push('');
+  lines.push('## News (latest)');
+  for (const n of news.slice(0, 5)) lines.push(`- [${n.title}](${site.url}/company/news/${n.slug}): ${n.date} — ${n.summary}`);
   lines.push('');
   lines.push('## Optional');
   lines.push(`- [Full text of the core pages and all articles](${site.url}/llms-full.txt)`);
