@@ -15,10 +15,10 @@ const { s } = Astro.props;
         <div class="prose">
           {s.body.map((p) => <p>{p}</p>)}
           {s.claims && s.claims.length > 0 && (
-            <div class="claims">
-              <div class="eyebrow plain">Numbers on this page, with their conditions</div>
+            <details class="claims method">
+              <summary>Numbers on this page, with their conditions and sources ({s.claims.length})</summary>
               {s.claims.map((id) => <Claim id={id as any} block />)}
-            </div>
+            </details>
           )}
           {s.related && <Related items={s.related} />}
         </div>

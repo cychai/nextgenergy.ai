@@ -110,7 +110,7 @@ export const claims: Record<string, Claim> = {
     id: 'cdu-approach-4k',
     value: '≤ 4 K',
     statement: 'Published CDU approach-temperature targets cluster at 3–4 K.',
-    condition: 'Approach between facility supply and secondary (TCS) supply. One primary specification and two manufacturer statements: Project Deschutes lists 3 °C at a 2,000 kW thermal load with 500 gpm on both loops; KAORI cites ≤ 4 °C as a common design target for brazed-plate heat exchangers; AVC states its CDUs are designed to 4 °C. A quoted approach is comparable only with its load fraction, the flow on both sides and the fluid stated.',
+    condition: 'Approach between facility supply and secondary (TCS) supply. One primary specification and two manufacturer statements: Project Deschutes lists 3 K at a 2,000 kW thermal load with 500 gpm on both loops; KAORI cites ≤ 4 K as a common design target for brazed-plate heat exchangers; AVC states its CDUs are designed to 4 K. A quoted approach is comparable only with its load fraction, the flow on both sides and the fluid stated.',
     source: 'OCP APAC Summit 2026, Cooling Environments: Google, "Project Deschutes Update V1.0" (E. Kung); KAORI, "Enabling High-Density Data Center Cooling: The Critical Role of Brazed Plate Heat Exchangers" (M. Lu); AVC, "Advanced Thermal Management for High-Density AI Servers: Cold Plate Optimization and CDU Specification Requirements" (F. Lin).',
     status: 'conditional',
     note: 'Two of the three sources are manufacturer statements, not independent tests.',

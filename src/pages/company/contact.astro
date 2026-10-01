@@ -15,7 +15,8 @@ const eventOn = showEvent();
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
           <div class="starts">
             <p class="eyebrow plain" style="margin:0 0 0.6rem">Where to start</p>
-            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Tell us which day suits you and what you would like to discuss.</span></a>}
+            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic} data-hide-from={event.hideFrom.toISOString()}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Tell us which day suits you and what you would like to discuss.</span></a>}
+            {eventOn && <script is:inline src="/event-expiry.js" defer></script>}
             <a class="start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
             <a class="start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
             <a class="start" href="?topic=heat#form" data-topic="heat"><strong>Assess heat-reuse potential</strong><span>Tell us the heat source, possible users, distance and temperatures.</span></a>
@@ -30,7 +31,7 @@ const eventOn = showEvent();
           <div class="field"><label for="topic">What is this about?</label>
             <select id="topic" name="topic" required>
               <option value="" selected disabled>Choose a topic</option>
-              <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option>{eventOn && <option>Meeting at GDCC Canada 2026</option>}<option>Something else</option>
+              <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option>{eventOn && <option data-hide-from={event.hideFrom.toISOString()}>Meeting at GDCC Canada 2026</option>}<option>Something else</option>
             </select></div>
           <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000"></textarea></div>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>

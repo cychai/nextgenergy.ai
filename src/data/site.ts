@@ -67,7 +67,9 @@ export const footerNav = [
 /**
  * Upcoming trade-show presence. Rendered on the home page and the contact page only while the
  * build date is before `hideFrom`, so the banner disappears on the first build after the show.
- * The site is static: after the show date someone must trigger one rebuild for it to go.
+ * dist/ is committed and Workers Builds only uploads it, so a Cloudflare-side redeploy is not enough:
+ * after the show run `npm run build`, commit dist and push. Until then public/event-expiry.js hides
+ * any element carrying data-hide-from in the visitor's browser.
  */
 export const event = {
   name: 'GDCC Canada 2026',

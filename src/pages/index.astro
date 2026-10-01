@@ -33,9 +33,10 @@ const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse
         {chain.map((s, i) => <span class="step"><span>{s}</span>{i < chain.length - 1 && <span class="arrow" aria-hidden="true">›</span>}</span>)}
       </div>
       {eventOn && (
-        <div class="event-bar">
-          <p><span class="event-tag">Meet us</span> <strong>{event.fullName}</strong> · {event.dates} · {event.venue} · <strong>Booth {event.booth}</strong></p>
+        <div class="event-bar" data-hide-from={event.hideFrom.toISOString()}>
+          <p><span class="event-tag">Meet us</span> <strong>Booth {event.booth}</strong> · <strong>{event.fullName}</strong> · {event.dates} · {event.venue}</p>
           <a class="btn" href={`/company/contact?topic=${event.topic}#form`}>Book a time at the booth</a>
+          <script is:inline src="/event-expiry.js" defer></script>
         </div>
       )}
     </div>
