@@ -1,0 +1,35 @@
+---
+/**
+ * Full-width trade-show strip above the site header. Base.astro renders it only when a page passes
+ * `eventBar` (the home page). Removed from the HTML on builds after event.hideFrom; until then
+ * /event-expiry.js removes it in the browser once the date has passed.
+ */
+import { event, showEvent } from '@/data/site';
+const on = showEvent();
+---
+{on && (
+  <div class="event-strip" data-hide-from={event.hideFrom.toISOString()} role="region" aria-label="Upcoming event">
+    <div class="wrap">
+      <p>
+        <span class="full">Meet us at <strong>Booth {event.booth}</strong> · {event.fullName} · 20–21 October · International Centre, Mississauga</span>
+        <span class="short"><strong>Booth {event.booth}</strong> · GDCC Canada · Oct 20–21</span>
+      </p>
+      <a class="event-cta" href={`/company/contact?topic=${event.topic}#form`}>Book a time <span aria-hidden="true">→</span></a>
+    </div>
+    <script is:inline src="/event-expiry.js" defer></script>
+  </div>
+)}
+<style>
+  .event-strip { background: var(--ink); color: #fff; font-size: 0.9rem; line-height: 1.35; }
+  .event-strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding-block: 0.55rem; min-width: 0; }
+  .event-strip p { margin: 0; min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .event-strip strong { color: #fff; font-weight: 700; }
+  .event-strip .short { display: none; }
+  .event-cta { flex: 0 0 auto; color: #fff; font-weight: 600; white-space: nowrap; padding: 0.3rem 0.8rem; border: 1px solid rgba(255, 255, 255, 0.55); border-radius: 999px; text-decoration: none; }
+  .event-cta:hover, .event-cta:focus-visible { background: #fff; color: var(--ink); }
+  @media (max-width: 700px) {
+    .event-strip { font-size: 0.85rem; }
+    .event-strip .full { display: none; }
+    .event-strip .short { display: inline; }
+  }
+</style>

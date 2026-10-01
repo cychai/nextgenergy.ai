@@ -3,6 +3,7 @@ import '@/styles/fonts.css';
 import '@/styles/global.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import EventBar from '@/components/EventBar.astro';
 import { site } from '@/data/site';
 import type { LdNode } from '@/lib/ld';
 
@@ -17,8 +18,10 @@ interface Props {
   ld?: LdNode[];
   /** Path of a Markdown twin of this page, exposed via <link rel="alternate" type="text/markdown">. */
   mdAlternate?: string;
+  /** Show the full-width trade-show strip above the header (home page only). */
+  eventBar?: boolean;
 }
-const { title, description = site.description, canonical, type = 'website', published, modified, ld = [], mdAlternate } = Astro.props;
+const { title, description = site.description, canonical, type = 'website', published, modified, ld = [], mdAlternate, eventBar = false } = Astro.props;
 const fullTitle = title === site.name ? `${site.name} | ${site.headline}` : `${title} | ${site.name} – ${site.tagline}`;
 const cleanPath = Astro.url.pathname.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const url = new URL(cleanPath, Astro.site);
@@ -64,6 +67,7 @@ const jsonld = JSON.stringify({
   </head>
   <body>
     <a class="skip" href="#main">Skip to main content</a>
+    {eventBar && <EventBar />}
     <Header />
     <noscript><div class="noscript wrap">This site works without JavaScript except for the interactive tools, the video player and the mobile menu. Navigation links are in the footer.</div></noscript>
     <main id="main" tabindex="-1"><slot /></main>
