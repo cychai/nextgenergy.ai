@@ -8,14 +8,36 @@ import { techArticleLd, faqLd } from '@/lib/ld';
 const path = '/evidence/standards';
 const qa = faqs[path];
 const ld = [techArticleLd(path, { headline: 'Standards we follow', description: 'The liquid-cooling standards and open specifications NextGenergy follows, what we have not found in them, and why the acceptance criteria we use should not be ours alone.' }), faqLd(path, qa)];
+const docs = [
+  { name: 'Modular Technology Cooling System for Cloud Scale', org: 'Open Compute Project', ver: 'Rev 1, August 2025', status: 'Published specification', href: 'https://www.opencompute.org/documents/ocp-modular-tcs-rev-1-final-2025-pdf', topics: 'Technology-cooling-loop boundaries between rack, CDU and facility; coolant quality; commissioning evidence' },
+  { name: 'Open Rack V3 Blind Mate Manifold Specification', org: 'Open Compute Project', ver: 'Rev 1.0 (document dated April 2024)', status: 'Specification; the file is labelled a review version', href: 'https://www.opencompute.org/documents/open-rack-v3-blind-mate-manifold-specification-rev-1-0-review-april05-2024-pdf', topics: 'Rack manifold and blind-mate interface; connection testing' },
+  { name: 'Thermal Boundaries in AI Infrastructure', org: 'Open Compute Project', ver: 'v0.98, 2026', status: 'Public-review draft', href: '', topics: 'Definitions of the thermal boundaries and who owns each' },
+  { name: 'Project Deschutes CDU specification', org: 'Google, contributed to OCP', ver: 'v1.0, February 2026', status: 'Released; presented at OCP APAC Summit 2026', href: '', topics: 'CDU approach at rated load (3 K at 2,000 kW, 500 gpm both loops); side-stream filtration' },
+  { name: 'ISO/IEC 30134-6, Key performance indicators: Energy Reuse Factor (ERF)', org: 'ISO/IEC', ver: 'Current edition per the ISO catalogue', status: 'Published international standard', href: 'https://www.iso.org/search.html?q=30134-6', topics: 'How reused energy is counted and where it is measured' },
+  { name: 'EN 50600-4-6, Energy Reuse Factor', org: 'CENELEC', ver: 'Current edition per the CENELEC catalogue', status: 'Published European standard', href: '', topics: 'ERF definition, as used in EU reporting' },
+  { name: 'Energy Reuse Effectiveness (ERE)', org: 'The Green Grid', ver: 'As published by The Green Grid', status: 'Published metric (white paper)', href: 'https://www.thegreengrid.org/', topics: 'Companion metric to PUE that credits reused energy' },
+  { name: 'Commission Delegated Regulation (EU) 2024/1364', org: 'European Commission', ver: '2024', status: 'In force (EU)', href: 'https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj', topics: 'Reporting and metering boundary for EU data centres of 500 kW IT and above, including reused heat' },
+];
+const reviewed = '2 October 2026';
 ---
 <Base ld={ld} title="Standards we follow" description="The liquid-cooling standards and open specifications NextGenergy follows, what we have not found in them, and why the acceptance criteria we use should not be ours alone.">
   <PageHero eyebrow="Evidence · Standards" title="Standards we follow" lede="We follow public drafts and published specifications for liquid cooling and the standards for metering boundaries, so that the acceptance criteria we use stay aligned with industry standards." crumbs={[['/evidence', 'Evidence']]} />
   <section class="section">
     <div class="wrap prose">
       <h2>What we follow</h2>
-      <p><strong>Open Compute Project, Cooling Environments.</strong> We follow the liquid-cooling workstream's public drafts and published specifications, with a focus on commissioning evidence, coolant quality and the boundaries between rack, CDU and facility. The interfaces are being specified: in 2026 Google contributed its Project Deschutes CDU specification to OCP, and quick-disconnect suppliers have asked for the 2019 cold-plate requirements to be updated. In the public documents we have read, we have not found a complete requirement for what a turnover package must contain; that is the gap our <a href="/evidence/turnover">turnover package</a> addresses. The documents we have read include the <a href="https://www.opencompute.org/documents/ocp-modular-tcs-rev-1-final-2025-pdf">Modular Technology Cooling System for Cloud Scale</a> (Rev 1, August 2025), the <a href="https://www.opencompute.org/documents/open-rack-v3-blind-mate-manifold-specification-rev-1-0-review-april05-2024-pdf">Open Rack V3 Blind Mate Manifold Specification</a> (Rev 1.0) and the public-review draft of Thermal Boundaries in AI Infrastructure (v0.98, 2026).</p>
-      <p><strong>Energy-reuse metrics.</strong> The metrics that make heat reuse auditable already exist: the Energy Reuse Factor (ERF) as defined in ISO/IEC 30134-6 and EN 50600-4-6, the Energy Reuse Effectiveness (ERE) published by The Green Grid as a companion to PUE, and the metering-boundary requirement in Commission Delegated Regulation (EU) 2024/1364 for larger EU data centres. We use them in our own reporting, and we recommend them wherever PUE is still the only number on the slide.</p>
+      <p>The documents below are the ones we have read and use. Where no stable public link exists we say so rather than link to a copy. Edition numbers for ISO and CENELEC standards should be checked against the publisher's catalogue before they are cited in a contract.</p>
+    </div>
+    <div class="wrap">
+      <div class="table-wrap"><table class="table std">
+        <thead><tr><th scope="col">Document</th><th scope="col">Number / version</th><th scope="col">Status</th><th scope="col">Original</th><th scope="col">What we look at in it</th></tr></thead>
+        <tbody>{docs.map((d) => <tr><td><strong>{d.name}</strong><br /><span class="small muted">{d.org}</span></td><td>{d.ver}</td><td>{d.status}</td><td>{d.href ? <a href={d.href} rel="noopener">Publisher's page</a> : <span class="muted">No stable public link</span>}</td><td>{d.topics}</td></tr>)}</tbody>
+      </table></div>
+      <p class="small muted" style="margin-top:0.8rem">Last reviewed {reviewed}.</p>
+    </div>
+    <div class="wrap prose">
+      <h2>What we have not found</h2>
+      <p>The interfaces are being specified: in 2026 Google contributed its Project Deschutes CDU specification to OCP, and quick-disconnect suppliers have asked for the 2019 cold-plate requirements to be updated. Within the documents and versions listed on this page, as reviewed on {reviewed}, we have not found a complete requirement for what a turnover package must contain; that is the gap our <a href="/evidence/turnover">turnover package</a> addresses. This is a statement about the listed documents, not about every standard in the field.</p>
+      <p><strong>Energy-reuse metrics.</strong> The metrics that make heat reuse auditable already exist: ERF, ERE and the EU metering-boundary requirement listed above. We use them in our own reporting, and we recommend them wherever PUE is still the only number on the slide.</p>
       <p><strong>Public writing.</strong> The three-clock model, the ten leak points and the metering-boundary argument were all published first as open articles and posts, and revised in public with input from operators, water-chemistry specialists and insurers. The versions on this site are current and are revised as the industry discussion moves.</p>
       <h2>What we look for in a specification</h2>
       <ul>
@@ -33,3 +55,7 @@ const ld = [techArticleLd(path, { headline: 'Standards we follow', description: 
   </section>
   <Faq items={qa} alt />
 </Base>
+<style>
+  .std td, .std th { overflow-wrap: break-word; }
+  .std td:first-child { min-width: 14em; }
+</style>

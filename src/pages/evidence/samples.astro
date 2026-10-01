@@ -54,7 +54,7 @@ const boundaries = [
       <article class="tpl">
         <div class="tag">Template · not a project record</div>
         <h2>3. System boundary diagram</h2>
-        <p class="muted">Drawn for each project, so every party can see where its responsibility starts and stops. The six boundaries follow <a href="/approach/thermal-path">the thermal path</a>.</p>
+        <p class="muted">Drawn for each project, so every party can see where its responsibility starts and stops. The six boundaries follow <a href="/approach/thermal-path">the thermal path</a>. This template numbers them in the direction heat travels, chip outward; the thermal path page and the simulator number them facility inward, so boundary 1 here is boundary 6 there.</p>
         <div class="bd" role="img" aria-label="Six boundaries from cold plate to heat rejection, each with its usual maker">
           {boundaries.map(([b, who], i) => (
             <div class="bd-step"><span class="n">{i + 1}</span><strong>{b}</strong><span class="who">{who}</span><span class="rec">Record owner: ______</span></div>

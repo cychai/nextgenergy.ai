@@ -56,7 +56,7 @@
     notice.setAttribute("aria-label", "Analytics privacy notice");
     notice.setAttribute("role", "dialog");
     notice.innerHTML =
-      '<p>May we use Google Analytics to understand site usage? Advertising features stay disabled.</p>' +
+      '<p>May we use Google Analytics cookies to understand site usage? Advertising features stay disabled. If you decline, no analytics cookies are set, but Google still receives a cookieless page-view signal; <a href="/company/privacy">details</a>.</p>' +
       '<div class="analytics-consent__actions">' +
       '<button type="button" data-analytics-choice="granted">Accept analytics</button>' +
       '<button type="button" data-analytics-choice="denied">Decline</button>' +

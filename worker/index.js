@@ -63,12 +63,18 @@ async function contact(request, env) {
   if (errors.length) return json(400, { ok: false, error: 'validation', fields: errors });
 
   if (!env.GMAIL_USER || !env.GMAIL_APP_PASSWORD) return json(503, { ok: false, error: 'not_configured' });
-  const subject = `[nextgenergy.ai] ${topic} — ${name}${org ? ', ' + org : ''}`;
-  const text = `${message}\n\n—\nName: ${name}\nOrganisation: ${org || '(not given)'}\nEmail: ${email}\nTopic: ${topic}\nSent from the contact form at nextgenergy.ai on ${new Date().toISOString()}\n`;
+  // Optional project details (all may be empty). Each is one line, at most 200 characters.
+  const DETAILS = [['load', 'IT load'], ['site', 'Site / location'], ['timing', 'Planned timing'], ['water', 'Supply / return conditions'], ['scope', 'Scope of supply'], ['day', 'Preferred day'], ['slot', 'Preferred time']];
+  const details = DETAILS.map(([k, label]) => [label, oneLine(clean(d[k], 200))]).filter(([, v]) => v);
+  const now = new Date();
+  const ref = `NG-${now.toISOString().slice(2, 10).replace(/-/g, '')}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+  const subject = `[nextgenergy.ai] ${topic} — ${name}${org ? ', ' + org : ''} [${ref}]`;
+  const detailText = details.length ? `\n\nProject details\n${details.map(([l, v]) => `${l}: ${v}`).join('\n')}` : '';
+  const text = `${message}${detailText}\n\n—\nReference: ${ref}\nName: ${name}\nOrganisation: ${org || '(not given)'}\nEmail: ${email}\nTopic: ${topic}\nSent from the contact form at nextgenergy.ai on ${now.toISOString()}\n`;
   try {
     await sendMail(env, { to: env.CONTACT_TO || 'sales@nextgenergy.ai', replyTo: email, subject, text });
     console.log(JSON.stringify({ t: 'contact', ok: true, topic }));
-    return json(200, { ok: true });
+    return json(200, { ok: true, ref, at: now.toISOString() });
   } catch (e) {
     console.log(JSON.stringify({ t: 'contact', ok: false, err: String((e && e.message) || e).slice(0, 80) }));
     return json(502, { ok: false, error: 'upstream' });

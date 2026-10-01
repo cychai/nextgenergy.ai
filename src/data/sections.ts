@@ -1,4 +1,7 @@
-export interface Sub { slug: string; title: string; summary: string; body: string[]; asks?: string[]; claims?: string[]; related?: { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }[]; }
+export interface Sub { slug: string; title: string; summary: string; body: string[]; asks?: string[]; claims?: string[]; related?: { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }[]; spec?: Spec; }
+
+/** Specification and interface framework for a product page: the fields a buyer compares, and how each is stated. Values are not published; they are configured per project and given in the data sheet. */
+export interface Spec { item: string; rows: [string, string][]; }
 
 export const solutions: Sub[] = [
   { slug: 'new-build', title: 'New-build AI data centre', summary: 'Fix the IT operating limits, the CDU approach and the acceptance criteria before the first rack lands, and plan heat reuse where a buyer exists.',
@@ -48,7 +51,23 @@ export const platform: Sub[] = [
     body: [
       'One of the most effective ways to reduce leak risk is to make fewer joints in the field. A skid moves the CDU, pumps, balancing and isolation valves, filtration, sample ports and controls into a factory where each boundary can be pressure-tested, flushed to a cleanliness class and released against written criteria, with the record attached to the serial.',
       'We design the skid around the project\'s acceptance criteria, including the transport splits and site connections, and have it built by manufacturing partners we have qualified. We own the specification and the factory acceptance test, and we are accountable for how the skid performs in the line within the agreed scope and acceptance criteria.'],
-    asks: ['FAT protocol agreed before build', 'Cleanliness class stated and sampled', 'Field connections limited to flanges with a test plan'] },
+    asks: ['FAT protocol agreed before build', 'Cleanliness class stated and sampled', 'Field connections limited to flanges with a test plan'],
+    spec: { item: 'skids', rows: [
+      ['Rated heat load and rating conditions', 'kW at stated supply temperatures, approach and fluid, for the skid as a whole'],
+      ['Equipment on the skid', 'CDU, pumps, filtration, valves, sample ports, sensors and controls, listed'],
+      ['Primary and secondary flow and pressure drop', 'Flow at rated load and pressure drop or available pressure on each loop'],
+      ['Pump redundancy', 'N, N+1 or 2N, and how a pump is isolated for service'],
+      ['Maximum allowable working pressure', 'For each loop, with the factory test pressure'],
+      ['Wetted materials and coolant compatibility', 'Named materials per loop; fluids and glycol concentrations allowed'],
+      ['Filtration', 'Full-flow rating and its basis; side-stream filtration if fitted'],
+      ['Transport splits', 'Number of shipping sections, and the size and weight of the largest'],
+      ['Site connections', 'Count of pipe, power and control connections made on site, each with its test'],
+      ['FAT checklist', 'Tests run before release, with acceptance criteria (see the FAT record template)'],
+      ['Installation conditions', 'Floor loading, footprint, levelling, access route and lifting points'],
+      ['Interfaces and communications', 'Pipe connection type and size; control and monitoring protocols; signals to the building systems'],
+      ['Dimensions, weight and service clearances', 'Per section and assembled; access needed for maintenance'],
+      ['Supply boundary', 'What we supply and what the site contractor provides, drawn at each connection'],
+    ] } },
   { slug: 'racks', title: 'ORv3 and 19-inch racks', summary: 'Open Rack V3 and standard 19-inch configurations with liquid distribution, power and cable management, for new halls and for retrofits of existing ones. IT compatibility agreed per project.',
     body: [
       'An ORv3 rack for liquid-cooled IT is a distribution system before it is a piece of furniture. The vertical manifold, the quick-disconnect positions, the busbar and the cable pathways all have to be agreed against the servers the owner is actually buying, and against the CDU that will feed them.',
@@ -65,7 +84,21 @@ export const platform: Sub[] = [
       'We select CDUs from several manufacturers against the project\'s approach, turndown and redundancy requirements, and we require the manufacturer\'s FAT for pump seals, heat-exchanger gaskets and filter housings, the enclosed boundaries that leak quietly.'],
     asks: ['Approach at rated load, with fouling allowance, stated with load fraction, both flows and fluid (published targets: 3–4 K)', 'Full-flow filter rating and its basis (25 µm is becoming the default on the secondary loop)', 'Turndown range and pump staging logic', 'FAT for internal boundaries'],
     claims: ['cdu-approach-4k', 'tcs-filtration-25um'],
-    related: [{ href: '/tools/approach-temp', label: 'CDU approach and free-cooling estimator', kind: 'tool' }] },
+    related: [{ href: '/tools/approach-temp', label: 'CDU approach and free-cooling estimator', kind: 'tool' }],
+    spec: { item: 'cdu', rows: [
+      ['Rated heat load and rating conditions', 'kW at a stated facility supply temperature, secondary supply temperature, approach and fluid'],
+      ['Primary (facility) flow and pressure drop', 'Flow at rated load and the pressure drop across the CDU at that flow'],
+      ['Secondary (TCS) flow and available pressure', 'Flow at rated load and the external pressure available to the rack loop at that flow'],
+      ['Pump redundancy', 'N, N+1 or 2N; whether pumps can be replaced while running; staging logic'],
+      ['Maximum allowable working pressure', 'For each loop, with the factory test pressure'],
+      ['Wetted materials', 'Metals, elastomers and plastics in contact with each fluid, named'],
+      ['Coolant compatibility', 'Fluids and glycol concentrations the unit is rated for'],
+      ['Filtration', 'Full-flow rating and its basis; side-stream filtration if fitted; change-out pressure drop'],
+      ['Interfaces and communications', 'Pipe connection type and size; control and monitoring protocols; alarms and signals exchanged'],
+      ['Dimensions and weight', 'Footprint, height, dry and operating weight'],
+      ['Service clearances', 'Front, rear, side and top access needed for maintenance'],
+      ['Scope of supply', 'What is included and what is not: controls, sensors, first fill, factory test, commissioning support'],
+    ] } },
   { slug: 'cooling-equipment', title: 'Cooling equipment', summary: 'Dry coolers and water-cooled chillers matched to site climate, facility water and coolant temperatures.',
     body: [
       'The heat has to leave the site. Dry coolers, adiabatic-assist units and water-cooled chillers are selected against the design ambient, the facility supply temperature the CDU approach implies, the water the site is allowed to use, and any heat buyer that would rather have the heat than reject it.',

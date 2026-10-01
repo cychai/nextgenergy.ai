@@ -15,7 +15,7 @@ const eventOn = showEvent();
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
           <div class="starts">
             <p class="eyebrow plain" style="margin:0 0 0.6rem">Where to start</p>
-            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic} data-hide-from={event.hideFrom.toISOString()}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Tell us which day suits you and what you would like to discuss.</span></a>}
+            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic} data-hide-from={event.hideFrom.toISOString()}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Pick a day and a morning or afternoon slot. The team confirms by email; a request is not a booking until then.</span></a>}
             {eventOn && <script is:inline src="/event-expiry.js" defer></script>}
             <a class="start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
             <a class="start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
@@ -33,12 +33,31 @@ const eventOn = showEvent();
               <option value="" selected disabled>Choose a topic</option>
               <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option>{eventOn && <option data-hide-from={event.hideFrom.toISOString()}>Meeting at GDCC Canada 2026</option>}<option>Something else</option>
             </select></div>
+          <fieldset class="details" data-details hidden>
+            <legend>Project details <span class="small muted">All optional. A rough idea is fine.</span></legend>
+            <div class="field" data-f="load"><label for="load" data-l>IT load</label><input id="load" name="load" type="text" maxlength="200" /></div>
+            <div class="field" data-f="site"><label for="site" data-l>Site location</label><input id="site" name="site" type="text" maxlength="200" /></div>
+            <div class="field" data-f="timing"><label for="timing" data-l>Planned timing</label><input id="timing" name="timing" type="text" maxlength="200" /></div>
+            <div class="field" data-f="water"><label for="water" data-l>Supply and return water conditions</label><input id="water" name="water" type="text" maxlength="200" /></div>
+            <div class="field" data-f="scope"><label for="scope" data-l>Scope of supply</label><input id="scope" name="scope" type="text" maxlength="200" /></div>
+          </fieldset>
+          {eventOn && (
+            <fieldset class="details" data-meeting hidden data-hide-from={event.hideFrom.toISOString()}>
+              <legend>Preferred time at booth {event.booth}</legend>
+              <div class="pair">
+                <div class="field"><label for="day">Day</label><select id="day" name="day"><option value="">No preference</option><option>Tue 20 October</option><option>Wed 21 October</option></select></div>
+                <div class="field"><label for="slot">Time</label><select id="slot" name="slot"><option value="">No preference</option><option>Morning</option><option>Afternoon</option></select></div>
+              </div>
+              <p class="small muted" style="margin:0">After you submit, the team confirms the time by email. The meeting is not booked until you receive that confirmation.</p>
+            </fieldset>
+          )}
           <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000"></textarea></div>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
           <p class="form-status" data-status role="status" hidden></p>
-          <div class="fallback" data-fallback hidden><button type="button" class="btn" data-copy-msg>Copy your message</button><button type="button" class="btn" data-copy-mail>Copy our email address</button></div>
+          <div class="receipt" data-receipt hidden></div>
+          <div class="fallback" data-fallback hidden><button type="button" class="btn" data-copy-msg>Copy your message</button><button type="button" class="btn" data-copy-mail>Copy our email address</button><a class="btn" data-open-mail href={`mailto:${site.email}`}>Open as a draft in your email app</a></div>
           <div class="btn-row" style="margin-top:0.5rem;align-items:center"><button class="btn primary" type="submit" data-send>Send message</button><span class="small muted">or write to <a href={`mailto:${site.email}`}><span class="mono">{site.email}</span></a></span></div>
-          <p class="small muted" style="margin:1rem 0 0">Your message is sent to our team over HTTPS and used only to reply to you; it is not added to any mailing list. If the form cannot send, it opens the same message in your email app instead. See our <a href="/company/privacy">privacy notice</a>.</p>
+          <p class="small muted" style="margin:1rem 0 0">Your message is sent to our team over HTTPS and used only to reply to you; it is not added to any mailing list. If the form cannot send, this page says so and gives you our address and a copy of your message; nothing opens automatically. See our <a href="/company/privacy">privacy notice</a>.</p>
         </form>
       </div>
     </div>
@@ -48,48 +67,102 @@ const eventOn = showEvent();
   const f = document.querySelector('[data-contact]');
   const status = f?.querySelector('[data-status]');
   const btn = f?.querySelector('[data-send]');
+  const receipt = f?.querySelector('[data-receipt]');
+  const details = f?.querySelector('[data-details]');
+  const meeting = f?.querySelector('[data-meeting]');
   const opened = Date.now();
-  const TOPIC = { product: 'Product enquiry or quote', commissioning: 'Commissioning or verification of an existing system', field: 'Field testing or operations', heat: 'Heat reuse', gdcc: 'Meeting at GDCC Canada 2026' };
-  const HINT = { product: 'IT load, site location, timeline and main constraints. A rough idea is fine.', commissioning: 'What system is installed, what records exist and what state it is in.', field: 'Site location, system size and the service you are looking for.', heat: 'Heat source and temperature, possible heat users, distance between them.', gdcc: 'Which day suits you (20 or 21 October), a rough time, and what you would like to discuss at booth A20.' };
-  const pre = new URLSearchParams(location.search).get('topic');
-  if (pre && TOPIC[pre] && f && [...f.topic.options].some((o) => o.value === TOPIC[pre])) { f.topic.value = TOPIC[pre]; f.message.placeholder = HINT[pre]; }
+  const TOPIC = { product: 'Product enquiry or quote', datasheet: 'Product enquiry or quote', commissioning: 'Commissioning or verification of an existing system', field: 'Field testing or operations', heat: 'Heat reuse', gdcc: 'Meeting at GDCC Canada 2026' };
+  const ITEM = { cdu: 'Data sheet request: CDU and secondary loop', skids: 'Data sheet request: factory-built skid' };
+  // Which optional detail fields each topic shows, with topic-specific labels and placeholders. All are optional.
+  const PROJECT = {
+    load: ['IT load', 'e.g. total MW, or number of racks and kW per rack'], site: ['Site location', 'City or region'], timing: ['Planned timing', 'e.g. design in Q1, equipment on site in Q3'],
+    water: ['Supply and return water conditions', 'Facility supply and return temperatures, if known'], scope: ['Scope of supply', 'e.g. CDUs only, skids with CDUs, racks, cooling plant'],
+  };
+  const FIELDS = {
+    'Product enquiry or quote': PROJECT, 'New build': PROJECT, 'Retrofit': { ...PROJECT, water: ['Existing chilled or facility water conditions', 'Supply temperature and spare capacity, if known'] },
+    'Heat reuse': { load: ['Heat source or IT load', 'e.g. 5 MW of IT load'], site: PROJECT.site, timing: PROJECT.timing, water: ['Return-water temperature, if known', 'e.g. secondary return temperature'], scope: ['Possible heat users', 'e.g. greenhouse, district network, building, and distance'] },
+    'Field testing or operations': { site: PROJECT.site, load: ['System size', 'e.g. number of CDUs or racks, IT load'], timing: ['When you need us', 'e.g. before handover in March'], scope: ['Service needed', 'e.g. fluid sampling, flow balance, periodic maintenance'] },
+    'Commissioning or verification of an existing system': { site: PROJECT.site, load: ['System size', 'e.g. number of CDUs or racks, IT load'], timing: ['When you need us', ''], scope: ['What exists today', 'e.g. drawings, FAT records, test results'] },
+  };
+  const HINT = { 'Product enquiry or quote': 'What you are planning and the main constraints. The fields above are optional.', 'Commissioning or verification of an existing system': 'What system is installed, what records exist and what state it is in.', 'Field testing or operations': 'Site, system and the service you are looking for.', 'Heat reuse': 'Heat source, possible heat users and the distance between them.', 'Meeting at GDCC Canada 2026': 'What you would like to discuss at booth A20.' };
+  function applyTopic() {
+    if (!f) return;
+    const cfg = FIELDS[f.topic.value];
+    if (details) {
+      details.hidden = !cfg;
+      details.querySelectorAll('[data-f]').forEach((el) => {
+        const spec = cfg && cfg[el.dataset.f];
+        el.hidden = !spec;
+        const input = el.querySelector('input');
+        if (spec) { el.querySelector('[data-l]').textContent = spec[0]; input.placeholder = spec[1]; } else if (input) input.value = '';
+      });
+    }
+    if (meeting) { meeting.hidden = f.topic.value !== 'Meeting at GDCC Canada 2026'; if (meeting.hidden) meeting.querySelectorAll('select').forEach((x) => (x.value = '')); }
+    f.message.placeholder = HINT[f.topic.value] || '';
+  }
+  const q = new URLSearchParams(location.search);
+  const pre = q.get('topic');
+  if (pre && TOPIC[pre] && f && [...f.topic.options].some((o) => o.value === TOPIC[pre])) f.topic.value = TOPIC[pre];
+  applyTopic();
+  if (pre === 'datasheet' && f && ITEM[q.get('item')]) { f.scope.value = ITEM[q.get('item')]; f.message.placeholder = 'Tell us roughly what the configuration is for (IT load, site, timing). We send the data sheet for the closest configuration.'; }
+  f?.topic.addEventListener('change', applyTopic);
   const say = (msg, kind) => { if (!status) return; status.textContent = msg; status.dataset.kind = kind; status.hidden = false; };
   const g = (d, k) => String(d.get(k) ?? '').trim();
   const COPIED = 'Copied';
   const fb = f?.querySelector('[data-fallback]');
+  const openMail = f?.querySelector('[data-open-mail]');
   let lastText = '';
-  async function copy(text, btn) {
+  async function copy(text, b) {
     try { await navigator.clipboard.writeText(text); }
     catch {
       const ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
       document.body.append(ta); ta.select(); try { document.execCommand('copy'); } catch {} ta.remove();
     }
-    const old = btn.textContent; btn.textContent = COPIED; setTimeout(() => (btn.textContent = old), 1600);
+    const old = b.textContent; b.textContent = COPIED; setTimeout(() => (b.textContent = old), 1600);
   }
   f?.querySelector('[data-copy-msg]')?.addEventListener('click', (e) => copy(lastText, e.currentTarget));
   f?.querySelector('[data-copy-mail]')?.addEventListener('click', (e) => copy(f.dataset.to, e.currentTarget));
-  function mailtoFallback(d) {
+  const LABELS = [['load', 'IT load'], ['site', 'Site'], ['timing', 'Timing'], ['water', 'Water conditions'], ['scope', 'Scope'], ['day', 'Preferred day'], ['slot', 'Preferred time']];
+  // Not delivered: say so plainly and offer the address, a copy of the message and an optional draft. Nothing opens by itself.
+  function notDelivered(d) {
     const subject = `[nextgenergy.ai] ${g(d, 'topic')} — ${g(d, 'name')}${g(d, 'org') ? ', ' + g(d, 'org') : ''}`;
-    const body = `${g(d, 'message')}\n\n—\n${g(d, 'name')}${g(d, 'org') ? '\n' + g(d, 'org') : ''}\n${g(d, 'email')}`;
-    lastText = `${subject}\n\n${body}`; if (fb) fb.hidden = false;
-    location.href = `mailto:${f.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const extra = LABELS.map(([k, l]) => (g(d, k) ? `${l}: ${g(d, k)}` : '')).filter(Boolean).join('\n');
+    const body = `${g(d, 'message')}${extra ? '\n\n' + extra : ''}\n\n—\n${g(d, 'name')}${g(d, 'org') ? '\n' + g(d, 'org') : ''}\n${g(d, 'email')}`;
+    lastText = `${subject}\n\n${body}`;
+    if (openMail) openMail.href = `mailto:${f.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (fb) fb.hidden = false;
+    say(`Not delivered. Your message has not reached us. Please email it to ${f.dataset.to}: copy your message below, or open it as a draft in your email app. What you typed is still in the form.`, 'error');
   }
   f?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (receipt) receipt.hidden = true;
     if (!f.checkValidity()) { f.reportValidity(); say('Please complete the highlighted fields.', 'error'); return; }
     const d = new FormData(f);
     const payload = { name: g(d, 'name'), org: g(d, 'org'), email: g(d, 'email'), topic: g(d, 'topic'), message: g(d, 'message'), website: g(d, 'website'), elapsed: Date.now() - opened };
+    LABELS.forEach(([k]) => { const v = g(d, k); if (v) payload[k] = v; });
     btn.disabled = true; say('Sending…', 'info');
     try {
       const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const j = await r.json().catch(() => ({}));
-      if (r.ok && j.ok) { f.reset(); if (fb) fb.hidden = true; say('Received by our server and passed to our team. We reply within two working days.', 'ok'); return; }
-      if (j.error === 'validation') { say('Please check your name, email, topic and message, then send again.', 'error'); btn.disabled = false; return; }
-      say('The form could not send just now, so we have tried to open a draft in your email app. If nothing opened, copy your message and our address below and send it from any mailbox.', 'info');
-      mailtoFallback(d);
+      if (r.ok && j.ok) {
+        const when = new Date(j.at || Date.now()).toLocaleString('en-CA', { dateStyle: 'medium', timeStyle: 'short' });
+        const isMeeting = payload.topic === 'Meeting at GDCC Canada 2026';
+        if (status) status.hidden = true;
+        if (receipt) {
+          receipt.replaceChildren();
+          const h = document.createElement('p'); h.className = 'r-h'; h.textContent = 'Received. Your message has reached our team.'; receipt.append(h);
+          const dl = document.createElement('dl');
+          [['Reference', j.ref || '—'], ['Received', when], ['Topic', payload.topic], ['Reply to', payload.email], ['Reply', 'within two working days']].concat(isMeeting && (payload.day || payload.slot) ? [['Requested', [payload.day, payload.slot].filter(Boolean).join(', ')]] : []).forEach(([k, v]) => { const dt = document.createElement('dt'); dt.textContent = k; const dd = document.createElement('dd'); dd.textContent = v; dl.append(dt, dd); });
+          receipt.append(dl);
+          if (isMeeting) { const n = document.createElement('p'); n.className = 'small'; n.textContent = 'Your requested time is not booked yet. The team will confirm it by email.'; receipt.append(n); }
+          receipt.hidden = false; receipt.setAttribute('tabindex', '-1'); receipt.focus();
+        }
+        f.reset(); applyTopic(); if (fb) fb.hidden = true; btn.disabled = false; return;
+      }
+      if (j.error === 'validation') { say('Please check your name, email, topic and message (at least 10 characters), then send again.', 'error'); btn.disabled = false; return; }
+      notDelivered(d);
     } catch {
-      say('The form could not send just now, so we have tried to open a draft in your email app. If nothing opened, copy your message and our address below and send it from any mailbox.', 'info');
-      mailtoFallback(d);
+      notDelivered(d);
     }
     btn.disabled = false;
   });
@@ -107,5 +180,18 @@ const eventOn = showEvent();
   .form-status[data-kind="ok"] { border-color: var(--green); background: #e7f6ea; }
   .form-status[data-kind="error"] { border-color: #b42318; background: #fef3f2; color: #7a271a; }
   .tool select:invalid { color: var(--ink-3); }
+  .details { border: 1px solid var(--line-2); border-radius: var(--r); padding: 1rem 1rem 0.2rem; margin: 0 0 1.3rem; min-width: 0; }
+  .details legend { padding: 0 0.4rem; font-weight: 600; }
+  .details legend span { font-weight: 400; margin-left: 0.3rem; }
+  .details .field { margin-bottom: 1rem; }
+  .details [hidden] { display: none; }
+  .pair { display: grid; gap: 0 1rem; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 420px) { .pair { grid-template-columns: 1fr; } }
+  .receipt { margin: 0.8rem 0 0; padding: 0.9rem 1rem; border-left: 3px solid var(--green); background: #e7f6ea; }
+  .receipt .r-h { margin: 0 0 0.5rem; font-weight: 600; }
+  .receipt dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; margin: 0; font-size: 0.92rem; }
+  .receipt dt { color: var(--ink-3); }
+  .receipt dd { margin: 0; overflow-wrap: anywhere; }
+  .receipt p.small { margin: 0.6rem 0 0; }
   .tool input[type="text"], .tool input[type="email"], .tool textarea { width: 100%; font: inherit; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); color: var(--ink); }
 </style>

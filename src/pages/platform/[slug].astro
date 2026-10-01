@@ -14,6 +14,17 @@ const { s } = Astro.props;
       <div class="split main">
         <div class="prose">
           {s.body.map((p) => <p>{p}</p>)}
+          {s.spec && (
+            <section class="spec" aria-labelledby="spec-h">
+              <h2 id="spec-h">Specification and interfaces</h2>
+              <p class="muted">The fields buyers compare. Values depend on the configuration, so we do not publish one set of numbers; each project gets a data sheet with every row filled in at stated conditions.</p>
+              <div class="table-wrap"><table class="table">
+                <thead><tr><th scope="col">Field</th><th scope="col">How it is stated</th><th scope="col">Value</th></tr></thead>
+                <tbody>{s.spec.rows.map(([f, h]) => <tr><th scope="row">{f}</th><td>{h}</td><td class="muted">Configured per project; data sheet on request</td></tr>)}</tbody>
+              </table></div>
+              <div class="btn-row" style="margin-top:1rem"><a class="btn primary" href={`/company/contact?topic=datasheet&item=${s.spec.item}#form`}>Request the data sheet</a>{s.spec.item === 'skids' && <a class="btn" href="/evidence/samples">See the FAT record template</a>}</div>
+            </section>
+          )}
           {s.claims && s.claims.length > 0 && (
             <details class="claims method">
               <summary>Numbers on this page, with their conditions and sources ({s.claims.length})</summary>
@@ -36,6 +47,10 @@ const { s } = Astro.props;
   </section>
 </Base>
 <style>
+  .spec { margin: 2.5rem 0 1.5rem; }
+  .spec h2 { margin-bottom: 0.5rem; }
+  .spec tbody th { font-weight: 600; text-align: left; min-width: 11em; text-transform: none; letter-spacing: 0; font-size: 0.95rem; color: var(--ink); }
+  .spec td.muted { min-width: 9em; }
   .claims { margin: 2rem 0 1rem; overflow-wrap: break-word; }
   .asks { list-style: none; padding: 0; margin: 0.5rem 0 0; }
   .asks li { padding: 0.6rem 0 0.6rem 1.4rem; border-bottom: 1px solid var(--line-2); font-size: 0.95rem; position: relative; }
