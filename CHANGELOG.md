@@ -2,6 +2,10 @@
 
 按日期倒序（多伦多日期），每次发布在最上方追加；每条一句，带 commit hash。dist/ 随源码一起提交，push main 即由 Cloudflare Workers Builds 上线。
 
+## 2026-10-02
+
+- `8826013` 按 ChatGPT 2026-10-02 审核（E01、E03–E05、跨站）：CDU 与撬块页加「Specification and interfaces」框架表（撬块含运输分段、现场接口数量、FAT 清单、安装条件、供应边界），数值一律「Configured per project; data sheet on request」，加「Request the data sheet」→ 联系页预选产品主题并带上产品名；Track record 四个案例改为统一六栏，未公开项写「Provided under a non-disclosure agreement」，水产案例改为控制目标；Standards 页改为版本表（全名、编号/版本、状态、原文入口、关注主题），缺口一句限定「本页所列文件及版本范围内」，最后复核 2026-10-02；联系表单按主题显示选填项目信息，成功给回执编号与「两个工作日内回复」，失败明确「Not delivered」并给邮箱、复制与可选草稿，不再自动打开邮件客户端；GDCC 预约加 10/20、10/21 与上午/下午，注明需邮件确认才算锁定；隐私页与横幅写明点「Decline」后不设 Cookie 但 Google 标签仍发送无 Cookie 的页面浏览信号（2026-10-02 线上实测 gcs=G100）；页脚写明 NextGenergy Technology Inc. 与 NextGenergy USA, LLC 在北美运营、主体在报价单注明，加相关网站（仿真台、液冷学院由 NextGenergy USA, LLC 运营）；热通路页与记录样例页加与仿真台 B1–B6 的编号对照。
+
 ## 2026-10-01
 
 - `57f59b2` Standards 页标题改为「Standards we follow」，页脚、Evidence 总览、Resources、geo 核心页与 llms.txt 的链接文字同步，网址不变。
