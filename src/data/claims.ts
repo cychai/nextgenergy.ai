@@ -82,6 +82,15 @@ export const claims: Record<string, Claim> = {
     verifiedBy: 'Internal records; not third-party audited.',
     status: 'conditional',
   },
+  'case-aquaculture-25c': {
+    id: 'case-aquaculture-25c',
+    value: 'About 25 °C',
+    statement: 'In the 12 MW cold-plate project whose recovered heat supplies aquaculture ponds, the measured pond temperature is about 25 °C.',
+    condition: 'Asia, 2023; cold-plate liquid cooling with heat recovery to industrial aquaculture ponds; delivered by the founding team through their earlier company, before NextGenergy. Measured value from the project operating record; the operating range, allowed variation and record dates are explained under a non-disclosure agreement.',
+    source: 'Project operating record (not published); see /company/track-record.',
+    verifiedBy: 'Project operating record; not published, not third-party audited.',
+    status: 'conditional',
+  },
   'founding-8-years': {
     id: 'founding-8-years',
     value: '6 years',

@@ -14,13 +14,14 @@ const fatRows = [
 ];
 const flowCols = ['Rack', 'Design flow (L/min)', 'Measured flow (L/min)', 'Deviation (%)', 'Tolerance (%)', 'Supply T (°C)', 'Return T (°C)', 'ΔP (kPa)', 'Pass / fail'];
 const ncrCols = ['ID', 'Boundary', 'Finding', 'Raised by, date', 'Corrective action', 'Owner', 'Re-test result', 'Closed by, date'];
+// Same numbering as /approach/thermal-path and the simulator: B1 facility water interface … B6 cold plate and chip.
 const boundaries = [
-  ['Cold plate and chip', 'Cold-plate maker, server OEM'],
-  ['Hoses, crimps and fittings', 'Hose assembler, rack integrator'],
-  ['Rack manifold and quick disconnects', 'Rack integrator, QD supplier'],
-  ['CDU and secondary loop', 'CDU maker, integrator'],
   ['Facility water interface', 'Facility mechanical contractor'],
   ['Heat rejection and reuse', 'Heat-rejection vendor or heat buyer'],
+  ['CDU and secondary loop', 'CDU maker, integrator'],
+  ['Rack manifold and quick disconnects', 'Rack integrator, QD supplier'],
+  ['Hoses, crimps and fittings', 'Hose assembler, rack integrator'],
+  ['Cold plate and chip', 'Cold-plate maker, server OEM'],
 ];
 ---
 <Base title="Sample deliverables" description="Templates for the records NextGenergy hands over: a factory acceptance test record, a turnover package index, a system boundary diagram, a flow-balance test record with its conditions, and a non-conformance log. Templates only; no project data.">
@@ -54,10 +55,10 @@ const boundaries = [
       <article class="tpl">
         <div class="tag">Template · not a project record</div>
         <h2>3. System boundary diagram</h2>
-        <p class="muted">Drawn for each project, so every party can see where its responsibility starts and stops. The six boundaries follow <a href="/approach/thermal-path">the thermal path</a>. This template numbers them in the direction heat travels, chip outward; the thermal path page and the simulator number them facility inward, so boundary 1 here is boundary 6 there.</p>
-        <div class="bd" role="img" aria-label="Six boundaries from cold plate to heat rejection, each with its usual maker">
+        <p class="muted">Drawn for each project, so every party can see where its responsibility starts and stops. The six boundaries follow <a href="/approach/thermal-path">the thermal path</a>, numbered from the facility inward: B1 facility water interface to B6 cold plate and chip.</p>
+        <div class="bd" role="img" aria-label="Six boundaries, B1 facility water interface to B6 cold plate and chip, each with its usual maker">
           {boundaries.map(([b, who], i) => (
-            <div class="bd-step"><span class="n">{i + 1}</span><strong>{b}</strong><span class="who">{who}</span><span class="rec">Record owner: ______</span></div>
+            <div class="bd-step"><span class="n">B{i + 1}</span><strong>{b}</strong><span class="who">{who}</span><span class="rec">Record owner: ______</span></div>
           ))}
         </div>
       </article>

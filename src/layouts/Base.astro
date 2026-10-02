@@ -43,10 +43,9 @@ const jsonld = JSON.stringify({
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical ?? url.href} />
-    <!-- Google Analytics 4 with Consent Mode: analytics storage denied until the visitor accepts (see /google-analytics.js and /company/privacy) -->
+    <!-- Analytics consent banner. Google Analytics is loaded only after the visitor accepts (see /google-analytics.js and /company/privacy). -->
     <link rel="stylesheet" href="/google-analytics.css" />
     <script is:inline src="/google-analytics.js"></script>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-SQ8WX1BMRW"></script>
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/brand/emblem-512.png" />
     <meta property="og:image" content={new URL('/products/hero-skid.jpg', Astro.site).href} />

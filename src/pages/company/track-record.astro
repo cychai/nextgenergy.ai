@@ -3,7 +3,7 @@ import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import { claims } from '@/data/claims';
 const mw = claims['deployed-1000mw'];
-const NDA = 'Provided under a non-disclosure agreement';
+const NDA = 'Explained under a non-disclosure agreement';
 // Six fixed fields per case. Only information already published is filled in; everything else says what it would take to see it.
 const cases = [
   { year: '2021', place: 'Asia', type: 'Immersion cooling · residential heating', scale: '25 MW',
@@ -12,30 +12,30 @@ const cases = [
     arch: 'Immersion liquid cooling; recovered heat supplies space heating to a residential community.',
     duty: 'Supply and return temperatures, heat delivered: ' + NDA.toLowerCase() + '.',
     period: 'In the project year 2021; the operating record and its dates: ' + NDA.toLowerCase() + '.',
-    evidence: NDA + '.' },
+    evidence: 'Not published; ' + NDA.toLowerCase() + '.' },
   { year: '2023', place: 'Asia', type: 'Direct-to-chip cooling · aquaculture', scale: '12 MW',
     cond: '12 MW liquid-cooled IT capacity, Asia, 2023. Location and client not named.',
     scope: 'Cold-plate liquid cooling with heat recovery, delivered by the founding team through their earlier company. Division of design, integration and operation: ' + NDA.toLowerCase() + '.',
     arch: 'Cold-plate liquid cooling; recovered heat is supplied to industrial aquaculture ponds.',
-    duty: 'Control objective: a constant pond temperature through the year. This is the design target, not a published measurement; the measured range and allowed variation: ' + NDA.toLowerCase() + '.',
+    duty: 'Measured pond temperature about 25 °C (project operating record, not published). The measured range and allowed variation: ' + NDA.toLowerCase() + '.',
     period: 'In the project year 2023; the operating record and its dates: ' + NDA.toLowerCase() + '.',
-    evidence: NDA + '.' },
+    evidence: 'Not published; ' + NDA.toLowerCase() + '.' },
   { year: '2024', place: 'Asia, above 3,000 m altitude', type: 'Heat reuse · space heating', scale: 'Not published',
     cond: 'Above 3,000 m altitude, Asia, 2024. Capacity not published; location and client not named.',
     scope: 'Heat-reuse system with a redesigned CDU, delivered by the founding team through their earlier company. Other scope: ' + NDA.toLowerCase() + '.',
     arch: 'Waste heat used for space heating. When the heating side needed a higher supply temperature in cold weather, the CDU was redesigned with a tighter approach temperature, so the loop could deliver warmer water without running the chips hotter.',
     duty: 'The approach temperature before and after the redesign, and the supply temperature reached: ' + NDA.toLowerCase() + '.',
     period: 'In the project year 2024; the operating record and its dates: ' + NDA.toLowerCase() + '.',
-    evidence: NDA + '.' },
+    evidence: 'Not published; ' + NDA.toLowerCase() + '.' },
   { year: '2025', place: 'Asia', type: 'Heat recovery · commercial heating', scale: '20 MW',
     cond: '20 MW, Asia, 2025. Location and client not named.',
     scope: 'Heat-recovery system, delivered by the founding team through their earlier company. Division of design, integration and operation: ' + NDA.toLowerCase() + '.',
     arch: 'A heat-recovery system supplying heating to commercial buildings.',
     duty: 'Supply and return temperatures, heat delivered: ' + NDA.toLowerCase() + '.',
     period: 'In the project year 2025; the operating record and its dates: ' + NDA.toLowerCase() + '.',
-    evidence: NDA + '.' },
+    evidence: 'Not published; ' + NDA.toLowerCase() + '.' },
 ];
-const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], ['arch', 'System architecture'], ['duty', 'Key operating conditions'], ['period', 'Operating observation period'], ['evidence', 'Evidence available']];
+const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], ['arch', 'System architecture'], ['duty', 'Key operating conditions'], ['period', 'Operating observation period'], ['evidence', 'System diagrams and acceptance records']];
 
 ---
 <Base title="Track record" description="Projects delivered by the NextGenergy founding team before NextGenergy: immersion and direct-to-chip liquid cooling with waste heat reused for residential, commercial and aquaculture heating.">
@@ -46,7 +46,7 @@ const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], 
         <div><span class="v">{mw.value}</span><span class="l">{mw.statement}</span><span class="c"><b>Condition:</b> {mw.condition}</span></div>
       </div>
       <h2 style="margin-top:2.5rem">Representative projects</h2>
-      <p class="muted" style="max-width:62ch">Each project is described in the same six fields. Locations and clients are not named. Scale is liquid-cooled IT capacity where it is published; it measures equipment delivered, not the heat supplied to users. Heating results are reported only as the project's control objective unless a measurement is published.</p>
+      <p class="muted" style="max-width:62ch">Each project is described in the same six fields. Locations and clients are not named. Scale is liquid-cooled IT capacity where it is published; it measures equipment delivered, not the heat supplied to users. Heating results are stated only where the project's operating record supports them; the operating records, system diagrams and acceptance records are not published.</p>
       <div class="cases">
         {cases.map((c) => (
           <article class="case">
@@ -56,7 +56,7 @@ const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], 
           </article>
         ))}
       </div>
-      <p class="small muted" style="margin-top:2rem">NextGenergy Technology Inc. was incorporated in 2025. Projects delivered by NextGenergy will be added here as they are handed over. To see the evidence behind any of these four projects, <a href="/company/contact?topic=product#form">ask us</a> and we will set up the non-disclosure agreement. Read more about the team on <a href="/company/leadership">Leadership</a>, and about heat reuse in <a href="/insights/waste-heat-becomes-an-asset">Waste Heat Becomes an Asset</a>.</p>
+      <p class="small muted" style="margin-top:2rem">NextGenergy was incorporated in 2025. Projects delivered by NextGenergy will be added here as they are handed over. Further detail on these four projects is explained only under a non-disclosure agreement; <a href="/company/contact?topic=product#form">contact us</a> to discuss. Read more about the team on <a href="/company/leadership">Leadership</a>, and about heat reuse in <a href="/insights/waste-heat-becomes-an-asset">Waste Heat Becomes an Asset</a>.</p>
     </div>
   </section>
 </Base>

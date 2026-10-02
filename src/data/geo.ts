@@ -10,7 +10,7 @@ export const definitions: Record<string, Definition> = {
   '/approach/thermal-path': {
     term: 'The whole thermal path',
     alt: ['thermal path', '整条热通路'],
-    text: 'The whole thermal path is the route heat takes in a liquid-cooled data centre, from the chip to the point where it leaves the site, drawn as six boundaries: facility water interface, heat rejection and reuse, CDU and secondary loop, rack manifold and quick disconnects, hoses and fittings, cold plate and chip. Each boundary has a maker, a test, an acceptance criterion and a record owner.',
+    text: 'The whole thermal path is the route heat takes in a liquid-cooled data centre, drawn as six boundaries numbered from the facility inward: B1 facility water interface, B2 heat rejection and reuse, B3 CDU and secondary loop, B4 rack manifold and quick disconnects, B5 hoses and fittings, B6 cold plate and chip. Each boundary has a maker, a test, an acceptance criterion and a record owner.',
   },
   '/approach/return-water': {
     term: 'Return-water grade',
