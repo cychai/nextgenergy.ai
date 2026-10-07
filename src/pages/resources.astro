@@ -40,6 +40,7 @@ const groups = [
             <p class="muted">{g.lede}</p>
             <ul>{g.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
             <a class="more" href={g.href}>All {g.title.toLowerCase()} →</a>
+            {g.href === '/company/news' && news.slice(0, 3).some((n) => n.legalAttribution) && <p class="small muted" style="margin-top:1rem">{news.slice(0, 3).find((n) => n.legalAttribution)?.legalAttribution}</p>}
           </div>
         ))}
       </div>

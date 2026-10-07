@@ -29,6 +29,7 @@ const ld = [newsArticleLd(path, { headline: n.title, description: n.summary, pub
           <ul>{n.links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
         </>
       )}
+      {n.legalAttribution && <p class="small muted">{n.legalAttribution}</p>}
       <hr />
       <p class="small muted">NextGenergy, Toronto. Media and other enquiries: <a href="mailto:sales@nextgenergy.ai">sales@nextgenergy.ai</a>. <a href="/company/news">All news</a>.</p>
     </div>

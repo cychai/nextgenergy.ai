@@ -10,11 +10,50 @@ export interface NewsItem {
   /** ISO date, Toronto local date of publication. */
   date: string;
   summary: string;
+  legalAttribution?: string;
   body: string[];
   links?: [string, string][];
 }
 
+// Task 04 first production publication date: America/Toronto, 2026-10-07.
+// Keep historical entries at their original publication dates.
 const items: NewsItem[] = [
+{
+  "slug": "nvidia-inception-membership",
+  "title": "NextGenergy joins NVIDIA Inception",
+  "date": "2026-10-07",
+  "summary": "NextGenergy joined NVIDIA Inception on 30 September 2026. The Toronto-based company provides prefabricated liquid cooling and field services for AI data centres.",
+  "body": [
+    "NextGenergy joined NVIDIA Inception on 30 September 2026.",
+    "The NVIDIA Inception program is designed to help startups accelerate innovation and growth.",
+    "NextGenergy plans and designs liquid-cooled AI data centres and delivers prefabricated skids, coolant distribution units (CDUs), ORv3 racks and cooling equipment. Across North America, it also provides testing, commissioning and maintenance for liquid-cooling loops. Regulated on-site work is carried out by licensed partners.",
+    "NextGenergy also operates the Liquid Cooling Academy at <a href=\"https://lca.nextgenergy.ai\">lca.nextgenergy.ai</a> and provides a liquid cooling simulator at <a href=\"https://sim.nextgenergy.ai\">sim.nextgenergy.ai</a>. The Academy’s Level 1 technician course is free. The simulator's results are model values, intended for comparing options and for early screening, not as a substitute for manufacturer data, project design calculations or acceptance testing.",
+    "NextGenergy is based in Toronto, Canada."
+  ],
+  "links": [
+    [
+      "https://www.nvidia.com/en-us/startups/",
+      "NVIDIA Inception"
+    ],
+    [
+      "/platform",
+      "Products and systems"
+    ],
+    [
+      "/services/field",
+      "Field testing and operations"
+    ],
+    [
+      "https://lca.nextgenergy.ai",
+      "Liquid Cooling Academy"
+    ],
+    [
+      "https://sim.nextgenergy.ai",
+      "Liquid cooling simulator"
+    ]
+  ],
+  "legalAttribution": "© 2025 NVIDIA, the NVIDIA logo, and NVIDIA Inception are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries."
+},
   {
     slug: 'gdcc-canada-2026-booth-a20',
     title: 'NextGenergy at GDCC Canada 2026, Booth A20',

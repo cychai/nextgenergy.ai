@@ -19,6 +19,7 @@ import { news, fmtNewsDate } from '@/data/news';
           </li>
         ))}
       </ol>
+      {news.some((n) => n.legalAttribution) && <p class="small muted" style="margin-top:2rem">{news.find((n) => n.legalAttribution)?.legalAttribution}</p>}
       <p class="small muted" style="margin-top:2rem">Longer writing on liquid cooling, power and heat reuse is in <a href="/insights">Insights</a>.</p>
     </div>
   </section>
