@@ -111,7 +111,7 @@ export function personLd(p: { id: string; name: string; alternateName?: string[]
   };
 }
 
-export function newsArticleLd(path: string, o: { headline: string; description: string; published: Date; modified?: Date; body?: string }): LdNode {
+export function newsArticleLd(path: string, o: { headline: string; description: string; published: Date; modified?: Date; body?: string; image?: string }): LdNode {
   return {
     '@type': 'NewsArticle',
     '@id': `${abs(path)}#article`,
@@ -122,7 +122,7 @@ export function newsArticleLd(path: string, o: { headline: string; description: 
     publisher: ORG,
     mainEntityOfPage: abs(path),
     url: abs(path),
-    image: abs('/products/hero-skid.jpg'),
+    image: abs(o.image ?? '/products/hero-skid.jpg'),
     inLanguage: 'en',
     datePublished: o.published.toISOString(),
     dateModified: (o.modified ?? o.published).toISOString(),

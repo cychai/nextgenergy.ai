@@ -47,11 +47,11 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [CoolIT Just Sold for $4.75B — and It Tells You Why Cold Plate Won the New-Build AI Rack](https://nextgenergy.ai/insights/coolit-just-sold-for-475b-and-it.md): 2026-07-03 — A water-and-chemistry giant just bought a cold-plate company. The number says less about who removes heat most aggressively — and more about where the real moat is moving.
 
 ## News (latest)
+- [NextGenergy at GDCC 2026](https://nextgenergy.ai/company/news/gdcc-canada-2026-recap): 2026-10-23 — At Booth A20, NextGenergy presented prefabricated liquid cooling and a whole-system view of data centre infrastructure, from core equipment and on-site verification to heat reuse and simulation.
 - [NextGenergy joins NVIDIA Inception](https://nextgenergy.ai/company/news/nvidia-inception-membership): 2026-10-07 — NextGenergy joined NVIDIA Inception on 30 September 2026. The Toronto-based company provides prefabricated liquid cooling and field services for AI data centres.
 - [NextGenergy at GDCC Canada 2026, Booth A20](https://nextgenergy.ai/company/news/gdcc-canada-2026-booth-a20): 2026-10-01 — NextGenergy will exhibit at Global Data Centre & Cloud Expo Canada 2026 on 20–21 October at the International Centre in Mississauga, booth A20.
 - [Liquid Cooling Academy opens registration](https://nextgenergy.ai/company/news/liquid-cooling-academy-registration): 2026-10-01 — The Liquid Cooling Academy at lca.nextgenergy.ai is open for registration. The Level 1 technician course is free and offered in English and Chinese.
 - [Free liquid cooling simulator now online](https://nextgenergy.ai/company/news/liquid-cooling-simulator-online): 2026-09-14 — NextGenergy has published a free, browser-based liquid cooling simulator at sim.nextgenergy.ai, in English and Chinese.
-- [What Canada's data centre principles ask to be measured, and who measures it](https://nextgenergy.ai/company/news/canada-data-centre-principles-measurement): 2026-09-12 — NextGenergy has published a page and a guide for municipal staff on the power, water and heat figures that Canada's Responsible Data Centre Development Principles ask for.
 
 ## Optional
 - [Full text of the core pages and all articles](https://nextgenergy.ai/llms-full.txt)
