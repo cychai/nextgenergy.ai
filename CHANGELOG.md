@@ -2,6 +2,10 @@
 
 按日期倒序（多伦多日期），每次发布在最上方追加；每条一句，带 commit hash。dist/ 随源码一起提交，push main 即由 Cloudflare Workers Builds 上线。
 
+## 2026-11-08
+
+- `85d3019` Insights 新增《The Bubble Lays the Rails》（Substack 11-08 同篇，导入脚本生成，标签 ai-economics/power/commissioning，关联 /evidence/commissioning）；修正 Insights 列表、标签页、详情页日期比实际早一天（格式化加 timeZone UTC）。
+
 ## 2026-10-02
 
 - `073ad72` 按 Jim 10-02 决定：页脚不点名任何法律主体，改为「NextGenergy · North America. The contracting entity for your region is named on each quotation.」，版权行只写 NextGenergy，液冷学院改「operated by NextGenergy」，首页、Track record、News 详情页去掉 Technology Inc.（JSON-LD legalName、llms.txt 与隐私页保留「NextGenergy (NextGenergy Technology Inc.)」，全站无美国公司）；GA 改为同意后才加载：未选择或「Decline」时不加载 gtag、不发任何请求，「Accept analytics」后动态加载，撤回同意即停发并删除 _ga 类 Cookie、以后访问不再加载，页面源码不再静态引用 googletagmanager，隐私页与横幅按新行为重写（CSP 仍放行 GA 域名）；水产案例改回「Measured pond temperature about 25 °C (project operating record, not published)」，第六栏改为「System diagrams and acceptance records: Not published; explained under a non-disclosure agreement」，删「ask us and we will set up the NDA」类暗示，claims.ts 新增 case-aquaculture-25c；六边界统一为设施→芯片 B1–B6（记录样例页、热通路页 B 编号、geo.ts 定义），删除编号对照说明，记录模板 PDF 重新生成。
