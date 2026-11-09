@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 }
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' });
 ---
 <Base title={`Insights: ${tag}`} description={`Articles tagged ${tag} from Every Watt Counts.`}>
   <PageHero eyebrow="Insights · Topic" title={tag!} crumbs={[['/insights', 'Insights']]} />

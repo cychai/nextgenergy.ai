@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 import { site } from '@/data/site';
 const posts = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
-const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit', timeZone: 'UTC' });
 ---
 <Base title="Insights" description="Every Watt Counts: long-form writing on power, liquid cooling and heat reuse for AI infrastructure, by Jim Li. Mirrored from Substack.">
   <PageHero eyebrow="Insights" title="Every Watt Counts" lede="Long-form writing on power, liquid cooling and heat reuse for AI infrastructure. Published first on Substack and mirrored here, with links into the evidence and tools each piece points at.">

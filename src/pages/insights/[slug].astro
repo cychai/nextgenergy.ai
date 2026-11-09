@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 const { p } = Astro.props;
 const { Content } = await render(p);
-const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const defaults: Record<string, { href: string; label: string; kind: 'evidence' | 'tool' | 'approach' | 'insight' }> = {
   '/evidence/leak-points': { href: '/evidence/leak-points', label: 'Ten leak points', kind: 'evidence' },
   '/evidence/turnover': { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' },
