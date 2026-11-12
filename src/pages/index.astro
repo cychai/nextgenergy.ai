@@ -9,6 +9,7 @@ const stats = [
   { c: claims['deployed-1000mw'], label: 'of liquid cooling delivered by our founding team' },
 ];
 const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse heat'];
+import CallLink from '@/components/CallLink.astro';
 ---
 <Base title={site.name} eventBar>
   <section class="hero home-hero">
@@ -120,7 +121,7 @@ const chain = ['Plan', 'Design', 'Prefabricate', 'Commission', 'Operate', 'Reuse
     <div class="wrap" style="text-align:center">
       <h2>Bring us your project.</h2>
       <p class="lede" style="margin-inline:auto">A new build, a retrofit, a heat-reuse scheme, a hall that needs commissioning, or a turnover package you would like verified. Start with your system diagram, equipment list and existing records.</p>
-      <div class="btn-row" style="justify-content:center"><a class="btn ghost" href="/company/contact">Talk to our team</a></div>
+      <div class="btn-row" style="justify-content:center;align-items:center"><a class="btn ghost" href="/company/contact">Talk to our team</a><CallLink onDark /></div>
     </div>
   </section>
 </Base>

@@ -8,6 +8,8 @@ export const site = {
   description:
     'NextGenergy plans and designs liquid-cooled AI data centres and delivers them as prefabricated skids, CDUs, ORv3 racks and cooling plant. Across North America it also provides field testing, commissioning and operations for the liquid cooling loop, with the evidence for every boundary.',
   email: 'sales@nextgenergy.ai',
+  /** Business line. Answered 24/7 by an AI receptionist that takes inquiries and messages for the team; not an emergency line, no SMS. */
+  phone: { display: '+1 (877) 373-7761', tel: 'tel:+18773737761', e164: '+18773737761' },
   linkedin: 'https://www.linkedin.com/company/nextgenergyai',
   substack: 'https://everywattcounts.substack.com',
   location: 'Toronto, Canada',

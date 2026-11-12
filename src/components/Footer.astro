@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
       <div>
         <a href="/" class="brand"><img src="/brand/logo-v3.png" alt="NextGenergy — Make every watt count" width="1400" height="459" /></a>
         <p style="margin-top:1rem; max-width: 34ch;">Prefabricated liquid cooling for AI data centres: we plan and design the system, deliver skids, CDUs, ORv3 racks and cooling plant, and test, commission and maintain the liquid loop in the field. Every boundary comes with its evidence.</p>
-        <p class="small">{site.location}<br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p class="small">{site.location}<br /><a href={`mailto:${site.email}`}>{site.email}</a><br /><a href={site.phone.tel} class="ftr-tel">{site.phone.display}</a> <span class="muted">· AI receptionist, 24/7</span></p>
         <p class="small"><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts</a> · <a href="/insights/rss.xml">RSS</a></p>
       </div>
       {footerNav.map((c) => (
@@ -28,3 +28,7 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<style>
+  .ftr-tel { display: inline-block; padding: 0.6rem 0; white-space: nowrap; }
+</style>

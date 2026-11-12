@@ -16,6 +16,7 @@ const steps = [
   { n: '02', t: 'Select and design', d: 'Coordinate rack, CDU and heat-rejection choices. Check temperatures, flow, interfaces, redundancy and service access.' },
   { n: '03', t: 'Integrate and deliver', d: 'Work with manufacturing partners to prefabricate the package, then commission on site and support its lifecycle.' },
 ];
+import CallLink from '@/components/CallLink.astro';
 ---
 <Base title="Products" description="Four product families for liquid-cooled AI data centres, built to work together: prefabricated skids, ORv3 racks, CDUs and cooling equipment. Select individual products or a coordinated package, with interfaces and acceptance criteria agreed before manufacture.">
   <PageHero eyebrow="Products" title="Four product families, built to work together." lede="Select individual products or a coordinated package, with interfaces and acceptance criteria agreed before manufacture. We plan the system, design and specify each product, have it built by manufacturing partners we qualify, and take responsibility for how the parts perform together." />
@@ -49,7 +50,7 @@ const steps = [
         <div><h3>Commissioning and verification</h3><p>Gate-by-gate testing and a turnover package, including for systems supplied by others. <a href="/services/field">Field services</a></p></div>
         <div><h3>Operations</h3><p>A maintenance programme for the liquid loop after handover, in three tiers. <a href="/services/field">Field services</a></p></div>
       </div>
-      <div class="btn-row" style="margin-top:1.5rem"><a class="btn primary" href="/company/contact?topic=product">Discuss a configuration</a></div>
+      <div class="btn-row" style="margin-top:1.5rem;align-items:center"><a class="btn primary" href="/company/contact?topic=product">Discuss a configuration</a><CallLink /></div>
     </div>
   </section>
   <section class="section alt">

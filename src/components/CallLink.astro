@@ -1,0 +1,13 @@
+---
+/** Secondary call entry placed next to an existing primary contact button. */
+import { site } from '@/data/site';
+interface Props { onDark?: boolean }
+const { onDark = false } = Astro.props;
+---
+<a class:list={['call-link', { 'on-dark': onDark }]} href={site.phone.tel}>Or call us <span class="num">{site.phone.display}</span></a>
+<style>
+  .call-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.2rem; font-weight: 600; font-size: 0.95rem; color: var(--blue); text-decoration: none; }
+  .call-link .num { margin-left: 0.35em; white-space: nowrap; }
+  .call-link:hover { text-decoration: underline; }
+  .call-link.on-dark { color: var(--paper); }
+</style>

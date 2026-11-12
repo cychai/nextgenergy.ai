@@ -50,6 +50,7 @@ const levels = [
   { l: 'L2', d: 'A single point is weeping without spreading, a standby pump has taken over, or a rack is outside the flow tolerance', a: 'Assess the impact and schedule corrective work within the approved operating envelope.' },
   { l: 'L3', d: 'Fluid chemistry drifting from baseline, filter differential climbing, a quick disconnect approaching its cycle limit', a: 'Investigate the trend and plan the intervention before limits are exceeded.' },
 ];
+import CallLink from '@/components/CallLink.astro';
 ---
 
 <Base
@@ -176,7 +177,7 @@ const levels = [
       <p>
         The same records define the warranty boundary between the parties, and they are the evidence an insurer asks for. A documented leak detection and inspection regime is one of the few things that visibly changes how a liquid-cooled hall is underwritten.
       </p>
-      <div class="btn-row"><a class="btn primary" href="/company/contact?topic=commissioning">Request a commissioning review</a></div>
+      <div class="btn-row" style="align-items:center"><a class="btn primary" href="/company/contact?topic=commissioning">Request a commissioning review</a><CallLink /></div>
       <Related items={[
         { href: '/evidence/commissioning', label: 'Acceptance criteria, gate by gate', kind: 'evidence' },
         { href: '/evidence/turnover', label: 'The turnover package', kind: 'evidence' },
