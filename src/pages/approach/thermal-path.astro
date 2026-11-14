@@ -1,4 +1,5 @@
 ---
+import ThermalPath from '@/components/diagram/ThermalPath.astro';
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
@@ -24,6 +25,7 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'From the fa
   <Definition d={d} />
   <section class="section">
     <div class="wrap">
+      <ThermalPath title="From the facility water interface to the chip: six boundaries" bounds={bounds.map((b) => b.t)} loops={['Facility water', 'Technology-cooling loop']} />
       <div class="split">
         <div class="sticky">
           <div class="eyebrow">Read this list downstream</div>

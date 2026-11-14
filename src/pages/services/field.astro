@@ -1,4 +1,6 @@
 ---
+import Gates from '@/components/diagram/Gates.astro';
+import Tiers from '@/components/diagram/Tiers.astro';
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/PageHero.astro';
 import Related from '@/components/Related.astro';
@@ -94,6 +96,7 @@ import CallLink from '@/components/CallLink.astro';
     <div class="wrap">
       <h2 class="sec-h">Commissioning: four gates</h2>
       <p class="sec-lede">A gate is a point of no return. Past it, the cost of going back rises sharply. The acceptance criteria for each gate are written and approved before that stage of work begins, never after it.</p>
+      <Gates title="Commissioning: four gates" gates={gates} />
       <div class="grid c2">
         {gates.map((s) => (
           <div class="card">
@@ -112,6 +115,7 @@ import CallLink from '@/components/CallLink.astro';
     <div class="wrap">
       <h2 class="sec-h">Operations: three tiers</h2>
       <p class="sec-lede">The lowest tier is not a marketing floor. It is built around the practices property insurers publish for liquid-cooled halls: periodic inspection of the pipework in the equipment room, monitoring of coolant quality against its design range, and an operating team trained and authorised to isolate a leak at the nearest valve. Proposed frequencies are confirmed against OEM requirements, site risk and the contract or insurance conditions actually adopted; they are not universal insurer requirements.</p>
+      <Tiers title="Operations: three tiers" tiers={tiers} />
       <div class="grid c3">
         {tiers.map((t) => (
           <div class="card">
