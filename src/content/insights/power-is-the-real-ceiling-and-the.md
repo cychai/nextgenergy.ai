@@ -9,7 +9,7 @@ related: [/solutions/retrofit]
 ---
 
 <!-- substack-body -->
-![](/insights-img/power-is-the-real-ceiling-and-the/01.webp)
+![Stop sign and a notice reading Gigawatts, stopped at the gate, outside a construction site](/insights-img/power-is-the-real-ceiling-and-the/01.webp)
 
 Two headlines, read together, say more than any AI-capex announcement.
 
@@ -36,7 +36,7 @@ When people talk about the AI race, they count GPUs, parameters and funding roun
 
 Capital markets can announce a $25 billion financing framework in a day. Nobody can conjure the megawatts on the same timeline.
 
-![](/insights-img/power-is-the-real-ceiling-and-the/02.webp)
+![Graphic contrasting fast-arriving capital with a multi-year queue for grid power](/insights-img/power-is-the-real-ceiling-and-the/02.webp)
 
 ## Path A: bring your own supply — the capital-heavy path
 
@@ -54,7 +54,7 @@ So what about everyone who isn’t that rich — and can’t wait a decade?
 
 This is the path still hiding in plain sight: **stop conjuring new power. Use the power that already exists, more intelligently.** There are three ways to do it.
 
-![](/insights-img/power-is-the-real-ceiling-and-the/03.webp)
+![Three panels on reusing existing sites, backup power redundancy and waste heat](/insights-img/power-is-the-real-ceiling-and-the/03.webp)
 
 ### 1\. Reuse the site — a Stranded Compute Grid
 

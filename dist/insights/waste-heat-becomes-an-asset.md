@@ -9,13 +9,13 @@
 
 ---
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/01.webp)
+![Air-cooled site venting heat beside a warm-water site piping heat to users](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/01.webp)
 
 This is the third of a trilogy. The first issue argued warm water is cheaper to run; the second, that it’s kinder to the hardware. This one is about the third return — the one that changes a data center’s place in the world: the reject heat itself can become a product.
 
 We learned that early. We began using recovered data-center heat in 2020, and by 2021 we were delivering it at larger scale into real buildings — community housing in a town, a kindergarten, a hospital, and industrial facilities — through real winters. Not a concept diagram, not a pilot loop on a slide. Real pipes, real buildings, real people walking on warm floors. The photo below with the infrared gun is one of those floors, measured warm under bare feet. Not a render.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/02.webp)
+![Handheld infrared thermometer pointed at a wooden floor beside a rug](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/02.webp)
 
 Caption: A home floor warmed by recovered data-center heat — measured under bare feet, in a real winter. Since 2020.
 
@@ -29,7 +29,7 @@ Air cooling tends to produce the low-grade kind. It pulls heat off the chips int
 
 > The heat was always there. Air cooling made it diffuse, low-grade, and hard to monetize.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/03.webp)
+![Diagram of electricity becoming diffuse exhaust under air cooling or usable warm water](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/03.webp)
 
 ## Warm water is what makes the heat worth capturing
 
@@ -37,7 +37,7 @@ This is the quiet payoff of the warm-water architecture from the first two issue
 
 But let’s be precise. Warm water doesn’t make heat valuable by magic. It keeps the heat concentrated, hot enough, metered, and contractable — so someone else can use it. Cold-plate loops carry heat away as hot water around 50–60°C; in our own systems we deliver it at about 55°C, and immersion can return fluid above 60°C. Modern low-temperature district networks — the 4th-generation systems being built across Europe — typically want supply somewhere around 50–70°C. Exact numbers vary by network, season, and how old the buildings are, but the direction is unmistakable: warm-water output often lands inside the band a buyer wants, with little or no heat-pump lift. The same architectural choice that lowered your power bill and extended your hardware just turned your reject heat from a liability into a feedstock.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/04.webp)
+![Thermometer chart placing immersion, cold-plate and air-cooled heat against the district heating band](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/04.webp)
 
 ## We didn’t wait for a mandate
 
@@ -51,15 +51,15 @@ We built our first immersion systems in 2020 and moved into large-scale heat del
 
 Put those together and the claim sharpens. 55°C water isn’t just a cooling output. Steady, metered, controlled, and matched to the right local demand, it becomes an energy product.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/05.webp)
+![Aisle between two rows of stacked grey units inside a heat-recovery plant](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/05.webp)
 
 _Our heat-recovery plant: the units that turn server heat into usable hot water._
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/06.webp)
+![Lettuce growing on tiered hydroponic racks inside a greenhouse](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/06.webp)
 
 _A year-round buyer: greenhouse crops grown on recovered heat._
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/07.webp)
+![Round aquaculture tanks under a greenhouse roof, with a person beside a control cabinet](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/07.webp)
 
 _Constant-temperature aquaculture — warm water held in a narrow band, fed by reject heat._
 
@@ -69,7 +69,7 @@ Beyond our own deployments, the public examples are piling up. Meta’s Odense p
 
 The point isn’t that every site does all of these. It’s that a high-grade heat stream is a tradable output — and the moment it’s tradable, the cooling system stops being only a cost.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/08.webp)
+![Diagram of server heat going to district heating, greenhouses, aquaculture, industry and absorption cooling](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/08.webp)
 
 ## The trade-offs you have to engineer for
 
@@ -99,7 +99,7 @@ For most of the industry’s history none of this showed up on a balance sheet, 
 
 Put it together and the cost-center framing breaks. Heat reuse is becoming, at once, a revenue line, a reported KPI, and in some markets a permit requirement. The data centers being designed today for 2028 are being designed as heat suppliers, not just heat producers.
 
-![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/09.webp)
+![Graphic contrasting cooling as pure cost with reject heat as an energy asset](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/09.webp)
 
 ## One loop, three returns
 

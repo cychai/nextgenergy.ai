@@ -9,7 +9,7 @@
 
 ---
 
-![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/01.webp)
+![Editorial illustration titled AI Safety Beyond the Lab, with portraits and data center scenes](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/01.webp)
 
 Dario Amodei has called for slowing the advance of frontier AI capabilities so safety work can keep up, and committed Anthropic to embedded third-party evaluators with employee-level access. Sam Altman backed the call and said OpenAI will bring in independent evaluators with employee-like access. Elon Musk also voiced agreement. [Reporting on the statements](https://apnews.com/article/d59552edcb27892d8ee4d98a48397706).
 
@@ -46,7 +46,7 @@ My position is that AI capacity should be delivered with three obligations built
 
 ---
 
-![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/02.webp)
+![Illustration of a grid, a data center and a community linked by underground heat pipes](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/02.webp)
 
 ## 1. Energy responsibility is becoming a delivery issue
 
@@ -88,7 +88,7 @@ The number was never shown to be wrong. **The boundary was missing.** I had not 
 
 If we intend to ask the labs for verifiable claims, our own energy and water figures have to carry their measurement boundary, their operating conditions, and a name. A calculation that fits an anecdote cannot reconstruct a missing operating record.
 
-![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/03.webp)
+![Illustration of engineers recording a pump switchover test beside chilled-water pump skids](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/03.webp)
 
 ## 2. Safety starts in design and has to survive integrated testing
 
@@ -126,7 +126,7 @@ No design eliminates every risk. The obligation is to identify credible failure 
 
 ---
 
-![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/04.webp)
+![Illustration of a row of liquid-cooled racks with one faulty rack isolated by valves](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/04.webp)
 
 ## 3. Liquid-cooling operations must keep faults local
 

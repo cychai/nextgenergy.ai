@@ -9,7 +9,7 @@ related: [/approach]
 ---
 
 <!-- substack-body -->
-![](/insights-img/start-here-why-every-watt-counts/01.webp)
+![Illustration of AI compute heat flowing to homes, greenhouses and industry](/insights-img/start-here-why-every-watt-counts/01.webp)
 
 We like to imagine artificial intelligence as something weightless: you type a sentence, and an answer appears. But pull back one layer, and it becomes physical very fast. Every token is a chip doing enormous math; every chip pulls real power; and almost every watt that goes in leaves again as heat.
 

@@ -21,7 +21,7 @@ I commented beneath Huang’s LinkedIn post: Open weights can let a factory, hos
 
 In less than 24 hours, the comment received more than 104,000 views, 66 reactions, and 21 replies. A LinkedIn comment cannot prove an industry thesis, of course. But it was a signal: open models, compute efficiency, and AI infrastructure are touching a real and growing anxiety.
 
-![Image: image1.png](/insights-img/open-weights-are-only-the-beginning/01.webp)
+![Screenshot of a LinkedIn post about open models with a reply beneath it](/insights-img/open-weights-are-only-the-beginning/01.webp)
 
 _**Figure 1 | After Jensen Huang shared the open-weights coalition letter, the author’s comment received 104,794 views in less than 24 hours.**_
 
@@ -55,13 +55,13 @@ This may be the sustainable path to billions of everyday AI tasks. But open weig
 
 I subscribe to Claude Max at CA$158.20 per month.
 
-![Image: image2.png](/insights-img/open-weights-are-only-the-beginning/02.webp)
+![Screenshot of a billing page listing monthly subscription invoices](/insights-img/open-weights-are-only-the-beginning/02.webp)
 
 _**Figure 2 | The author’s Claude billing page shows three consecutive monthly charges of CA$158.20.**_
 
 After roughly two days of intensive use, the limits page showed 59% usage for “All models” and 93% for the category labeled “Fable” (the notice identifies it as “Fable 5”), putting that model-specific weekly allowance close to its limit.
 
-![Image: image3.png](/insights-img/open-weights-are-only-the-beginning/03.webp)
+![Screenshot of a usage page with weekly limit bars for two model categories](/insights-img/open-weights-are-only-the-beginning/03.webp)
 
 _**Figure 3 | After roughly two days of intensive use: All models at 59% and Fable at 93%; the notice identifies the model as “Fable 5.”**_
 
@@ -128,7 +128,7 @@ An organization can download a model in minutes. It cannot obtain, in minutes:
 
 Open weights do not eliminate AI’s bottlenecks. To some extent, they move the constraint from the model layer to the compute layer—and then from compute to megawatts, the grid, and cooling systems.
 
-![](/insights-img/open-weights-are-only-the-beginning/04.webp)
+![Chain diagram from open weights through GPU compute, power and liquid cooling to useful heat](/insights-img/open-weights-are-only-the-beginning/04.webp)
 
 _**Figure 4 | Open weights can be downloaded, but GPU compute, power, liquid cooling, and a productive destination for recovered heat must still be built in the physical world.**_
 

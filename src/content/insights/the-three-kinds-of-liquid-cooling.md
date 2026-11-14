@@ -9,7 +9,7 @@ related: [/platform/cold-plates, /approach/return-water]
 ---
 
 <!-- substack-body -->
-![](/insights-img/the-three-kinds-of-liquid-cooling/01.webp)
+![Rows of stacked white equipment enclosures filling a large warehouse hall](/insights-img/the-three-kinds-of-liquid-cooling/01.webp)
 
 The earlier issues of Every Watt Counts were all about the “why.” This is the sixth. So far, the series has covered physics, water, heat, and the economics of liquid cooling. Today we get concrete: how do you actually tell the kinds of liquid cooling apart?
 
@@ -49,9 +49,9 @@ The answer lives in the conditions of the time. Cold plate wasn’t new — HPC 
 
 Nearly every machine on the market was built for air. To go liquid, all we could do was take servers apart one by one — pull fans, clean out dust, and clear alarms. Immersion, it turned out, was the only way to force an air-cooled server into liquid.
 
-![](/insights-img/the-three-kinds-of-liquid-cooling/02.webp)
+![Dust being blown off the heat sinks of a circuit board](/insights-img/the-three-kinds-of-liquid-cooling/02.webp)
 
-![](/insights-img/the-three-kinds-of-liquid-cooling/03.webp)
+![Hand lifting a fan out of an opened air-cooled server](/insights-img/the-three-kinds-of-liquid-cooling/03.webp)
 
 _caption: “In 2020, we retrofitted servers one by one — pulling fans, clearing dust, then bringing each machine up in liquid.”_
 
@@ -67,15 +67,15 @@ With that scoped, two questions are all you need: Does the coolant directly touc
 
 Look at three pictures first, and their different temperaments click into place —
 
-![](/insights-img/the-three-kinds-of-liquid-cooling/04.webp)
+![Illustration of circuit boards submerged in a liquid tank connected to a cooler](/insights-img/the-three-kinds-of-liquid-cooling/04.webp)
 
 _caption: “Immersion — the most complete contact with heat, and the most physical maintenance experience.”_
 
-![](/insights-img/the-three-kinds-of-liquid-cooling/05.webp)
+![Illustration of a server board with cold plates and hoses connected to a manifold](/insights-img/the-three-kinds-of-liquid-cooling/05.webp)
 
 _caption: “Cold plate — the mainstream path: less dramatic than immersion, but much easier to fit into existing operations.”_
 
-![](/insights-img/the-three-kinds-of-liquid-cooling/06.webp)
+![Illustration of a tank where nozzles spray liquid onto server boards](/insights-img/the-three-kinds-of-liquid-cooling/06.webp)
 
 _caption: “Spray — technically elegant, but still waiting for a broader ecosystem.”_
 

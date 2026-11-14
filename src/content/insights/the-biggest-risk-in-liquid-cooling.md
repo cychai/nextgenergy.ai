@@ -9,7 +9,7 @@ related: [/approach/three-clocks, /evidence/leak-points, /tools/leak-checklist]
 ---
 
 <!-- substack-body -->
-![](/insights-img/the-biggest-risk-in-liquid-cooling/01.webp)
+![Three gauges on a coolant pipe labelled factory inspection, rack deployment and long-term aging](/insights-img/the-biggest-risk-in-liquid-cooling/01.webp)
 
 “Leak” is one word doing three different jobs.
 
@@ -19,7 +19,7 @@ They are not. They are discovered at different times, solved in different ways, 
 
 One boundary condition before we begin: this is not a mutually exclusive classification by leak location. A connector can leak on day one or in year three. Corrosion can eventually perforate a cold plate or a pipe. I am classifying leaks by the three windows in which risk most commonly reveals itself: **manufacturing, delivery, and service life**. Each window creates a different evidence trail, a different accountable party, and a different cost owner.
 
-![](/insights-img/the-biggest-risk-in-liquid-cooling/02.webp)
+![Three panels showing leak evidence at manufacturing, delivery and service-life stages](/insights-img/the-biggest-risk-in-liquid-cooling/02.webp)
 
 ## Clock One: Manufacturing
 
@@ -135,7 +135,7 @@ Record branch flow, rack pressure drop, temperature distribution, and the startu
 Condensation belongs outside the three clocks because it can appear on the first day of commissioning. When coolant supply temperature falls below the local dew point, water appears on a surface whose fluid boundary was never breached. The electrical consequence can look identical to a leak, while the root cause is humidity, insulation, or a control setpoint.  
 The control system should maintain a designed dew-point margin—not zero margin—and define a conservative fallback when a dew-point or humidity sensor fails. Insulation and vapor barriers must remain intact, with suitable sensor redundancy. A leak rope cannot distinguish condensation from a real coolant leak on its own; dew point and surface temperature must be correlated.
 
-![](/insights-img/the-biggest-risk-in-liquid-cooling/03.webp)
+![Four-step leak detection chain: detect, infer, self-check and intervene](/insights-img/the-biggest-risk-in-liquid-cooling/03.webp)
 
 ## Detection Is Not a Sensor. It Is a Chain from Discovery to Isolation.
 
@@ -163,7 +163,7 @@ NVIDIA’s Mission Control management framework for GB200/GB300 NVL72 already ex
 
 Detection alone is no longer enough. Isolation status is becoming part of the evidence that must be delivered.
 
-![](/insights-img/the-biggest-risk-in-liquid-cooling/04.webp)
+![Triangle linking leak probability, severity and detectability, with evidence at the centre](/insights-img/the-biggest-risk-in-liquid-cooling/04.webp)
 
 ## From Two Buckets to Three Risk Factors
 
@@ -192,7 +192,7 @@ Neither event was a coolant leak. They support a more fundamental point: materia
 
 ## The Three Clocks at a Glance
 
-![](/insights-img/the-biggest-risk-in-liquid-cooling/05.webp)
+![Table of leak conditions, controls, detection and evidence across manufacturing, delivery and service life](/insights-img/the-biggest-risk-in-liquid-cooling/05.webp)
 
 **Separate category—condensation:** coolant below local dew point, damaged insulation, or sensor/control failure → dew-point margin, interlock, vapor barrier, redundancy, and conservative fallback → correlate leak sensing with dew point and surface temperature.
 

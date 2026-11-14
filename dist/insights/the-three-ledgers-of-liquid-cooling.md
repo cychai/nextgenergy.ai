@@ -9,7 +9,7 @@
 
 ---
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/01.webp)
+![Title graphic showing three ledgers labelled CapEx, OpEx and Reuse](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/01.webp)
 
 For most of its history, the industry has judged a data center on two ledgers: what it costs to build, and what it costs to run. The heat was a line item outside both — you made it, then paid again to throw it away.
 
@@ -23,13 +23,13 @@ Let me open with a retrofit we actually did (an internal case, illustrative, not
 
 A 5 MW legacy air-cooled data center once needed four full floors to house its compute. Converted to liquid, the same 5 MW fit into half of one floor — roughly one-eighth of the original footprint. Put plainly: one high-density liquid-cooled rack now does the work of about ten air-cooled ones.
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/02.webp)
+![Illustration of a multi-floor air-cooled building beside a smaller liquid-cooled hall of equal compute](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/02.webp)
 
 That picture punctures the trap in the first ledger. This ledger looks at a single number: day-one capital. On that number, liquid is genuinely higher — you’ve added cold plates, a CDU (coolant distribution unit), rack manifolds, and a warm-water loop. The air-cooled ledger reads that line and rests its case: too expensive.
 
 But that’s the wrong denominator. The question isn’t “cost per watt” — it’s cost per unit of useful compute. And that’s exactly where density flips the math.
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/03.webp)
+![Table comparing capital cost items for air-cooled and liquid-cooled data centers](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/03.webp)
 
 The mechanism lives in that half-floor. Air cooling spreads compute thinly across a sea of low-density racks: more racks, more floors, more electrical and mechanical plant, more building. Past roughly 100 kW per rack, air simply can’t hold the load, and liquid becomes the main path. Liquid packs hundreds of kilowatts into a single rack — so the same mechanical, electrical, and building investment now carries far more compute.
 
@@ -43,11 +43,11 @@ Start with a sound. Walk into an older air-cooled hall and what hits you is a wa
 
 A liquid hall is a different world: quiet. No wall of fans — just liquid moving through pipes, carrying the heat away directly instead of blowing it around. In a well-designed immersion or warm-water system, that overhead can shrink to a PUE premium of 0.03–0.08 — though not every liquid project gets there automatically; it depends on the heat-rejection back end and the climate.
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/04.webp)
+![Split image of a fan wall and a liquid-cooled cold plate, comparing cooling overhead](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/04.webp)
 
 And that’s only the visible layer. This ledger has two, and most people count only the power and water they can see — missing the more valuable hidden account. On both, liquid comes out ahead:
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/05.webp)
+![Table comparing operating cost items for air-cooled and liquid-cooled data centers](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/05.webp)
 
 The hidden layer is the one people underrate. A $30,000–$40,000 GPU is a depreciating financial asset. Liquid won’t change its technology generation, but a cooler, cleaner, lower-thermal-stress environment lets it age more slowly and hold more resale value. Put the two layers together: system-level modeling shows an immersion design landing roughly 20% below air on 10-year TCO, with high-density payback as fast as 1.6–2.2 years (again dependent on power price, load factor, and whether heat revenue is counted).
 
@@ -59,11 +59,11 @@ The third ledger is the strongest, because the air-cooled era never had it at al
 
 Imagine a data center whose GPUs are crunching AI around the clock — and, right next door, a vegetable greenhouse in the dead of winter: minus-ten outside, warm as spring inside, tomatoes and lettuce growing as usual. What keeps that greenhouse warm is the waste heat from the GPUs next door: warm water, concentrated in a pipe, flowing into the greenhouse and holding winter at bay.
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/06.webp)
+![Illustration of a pipe carrying waste heat from a server hall to a winter greenhouse](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/06.webp)
 
 For the same heat, the air and liquid eras run in opposite directions — a sign flip:
 
-![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/07.webp)
+![Table comparing how air-cooled and liquid-cooled data centers treat waste heat](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/07.webp)
 
 Heat has a grade, and the grade is temperature. Air cooling rejects the low-grade kind — lukewarm, diffuse — and upgrading it to something a buyer can use usually costs more than the heat is worth, so it gets thrown away. Liquid concentrates the heat into water at roughly 50–60 °C (direct-to-chip typically captures about 70–80% of the white-space heat load; full-platform vendor solutions may claim more), landing near what a 4th-generation low-temperature district-heating network wants — usable directly, or with a small lift, in district or greenhouse settings. That’s what finally makes reuse accessible.
 

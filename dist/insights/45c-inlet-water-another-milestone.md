@@ -42,7 +42,7 @@ Going from ~20°C to 45°C is more than 20 degrees of headroom — which turns t
 
 “Hotter is cheaper” doesn’t defy physics — it works with it.
 
-![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/01.webp)
+![Comparison of a traditional chilled-water loop and a warm-water loop with dry coolers](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/01.webp)
 
 ## 2\. Won’t such a high temperature damage the chips?
 
@@ -65,7 +65,7 @@ Why is liquid so capable? A plain physical fact: by volume, water carries roughl
 
 To remove more heat with air you must move more air, and fan power scales roughly with the cube of airflow — a losing spiral of hotter chips, more airflow, exploding fan power, and 85+ dB of noise. As Motivair’s Richard Whitmore put it: once watts-per-chip cross a threshold, liquid cooling moves from optional to mandatory. The real reason “45°C won’t damage the chips”: the workhorse of heat removal has shifted from “blowing cold air” to “pulling heat off the die with liquid.” In this new paradigm, a high inlet temperature is an advantage, not a risk.
 
-![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/02.webp)
+![Chart of rack power density rising over time past the air-cooling ceiling](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/02.webp)
 
 ## 3\. Why is this a milestone?
 
@@ -83,11 +83,11 @@ Going from “use less energy” to “no chiller, near-zero water” isn’t tu
 
 Heat in the air-cooling era was low-grade: too cool, too diffuse, barely usable. A closed loop at 45°C in / 55°C out is the first time that heat becomes concentrated, steady, hot enough, and genuinely useful. The same stream can feed district energy, greenhouses, aquaculture, industrial preheat — and at the frontier, desalination or carbon capture. A data center stops being the thing communities resist and becomes infrastructure that gives back.
 
-![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/03.webp)
+![Diagram of AI compute heat routed to homes, greenhouses, aquaculture and industry](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/03.webp)
 
 The economics already pencil out. Microsoft heats ~6,000 homes in Denmark (250,000 people planned in Finland); Google’s Hamina site meets ~80% of local heating; Meta’s Odense facility heats 12,000+ homes; an AWS site in Dublin supplies ~92% of a campus’s heat. Recovered heat is delivered at ~€12–30/MWh versus €35–55 for a gas boiler; capital cost runs about €190,000–250,000/MW against €730,000+ for new gas cogeneration — roughly 60% less. Denmark and Germany are legislating reuse, and the Open Compute Project published its “Data Center Heat Reuse Reference Design 1.0” in March 2025.
 
-![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/04.webp)
+![Bar charts comparing energy and capital cost of recovered heat with gas options](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/04.webp)
 
 ## We’ve been on this road for years
 

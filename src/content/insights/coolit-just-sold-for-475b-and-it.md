@@ -9,7 +9,7 @@ related: [/platform/cold-plates, /approach/thermal-path]
 ---
 
 <!-- substack-body -->
-![](/insights-img/coolit-just-sold-for-475b-and-it/01.webp)
+![CoolIT brand graphic of a server rack with the slogan Liquid Cooling. All In.](/insights-img/coolit-just-sold-for-475b-and-it/01.webp)
 
 On July 2, Ecolab closed its roughly $4.75 billion all-cash acquisition of CoolIT — ahead of schedule.
 
@@ -35,7 +35,7 @@ In other words: liquid cooling is turning from a hardware business into a chemis
 
 ## Why cold plate won the new-build AI rack — a look back at something I wrote four years ago
 
-![](/insights-img/coolit-just-sold-for-475b-and-it/02.webp)
+![Table comparing oil immersion and water cold plate in a brownfield retrofit](/insights-img/coolit-just-sold-for-475b-and-it/02.webp)
 
 Here’s the twist: four years ago, this outcome wasn’t obvious.
 
@@ -77,11 +77,11 @@ And a counter-intuitive point worth saying in immersion’s defense: physical re
 
 So this isn’t “who kills whom” — it's matching. New-build designed for liquid points to cold plate; a hall of air-cooled servers means running the immersion math first; extreme heat flux and high-grade heat reuse each shift the answer — the full picture is in the matrix below.
 
-![](/insights-img/coolit-just-sold-for-475b-and-it/03.webp)
+![Chart matching cold plate and immersion to density and new-build versus retrofit](/insights-img/coolit-just-sold-for-475b-and-it/03.webp)
 
 ## The real takeaway
 
-![](/insights-img/coolit-just-sold-for-475b-and-it/04.webp)
+![Concentric rings around a chip, from cold plate and CDU out to global service](/insights-img/coolit-just-sold-for-475b-and-it/04.webp)
 
 Ecolab’s acquisition of CoolIT makes two things clear at once.
 

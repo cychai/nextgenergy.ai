@@ -9,7 +9,7 @@ related: [/evidence/commissioning]
 ---
 
 <!-- substack-body -->
-![](/insights-img/the-bubble-lays-the-rails/01.webp)
+![Night view of railway tracks and power lines running toward a lit data center](/insights-img/the-bubble-lays-the-rails/01.webp)
 
 Last Thursday, about $2.5 trillion of market value vanished in a single day. Nvidia fell more than 9%, its worst day since April 2025. The Nasdaq closed in correction. Midterm results and AI-spending fears hit at once, and one word came back everywhere: bubble.
 
@@ -63,7 +63,7 @@ Follow the money, not the share price.
 
 **Spending is running ahead of revenue.** In 2024 Sequoia's David Cahn called it "AI's $600 billion question": how much the application layer must earn to pay for all this. Spending has grown much faster since.
 
-![](/insights-img/the-bubble-lays-the-rails/02.webp)
+![Illustration of a data center campus at dusk encircled by a glowing loop](/insights-img/the-bubble-lays-the-rails/02.webp)
 
 None of this proves a crash. It proves the build-out is now a financing system as much as a technology system. The test is simple: does each layer still work if utilisation disappoints, rates rise or a tenant delays its ramp?
 
@@ -77,7 +77,7 @@ A GPU's economic life is measured in years. Every new generation reprices the la
 
 So if this bubble bursts, the wreckage will not be cheap compute. It will be fast-depreciating chips bolted into very valuable buildings.
 
-![](/insights-img/the-bubble-lays-the-rails/03.webp)
+![Illustration of a graphics card beside a data center with a substation and cooling pipes](/insights-img/the-bubble-lays-the-rails/03.webp)
 
 The rails of this cycle are everything around the chip:
 
@@ -145,7 +145,7 @@ That changes the work worth doing now:
 -   **Design for the second tenant.** The best distressed asset is the one that can take a new tenant, a new rack density or a new cooling architecture without reopening the hall.
     
 
-![](/insights-img/the-bubble-lays-the-rails/04.webp)
+![Data center at sunset with a substation, cooling units and large pipes in front](/insights-img/the-bubble-lays-the-rails/04.webp)
 
 The bubble lays the rails. The money that paid for them may never come back. The rails will still be there.
 
