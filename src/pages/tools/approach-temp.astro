@@ -22,6 +22,7 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
             <select id="climate">
               <option value="toronto">Toronto, ON</option><option value="montreal">Montréal, QC</option><option value="chicago">Chicago, IL</option><option value="dallas">Dallas, TX</option><option value="phoenix">Phoenix, AZ</option><option value="frankfurt">Frankfurt, DE</option><option value="stockholm">Stockholm, SE</option><option value="singapore">Singapore</option>
             </select><p class="small muted" style="margin:0.4rem 0 0">Illustrative dry-bulb distributions only, shaped from typical-meteorological-year climate normals for each city in 5 K bins and scaled to 8,760 h. Not station data and not a design basis. Replace with a named station's TMY or bin data for design.</p></div>
+          <div class="share-row" data-v2><button type="button" class="btn" data-share data-done="Link copied" data-fail="Could not copy. The link is now in the address bar.">Copy link to these inputs</button><span role="status" data-share-status></span></div>
         </div>
         <div>
           <div class="eyebrow">Result</div>
@@ -53,6 +54,7 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
       </div>
     </div>
   </section>
+  <button type="button" class="tbar" data-tbar data-v2 hidden><span data-tbar-text></span><span class="go">Results ↓</span></button>
   <Faq items={qa} alt />
 </Base>
 <style>
@@ -61,6 +63,7 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
   .row strong { font-family: var(--font-figure); font-weight: var(--fw-figure); font-size: var(--fs-md); white-space: nowrap; }
 </style>
 <script>
+  import { restore, share, inRange, resultBar } from '@/scripts/tool';
   // Hours per year with dry-bulb in each 5 K bin, from -30 to 45 °C (bins: [-30,-25) ... [40,45)). Approximate TMY shapes.
   const bins = [-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40];
   const climates = {
@@ -85,7 +88,15 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
     }
     return h;
   }
+  const ids = ['tsup', 'cdu', 'dc', 'climate'];
+  const setBar = resultBar(document.querySelector('.tool[aria-live]'));
   function run() {
+    out('cdu', +cdu.value); out('dc', +dc.value);
+    if (!inRange(tsup, 15, 50, 'Enter a value from 15 to 50 °C.')) {
+      ['fws', 'amb', 'hrs', 'pct', 'trim', 'sens'].forEach((k) => out(k, '—'));
+      setBar('Please correct the inputs.');
+      return;
+    }
     const Ts = +tsup.value, a1 = +cdu.value, a2 = +dc.value;
     out('cdu', a1); out('dc', a2);
     const fws = Ts - a1, amb = fws - a2;
@@ -95,7 +106,9 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
     const r100 = (x) => (Math.round(x / 100) * 100).toLocaleString('en-CA');
     out('hrs', 'about ' + r100(h)); out('pct', (h / 87.6).toFixed(0)); out('trim', 'about ' + r100(8760 - h));
     out('sens', 'about ' + r100(hoursBelow(dist, amb + 1) - h));
+    setBar(`Full free cooling <b>${(h / 87.6).toFixed(0)} %</b> of the year · about <b>${r100(h)}</b> h`);
   }
   [tsup, cdu, dc, cl].forEach((i) => i.addEventListener('input', run));
+  restore(ids); share(ids);
   run();
 </script>

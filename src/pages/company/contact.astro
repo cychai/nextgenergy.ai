@@ -31,14 +31,14 @@ const eventOn = showEvent();
           <p class="small muted"><strong>What happens next.</strong> We reply within two working days with questions or a suggested next step. A formal scope and quotation follow once the basic requirements are clear.</p>
         </div>
         <form id="form" class="tool" data-contact data-to={site.email} novalidate>
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required maxlength="120" autocomplete="name" /></div>
+          <div class="field"><label for="name">Name<span class="req" data-v2>required</span></label><input id="name" name="name" type="text" required maxlength="120" autocomplete="name" aria-describedby="name-err" data-req="Enter your name." /><p class="field-err" id="name-err" data-v2 hidden></p></div>
           <div class="field"><label for="org">Organisation</label><input id="org" name="org" type="text" maxlength="160" autocomplete="organization" /></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email" /></div>
-          <div class="field"><label for="topic">What is this about?</label>
-            <select id="topic" name="topic" required>
+          <div class="field"><label for="email">Email<span class="req" data-v2>required</span></label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email" aria-describedby="email-err" data-req="Enter your email address." data-fmt="Enter a valid email address, for example name@company.com." /><p class="field-err" id="email-err" data-v2 hidden></p></div>
+          <div class="field"><label for="topic">What is this about?<span class="req" data-v2>required</span></label>
+            <select id="topic" name="topic" required aria-describedby="topic-err" data-req="Choose a topic.">
               <option value="" selected disabled>Choose a topic</option>
               <option>Product enquiry or quote</option><option>Field testing or operations</option><option>New build</option><option>Retrofit</option><option>Heat reuse</option><option>Commissioning or verification of an existing system</option><option>Partnership</option>{eventOn && <option data-hide-from={event.hideFrom.toISOString()}>Meeting at GDCC Canada 2026</option>}<option>Something else</option>
-            </select></div>
+            </select><p class="field-err" id="topic-err" data-v2 hidden></p></div>
           <fieldset class="details" data-details hidden>
             <legend>Project details <span class="small muted">All optional. A rough idea is fine.</span></legend>
             <div class="field" data-f="load"><label for="load" data-l>IT load</label><input id="load" name="load" type="text" maxlength="200" /></div>
@@ -57,7 +57,7 @@ const eventOn = showEvent();
               <p class="small muted" style="margin:0">After you submit, the team confirms the time by email. The meeting is not booked until you receive that confirmation.</p>
             </fieldset>
           )}
-          <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000"></textarea></div>
+          <div class="field"><label for="msg">Message<span class="req" data-v2>required</span></label><textarea id="msg" name="message" rows="6" required minlength="10" maxlength="5000" aria-describedby="msg-err" data-req="Write your message." data-short="Write at least 10 characters."></textarea><p class="field-err" id="msg-err" data-v2 hidden></p></div>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
           <p class="form-status" data-status role="status" hidden></p>
           <div class="receipt" data-receipt hidden></div>
@@ -139,10 +139,29 @@ const eventOn = showEvent();
     if (fb) fb.hidden = false;
     say(`Not delivered. Your message has not reached us. Please email it to ${f.dataset.to}: copy your message below, or open it as a draft in your email app. What you typed is still in the form.`, 'error');
   }
+  // Field-level validation: the message sits under the field (aria-describedby) and comes from the markup.
+  // A field is checked when it is left with something in it, re-checked while it is being corrected, and all are checked on submit.
+  const need = f ? [...f.querySelectorAll('[required]')] : [];
+  const mark = (el, m) => {
+    const p = document.getElementById(el.id + '-err');
+    if (p) { p.textContent = m; p.hidden = !m; }
+    el.setAttribute('aria-invalid', m ? 'true' : 'false');
+  };
+  const check = (el) => {
+    const v = el.value.trim(), ds = el.dataset;
+    const m = !v ? ds.req : el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? ds.fmt : el.minLength > 0 && v.length < el.minLength ? ds.short : '';
+    mark(el, m);
+    return !m;
+  };
+  need.forEach((el) => {
+    el.addEventListener('blur', () => { if (el.value.trim()) check(el); });
+    el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+  });
   f?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (receipt) receipt.hidden = true;
-    if (!f.checkValidity()) { f.reportValidity(); say('Please complete the highlighted fields.', 'error'); return; }
+    const bad = need.filter((el) => !check(el));
+    if (bad.length) { bad[0].focus(); say('Please complete the highlighted fields.', 'error'); return; }
     const d = new FormData(f);
     const payload = { name: g(d, 'name'), org: g(d, 'org'), email: g(d, 'email'), topic: g(d, 'topic'), message: g(d, 'message'), website: g(d, 'website'), elapsed: Date.now() - opened };
     LABELS.forEach(([k]) => { const v = g(d, k); if (v) payload[k] = v; });
@@ -163,7 +182,7 @@ const eventOn = showEvent();
           if (isMeeting) { const n = document.createElement('p'); n.className = 'small'; n.textContent = 'Your requested time is not booked yet. The team will confirm it by email.'; receipt.append(n); }
           receipt.hidden = false; receipt.setAttribute('tabindex', '-1'); receipt.focus();
         }
-        f.reset(); applyTopic(); if (fb) fb.hidden = true; btn.disabled = false; return;
+        f.reset(); applyTopic(); need.forEach((el) => mark(el, '')); if (fb) fb.hidden = true; btn.disabled = false; return;
       }
       if (j.error === 'validation') { say('Please check your name, email, topic and message (at least 10 characters), then send again.', 'error'); btn.disabled = false; return; }
       notDelivered(d);

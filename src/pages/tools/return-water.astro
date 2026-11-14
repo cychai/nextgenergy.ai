@@ -49,6 +49,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
             <div class="readout" aria-live="polite" aria-atomic="true"><span data-out="gwh">—</span> GWh<sub>th</sub></div>
             <p class="small muted" style="margin:0.3rem 0 0">≈ CAD $<span data-out="rev">—</span> per year at the stated value, counted on the heat the data centre delivers: gross revenue, not profit, before pumping, heat-pump electricity and network costs. Temperature match is only the first screen; flow, temperature drop, capacity and seasonal demand all have to line up.</p>
           </div>
+          <div class="share-row" data-v2><button type="button" class="btn" data-share data-done="Link copied" data-fail="Could not copy. The link is now in the address bar.">Copy link to these inputs</button><span role="status" data-share-status></span></div>
         </div>
         <div>
           <div class="eyebrow">Off-takers, by physical feasibility</div>
@@ -78,15 +79,18 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
       </div>
     </div>
   </section>
+  <button type="button" class="tbar" data-tbar data-v2 hidden><span data-tbar-text></span><span class="go">Results ↓</span></button>
   <Faq items={qa} alt />
 </Base>
 <style>
   .input-error { margin: 0 0 1rem; padding: 0.7rem 0.9rem; border-left: 3px solid var(--danger); background: var(--danger-bg); color: var(--danger-text); font-size: var(--fs-sm); }
   input[aria-invalid="true"] { border-color: var(--danger) !important; }
   .tool.buyers { padding: var(--sp-2) var(--sp-5); }
+  .tool.buyers :global(.tax) { margin: var(--sp-3) 0 var(--sp-1); }
   .result { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
 </style>
 <script>
+  import { restore, share, inRange, resultBar } from '@/scripts/tool';
   const buyers = [
     { name: 'Legacy district heating (2nd/3rd gen)', min: 70, max: 95, why: 'Older networks and radiators sized for 70–90 °C supply; some run higher.' },
     { name: 'Absorption cooling (single-effect LiBr)', min: 80, max: 95, why: 'Hot-water single-effect machines are mostly rated at 90 °C; some run down to about 80 °C. Check the maker\'s curve.' },
@@ -111,13 +115,13 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
   const errBox = document.createElement('p');
   errBox.className = 'input-error'; errBox.setAttribute('role', 'alert'); errBox.hidden = true;
   list.parentNode.insertBefore(errBox, list);
+  const ids = ['tret', 'hx', 'mw', 'dt', 'price', 'hrs'];
+  const setBar = resultBar(list);
+  const pc = (v) => Math.max(0, Math.min(100, v));
   function invalid() {
     const bad = [];
     for (const [input, label, lo, hi, unit] of fields) {
-      const raw = input.value.trim(), v = Number(raw);
-      const ok = raw !== '' && Number.isFinite(v) && v >= lo && v <= hi;
-      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
-      if (!ok) bad.push(`${label}: enter a value from ${lo} to ${hi} ${unit}.`);
+      if (!inRange(input, lo, hi, `Enter a value from ${lo} to ${hi} ${unit}.`)) bad.push(`${label}: enter a value from ${lo} to ${hi} ${unit}.`);
     }
     return bad;
   }
@@ -125,6 +129,7 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
     const bad = invalid();
     if (bad.length) {
       errBox.textContent = 'Please correct the inputs. ' + bad.join(' ');
+      setBar('Please correct the inputs.');
       errBox.hidden = false;
       ['tdel', 'flow', 'gwh', 'rev'].forEach((k) => out(k, '—'));
       list.innerHTML = '';
@@ -141,9 +146,13 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
     const gwh = P * H / 1000;
     out('gwh', gwh.toFixed(1));
     out('rev', Math.round(gwh * 1000 * pr).toLocaleString('en-CA'));
-    list.innerHTML = buyers.map((b) => {
+    // Temperature axis (0–100 °C): one bar per off-taker window, one line at the delivered temperature.
+    const mark = `<line x1="${pc(T)}%" x2="${pc(T)}%" y1="0" y2="10"/>`;
+    const axis = `<svg class="tax" role="img" aria-label="Temperature axis, 0 to 100 °C. Each bar is an off-taker's supply window; the line marks the temperature the buyer receives.">${[0, 20, 40, 60, 80, 100].map((v) => `<text x="${v}%" y="34" text-anchor="${v ? (v < 100 ? 'middle' : 'end') : 'start'}">${v}${v < 100 ? '' : ' °C'}</text>`).join('')}<line x1="${pc(T)}%" x2="${pc(T)}%" y1="15" y2="21"/><text class="now" x="${pc(T)}%" y="11" text-anchor="${T < 12 ? 'start' : T > 88 ? 'end' : 'middle'}">${T.toFixed(1)} °C</text></svg>`;
+    let n = 0;
+    list.innerHTML = axis + buyers.map((b) => {
       let cls, st, extra = '';
-      if (T >= b.min) { cls = 'ok'; st = 'Temperature match'; }
+      if (T >= b.min) { n++; cls = 'ok'; st = 'Temperature match'; }
       else if (T >= b.min - 25) {
         cls = 'lift'; st = 'Lift needed';
         const Th = b.min + 273.15, Tc = T + 273.15;
@@ -151,9 +160,11 @@ const ld = [softwareLd(path, { name: 'Return-water grade → heat buyers', descr
         const elec = P / (cop - 1);
         extra = ` Lift of ${(b.min - T).toFixed(1)} K; COP ≈ ${cop.toFixed(1)} → ≈ ${elec.toFixed(2)} MW<sub>e</sub> to lift ${P} MW<sub>th</sub> of reject heat, delivering ≈ ${(P + elec).toFixed(2)} MW<sub>th</sub>.`;
       } else { cls = 'no'; st = 'Outside screening range'; }
-      return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span></div>`;
+      return `<div class="buyer ${cls}"><span class="dot"></span><div><div class="name">${b.name}</div><div class="why">${b.why} Window ${b.min}–${b.max} °C.${extra}</div></div><span class="st">${st}</span><svg class="trk" aria-hidden="true"><rect class="bg" y="4" width="100%" height="2"/><rect class="win" x="${b.min}%" y="2" width="${b.max - b.min}%" height="6" rx="3"/>${mark}</svg></div>`;
     }).join('');
+    setBar(`Buyer receives <b>${T.toFixed(1)} °C</b> · <b>${n}</b> of ${buyers.length} match · <b>${gwh.toFixed(1)}</b> GWh/yr`);
   }
   [t, hx, mw, dt, price, hrs].forEach((i) => i.addEventListener('input', run));
+  restore(ids); share(ids);
   run();
 </script>
