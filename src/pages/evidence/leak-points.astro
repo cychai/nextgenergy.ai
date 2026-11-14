@@ -19,7 +19,7 @@ const ld = [definedTermLd(path, d), techArticleLd(path, { headline: 'Ten leak po
   <Definition d={d} />
   <section class="section">
     <div class="wrap">
-      <LeakMap title="Ten leak points" points={leakPoints} />
+      <LeakMap title="Ten leak points" points={leakPoints} fluids={['Supply', 'Return']} />
       <div class="split">
         <div class="sticky">
           <div class="eyebrow">Grouped by position on the path</div>
