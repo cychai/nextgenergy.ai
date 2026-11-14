@@ -39,12 +39,11 @@ const sub = (label: string) => `${label} submenu`;
   </div>
   <div class="mnav" id="mnav">
     <div class="wrap">
-      <button type="button" class="msrch" data-search aria-haspopup="dialog" aria-controls="srch"><Icon name="search" />Search</button>
       {nav.map((n) => menu[n.href] ? (
         <div class="mrow">
           <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
           <details name="mnav" open={isCurrent(n)}>
-            <summary aria-label={sub(n.label)}><Icon name="chevron-down" /></summary>
+            <summary aria-label={sub(n.label)}><Icon name="caret" /></summary>
             <div class="msub">
               {menu[n.href].map((g) => (
                 <>
@@ -58,10 +57,13 @@ const sub = (label: string) => `${label} submenu`;
       ) : (
         <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
       ))}
-      <a href="/company/contact" aria-current={cur('/company/contact')}>Contact</a>
+    </div>
+    <div class="mbar">
+      <button type="button" class="msrch" data-search aria-haspopup="dialog" aria-controls="srch"><Icon name="search" />Search</button>
+      <a class="mcta" href="/company/contact" aria-current={cur('/company/contact')}>Contact</a>
     </div>
   </div>
-  <div class="mnav-scrim" data-menu-scrim hidden></div>
+  <div class="mnav-scrim" data-menu-scrim></div>
 </header>
 <noscript><style is:inline>[data-search] { display: none !important; }</style></noscript>
 <dialog class="srch" id="srch" aria-label="Search this site" data-hint="Type a word or two. Up and down arrows choose a result, Enter opens it, Esc closes." data-none="No results for “{q}”." data-count="{n} results" data-error="Search is unavailable right now. Please use the menu or the footer links.">
