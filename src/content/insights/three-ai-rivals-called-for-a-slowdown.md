@@ -9,7 +9,7 @@ related: [/evidence/commissioning, /evidence/turnover, /evidence/canada-principl
 ---
 
 <!-- substack-body -->
-![](https://substackcdn.com/image/fetch/$s_!Ucr8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6bb9e42-c666-434e-9cab-b44575e40539_894x596.png)
+![](/insights-img/three-ai-rivals-called-for-a-slowdown/01.webp)
 
 Dario Amodei has called for slowing the advance of frontier AI capabilities so safety work can keep up, and committed Anthropic to embedded third-party evaluators with employee-level access. Sam Altman backed the call and said OpenAI will bring in independent evaluators with employee-like access. Elon Musk also voiced agreement. [Reporting on the statements](https://apnews.com/article/d59552edcb27892d8ee4d98a48397706).
 
@@ -46,7 +46,7 @@ My position is that AI capacity should be delivered with three obligations built
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!Dd9z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F982fdf22-a6ab-4b47-8c97-cc77b018a9e6_1536x1024.png)
+![](/insights-img/three-ai-rivals-called-for-a-slowdown/02.webp)
 
 ## 1. Energy responsibility is becoming a delivery issue
 
@@ -88,7 +88,7 @@ The number was never shown to be wrong. **The boundary was missing.** I had not 
 
 If we intend to ask the labs for verifiable claims, our own energy and water figures have to carry their measurement boundary, their operating conditions, and a name. A calculation that fits an anecdote cannot reconstruct a missing operating record.
 
-![](https://substackcdn.com/image/fetch/$s_!Uk_O!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0c9bd108-ab78-4651-be95-6271c78f8168_1536x1024.png)
+![](/insights-img/three-ai-rivals-called-for-a-slowdown/03.webp)
 
 ## 2. Safety starts in design and has to survive integrated testing
 
@@ -126,7 +126,7 @@ No design eliminates every risk. The obligation is to identify credible failure 
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!h9Px!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F305a0b1f-1c4e-4988-a376-1d7d5ec751d6_1536x1024.png)
+![](/insights-img/three-ai-rivals-called-for-a-slowdown/04.webp)
 
 ## 3. Liquid-cooling operations must keep faults local
 

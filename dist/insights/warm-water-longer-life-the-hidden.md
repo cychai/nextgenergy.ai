@@ -9,7 +9,7 @@
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!PUnr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F091135bb-acc4-4348-ae5b-b28c24194032_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/01.webp)
 
 The industry argues about two numbers: dollars per GPU, and tokens per second. But a third quietly decides the economics of an AI cluster: how long each GPU keeps earning.
 
@@ -31,7 +31,7 @@ Environment. Air-side cooling moves large volumes of air through the room and ac
 
 Notice the pattern: **the enemy isn’t “warm.” The enemy is hot, unstable, and dirty.**
 
-![](https://substackcdn.com/image/fetch/$s_!yn6K!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F56e8532b-604b-4012-b8be-85ba15b1c54c_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/02.webp)
 
 ### Stability is the real unlock
 
@@ -43,7 +43,7 @@ Junction temperature, done right. As I argued last time, what a chip fears isn�
 
 A cleaner environment — and here the two architectures differ. Immersion puts the whole board in a single, clean, uniform medium: no dust, no humidity swings, no static. Cold-plate cooling keeps the heat path in a sealed liquid loop and sharply reduces airflow, fans and vibration even where some air remains. Both move the hardware into a kinder world. In comparable deployments and operating conditions, we’ve measured system-level temperatures up to about 20°C below air-cooled baselines — and designed around exactly the reliability numbers above. It shows up as a lower fault rate.
 
-![](https://substackcdn.com/image/fetch/$s_!QVva!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9a4de86-57aa-440b-b55a-20e169e9486f_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/03.webp)
 
 ### The trade-offs you have to engineer for
 
@@ -53,7 +53,7 @@ Material compatibility — especially in immersion. The governing principle is �
 
 Heat and evaporation in the room. A 45°C loop — or an open immersion bath — can raise the ambient temperature of the space, and volatile or two-phase fluids can evaporate, creating fluid loss, vapor to manage, and for certain fluorochemicals, real environmental and regulatory exposure (GWP and PFAS scrutiny). The answer is design discipline: sealed, low- or non-volatile fluids; loops that carry the heat out to the facility side — ideally to reuse — rather than into the room; and proper containment and monitoring. Design discipline is what turns these risks back into reliability.
 
-![](https://substackcdn.com/image/fetch/$s_!2rCw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa754deec-89c1-4386-bc82-3e82ae04bc78_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/04.webp)
 
 ### The economics — start with what you can underwrite
 
@@ -67,7 +67,7 @@ Only then the headline model, labeled as exactly that. As an illustrative model 
 
 The same warm-water loop does three things from one decision: it cuts cooling energy and water, it makes the reject heat hot enough to reuse, and it keeps the most expensive hardware healthier and worth more for longer. Power, cooling, heat recovery, and hardware life aren’t separate decisions — they’re connected returns from one architectural choice.
 
-![](https://substackcdn.com/image/fetch/$s_!67l0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72cda4d3-224b-403e-ae70-b996dcaa96c6_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/05.webp)
 
 We didn’t arrive at this from the sidelines. We built our first immersion systems in 2020, moved cold-plate into volume the following year, and have since deployed across more than 1 GW of installed capacity — delivering recovered heat into district heating, greenhouses and aquaculture, over 2,000,000 m² of it. The longevity case, the reliability numbers, and the trade-offs above aren’t theory to us; they’re what we engineered around to make those systems run.
 

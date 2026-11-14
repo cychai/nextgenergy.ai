@@ -12,12 +12,15 @@ const lazyArticleImages = () => ({
   hooks: {
     'astro:build:done': async ({ dir }) => {
       const root = fileURLToPath(new URL('insights/', dir));
+      const sizes = JSON.parse(await readFile(new URL('./src/data/insight-images.json', import.meta.url), 'utf8').catch(() => '{}'));
       for (const f of (await readdir(root).catch(() => [])).filter((n) => n.endsWith('.html'))) {
         const html = await readFile(root + f, 'utf8');
         const at = html.indexOf('article-body');
         if (at < 0) continue;
         const end = html.indexOf('</article>', at);
-        const body = html.slice(at, end < 0 ? undefined : end).replace(/<img\b(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"');
+        const body = html.slice(at, end < 0 ? undefined : end).replace(/<img\b(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"')
+          // Self-hosted article images (C-13) get their width and height from the manifest written by scripts/localize-insight-images.py.
+          .replace(/<img\b(?![^>]*\bwidth=)([^>]*\bsrc="(\/insights-img\/[^"]+)")/g, (m, rest, src) => (sizes[src] ? `<img width="${sizes[src][0]}" height="${sizes[src][1]}"${rest}` : m));
         const out = html.slice(0, at) + body + (end < 0 ? '' : html.slice(end));
         if (out !== html) await writeFile(root + f, out);
       }
@@ -82,9 +85,41 @@ const icons = () => ({
   },
 });
 
+// Site search index (C-02). After the build, every page's title, section (its last breadcrumb), description,
+// headings and the first part of its text are written to dist/search-index.json. The file is fetched only when a
+// visitor opens the search box; it is disallowed in robots.txt and is not a page, so it is in neither the sitemap nor llms.txt.
+const searchIndex = () => ({
+  name: 'search-index',
+  hooks: {
+    'astro:build:done': async ({ dir }) => {
+      const root = fileURLToPath(dir);
+      const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${d}${e.name}/`) : e.name.endsWith('.html') ? [`${d}${e.name}`] : []));
+      const ent = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+      const plain = (h) => h.replace(/<(script|style|svg|template)\b[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ')
+        .replace(/&#x([0-9a-f]+);/gi, (m, n) => String.fromCodePoint(parseInt(n, 16))).replace(/&#(\d+);/g, (m, n) => String.fromCodePoint(+n))
+        .replace(/&([a-z]+);/g, (m, n) => ent[n] ?? m).replace(/\s+/g, ' ').trim();
+      const rows = [];
+      for (const file of walk(root).sort()) {
+        const u = '/' + file.slice(root.length, -5).replace(/(^|\/)index$/, '');
+        if (u === '/404' || u.startsWith('/insights/tag/')) continue;
+        const html = await readFile(file, 'utf8');
+        const main = (/<main[^>]*>([\s\S]*)<\/main>/.exec(html) ?? [])[1] ?? '';
+        const crumbs = [...((/<nav class="crumbs"[^>]*>([\s\S]*?)<\/nav>/.exec(main) ?? [])[1] ?? '').matchAll(/<a[^>]*>([\s\S]*?)<\/a>/g)].map((m) => plain(m[1]));
+        const t = plain((/<h1[^>]*>([\s\S]*?)<\/h1>/.exec(main) ?? [])[1] ?? '') || plain((/<title>([\s\S]*?)<\/title>/.exec(html) ?? [])[1] ?? '').split(' | ')[0];
+        const d = plain((/<meta name="description" content="([^"]*)"/.exec(html) ?? [])[1] ?? '');
+        const h = [...main.matchAll(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/g)].map((m) => plain(m[1])).filter((x) => x.length <= 80).join(' · ');
+        // Body text: the page after its title block, without navigation aids (breadcrumbs, in-page nav, contents, previous/next).
+        const b = plain(main.replace(/<(nav|aside)\b[\s\S]*?<\/\1>/g, ' ').replace(/<h1[^>]*>[\s\S]*?<\/h1>/, ' ')).slice(0, 1200);
+        rows.push({ u, t, s: crumbs.length > 1 ? crumbs[crumbs.length - 1] : '', d, h, b });
+      }
+      await writeFile(`${root}search-index.json`, JSON.stringify(rows));
+    },
+  },
+});
+
 export default defineConfig({
   site: 'https://nextgenergy.ai',
-  integrations: [sitemap(), lazyArticleImages(), icons(), pageNav('On this page')],
+  integrations: [sitemap(), lazyArticleImages(), icons(), searchIndex(), pageNav('On this page')],
   trailingSlash: 'never',
   build: { format: 'file' },
   markdown: { shikiConfig: { theme: 'github-light' } },

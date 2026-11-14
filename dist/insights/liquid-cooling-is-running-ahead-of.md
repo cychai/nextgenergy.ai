@@ -9,7 +9,7 @@
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!4-mo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb41e03-efd5-49a3-9d6b-f8ed2603b674_1024x1536.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/01.webp)
 
 _The three layers of liquid-cooling compliance — safety, interoperability, and the white space where the real risk lives._
 
@@ -40,7 +40,7 @@ Liquid-cooling compliance is easier to understand when divided into three layers
 
 ## **Layer 1: Safety — mature, but largely borrowed**
 
-![](https://substackcdn.com/image/fetch/$s_!ev8r!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec3f69de-7b03-4fa5-82b0-076cff8076d2_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/02.webp)
 
 _Certification does not transfer up the chain. A certified component, a Listed product and an installed system are different objects — and only the AHJ approves the installation itself._
 
@@ -84,7 +84,7 @@ A Field Evaluation provides a site-specific assessment of unlabeled, modified or
 
 ## **Layer 2: Interoperability — still forming**
 
-![](https://substackcdn.com/image/fetch/$s_!KRf4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b909e98-e3e0-4645-a677-2b61ccf715bb_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/03.webp)
 
 _Conceptual illustration; operating values shown are illustrative only. The interoperability layer: fluids, quick disconnects, CDUs, manifolds and cold plates, defined through specifications and test conditions — not through a single universal certification._
 
@@ -110,7 +110,7 @@ The distinction is not semantic. One mark may address alignment with an open tec
 
 ## **Layer 3: The white space — where the real risk lives**
 
-![](https://substackcdn.com/image/fetch/$s_!7oQ0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F184dc5e3-9969-425a-9553-f39b4df4d5aa_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/04.webp)
 
 _The white space: leak response, fluid life cycle and heat reuse — detect, recover, return value. The issues most characteristic of liquid cooling, where no single mark closes the risk._
 

@@ -10,7 +10,7 @@ historyNote: true
 ---
 
 <!-- substack-body -->
-![](https://substackcdn.com/image/fetch/$s_!6wWv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd9a98e-f134-41f0-9975-0d814a0ae4b3_1733x907.png)
+![](/insights-img/from-25-tonnes-a-day-to-zero-the/01.webp)
 
 This is the fourth of a series. The first three argued that warm water is cheaper to run, kinder to the hardware, and able to turn reject heat into an asset. This one is about the resource everyone is suddenly worried AI is draining: water.
 
@@ -26,7 +26,7 @@ So data centers do use real water. The honest question is not whether, but how m
 
 ## 𝗔 𝗾𝘂𝗶𝗰𝗸 𝘀𝗰𝗮𝗹𝗲 𝗰𝗵𝗲𝗰𝗸
 
-![](https://substackcdn.com/image/fetch/$s_!Iq74!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1f7600a-3365-43b3-8f3e-03d063c542d9_1448x1086.png)
+![](/insights-img/from-25-tonnes-a-day-to-zero-the/02.webp)
 
 Of the world’s freshwater withdrawals, agriculture takes roughly 70%, industry about 19%, and 𝗺𝘂𝗻𝗶𝗰𝗶𝗽𝗮𝗹 / 𝗱𝗼𝗺𝗲𝘀𝘁𝗶𝗰 use about 12% (FAO AQUASTAT — “municipal” is broader than just homes). Direct data-center water consumption is much smaller: on a direct-consumption basis, current U.S. estimates put it 𝘄𝗲𝗹𝗹 𝗯𝗲𝗹𝗼𝘄 𝟬.𝟭% of total national withdrawals. The exact number moves with the boundary — withdrawals vs consumption, direct cooling water vs the water embedded in electricity — but direct cooling water is not the top-line driver of national water use.
 
@@ -40,7 +40,7 @@ So the responsibility is real even when the global number is small: design for z
 
 ## 𝗧𝗵𝗲 𝗳𝗼𝘂𝗿-𝘀𝘁𝗮𝗴𝗲 𝗷𝗼𝘂𝗿𝗻𝗲𝘆: 𝗵𝗼𝘄 𝘄𝗲 𝗴𝗼𝘁 𝗳𝗿𝗼𝗺 𝟮𝟱 𝘁𝗼𝗻𝗻𝗲𝘀 𝘁𝗼𝘄𝗮𝗿𝗱 𝘇𝗲𝗿𝗼
 
-![](https://substackcdn.com/image/fetch/$s_!Uxcb!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4993769f-bab3-4155-809f-7d70580e5b06_1448x1086.png)
+![](/insights-img/from-25-tonnes-a-day-to-zero-the/03.webp)
 
 Here is what the brochures skip. In the conventional path, almost every step that cut on-site water pushed cost or risk onto the power side instead. We didn’t theorize that trade-off — we walked down it, one architecture at a time.
 
@@ -56,7 +56,7 @@ Here is what the brochures skip. In the conventional path, almost every step tha
 
 ## 𝗪𝗵𝘆 𝗿𝗲𝘂𝘀𝗲 𝗯𝗿𝗲𝗮𝗸𝘀 𝘁𝗵𝗲 𝘁𝗿𝗮𝗱𝗲-𝗼𝗳𝗳
 
-![](https://substackcdn.com/image/fetch/$s_!GPma!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8c2d4a6-858e-4988-a8fa-b3ac4d0b1549_1448x1086.png)
+![](/insights-img/from-25-tonnes-a-day-to-zero-the/04.webp)
 
 It breaks it because it changes what “cooling” is for. The first three stages all ask: how do we get rid of this heat as cheaply as possible? Stage four asks a different question: who needs this heat?
 
@@ -66,7 +66,7 @@ This is why I keep saying it: “𝘄𝗮𝘁𝗲𝗿 𝗳𝗼𝗿 𝗔𝗜” �
 
 ## 𝗧𝗵𝗲 𝘀𝗰𝗼𝗿𝗲𝗯𝗼𝗮𝗿𝗱 𝗻𝗲𝗲𝗱𝘀 𝘁𝗵𝗿𝗲𝗲 𝗹𝗲𝗻𝘀𝗲𝘀, 𝗻𝗼𝘁 𝗼𝗻𝗲
 
-![](https://substackcdn.com/image/fetch/$s_!eUqD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feec1b716-eb27-47da-b5e0-f1e5572001f7_1448x1086.png)
+![](/insights-img/from-25-tonnes-a-day-to-zero-the/05.webp)
 
 PUE measures total facility energy over IT energy. By definition it can never go below 1.0 — and it gives no credit for useful heat that leaves the control boundary. Worse, it moves the wrong way: add the pumps to recover and deliver heat, and PUE gets worse precisely as you start turning waste into value.
 

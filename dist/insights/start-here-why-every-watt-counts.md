@@ -9,7 +9,7 @@
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!VbYy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cb75f86-7c9a-4dea-99f7-ff000bc28ad3_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/start-here-why-every-watt-counts/01.webp)
 
 We like to imagine artificial intelligence as something weightless: you type a sentence, and an answer appears. But pull back one layer, and it becomes physical very fast. Every token is a chip doing enormous math; every chip pulls real power; and almost every watt that goes in leaves again as heat.
 

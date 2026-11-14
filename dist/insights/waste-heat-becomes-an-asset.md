@@ -9,13 +9,13 @@
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!wwKH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c68c192-08de-435b-bbff-8e2e69477a6b_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/01.webp)
 
 This is the third of a trilogy. The first issue argued warm water is cheaper to run; the second, that it’s kinder to the hardware. This one is about the third return — the one that changes a data center’s place in the world: the reject heat itself can become a product.
 
 We learned that early. We began using recovered data-center heat in 2020, and by 2021 we were delivering it at larger scale into real buildings — community housing in a town, a kindergarten, a hospital, and industrial facilities — through real winters. Not a concept diagram, not a pilot loop on a slide. Real pipes, real buildings, real people walking on warm floors. The photo below with the infrared gun is one of those floors, measured warm under bare feet. Not a render.
 
-![](https://substackcdn.com/image/fetch/$s_!CeMH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdeb5b3af-7546-4134-bcd8-287b51db6279_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/02.webp)
 
 Caption: A home floor warmed by recovered data-center heat — measured under bare feet, in a real winter. Since 2020.
 
@@ -29,7 +29,7 @@ Air cooling tends to produce the low-grade kind. It pulls heat off the chips int
 
 > The heat was always there. Air cooling made it diffuse, low-grade, and hard to monetize.
 
-![](https://substackcdn.com/image/fetch/$s_!1wP8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38fe6a22-aeb6-4925-ae95-9f96c1d376bb_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/03.webp)
 
 ## Warm water is what makes the heat worth capturing
 
@@ -37,7 +37,7 @@ This is the quiet payoff of the warm-water architecture from the first two issue
 
 But let’s be precise. Warm water doesn’t make heat valuable by magic. It keeps the heat concentrated, hot enough, metered, and contractable — so someone else can use it. Cold-plate loops carry heat away as hot water around 50–60°C; in our own systems we deliver it at about 55°C, and immersion can return fluid above 60°C. Modern low-temperature district networks — the 4th-generation systems being built across Europe — typically want supply somewhere around 50–70°C. Exact numbers vary by network, season, and how old the buildings are, but the direction is unmistakable: warm-water output often lands inside the band a buyer wants, with little or no heat-pump lift. The same architectural choice that lowered your power bill and extended your hardware just turned your reject heat from a liability into a feedstock.
 
-![](https://substackcdn.com/image/fetch/$s_!kuNR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3ab3604-adc0-4d27-9726-8207971d1cb0_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/04.webp)
 
 ## We didn’t wait for a mandate
 
@@ -51,15 +51,15 @@ We built our first immersion systems in 2020 and moved into large-scale heat del
 
 Put those together and the claim sharpens. 55°C water isn’t just a cooling output. Steady, metered, controlled, and matched to the right local demand, it becomes an energy product.
 
-![](https://substackcdn.com/image/fetch/$s_!Cb--!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1c6b5a8-f322-4ecd-ad8d-d3ea642de9d1_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/05.webp)
 
 _Our heat-recovery plant: the units that turn server heat into usable hot water._
 
-![](https://substackcdn.com/image/fetch/$s_!KGpX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2c735cdf-5035-4afc-b40e-c205841a4e02_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/06.webp)
 
 _A year-round buyer: greenhouse crops grown on recovered heat._
 
-![](https://substackcdn.com/image/fetch/$s_!hGiE!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F955c817e-ec35-4157-bec5-5098360d3d8e_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/07.webp)
 
 _Constant-temperature aquaculture — warm water held in a narrow band, fed by reject heat._
 
@@ -69,7 +69,7 @@ Beyond our own deployments, the public examples are piling up. Meta’s Odense p
 
 The point isn’t that every site does all of these. It’s that a high-grade heat stream is a tradable output — and the moment it’s tradable, the cooling system stops being only a cost.
 
-![](https://substackcdn.com/image/fetch/$s_!rOND!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77d0501c-ae08-4acd-b59e-40e32c985adc_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/08.webp)
 
 ## The trade-offs you have to engineer for
 
@@ -99,7 +99,7 @@ For most of the industry’s history none of this showed up on a balance sheet, 
 
 Put it together and the cost-center framing breaks. Heat reuse is becoming, at once, a revenue line, a reported KPI, and in some markets a permit requirement. The data centers being designed today for 2028 are being designed as heat suppliers, not just heat producers.
 
-![](https://substackcdn.com/image/fetch/$s_!74G2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc65fff2-a3b7-4c9b-b548-21a0a6dd03f1_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/09.webp)
 
 ## One loop, three returns
 

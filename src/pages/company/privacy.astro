@@ -12,7 +12,7 @@ import { site } from '@/data/site';
         <li><strong>Google Analytics, only if you accept.</strong> Nothing from Google loads until you choose. Before you choose, and if you click “Decline”, the Google tag is not loaded and your browser sends no request of any kind to Google: no cookies, no cookieless measurement, no page-view signal. Only if you click “Accept analytics” does the page load the Google tag, which then measures your visits with advertising features disabled and may set analytics cookies such as <code>_ga</code> to recognise repeat visits. Your choice is kept in your browser's local storage, so the banner does not reappear on every page. You can change it at any time using “Analytics choices” in the footer: if you withdraw consent, the tag stops sending on the current page, any <code>_ga</code> cookies are deleted, and on later visits the tag is not loaded at all.</li>
         <li><strong>Hosting logs.</strong> The site is served by Cloudflare. Like any web server, Cloudflare's edge records standard request logs (IP address, requested page, browser type, timestamp) for security and operations. We do not receive these as personal data and do not use them to identify visitors. Cloudflare's own privacy policy applies to that processing.</li>
         <li><strong>Fonts and stylesheets</strong> are served from this domain. Apart from the Google Analytics tag above, which loads only after you accept, no script is loaded from a third party.</li>
-        <li><strong>Images in articles</strong> under /insights are loaded from Substack's content network (substackcdn.com), because those articles are mirrored from our Substack publication. Loading an image sends a standard request, including your IP address, to Substack.</li>
+        <li><strong>Images in articles</strong> under /insights are served from this domain, like the rest of the site. Loading them sends no request to Substack.</li>
         <li><strong>The turnover self-check tool</strong> stores your tick marks in your own browser (local storage) so they survive a reload. Nothing is sent to us. Clearing your browser data removes it.</li>
       </ul>
       <h2>When you write to us</h2>
@@ -23,7 +23,7 @@ import { site } from '@/data/site';
       <p>To have an email and its contents deleted, write to {site.email} and say so. We will confirm when it is done. If you are in the EU, UK or Canada you have the rights those jurisdictions give you over personal data, including access and erasure, and you may exercise them through the same address.</p>
       <h2>Changes</h2>
       <p>If we add any further third-party service that processes visitor data, this page will be updated first and the change will be dated here.</p>
-      <p class="small muted">This notice is given by NextGenergy (NextGenergy Technology Inc.). Last updated 12 November 2026 (business phone line). Previous update 2 October 2026 (Google Analytics loads only after you accept; contact form failure handling). Contact for this notice: {site.email}.</p>
+      <p class="small muted">This notice is given by NextGenergy (NextGenergy Technology Inc.). Last updated 14 November 2026 (article images are now served from this domain instead of Substack's content network). Previous updates: 12 November 2026 (business phone line); 2 October 2026 (Google Analytics loads only after you accept; contact form failure handling). Contact for this notice: {site.email}.</p>
     </div>
   </section>
 </Base>

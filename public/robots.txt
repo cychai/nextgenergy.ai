@@ -4,6 +4,8 @@
 
 User-agent: *
 Allow: /
+# The site-search index is a data file for the search box, not a page.
+Disallow: /search-index.json
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Explicitly welcome (retrieval / citation): OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User,

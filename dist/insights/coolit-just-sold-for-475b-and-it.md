@@ -9,7 +9,7 @@
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!VhVR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8cba1eb5-506e-4d91-86cf-15f9ebfee83d_1280x1280.jpeg)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/01.webp)
 
 On July 2, Ecolab closed its roughly $4.75 billion all-cash acquisition of CoolIT — ahead of schedule.
 
@@ -35,7 +35,7 @@ In other words: liquid cooling is turning from a hardware business into a chemis
 
 ## Why cold plate won the new-build AI rack — a look back at something I wrote four years ago
 
-![](https://substackcdn.com/image/fetch/$s_!pxxi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44d26370-7eae-4648-94cb-ff60091bfed4_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/02.webp)
 
 Here’s the twist: four years ago, this outcome wasn’t obvious.
 
@@ -77,11 +77,11 @@ And a counter-intuitive point worth saying in immersion’s defense: physical re
 
 So this isn’t “who kills whom” — it's matching. New-build designed for liquid points to cold plate; a hall of air-cooled servers means running the immersion math first; extreme heat flux and high-grade heat reuse each shift the answer — the full picture is in the matrix below.
 
-![](https://substackcdn.com/image/fetch/$s_!ybxB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5159fbe2-bbc8-4bdb-90d3-d23e9a7e70dd_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/03.webp)
 
 ## The real takeaway
 
-![](https://substackcdn.com/image/fetch/$s_!sz3m!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6fc44ac5-23ac-4de8-94ae-74536ac4ef6b_1672x941.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/04.webp)
 
 Ecolab’s acquisition of CoolIT makes two things clear at once.
 

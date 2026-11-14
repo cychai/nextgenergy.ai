@@ -9,7 +9,7 @@ related: [/approach/thermal-path, /tools/approach-temp]
 ---
 
 <!-- substack-body -->
-![Image: image1.png](https://substackcdn.com/image/fetch/$s_!FUIH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F770520e0-2a98-447d-854e-2cdd575aded0_1920x1080.png)
+![Image: image1.png](/insights-img/from-amd-advancing-ai-2026-helios/01.webp)
 
 _AMD Advancing AI 2026, San Francisco_
 
@@ -19,7 +19,7 @@ Standing in front of the hardware, my first reaction was not that AMD had simply
 
 The more consequential development was that AMD had begun to organize CPUs, GPUs, networking, software, power, liquid cooling and rack design as one co-optimized system. That is a different arena from the traditional contest over individual chips.
 
-![Image: image2.jpg](https://substackcdn.com/image/fetch/$s_!sjuu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe49a80e4-d258-4f74-a324-44c3cb97cf9a_1200x675.jpeg)
+![Image: image2.jpg](/insights-img/from-amd-advancing-ai-2026-helios/02.webp)
 
 _AMD Chair and CEO Lisa Su delivers the keynote at Advancing AI 2026_
 
@@ -46,7 +46,7 @@ AMD’s current reference design integrates 72 AMD Instinct MI455X GPUs, 6th Gen
 
 Four scale-up cartridges use Ultra Accelerator Link over Ethernet, or UALoE, to connect the GPUs, with up to 260 TB/s of aggregate scale-up bandwidth. AMD also lists up to 43 TB/s of scale-out bandwidth through its Pensando-based networking. These are peak or theoretical specifications—not guarantees of application-level performance.
 
-![Image: image3.png](https://substackcdn.com/image/fetch/$s_!3qCG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4fd5f97f-2a8f-4b04-94ed-41646fb59346_1920x1080.png)
+![Image: image3.png](/insights-img/from-amd-advancing-ai-2026-helios/03.webp)
 
 _An AMD Helios rack-scale system on display at Advancing AI 2026_
 
@@ -76,7 +76,7 @@ Helios is AMD’s attempt to compete at that level. It adopts Meta’s Open Rack
 
 “Open” here describes an industrial model as much as a technical standard. AMD defines the CPU, GPU, networking and reference architecture. Large customers influence standards and workload optimization. Celestica is developing and manufacturing scale-up switches. Sanmina, Wiwynn, Wistron and Inventec are among the manufacturing partners. OEMs such as HPE can turn the reference design into customer-facing products.
 
-![Image: image4.png](https://substackcdn.com/image/fetch/$s_!R811!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a4d287f-0ed3-426a-9dff-c2e2f2fe6cf9_327x529.png)
+![Image: image4.png](/insights-img/from-amd-advancing-ai-2026-helios/04.webp)
 
 _AMD Helios rack-scale reference design. Image: AMD_
 

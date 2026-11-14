@@ -10,7 +10,8 @@ export async function getStaticPaths() {
 
 export const articleMarkdown = (p: { id: string; body?: string; data: { title: string; subtitle?: string; date: Date; updated?: Date; canonical?: string; sourceUrl?: string; tags: string[] } }) => {
   const d = (x: Date) => x.toISOString().slice(0, 10);
-  const body = (p.body ?? '').replace(/<!--[\s\S]*?-->/g, '').trim();
+  // Self-hosted article images are site-relative in the source; here they are written as full URLs so the Markdown stands on its own.
+  const body = (p.body ?? '').replace(/<!--[\s\S]*?-->/g, '').replace(/\]\(\/insights-img\//g, `](${site.url}/insights-img/`).trim();
   const meta = [
     `- Author: Jim (Junming) Li, Founder & CEO, NextGenergy`,
     `- Published: ${d(p.data.date)}` + (p.data.updated ? ` · Updated: ${d(p.data.updated)}` : ''),

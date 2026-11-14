@@ -3,6 +3,7 @@ import Base from '@/layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { site } from '@/data/site';
 import { claims } from '@/data/claims';
+import Picto from '@/components/diagram/Picto.astro';
 const latest = (await getCollection('insights', (p) => !p.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 const stats = [
   { c: claims['founding-8-years'], label: 'of liquid-cooling focus in our founding team, immersion and direct-to-chip' },
@@ -70,13 +71,13 @@ import CallLink from '@/components/CallLink.astro';
           <div class="stat">
             <span class="v">{s.c.value}</span>
             <span class="l">{s.label}</span>
-            <span class="cond"><b>Condition:</b> {s.c.condition}</span>
+            <details class="stat-basis" data-print><summary data-v2>Basis</summary><span class="cond"><b>Condition:</b> {s.c.condition}</span></details>
           </div>
         ))}
         <div class="stat">
           <span class="v">Toronto</span>
           <span class="l">sourcing, integration and field coordination for North America</span>
-          <span class="cond">NextGenergy, Toronto, Ontario. Manufacturing by qualified partners; site work by licensed and insured partner companies.</span>
+          <details class="stat-basis" data-print><summary data-v2>Basis</summary><span class="cond">NextGenergy, Toronto, Ontario. Manufacturing by qualified partners; site work by licensed and insured partner companies.</span></details>
         </div>
       </div>
       <p class="small" style="margin-top:1rem"><a href="/company/track-record">The projects behind these figures →</a></p>
@@ -109,10 +110,10 @@ import CallLink from '@/components/CallLink.astro';
       <div class="eyebrow">Go deeper</div>
       <h2>The thinking and the records behind the products.</h2>
       <div class="deeper">
-        <a class="card pad-s deep" href="/solutions"><span class="card-title">Solutions</span><span class="d">New build, retrofit, heat reuse, cold climate and edge, each with what to decide early.</span><span class="more">By project type →</span></a>
-        <a class="card pad-s deep" href="/approach"><span class="card-title">Our approach</span><span class="d">The thermal path, return-water grade and the three clocks of leak risk.</span><span class="more">How we think →</span></a>
-        <a class="card pad-s deep" href="/evidence"><span class="card-title">Evidence</span><span class="d">Commissioning criteria, the turnover package and the ten leak points.</span><span class="more">What we hand over →</span></a>
-        <a class="card pad-s deep" href="/insights"><span class="card-title">Insights</span><span class="d">{latest ? latest.data.title : 'Long-form writing on power, liquid cooling and heat reuse.'}</span><span class="more">Latest article →</span></a>
+        <a class="card pad-s deep" href="/solutions"><Picto name="site" /><span class="card-title">Solutions</span><span class="d">New build, retrofit, heat reuse, cold climate and edge, each with what to decide early.</span><span class="more">By project type →</span></a>
+        <a class="card pad-s deep" href="/approach"><Picto name="path" /><span class="card-title">Our approach</span><span class="d">The thermal path, return-water grade and the three clocks of leak risk.</span><span class="more">How we think →</span></a>
+        <a class="card pad-s deep" href="/evidence"><Picto name="records" /><span class="card-title">Evidence</span><span class="d">Commissioning criteria, the turnover package and the ten leak points.</span><span class="more">What we hand over →</span></a>
+        <a class="card pad-s deep" href="/insights"><Picto name="article" /><span class="card-title">Insights</span><span class="d">{latest ? latest.data.title : 'Long-form writing on power, liquid cooling and heat reuse.'}</span><span class="more">Latest article →</span></a>
       </div>
     </div>
   </section>
@@ -153,7 +154,7 @@ import CallLink from '@/components/CallLink.astro';
 
   .stats { display: grid; gap: 1.5rem 2.5rem; grid-template-columns: 1fr; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
   @media (min-width: 720px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-  .stat .v { display: block; font-family: var(--font-figure); font-size: var(--fs-lg); line-height: 1; font-weight: var(--fw-figure); color: var(--ink); margin-bottom: 0.4rem; }
+  .stat .v { display: block; font-family: var(--font-figure); line-height: 1; font-weight: var(--fw-figure); color: var(--ink); margin-bottom: 0.4rem; }
   .stat .l { display: block; color: var(--ink-2); font-size: var(--fs-sm); }
   .stat .cond { display: block; font-size: var(--fs-xs); line-height: 1.45; color: var(--ink-3); margin-top: 0.45rem; max-width: var(--measure-wide); }
   .stat .cond b { color: var(--ink-2); font-weight: 600; }

@@ -9,7 +9,7 @@ related: [/solutions/retrofit]
 ---
 
 <!-- substack-body -->
-![](https://substackcdn.com/image/fetch/$s_!gQId!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6f0a80b-e6b5-4c46-9c65-3baab858d77d_1672x941.png)
+![](/insights-img/power-is-the-real-ceiling-and-the/01.webp)
 
 Two headlines, read together, say more than any AI-capex announcement.
 
@@ -36,7 +36,7 @@ When people talk about the AI race, they count GPUs, parameters and funding roun
 
 Capital markets can announce a $25 billion financing framework in a day. Nobody can conjure the megawatts on the same timeline.
 
-![](https://substackcdn.com/image/fetch/$s_!tYCj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcc87bb10-ce97-4ac7-8c6f-9d959f0fc43d_1672x941.png)
+![](/insights-img/power-is-the-real-ceiling-and-the/02.webp)
 
 ## Path A: bring your own supply — the capital-heavy path
 
@@ -54,7 +54,7 @@ So what about everyone who isn’t that rich — and can’t wait a decade?
 
 This is the path still hiding in plain sight: **stop conjuring new power. Use the power that already exists, more intelligently.** There are three ways to do it.
 
-![](https://substackcdn.com/image/fetch/$s_!DavS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F698e0aa9-7892-4515-a7d9-d40688a8cfd2_1672x941.png)
+![](/insights-img/power-is-the-real-ceiling-and-the/03.webp)
 
 ### 1\. Reuse the site — a Stranded Compute Grid
 

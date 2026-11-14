@@ -310,7 +310,7 @@ Every performance number on the site is published with its condition and source.
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!evsZ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe3a5dfc9-e4a8-41b1-be5a-95a9d7c90489_1672x941.jpeg)
+![](https://nextgenergy.ai/insights-img/the-bubble-lays-the-rails/01.webp)
 
 Last Thursday, about $2.5 trillion of market value vanished in a single day. Nvidia fell more than 9%, its worst day since April 2025. The Nasdaq closed in correction. Midterm results and AI-spending fears hit at once, and one word came back everywhere: bubble.
 
@@ -364,7 +364,7 @@ Follow the money, not the share price.
 
 **Spending is running ahead of revenue.** In 2024 Sequoia's David Cahn called it "AI's $600 billion question": how much the application layer must earn to pay for all this. Spending has grown much faster since.
 
-![](https://substackcdn.com/image/fetch/$s_!scUm!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c0f118c-86b7-4ef1-a9e1-309e605ffe13_1672x941.jpeg)
+![](https://nextgenergy.ai/insights-img/the-bubble-lays-the-rails/02.webp)
 
 None of this proves a crash. It proves the build-out is now a financing system as much as a technology system. The test is simple: does each layer still work if utilisation disappoints, rates rise or a tenant delays its ramp?
 
@@ -378,7 +378,7 @@ A GPU's economic life is measured in years. Every new generation reprices the la
 
 So if this bubble bursts, the wreckage will not be cheap compute. It will be fast-depreciating chips bolted into very valuable buildings.
 
-![](https://substackcdn.com/image/fetch/$s_!WuVt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdf6ce96e-0836-4cbe-b137-cf3f928b243d_1672x941.jpeg)
+![](https://nextgenergy.ai/insights-img/the-bubble-lays-the-rails/03.webp)
 
 The rails of this cycle are everything around the chip:
 
@@ -446,7 +446,7 @@ That changes the work worth doing now:
 -   **Design for the second tenant.** The best distressed asset is the one that can take a new tenant, a new rack density or a new cooling architecture without reopening the hall.
     
 
-![](https://substackcdn.com/image/fetch/$s_!-IRu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3cc7c985-0c40-48ba-a87a-f264f316fddb_1672x941.jpeg)
+![](https://nextgenergy.ai/insights-img/the-bubble-lays-the-rails/04.webp)
 
 The bubble lays the rails. The money that paid for them may never come back. The rails will still be there.
 
@@ -508,7 +508,7 @@ Earlier in this newsletter:
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!Ucr8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6bb9e42-c666-434e-9cab-b44575e40539_894x596.png)
+![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/01.webp)
 
 Dario Amodei has called for slowing the advance of frontier AI capabilities so safety work can keep up, and committed Anthropic to embedded third-party evaluators with employee-level access. Sam Altman backed the call and said OpenAI will bring in independent evaluators with employee-like access. Elon Musk also voiced agreement. [Reporting on the statements](https://apnews.com/article/d59552edcb27892d8ee4d98a48397706).
 
@@ -545,7 +545,7 @@ My position is that AI capacity should be delivered with three obligations built
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!Dd9z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F982fdf22-a6ab-4b47-8c97-cc77b018a9e6_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/02.webp)
 
 ## 1. Energy responsibility is becoming a delivery issue
 
@@ -587,7 +587,7 @@ The number was never shown to be wrong. **The boundary was missing.** I had not 
 
 If we intend to ask the labs for verifiable claims, our own energy and water figures have to carry their measurement boundary, their operating conditions, and a name. A calculation that fits an anecdote cannot reconstruct a missing operating record.
 
-![](https://substackcdn.com/image/fetch/$s_!Uk_O!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0c9bd108-ab78-4651-be95-6271c78f8168_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/03.webp)
 
 ## 2. Safety starts in design and has to survive integrated testing
 
@@ -625,7 +625,7 @@ No design eliminates every risk. The obligation is to identify credible failure 
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!h9Px!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F305a0b1f-1c4e-4988-a376-1d7d5ec751d6_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/three-ai-rivals-called-for-a-slowdown/04.webp)
 
 ## 3. Liquid-cooling operations must keep faults local
 
@@ -701,7 +701,7 @@ Earlier in this newsletter:
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!qEr9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2d4e71-5c8b-4561-8b07-3747c9e4a761_1921x819.png)
+![](https://nextgenergy.ai/insights-img/the-biggest-risk-in-liquid-cooling/01.webp)
 
 “Leak” is one word doing three different jobs.
 
@@ -711,7 +711,7 @@ They are not. They are discovered at different times, solved in different ways, 
 
 One boundary condition before we begin: this is not a mutually exclusive classification by leak location. A connector can leak on day one or in year three. Corrosion can eventually perforate a cold plate or a pipe. I am classifying leaks by the three windows in which risk most commonly reveals itself: **manufacturing, delivery, and service life**. Each window creates a different evidence trail, a different accountable party, and a different cost owner.
 
-![](https://substackcdn.com/image/fetch/$s_!hYno!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8897cdf1-e0e0-4a3d-94ac-f3bf8f453f69_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/the-biggest-risk-in-liquid-cooling/02.webp)
 
 ## Clock One: Manufacturing
 
@@ -827,7 +827,7 @@ Record branch flow, rack pressure drop, temperature distribution, and the startu
 Condensation belongs outside the three clocks because it can appear on the first day of commissioning. When coolant supply temperature falls below the local dew point, water appears on a surface whose fluid boundary was never breached. The electrical consequence can look identical to a leak, while the root cause is humidity, insulation, or a control setpoint.  
 The control system should maintain a designed dew-point margin—not zero margin—and define a conservative fallback when a dew-point or humidity sensor fails. Insulation and vapor barriers must remain intact, with suitable sensor redundancy. A leak rope cannot distinguish condensation from a real coolant leak on its own; dew point and surface temperature must be correlated.
 
-![](https://substackcdn.com/image/fetch/$s_!1l5Z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe168fd01-50ef-4657-8d78-8430955f1fa4_1693x929.png)
+![](https://nextgenergy.ai/insights-img/the-biggest-risk-in-liquid-cooling/03.webp)
 
 ## Detection Is Not a Sensor. It Is a Chain from Discovery to Isolation.
 
@@ -855,7 +855,7 @@ NVIDIA’s Mission Control management framework for GB200/GB300 NVL72 already ex
 
 Detection alone is no longer enough. Isolation status is becoming part of the evidence that must be delivered.
 
-![](https://substackcdn.com/image/fetch/$s_!WTna!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9ab810e6-3fa5-4d5b-8c22-4801d144f2e5_1254x1254.png)
+![](https://nextgenergy.ai/insights-img/the-biggest-risk-in-liquid-cooling/04.webp)
 
 ## From Two Buckets to Three Risk Factors
 
@@ -884,7 +884,7 @@ Neither event was a coolant leak. They support a more fundamental point: materia
 
 ## The Three Clocks at a Glance
 
-![](https://substackcdn.com/image/fetch/$s_!WMbI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F094dc7e4-e85d-405a-8a2d-6e5fd7188e8b_1956x830.png)
+![](https://nextgenergy.ai/insights-img/the-biggest-risk-in-liquid-cooling/05.webp)
 
 **Separate category—condensation:** coolant below local dew point, damaged insulation, or sensor/control failure → dew-point margin, interlock, vapor barrier, redundancy, and conservative fallback → correlate leak sensing with dew point and surface temperature.
 
@@ -931,7 +931,7 @@ _\[OCP/Vertiv, “Leak Detection and Intervention”\](https://www.opencompute.o
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!4-mo!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb41e03-efd5-49a3-9d6b-f8ed2603b674_1024x1536.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/01.webp)
 
 _The three layers of liquid-cooling compliance — safety, interoperability, and the white space where the real risk lives._
 
@@ -962,7 +962,7 @@ Liquid-cooling compliance is easier to understand when divided into three layers
 
 ## **Layer 1: Safety — mature, but largely borrowed**
 
-![](https://substackcdn.com/image/fetch/$s_!ev8r!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec3f69de-7b03-4fa5-82b0-076cff8076d2_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/02.webp)
 
 _Certification does not transfer up the chain. A certified component, a Listed product and an installed system are different objects — and only the AHJ approves the installation itself._
 
@@ -1006,7 +1006,7 @@ A Field Evaluation provides a site-specific assessment of unlabeled, modified or
 
 ## **Layer 2: Interoperability — still forming**
 
-![](https://substackcdn.com/image/fetch/$s_!KRf4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b909e98-e3e0-4645-a677-2b61ccf715bb_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/03.webp)
 
 _Conceptual illustration; operating values shown are illustrative only. The interoperability layer: fluids, quick disconnects, CDUs, manifolds and cold plates, defined through specifications and test conditions — not through a single universal certification._
 
@@ -1032,7 +1032,7 @@ The distinction is not semantic. One mark may address alignment with an open tec
 
 ## **Layer 3: The white space — where the real risk lives**
 
-![](https://substackcdn.com/image/fetch/$s_!7oQ0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F184dc5e3-9969-425a-9553-f39b4df4d5aa_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/liquid-cooling-is-running-ahead-of/04.webp)
 
 _The white space: leak response, fluid life cycle and heat reuse — detect, recover, return value. The issues most characteristic of liquid cooling, where no single mark closes the risk._
 
@@ -1167,7 +1167,7 @@ I commented beneath Huang’s LinkedIn post: Open weights can let a factory, hos
 
 In less than 24 hours, the comment received more than 104,000 views, 66 reactions, and 21 replies. A LinkedIn comment cannot prove an industry thesis, of course. But it was a signal: open models, compute efficiency, and AI infrastructure are touching a real and growing anxiety.
 
-![Image: image1.png](https://substackcdn.com/image/fetch/$s_!YGRw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d40bc74-1641-4da5-8b3d-a89fb545654e_740x600.png)
+![Image: image1.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/01.webp)
 
 _**Figure 1 | After Jensen Huang shared the open-weights coalition letter, the author’s comment received 104,794 views in less than 24 hours.**_
 
@@ -1201,13 +1201,13 @@ This may be the sustainable path to billions of everyday AI tasks. But open weig
 
 I subscribe to Claude Max at CA$158.20 per month.
 
-![Image: image2.png](https://substackcdn.com/image/fetch/$s_!Z1Ao!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F30fff958-f749-4c51-ab6a-928bce52a980_1420x602.png)
+![Image: image2.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/02.webp)
 
 _**Figure 2 | The author’s Claude billing page shows three consecutive monthly charges of CA$158.20.**_
 
 After roughly two days of intensive use, the limits page showed 59% usage for “All models” and 93% for the category labeled “Fable” (the notice identifies it as “Fable 5”), putting that model-specific weekly allowance close to its limit.
 
-![Image: image3.png](https://substackcdn.com/image/fetch/$s_!5Ta5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed1d42f8-b7b3-4a77-97fe-367944cff453_1510x644.png)
+![Image: image3.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/03.webp)
 
 _**Figure 3 | After roughly two days of intensive use: All models at 59% and Fable at 93%; the notice identifies the model as “Fable 5.”**_
 
@@ -1274,7 +1274,7 @@ An organization can download a model in minutes. It cannot obtain, in minutes:
 
 Open weights do not eliminate AI’s bottlenecks. To some extent, they move the constraint from the model layer to the compute layer—and then from compute to megawatts, the grid, and cooling systems.
 
-![](https://substackcdn.com/image/fetch/$s_!LMXU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffe5a9a38-7712-497d-b024-3d4b202aafa3_1672x941.png)
+![](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/04.webp)
 
 _**Figure 4 | Open weights can be downloaded, but GPU compute, power, liquid cooling, and a productive destination for recovered heat must still be built in the physical world.**_
 
@@ -1380,7 +1380,7 @@ _— Jim Li, founder of NextGenergy, focuses on power, cooling, and energy reuse
 
 ---
 
-![Image: image1.png](https://substackcdn.com/image/fetch/$s_!FUIH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F770520e0-2a98-447d-854e-2cdd575aded0_1920x1080.png)
+![Image: image1.png](https://nextgenergy.ai/insights-img/from-amd-advancing-ai-2026-helios/01.webp)
 
 _AMD Advancing AI 2026, San Francisco_
 
@@ -1390,7 +1390,7 @@ Standing in front of the hardware, my first reaction was not that AMD had simply
 
 The more consequential development was that AMD had begun to organize CPUs, GPUs, networking, software, power, liquid cooling and rack design as one co-optimized system. That is a different arena from the traditional contest over individual chips.
 
-![Image: image2.jpg](https://substackcdn.com/image/fetch/$s_!sjuu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe49a80e4-d258-4f74-a324-44c3cb97cf9a_1200x675.jpeg)
+![Image: image2.jpg](https://nextgenergy.ai/insights-img/from-amd-advancing-ai-2026-helios/02.webp)
 
 _AMD Chair and CEO Lisa Su delivers the keynote at Advancing AI 2026_
 
@@ -1417,7 +1417,7 @@ AMD’s current reference design integrates 72 AMD Instinct MI455X GPUs, 6th Gen
 
 Four scale-up cartridges use Ultra Accelerator Link over Ethernet, or UALoE, to connect the GPUs, with up to 260 TB/s of aggregate scale-up bandwidth. AMD also lists up to 43 TB/s of scale-out bandwidth through its Pensando-based networking. These are peak or theoretical specifications—not guarantees of application-level performance.
 
-![Image: image3.png](https://substackcdn.com/image/fetch/$s_!3qCG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4fd5f97f-2a8f-4b04-94ed-41646fb59346_1920x1080.png)
+![Image: image3.png](https://nextgenergy.ai/insights-img/from-amd-advancing-ai-2026-helios/03.webp)
 
 _An AMD Helios rack-scale system on display at Advancing AI 2026_
 
@@ -1447,7 +1447,7 @@ Helios is AMD’s attempt to compete at that level. It adopts Meta’s Open Rack
 
 “Open” here describes an industrial model as much as a technical standard. AMD defines the CPU, GPU, networking and reference architecture. Large customers influence standards and workload optimization. Celestica is developing and manufacturing scale-up switches. Sanmina, Wiwynn, Wistron and Inventec are among the manufacturing partners. OEMs such as HPE can turn the reference design into customer-facing products.
 
-![Image: image4.png](https://substackcdn.com/image/fetch/$s_!R811!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a4d287f-0ed3-426a-9dff-c2e2f2fe6cf9_327x529.png)
+![Image: image4.png](https://nextgenergy.ai/insights-img/from-amd-advancing-ai-2026-helios/04.webp)
 
 _AMD Helios rack-scale reference design. Image: AMD_
 
@@ -1547,7 +1547,7 @@ _— Jim Li, founder of NextGenergy, focuses on power, cooling, and energy reuse
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!1CLp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2531767e-f7f7-4a1b-844f-ff03da748762_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-stranded-compute-grid/01.webp)
 
 ## The inventory nobody brags about
 
@@ -1569,7 +1569,7 @@ Now set that against what AI hardware asks for. In Uptime’s 2025 survey, 82% o
 
 But watch what owners are already doing: among surveyed owners and operators already hosting AI workloads, 52% have upgraded power distribution and 51% have upgraded cooling (Uptime, 2025). The retrofit wave is not a forecast. It is underway.
 
-![](https://substackcdn.com/image/fetch/$s_!Lf4b!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06c8de01-85dd-4c9b-99bd-b90ae09a88af_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-stranded-compute-grid/02.webp)
 
 ## Why location still matters
 
@@ -1599,7 +1599,7 @@ Here is arithmetic worth doing carefully, because it is strong enough without ex
 
 Under legacy data-hall assumptions — 150 watts per square foot and 5 kW per rack — 1 MW of IT load requires approximately 6,700 square feet of white space and 200 racks. On a static TDP basis, deploying the same 1 MW of IT load with liquid-cooled AI racks rated at approximately 132–135 kW would require only **seven or eight compute racks**. Rack count — and much of the white-space requirement — can shrink by an order of magnitude. The whole building does not: power distribution, CDUs, pumps, maintenance aisles, structural reinforcement and redundancy all claim space back. The honest claim is that 200 racks can become eight — not that four floors can become half a floor.
 
-![](https://substackcdn.com/image/fetch/$s_!u-lB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb74c4063-d2ac-450b-945f-52f7f2fab37e_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-stranded-compute-grid/03.webp)
 
 Real projects are testing exactly this. Patmos is converting the Kansas City Star’s 400,000-square-foot printing plant into a planned 100 MW-class high-density facility. The site is being brought online in stages and is designed to support racks of up to 100 kW. Digital Realty says more than half of its roughly 170 data centers support liquid cooling; Equinix has announced deployments across about 100 facilities in 45 cities. And the weight matters: a fully configured GB300 NVL72 weighs in at about 1.5 metric tons (HPE figure). On a raised floor, that creates a point-load issue that every project must verify against OEM specifications. Cases so far show that some structurally suitable older buildings can carry high density with targeted reinforcement. Whether any specific one can is, again, a site-by-site question.
 
@@ -1659,7 +1659,7 @@ _\- Queues and opposition: JLL 2026 Outlook (average grid-access wait in major d
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!gQId!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff6f0a80b-e6b5-4c46-9c65-3baab858d77d_1672x941.png)
+![](https://nextgenergy.ai/insights-img/power-is-the-real-ceiling-and-the/01.webp)
 
 Two headlines, read together, say more than any AI-capex announcement.
 
@@ -1686,7 +1686,7 @@ When people talk about the AI race, they count GPUs, parameters and funding roun
 
 Capital markets can announce a $25 billion financing framework in a day. Nobody can conjure the megawatts on the same timeline.
 
-![](https://substackcdn.com/image/fetch/$s_!tYCj!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcc87bb10-ce97-4ac7-8c6f-9d959f0fc43d_1672x941.png)
+![](https://nextgenergy.ai/insights-img/power-is-the-real-ceiling-and-the/02.webp)
 
 ## Path A: bring your own supply — the capital-heavy path
 
@@ -1704,7 +1704,7 @@ So what about everyone who isn’t that rich — and can’t wait a decade?
 
 This is the path still hiding in plain sight: **stop conjuring new power. Use the power that already exists, more intelligently.** There are three ways to do it.
 
-![](https://substackcdn.com/image/fetch/$s_!DavS!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F698e0aa9-7892-4515-a7d9-d40688a8cfd2_1672x941.png)
+![](https://nextgenergy.ai/insights-img/power-is-the-real-ceiling-and-the/03.webp)
 
 ### 1\. Reuse the site — a Stranded Compute Grid
 
@@ -1801,7 +1801,7 @@ _– Honest boundaries: Tier definitions and certification are strict — “reu
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!VhVR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8cba1eb5-506e-4d91-86cf-15f9ebfee83d_1280x1280.jpeg)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/01.webp)
 
 On July 2, Ecolab closed its roughly $4.75 billion all-cash acquisition of CoolIT — ahead of schedule.
 
@@ -1827,7 +1827,7 @@ In other words: liquid cooling is turning from a hardware business into a chemis
 
 ## Why cold plate won the new-build AI rack — a look back at something I wrote four years ago
 
-![](https://substackcdn.com/image/fetch/$s_!pxxi!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44d26370-7eae-4648-94cb-ff60091bfed4_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/02.webp)
 
 Here’s the twist: four years ago, this outcome wasn’t obvious.
 
@@ -1869,11 +1869,11 @@ And a counter-intuitive point worth saying in immersion’s defense: physical re
 
 So this isn’t “who kills whom” — it's matching. New-build designed for liquid points to cold plate; a hall of air-cooled servers means running the immersion math first; extreme heat flux and high-grade heat reuse each shift the answer — the full picture is in the matrix below.
 
-![](https://substackcdn.com/image/fetch/$s_!ybxB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5159fbe2-bbc8-4bdb-90d3-d23e9a7e70dd_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/03.webp)
 
 ## The real takeaway
 
-![](https://substackcdn.com/image/fetch/$s_!sz3m!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6fc44ac5-23ac-4de8-94ae-74536ac4ef6b_1672x941.png)
+![](https://nextgenergy.ai/insights-img/coolit-just-sold-for-475b-and-it/04.webp)
 
 Ecolab’s acquisition of CoolIT makes two things clear at once.
 
@@ -1927,7 +1927,7 @@ _\- 2022 retrofit cost and PUE figures are my field notes from brownfield retrof
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!WtQk!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F42580874-bcd1-4a40-94d3-b9349ee246e4_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/01.webp)
 
 The earlier issues of Every Watt Counts were all about the “why.” This is the sixth. So far, the series has covered physics, water, heat, and the economics of liquid cooling. Today we get concrete: how do you actually tell the kinds of liquid cooling apart?
 
@@ -1967,9 +1967,9 @@ The answer lives in the conditions of the time. Cold plate wasn’t new — HPC 
 
 Nearly every machine on the market was built for air. To go liquid, all we could do was take servers apart one by one — pull fans, clean out dust, and clear alarms. Immersion, it turned out, was the only way to force an air-cooled server into liquid.
 
-![](https://substackcdn.com/image/fetch/$s_!KaY5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F13e545da-b3a3-4229-977e-a9de14fa953e_1086x1448.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/02.webp)
 
-![](https://substackcdn.com/image/fetch/$s_!zIV0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F34e946f2-c1c3-46bb-b492-069b397004f0_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/03.webp)
 
 _caption: “In 2020, we retrofitted servers one by one — pulling fans, clearing dust, then bringing each machine up in liquid.”_
 
@@ -1985,15 +1985,15 @@ With that scoped, two questions are all you need: Does the coolant directly touc
 
 Look at three pictures first, and their different temperaments click into place —
 
-![](https://substackcdn.com/image/fetch/$s_!3buT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fda444074-9bf3-4909-a84e-6554056915ae_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/04.webp)
 
 _caption: “Immersion — the most complete contact with heat, and the most physical maintenance experience.”_
 
-![](https://substackcdn.com/image/fetch/$s_!DB-l!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd654000a-8aee-4e15-8d5f-941147015bb0_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/05.webp)
 
 _caption: “Cold plate — the mainstream path: less dramatic than immersion, but much easier to fit into existing operations.”_
 
-![](https://substackcdn.com/image/fetch/$s_!5nxM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50f41be4-d349-4ad5-a0c8-f15832b06723_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/the-three-kinds-of-liquid-cooling/06.webp)
 
 _caption: “Spray — technically elegant, but still waiting for a broader ecosystem.”_
 
@@ -2079,7 +2079,7 @@ Next issue, we take that choice apart: water or oil, cold plate or immersion —
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!yUto!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54978c46-a807-47bd-9de5-ac2520f5dc51_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/01.webp)
 
 For most of its history, the industry has judged a data center on two ledgers: what it costs to build, and what it costs to run. The heat was a line item outside both — you made it, then paid again to throw it away.
 
@@ -2093,13 +2093,13 @@ Let me open with a retrofit we actually did (an internal case, illustrative, not
 
 A 5 MW legacy air-cooled data center once needed four full floors to house its compute. Converted to liquid, the same 5 MW fit into half of one floor — roughly one-eighth of the original footprint. Put plainly: one high-density liquid-cooled rack now does the work of about ten air-cooled ones.
 
-![](https://substackcdn.com/image/fetch/$s_!I7id!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F21b504e7-600f-4d75-bb97-6fcfa816bd75_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/02.webp)
 
 That picture punctures the trap in the first ledger. This ledger looks at a single number: day-one capital. On that number, liquid is genuinely higher — you’ve added cold plates, a CDU (coolant distribution unit), rack manifolds, and a warm-water loop. The air-cooled ledger reads that line and rests its case: too expensive.
 
 But that’s the wrong denominator. The question isn’t “cost per watt” — it’s cost per unit of useful compute. And that’s exactly where density flips the math.
 
-![](https://substackcdn.com/image/fetch/$s_!zeg3!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05ee6b2c-f940-4c72-80e5-3333c08a02a1_1600x1160.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/03.webp)
 
 The mechanism lives in that half-floor. Air cooling spreads compute thinly across a sea of low-density racks: more racks, more floors, more electrical and mechanical plant, more building. Past roughly 100 kW per rack, air simply can’t hold the load, and liquid becomes the main path. Liquid packs hundreds of kilowatts into a single rack — so the same mechanical, electrical, and building investment now carries far more compute.
 
@@ -2113,11 +2113,11 @@ Start with a sound. Walk into an older air-cooled hall and what hits you is a wa
 
 A liquid hall is a different world: quiet. No wall of fans — just liquid moving through pipes, carrying the heat away directly instead of blowing it around. In a well-designed immersion or warm-water system, that overhead can shrink to a PUE premium of 0.03–0.08 — though not every liquid project gets there automatically; it depends on the heat-rejection back end and the climate.
 
-![](https://substackcdn.com/image/fetch/$s_!ilzh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1389f2b-6f60-4d42-9e89-c4af52b97948_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/04.webp)
 
 And that’s only the visible layer. This ledger has two, and most people count only the power and water they can see — missing the more valuable hidden account. On both, liquid comes out ahead:
 
-![](https://substackcdn.com/image/fetch/$s_!6b_F!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F50949dd3-baee-47ef-8abb-2eb66c751238_1600x1160.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/05.webp)
 
 The hidden layer is the one people underrate. A $30,000–$40,000 GPU is a depreciating financial asset. Liquid won’t change its technology generation, but a cooler, cleaner, lower-thermal-stress environment lets it age more slowly and hold more resale value. Put the two layers together: system-level modeling shows an immersion design landing roughly 20% below air on 10-year TCO, with high-density payback as fast as 1.6–2.2 years (again dependent on power price, load factor, and whether heat revenue is counted).
 
@@ -2129,11 +2129,11 @@ The third ledger is the strongest, because the air-cooled era never had it at al
 
 Imagine a data center whose GPUs are crunching AI around the clock — and, right next door, a vegetable greenhouse in the dead of winter: minus-ten outside, warm as spring inside, tomatoes and lettuce growing as usual. What keeps that greenhouse warm is the waste heat from the GPUs next door: warm water, concentrated in a pipe, flowing into the greenhouse and holding winter at bay.
 
-![](https://substackcdn.com/image/fetch/$s_!MX4A!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F40de48fc-94f7-4082-89a0-4e350596624e_1672x941.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/06.webp)
 
 For the same heat, the air and liquid eras run in opposite directions — a sign flip:
 
-![](https://substackcdn.com/image/fetch/$s_!Fqm1!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8eedb32f-2764-4446-b05a-294d7a9d31d9_1600x1160.png)
+![](https://nextgenergy.ai/insights-img/the-three-ledgers-of-liquid-cooling/07.webp)
 
 Heat has a grade, and the grade is temperature. Air cooling rejects the low-grade kind — lukewarm, diffuse — and upgrading it to something a buyer can use usually costs more than the heat is worth, so it gets thrown away. Liquid concentrates the heat into water at roughly 50–60 °C (direct-to-chip typically captures about 70–80% of the white-space heat load; full-platform vendor solutions may claim more), landing near what a 4th-generation low-temperature district-heating network wants — usable directly, or with a small lift, in district or greenhouse settings. That’s what finally makes reuse accessible.
 
@@ -2209,7 +2209,7 @@ _• NextGenergy: warm-water systems since 2020; large-scale heat delivery since
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!6wWv!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7bd9a98e-f134-41f0-9975-0d814a0ae4b3_1733x907.png)
+![](https://nextgenergy.ai/insights-img/from-25-tonnes-a-day-to-zero-the/01.webp)
 
 This is the fourth of a series. The first three argued that warm water is cheaper to run, kinder to the hardware, and able to turn reject heat into an asset. This one is about the resource everyone is suddenly worried AI is draining: water.
 
@@ -2225,7 +2225,7 @@ So data centers do use real water. The honest question is not whether, but how m
 
 ## 𝗔 𝗾𝘂𝗶𝗰𝗸 𝘀𝗰𝗮𝗹𝗲 𝗰𝗵𝗲𝗰𝗸
 
-![](https://substackcdn.com/image/fetch/$s_!Iq74!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1f7600a-3365-43b3-8f3e-03d063c542d9_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/from-25-tonnes-a-day-to-zero-the/02.webp)
 
 Of the world’s freshwater withdrawals, agriculture takes roughly 70%, industry about 19%, and 𝗺𝘂𝗻𝗶𝗰𝗶𝗽𝗮𝗹 / 𝗱𝗼𝗺𝗲𝘀𝘁𝗶𝗰 use about 12% (FAO AQUASTAT — “municipal” is broader than just homes). Direct data-center water consumption is much smaller: on a direct-consumption basis, current U.S. estimates put it 𝘄𝗲𝗹𝗹 𝗯𝗲𝗹𝗼𝘄 𝟬.𝟭% of total national withdrawals. The exact number moves with the boundary — withdrawals vs consumption, direct cooling water vs the water embedded in electricity — but direct cooling water is not the top-line driver of national water use.
 
@@ -2239,7 +2239,7 @@ So the responsibility is real even when the global number is small: design for z
 
 ## 𝗧𝗵𝗲 𝗳𝗼𝘂𝗿-𝘀𝘁𝗮𝗴𝗲 𝗷𝗼𝘂𝗿𝗻𝗲𝘆: 𝗵𝗼𝘄 𝘄𝗲 𝗴𝗼𝘁 𝗳𝗿𝗼𝗺 𝟮𝟱 𝘁𝗼𝗻𝗻𝗲𝘀 𝘁𝗼𝘄𝗮𝗿𝗱 𝘇𝗲𝗿𝗼
 
-![](https://substackcdn.com/image/fetch/$s_!Uxcb!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4993769f-bab3-4155-809f-7d70580e5b06_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/from-25-tonnes-a-day-to-zero-the/03.webp)
 
 Here is what the brochures skip. In the conventional path, almost every step that cut on-site water pushed cost or risk onto the power side instead. We didn’t theorize that trade-off — we walked down it, one architecture at a time.
 
@@ -2255,7 +2255,7 @@ Here is what the brochures skip. In the conventional path, almost every step tha
 
 ## 𝗪𝗵𝘆 𝗿𝗲𝘂𝘀𝗲 𝗯𝗿𝗲𝗮𝗸𝘀 𝘁𝗵𝗲 𝘁𝗿𝗮𝗱𝗲-𝗼𝗳𝗳
 
-![](https://substackcdn.com/image/fetch/$s_!GPma!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8c2d4a6-858e-4988-a8fa-b3ac4d0b1549_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/from-25-tonnes-a-day-to-zero-the/04.webp)
 
 It breaks it because it changes what “cooling” is for. The first three stages all ask: how do we get rid of this heat as cheaply as possible? Stage four asks a different question: who needs this heat?
 
@@ -2265,7 +2265,7 @@ This is why I keep saying it: “𝘄𝗮𝘁𝗲𝗿 𝗳𝗼𝗿 𝗔𝗜” �
 
 ## 𝗧𝗵𝗲 𝘀𝗰𝗼𝗿𝗲𝗯𝗼𝗮𝗿𝗱 𝗻𝗲𝗲𝗱𝘀 𝘁𝗵𝗿𝗲𝗲 𝗹𝗲𝗻𝘀𝗲𝘀, 𝗻𝗼𝘁 𝗼𝗻𝗲
 
-![](https://substackcdn.com/image/fetch/$s_!eUqD!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feec1b716-eb27-47da-b5e0-f1e5572001f7_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/from-25-tonnes-a-day-to-zero-the/05.webp)
 
 PUE measures total facility energy over IT energy. By definition it can never go below 1.0 — and it gives no credit for useful heat that leaves the control boundary. Worse, it moves the wrong way: add the pumps to recover and deliver heat, and PUE gets worse precisely as you start turning waste into value.
 
@@ -2299,13 +2299,13 @@ _FAO AQUASTAT (global split); USGS 2015 (~322 Bgal/day U.S. withdrawals); LBNL 2
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!wwKH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c68c192-08de-435b-bbff-8e2e69477a6b_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/01.webp)
 
 This is the third of a trilogy. The first issue argued warm water is cheaper to run; the second, that it’s kinder to the hardware. This one is about the third return — the one that changes a data center’s place in the world: the reject heat itself can become a product.
 
 We learned that early. We began using recovered data-center heat in 2020, and by 2021 we were delivering it at larger scale into real buildings — community housing in a town, a kindergarten, a hospital, and industrial facilities — through real winters. Not a concept diagram, not a pilot loop on a slide. Real pipes, real buildings, real people walking on warm floors. The photo below with the infrared gun is one of those floors, measured warm under bare feet. Not a render.
 
-![](https://substackcdn.com/image/fetch/$s_!CeMH!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdeb5b3af-7546-4134-bcd8-287b51db6279_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/02.webp)
 
 Caption: A home floor warmed by recovered data-center heat — measured under bare feet, in a real winter. Since 2020.
 
@@ -2319,7 +2319,7 @@ Air cooling tends to produce the low-grade kind. It pulls heat off the chips int
 
 > The heat was always there. Air cooling made it diffuse, low-grade, and hard to monetize.
 
-![](https://substackcdn.com/image/fetch/$s_!1wP8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F38fe6a22-aeb6-4925-ae95-9f96c1d376bb_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/03.webp)
 
 ## Warm water is what makes the heat worth capturing
 
@@ -2327,7 +2327,7 @@ This is the quiet payoff of the warm-water architecture from the first two issue
 
 But let’s be precise. Warm water doesn’t make heat valuable by magic. It keeps the heat concentrated, hot enough, metered, and contractable — so someone else can use it. Cold-plate loops carry heat away as hot water around 50–60°C; in our own systems we deliver it at about 55°C, and immersion can return fluid above 60°C. Modern low-temperature district networks — the 4th-generation systems being built across Europe — typically want supply somewhere around 50–70°C. Exact numbers vary by network, season, and how old the buildings are, but the direction is unmistakable: warm-water output often lands inside the band a buyer wants, with little or no heat-pump lift. The same architectural choice that lowered your power bill and extended your hardware just turned your reject heat from a liability into a feedstock.
 
-![](https://substackcdn.com/image/fetch/$s_!kuNR!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3ab3604-adc0-4d27-9726-8207971d1cb0_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/04.webp)
 
 ## We didn’t wait for a mandate
 
@@ -2341,15 +2341,15 @@ We built our first immersion systems in 2020 and moved into large-scale heat del
 
 Put those together and the claim sharpens. 55°C water isn’t just a cooling output. Steady, metered, controlled, and matched to the right local demand, it becomes an energy product.
 
-![](https://substackcdn.com/image/fetch/$s_!Cb--!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1c6b5a8-f322-4ecd-ad8d-d3ea642de9d1_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/05.webp)
 
 _Our heat-recovery plant: the units that turn server heat into usable hot water._
 
-![](https://substackcdn.com/image/fetch/$s_!KGpX!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2c735cdf-5035-4afc-b40e-c205841a4e02_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/06.webp)
 
 _A year-round buyer: greenhouse crops grown on recovered heat._
 
-![](https://substackcdn.com/image/fetch/$s_!hGiE!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F955c817e-ec35-4157-bec5-5098360d3d8e_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/07.webp)
 
 _Constant-temperature aquaculture — warm water held in a narrow band, fed by reject heat._
 
@@ -2359,7 +2359,7 @@ Beyond our own deployments, the public examples are piling up. Meta’s Odense p
 
 The point isn’t that every site does all of these. It’s that a high-grade heat stream is a tradable output — and the moment it’s tradable, the cooling system stops being only a cost.
 
-![](https://substackcdn.com/image/fetch/$s_!rOND!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F77d0501c-ae08-4acd-b59e-40e32c985adc_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/08.webp)
 
 ## The trade-offs you have to engineer for
 
@@ -2389,7 +2389,7 @@ For most of the industry’s history none of this showed up on a balance sheet, 
 
 Put it together and the cost-center framing breaks. Heat reuse is becoming, at once, a revenue line, a reported KPI, and in some markets a permit requirement. The data centers being designed today for 2028 are being designed as heat suppliers, not just heat producers.
 
-![](https://substackcdn.com/image/fetch/$s_!74G2!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc65fff2-a3b7-4c9b-b548-21a0a6dd03f1_1672x941.png)
+![](https://nextgenergy.ai/insights-img/waste-heat-becomes-an-asset/09.webp)
 
 ## One loop, three returns
 
@@ -2427,7 +2427,7 @@ _— Jim Li, founder of NextGenergy. Power, cooling, and heat recovery for AI da
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!PUnr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F091135bb-acc4-4348-ae5b-b28c24194032_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/01.webp)
 
 The industry argues about two numbers: dollars per GPU, and tokens per second. But a third quietly decides the economics of an AI cluster: how long each GPU keeps earning.
 
@@ -2449,7 +2449,7 @@ Environment. Air-side cooling moves large volumes of air through the room and ac
 
 Notice the pattern: **the enemy isn’t “warm.” The enemy is hot, unstable, and dirty.**
 
-![](https://substackcdn.com/image/fetch/$s_!yn6K!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F56e8532b-604b-4012-b8be-85ba15b1c54c_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/02.webp)
 
 ### Stability is the real unlock
 
@@ -2461,7 +2461,7 @@ Junction temperature, done right. As I argued last time, what a chip fears isn�
 
 A cleaner environment — and here the two architectures differ. Immersion puts the whole board in a single, clean, uniform medium: no dust, no humidity swings, no static. Cold-plate cooling keeps the heat path in a sealed liquid loop and sharply reduces airflow, fans and vibration even where some air remains. Both move the hardware into a kinder world. In comparable deployments and operating conditions, we’ve measured system-level temperatures up to about 20°C below air-cooled baselines — and designed around exactly the reliability numbers above. It shows up as a lower fault rate.
 
-![](https://substackcdn.com/image/fetch/$s_!QVva!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9a4de86-57aa-440b-b55a-20e169e9486f_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/03.webp)
 
 ### The trade-offs you have to engineer for
 
@@ -2471,7 +2471,7 @@ Material compatibility — especially in immersion. The governing principle is �
 
 Heat and evaporation in the room. A 45°C loop — or an open immersion bath — can raise the ambient temperature of the space, and volatile or two-phase fluids can evaporate, creating fluid loss, vapor to manage, and for certain fluorochemicals, real environmental and regulatory exposure (GWP and PFAS scrutiny). The answer is design discipline: sealed, low- or non-volatile fluids; loops that carry the heat out to the facility side — ideally to reuse — rather than into the room; and proper containment and monitoring. Design discipline is what turns these risks back into reliability.
 
-![](https://substackcdn.com/image/fetch/$s_!2rCw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa754deec-89c1-4386-bc82-3e82ae04bc78_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/04.webp)
 
 ### The economics — start with what you can underwrite
 
@@ -2485,7 +2485,7 @@ Only then the headline model, labeled as exactly that. As an illustrative model 
 
 The same warm-water loop does three things from one decision: it cuts cooling energy and water, it makes the reject heat hot enough to reuse, and it keeps the most expensive hardware healthier and worth more for longer. Power, cooling, heat recovery, and hardware life aren’t separate decisions — they’re connected returns from one architectural choice.
 
-![](https://substackcdn.com/image/fetch/$s_!67l0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F72cda4d3-224b-403e-ae70-b996dcaa96c6_1672x941.png)
+![](https://nextgenergy.ai/insights-img/warm-water-longer-life-the-hidden/05.webp)
 
 We didn’t arrive at this from the sidelines. We built our first immersion systems in 2020, moved cold-plate into volume the following year, and have since deployed across more than 1 GW of installed capacity — delivering recovered heat into district heating, greenhouses and aquaculture, over 2,000,000 m² of it. The longevity case, the reliability numbers, and the trade-offs above aren’t theory to us; they’re what we engineered around to make those systems run.
 
@@ -2556,7 +2556,7 @@ Going from ~20°C to 45°C is more than 20 degrees of headroom — which turns t
 
 “Hotter is cheaper” doesn’t defy physics — it works with it.
 
-![](https://substackcdn.com/image/fetch/$s_!Aw9Z!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6a20dbac-c687-4014-84ad-25bb9102fdf9_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/01.webp)
 
 ## 2\. Won’t such a high temperature damage the chips?
 
@@ -2579,7 +2579,7 @@ Why is liquid so capable? A plain physical fact: by volume, water carries roughl
 
 To remove more heat with air you must move more air, and fan power scales roughly with the cube of airflow — a losing spiral of hotter chips, more airflow, exploding fan power, and 85+ dB of noise. As Motivair’s Richard Whitmore put it: once watts-per-chip cross a threshold, liquid cooling moves from optional to mandatory. The real reason “45°C won’t damage the chips”: the workhorse of heat removal has shifted from “blowing cold air” to “pulling heat off the die with liquid.” In this new paradigm, a high inlet temperature is an advantage, not a risk.
 
-![](https://substackcdn.com/image/fetch/$s_!cIV6!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff178c38-4719-420e-b0e0-31ed7297d216_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/02.webp)
 
 ## 3\. Why is this a milestone?
 
@@ -2597,11 +2597,11 @@ Going from “use less energy” to “no chiller, near-zero water” isn’t tu
 
 Heat in the air-cooling era was low-grade: too cool, too diffuse, barely usable. A closed loop at 45°C in / 55°C out is the first time that heat becomes concentrated, steady, hot enough, and genuinely useful. The same stream can feed district energy, greenhouses, aquaculture, industrial preheat — and at the frontier, desalination or carbon capture. A data center stops being the thing communities resist and becomes infrastructure that gives back.
 
-![](https://substackcdn.com/image/fetch/$s_!HmkQ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffeaf0641-cb14-4648-aac1-a401bd973cca_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/03.webp)
 
 The economics already pencil out. Microsoft heats ~6,000 homes in Denmark (250,000 people planned in Finland); Google’s Hamina site meets ~80% of local heating; Meta’s Odense facility heats 12,000+ homes; an AWS site in Dublin supplies ~92% of a campus’s heat. Recovered heat is delivered at ~€12–30/MWh versus €35–55 for a gas boiler; capital cost runs about €190,000–250,000/MW against €730,000+ for new gas cogeneration — roughly 60% less. Denmark and Germany are legislating reuse, and the Open Compute Project published its “Data Center Heat Reuse Reference Design 1.0” in March 2025.
 
-![](https://substackcdn.com/image/fetch/$s_!Kjv4!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F95e940eb-e6f3-488b-8fa0-ba550106a21a_1448x1086.png)
+![](https://nextgenergy.ai/insights-img/45c-inlet-water-another-milestone/04.webp)
 
 ## We’ve been on this road for years
 
@@ -2643,7 +2643,7 @@ _• Open Compute Project, “Data Center Heat Reuse Reference Design 1.0,” Ma
 
 ---
 
-![](https://substackcdn.com/image/fetch/$s_!VbYy!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5cb75f86-7c9a-4dea-99f7-ff000bc28ad3_1536x1024.png)
+![](https://nextgenergy.ai/insights-img/start-here-why-every-watt-counts/01.webp)
 
 We like to imagine artificial intelligence as something weightless: you type a sentence, and an answer appears. But pull back one layer, and it becomes physical very fast. Every token is a chip doing enormous math; every chip pulls real power; and almost every watt that goes in leaves again as heat.
 

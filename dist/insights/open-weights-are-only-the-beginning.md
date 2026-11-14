@@ -21,7 +21,7 @@ I commented beneath Huang’s LinkedIn post: Open weights can let a factory, hos
 
 In less than 24 hours, the comment received more than 104,000 views, 66 reactions, and 21 replies. A LinkedIn comment cannot prove an industry thesis, of course. But it was a signal: open models, compute efficiency, and AI infrastructure are touching a real and growing anxiety.
 
-![Image: image1.png](https://substackcdn.com/image/fetch/$s_!YGRw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d40bc74-1641-4da5-8b3d-a89fb545654e_740x600.png)
+![Image: image1.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/01.webp)
 
 _**Figure 1 | After Jensen Huang shared the open-weights coalition letter, the author’s comment received 104,794 views in less than 24 hours.**_
 
@@ -55,13 +55,13 @@ This may be the sustainable path to billions of everyday AI tasks. But open weig
 
 I subscribe to Claude Max at CA$158.20 per month.
 
-![Image: image2.png](https://substackcdn.com/image/fetch/$s_!Z1Ao!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F30fff958-f749-4c51-ab6a-928bce52a980_1420x602.png)
+![Image: image2.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/02.webp)
 
 _**Figure 2 | The author’s Claude billing page shows three consecutive monthly charges of CA$158.20.**_
 
 After roughly two days of intensive use, the limits page showed 59% usage for “All models” and 93% for the category labeled “Fable” (the notice identifies it as “Fable 5”), putting that model-specific weekly allowance close to its limit.
 
-![Image: image3.png](https://substackcdn.com/image/fetch/$s_!5Ta5!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fed1d42f8-b7b3-4a77-97fe-367944cff453_1510x644.png)
+![Image: image3.png](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/03.webp)
 
 _**Figure 3 | After roughly two days of intensive use: All models at 59% and Fable at 93%; the notice identifies the model as “Fable 5.”**_
 
@@ -128,7 +128,7 @@ An organization can download a model in minutes. It cannot obtain, in minutes:
 
 Open weights do not eliminate AI’s bottlenecks. To some extent, they move the constraint from the model layer to the compute layer—and then from compute to megawatts, the grid, and cooling systems.
 
-![](https://substackcdn.com/image/fetch/$s_!LMXU!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffe5a9a38-7712-497d-b024-3d4b202aafa3_1672x941.png)
+![](https://nextgenergy.ai/insights-img/open-weights-are-only-the-beginning/04.webp)
 
 _**Figure 4 | Open weights can be downloaded, but GPU compute, power, liquid cooling, and a productive destination for recovered heat must still be built in the physical world.**_
 

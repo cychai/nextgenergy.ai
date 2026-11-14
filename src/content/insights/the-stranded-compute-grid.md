@@ -9,7 +9,7 @@ related: [/solutions/heat-reuse]
 ---
 
 <!-- substack-body -->
-![](https://substackcdn.com/image/fetch/$s_!1CLp!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2531767e-f7f7-4a1b-844f-ff03da748762_1672x941.png)
+![](/insights-img/the-stranded-compute-grid/01.webp)
 
 ## The inventory nobody brags about
 
@@ -31,7 +31,7 @@ Now set that against what AI hardware asks for. In Uptime’s 2025 survey, 82% o
 
 But watch what owners are already doing: among surveyed owners and operators already hosting AI workloads, 52% have upgraded power distribution and 51% have upgraded cooling (Uptime, 2025). The retrofit wave is not a forecast. It is underway.
 
-![](https://substackcdn.com/image/fetch/$s_!Lf4b!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F06c8de01-85dd-4c9b-99bd-b90ae09a88af_1448x1086.png)
+![](/insights-img/the-stranded-compute-grid/02.webp)
 
 ## Why location still matters
 
@@ -61,7 +61,7 @@ Here is arithmetic worth doing carefully, because it is strong enough without ex
 
 Under legacy data-hall assumptions — 150 watts per square foot and 5 kW per rack — 1 MW of IT load requires approximately 6,700 square feet of white space and 200 racks. On a static TDP basis, deploying the same 1 MW of IT load with liquid-cooled AI racks rated at approximately 132–135 kW would require only **seven or eight compute racks**. Rack count — and much of the white-space requirement — can shrink by an order of magnitude. The whole building does not: power distribution, CDUs, pumps, maintenance aisles, structural reinforcement and redundancy all claim space back. The honest claim is that 200 racks can become eight — not that four floors can become half a floor.
 
-![](https://substackcdn.com/image/fetch/$s_!u-lB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb74c4063-d2ac-450b-945f-52f7f2fab37e_1672x941.png)
+![](/insights-img/the-stranded-compute-grid/03.webp)
 
 Real projects are testing exactly this. Patmos is converting the Kansas City Star’s 400,000-square-foot printing plant into a planned 100 MW-class high-density facility. The site is being brought online in stages and is designed to support racks of up to 100 kW. Digital Realty says more than half of its roughly 170 data centers support liquid cooling; Equinix has announced deployments across about 100 facilities in 45 cities. And the weight matters: a fully configured GB300 NVL72 weighs in at about 1.5 metric tons (HPE figure). On a raised floor, that creates a point-load issue that every project must verify against OEM specifications. Cases so far show that some structurally suitable older buildings can carry high density with targeted reinforcement. Whether any specific one can is, again, a site-by-site question.
 
