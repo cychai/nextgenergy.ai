@@ -16,8 +16,8 @@ const kinds = { evidence: 'Evidence', tool: 'Tool', approach: 'Approach', insigh
 )}
 <style>
   .related { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
-  a { display: flex; gap: 0.8rem; align-items: baseline; font-weight: 500; text-decoration: none; color: var(--ink); }
-  a:hover { color: var(--heat); }
-  .k { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--water); min-width: 5.5rem; }
+  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+  a { display: flex; gap: 0.8rem; align-items: center; min-height: var(--tap); padding: 0.3rem 0; font-weight: 500; text-decoration: none; color: var(--ink); }
+  a:hover { color: var(--heat-text); text-decoration: underline; text-underline-offset: 3px; }
+  .k { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--water); min-width: 5.5rem; }
 </style>

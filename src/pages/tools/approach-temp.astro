@@ -16,8 +16,8 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
       <div class="split">
         <div class="tool" data-at>
           <div class="field"><label for="tsup">Required secondary supply to the racks (TCS)</label><div style="display:grid;grid-template-columns:1fr auto;gap:0.6rem;align-items:center"><input type="number" id="tsup" min="15" max="50" step="0.5" value="32" /><span class="mono muted">°C</span></div><p class="small muted" style="margin:0.4rem 0 0">ASHRAE liquid-cooling classes W32, W40 and W45 set an upper facility-water-supply limit of 32, 40 and 45 °C for equipment declared to that class; they are operating envelopes, not set-points. Enter the supply your racks actually require.</p></div>
-          <div class="field"><label for="cdu">CDU heat-exchanger approach at rated load</label><input type="range" id="cdu" min="1" max="10" step="0.5" value="4" /><div class="readout" style="font-size:1.8rem"><span data-out="cdu">4</span> K</div><p class="small muted" style="margin:0.2rem 0 0">Include the fouling allowance. Datasheet approach is usually clean-plate.</p></div>
-          <div class="field"><label for="dc">Dry-cooler approach to ambient dry-bulb</label><input type="range" id="dc" min="3" max="15" step="0.5" value="8" /><div class="readout" style="font-size:1.8rem"><span data-out="dc">8</span> K</div></div>
+          <div class="field"><label for="cdu">CDU heat-exchanger approach at rated load</label><input type="range" id="cdu" min="1" max="10" step="0.5" value="4" /><div class="readout"><span data-out="cdu">4</span> K</div><p class="small muted" style="margin:0.2rem 0 0">Include the fouling allowance. Datasheet approach is usually clean-plate.</p></div>
+          <div class="field"><label for="dc">Dry-cooler approach to ambient dry-bulb</label><input type="range" id="dc" min="3" max="15" step="0.5" value="8" /><div class="readout"><span data-out="dc">8</span> K</div></div>
           <div class="field"><label for="climate">Climate (for free-cooling hours)</label>
             <select id="climate">
               <option value="toronto">Toronto, ON</option><option value="montreal">Montréal, QC</option><option value="chicago">Chicago, IL</option><option value="dallas">Dallas, TX</option><option value="phoenix">Phoenix, AZ</option><option value="frankfurt">Frankfurt, DE</option><option value="stockholm">Stockholm, SE</option><option value="singapore">Singapore</option>
@@ -25,7 +25,7 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
         </div>
         <div>
           <div class="eyebrow">Result</div>
-          <div class="tool">
+          <div class="tool" aria-live="polite">
             <div class="row"><span>Facility supply required at the CDU</span><strong><span data-out="fws">—</span> °C</strong></div>
             <div class="row"><span>Ambient dry-bulb at or below which dry rejection alone holds it</span><strong><span data-out="amb">—</span> °C</strong></div>
             <div class="row"><span>Hours per year at or below that ambient</span><strong><span data-out="hrs">—</span> h</strong></div>
@@ -56,9 +56,9 @@ const ld = [softwareLd(path, { name: 'CDU approach and free-cooling estimator', 
   <Faq items={qa} alt />
 </Base>
 <style>
-  .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line-2); font-size: 0.95rem; }
+  .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line-2); font-size: var(--fs-sm); }
   .row:last-child { border-bottom: 0; }
-  .row strong { font-family: var(--serif); font-size: 1.3rem; white-space: nowrap; }
+  .row strong { font-family: var(--font-figure); font-weight: var(--fw-figure); font-size: var(--fs-md); white-space: nowrap; }
 </style>
 <script>
   // Hours per year with dry-bulb in each 5 K bin, from -30 to 45 °C (bins: [-30,-25) ... [40,45)). Approximate TMY shapes.

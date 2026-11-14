@@ -21,11 +21,11 @@ const eventOn = showEvent();
           <p><strong>Elsewhere</strong><br /><a href={site.linkedin}>LinkedIn</a> · <a href={site.substack}>Every Watt Counts on Substack</a></p>
           <div class="starts">
             <p class="eyebrow plain" style="margin:0 0 0.6rem">Where to start</p>
-            {eventOn && <a class="start event" href={`?topic=${event.topic}#form`} data-topic={event.topic} data-hide-from={event.hideFrom.toISOString()}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Pick a day and a morning or afternoon slot. The team confirms by email; a request is not a booking until then.</span></a>}
+            {eventOn && <a class="card tight start event" href={`?topic=${event.topic}#form`} data-topic={event.topic} data-hide-from={event.hideFrom.toISOString()}><strong>Book a time at the booth: {event.name}, booth {event.booth}</strong><span>{event.dates} · {event.venue}. Pick a day and a morning or afternoon slot. The team confirms by email; a request is not a booking until then.</span></a>}
             {eventOn && <script is:inline src="/event-expiry.js" defer></script>}
-            <a class="start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
-            <a class="start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
-            <a class="start" href="?topic=heat#form" data-topic="heat"><strong>Assess heat-reuse potential</strong><span>Tell us the heat source, possible users, distance and temperatures.</span></a>
+            <a class="card tight start" href="?topic=product#form" data-topic="product"><strong>Discuss a cooling configuration</strong><span>Tell us the IT load, site, timeline and main constraints.</span></a>
+            <a class="card tight start" href="?topic=commissioning#form" data-topic="commissioning"><strong>Request a commissioning review</strong><span>Tell us what records exist, the state of the system and what can be tested.</span></a>
+            <a class="card tight start" href="?topic=heat#form" data-topic="heat"><strong>Assess heat-reuse potential</strong><span>Tell us the heat source, possible users, distance and temperatures.</span></a>
           </div>
           <p class="small muted" style="margin-top:1.2rem"><strong>Early-stage projects are welcome.</strong> If you do not yet have a system diagram or equipment list, tell us what you know and we will help define the next step.</p>
           <p class="small muted"><strong>What happens next.</strong> We reply within two working days with questions or a suggested next step. A formal scope and quotation follow once the basic requirements are clear.</p>
@@ -174,22 +174,22 @@ const eventOn = showEvent();
   });
 </script>
 <style>
-  .call { margin: 0 0 1.4rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 6px; }
+  .call { margin: 0 0 1.4rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: var(--r); }
   .call-h { margin: 0 0 0.6rem; }
-  .call-btn { min-height: 44px; font-size: 1.05rem; }
+  .call-btn { font-size: var(--fs-base); }
   .call-note { margin: 0.7rem 0 0; max-width: 46ch; }
 
   .starts { margin-top: 1.6rem; }
-  .start { display: block; padding: 0.8rem 1rem; margin-bottom: 0.6rem; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--white); color: inherit; text-decoration: none; }
-  .start:hover { border-color: var(--water); }
+  .start { margin-bottom: var(--sp-2); text-decoration: none; }
   .start.event { border-left: 3px solid var(--heat); }
-  .start strong { display: block; color: var(--ink); font-size: 0.98rem; }
-  .start span { display: block; color: var(--ink-3); font-size: 0.88rem; margin-top: 0.15rem; }
+  .start strong { display: block; color: var(--ink); }
+  .start span { display: block; color: var(--ink-3); font-size: var(--fs-sm); margin-top: 0.15rem; }
   .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
   .fallback { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.7rem; }
-  .form-status { margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--blue); background: var(--water-2); font-size: 0.95rem; }
-  .form-status[data-kind="ok"] { border-color: var(--green); background: #e7f6ea; }
-  .form-status[data-kind="error"] { border-color: #b42318; background: #fef3f2; color: #7a271a; }
+  .fallback[hidden] { display: none; }
+  .form-status { margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--blue); background: var(--water-2); font-size: var(--fs-sm); }
+  .form-status[data-kind="ok"] { border-color: var(--green); background: var(--ok-bg); }
+  .form-status[data-kind="error"] { border-color: var(--danger); background: var(--danger-bg); color: var(--danger-text); }
   .tool select:invalid { color: var(--ink-3); }
   .details { border: 1px solid var(--line-2); border-radius: var(--r); padding: 1rem 1rem 0.2rem; margin: 0 0 1.3rem; min-width: 0; }
   .details legend { padding: 0 0.4rem; font-weight: 600; }
@@ -198,11 +198,10 @@ const eventOn = showEvent();
   .details [hidden] { display: none; }
   .pair { display: grid; gap: 0 1rem; grid-template-columns: 1fr 1fr; }
   @media (max-width: 420px) { .pair { grid-template-columns: 1fr; } }
-  .receipt { margin: 0.8rem 0 0; padding: 0.9rem 1rem; border-left: 3px solid var(--green); background: #e7f6ea; }
+  .receipt { margin: 0.8rem 0 0; padding: 0.9rem 1rem; border-left: 3px solid var(--green); background: var(--ok-bg); }
   .receipt .r-h { margin: 0 0 0.5rem; font-weight: 600; }
-  .receipt dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; margin: 0; font-size: 0.92rem; }
+  .receipt dl { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 1rem; margin: 0; font-size: var(--fs-sm); }
   .receipt dt { color: var(--ink-3); }
   .receipt dd { margin: 0; overflow-wrap: anywhere; }
   .receipt p.small { margin: 0.6rem 0 0; }
-  .tool input[type="text"], .tool input[type="email"], .tool textarea { width: 100%; font: inherit; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: var(--r); background: var(--paper); color: var(--ink); }
 </style>

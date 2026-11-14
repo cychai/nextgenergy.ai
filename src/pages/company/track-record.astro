@@ -49,7 +49,7 @@ const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], 
       <p class="muted" style="max-width:62ch">Each project is described in the same six fields. Locations and clients are not named. Scale is liquid-cooled IT capacity where it is published; it measures equipment delivered, not the heat supplied to users. Heating results are stated only where the project's operating record supports them; the operating records, system diagrams and acceptance records are not published.</p>
       <div class="cases">
         {cases.map((c) => (
-          <article class="case">
+          <article class="card pad-s case">
             <div class="meta"><span class="yr">{c.year}</span><span>{c.place}</span><span>{c.scale}</span></div>
             <h3>{c.type}</h3>
             <dl>{FIELDS.map(([k, l]) => <><dt>{l}</dt><dd>{c[k]}</dd></>)}</dl>
@@ -61,18 +61,18 @@ const FIELDS = [['cond', 'Project conditions'], ['scope', 'Scope of delivery'], 
   </section>
 </Base>
 <style>
-  .figs .v { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 600; line-height: 1.1; }
+  .figs .v { display: block; font-family: var(--font-figure); font-size: var(--fs-xl); font-weight: var(--fw-figure); line-height: 1.1; }
   .figs .l { display: block; color: var(--ink-2); margin-top: 0.3rem; }
-  .figs .c { display: block; font-size: 0.82rem; color: var(--ink-3); margin-top: 0.4rem; max-width: 70ch; }
+  .figs .c { display: block; font-size: var(--fs-sm); color: var(--ink-3); margin-top: 0.4rem; max-width: 70ch; }
   .cases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 1.5rem; }
   @media (min-width: 800px) { .cases { grid-template-columns: 1fr 1fr; } }
-  .case { background: var(--white); border: 1px solid var(--line-2); border-radius: var(--r); padding: 1.8rem; display: flex; flex-direction: column; }
-  .case .meta { display: flex; gap: 0.8rem; align-items: baseline; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
-  .case .yr { color: var(--heat); font-weight: 600; font-size: 0.9rem; }
-  .case h3 { margin: 0.5rem 0 0.5rem; font-size: 1.2rem; }
+  .case { gap: 0; }
+  .case .meta { display: flex; gap: 0.8rem; align-items: baseline; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+  .case .yr { color: var(--heat-text); font-weight: 600; font-size: var(--fs-sm); }
+  .case h3 { margin: 0.5rem 0 0.5rem; }
   .case p { color: var(--ink-2); margin: 0 0 1rem; }
-  .case dl { margin: 0.4rem 0 0; display: grid; grid-template-columns: 1fr; gap: 0.15rem; font-size: 0.92rem; border-top: 1px solid var(--line-2); padding-top: 0.8rem; }
+  .case dl { margin: 0.4rem 0 0; display: grid; grid-template-columns: 1fr; gap: 0.15rem; font-size: var(--fs-sm); border-top: 1px solid var(--line-2); padding-top: 0.8rem; }
   .case dd + dt { margin-top: 0.6rem; }
-  .case dt { color: var(--ink-3); font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .case dt { color: var(--ink-3); font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; }
   .case dd { margin: 0; color: var(--ink); }
 </style>

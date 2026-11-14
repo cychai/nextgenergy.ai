@@ -25,7 +25,7 @@ import CallLink from '@/components/CallLink.astro';
           </div>
         </div>
         <figure class="hero-fig">
-          <img src="/products/hero-skid.jpg" alt="Prefabricated liquid-cooling skid: a row of liquid-cooled racks on a steel frame with overhead supply and return headers, cable trays and an integrated CDU" width="1400" height="933" fetchpriority="high" />
+          <picture><source type="image/webp" srcset="/products/hero-skid-700.webp 700w, /products/hero-skid-1400.webp 1400w" sizes="(min-width: 900px) 520px, calc(100vw - 5rem)" /><img src="/products/hero-skid.jpg" alt="Prefabricated liquid-cooling skid: a row of liquid-cooled racks on a steel frame with overhead supply and return headers, cable trays and an integrated CDU" width="1400" height="933" fetchpriority="high" decoding="async" /></picture>
           <figcaption>Illustrative prefabricated configuration. Equipment and performance are confirmed per project.</figcaption>
         </figure>
       </div>
@@ -40,9 +40,9 @@ import CallLink from '@/components/CallLink.astro';
       <div class="eyebrow">What we do</div>
       <h2>Two things, and the records for both.</h2>
       <div class="lines">
-        <a class="line" href="/platform">
-          <div class="line-img render"><img src="/products/cdu-family.jpg" alt="Three coolant distribution units: in-rack, liquid-to-air and in-row" loading="lazy" width="1200" height="800" /></div>
-          <div class="line-body">
+        <a class="card media line" href="/platform">
+          <div class="card-img render"><img src="/products/cdu-family.jpg" alt="Three coolant distribution units: in-rack, liquid-to-air and in-row" loading="lazy" width="1200" height="800" /></div>
+          <div class="card-body">
             <span class="num">01</span>
             <h3>Prefabricated liquid cooling systems</h3>
             <p>We plan and design liquid-cooled AI data centres and deliver the cooling system as a coordinated package of four product families, with interfaces and acceptance criteria agreed before manufacture.</p>
@@ -52,9 +52,9 @@ import CallLink from '@/components/CallLink.astro';
             <span class="more">Four product families →</span>
           </div>
         </a>
-        <a class="line" href="/services/field">
-          <div class="line-img photo"><img src="/products/field-tech.jpg" alt="Technician with a tablet checking pressure gauges on liquid-cooling pipework" loading="lazy" width="621" height="658" /></div>
-          <div class="line-body">
+        <a class="card media line" href="/services/field">
+          <div class="card-img"><img src="/products/field-tech.jpg" alt="Technician with a tablet checking pressure gauges on liquid-cooling pipework" loading="lazy" width="621" height="658" /></div>
+          <div class="card-body">
             <span class="num">02</span>
             <h3>Field testing, verification and operations</h3>
             <p>For liquid-cooled halls across North America, on systems we supplied and on systems we did not: four commissioning gates with written criteria, then a three-tier operations programme for the cooling loop, not the servers.</p>
@@ -94,7 +94,7 @@ import CallLink from '@/components/CallLink.astro';
             <a class="btn ghost" href="https://sim.nextgenergy.ai">Open the simulator</a>
             <a class="btn ghost" href="/tools">All engineering tools</a>
           </div>
-          <p class="small" style="color:#9fb0d0;margin-top:1.2rem">Concept model for planning and comparison. Not for equipment selection, acceptance or performance claims.</p>
+          <p class="small dim" style="margin-top:1.2rem">Concept model for planning and comparison. Not for equipment selection, acceptance or performance claims.</p>
         </div>
         <a class="laptop" href="https://sim.nextgenergy.ai" aria-label="Open the liquid cooling simulator">
           <span class="screen"><img src="/products/simulator.jpg" alt="Liquid cooling simulator on a laptop: racks, CDU, dry cooler and trim chiller with live temperatures, flows and pPUE" width="1440" height="900" loading="lazy" /></span>
@@ -109,32 +109,27 @@ import CallLink from '@/components/CallLink.astro';
       <div class="eyebrow">Go deeper</div>
       <h2>The thinking and the records behind the products.</h2>
       <div class="deeper">
-        <a class="deep" href="/solutions"><span class="k">Solutions</span><span class="d">New build, retrofit, heat reuse, cold climate and edge, each with what to decide early.</span><span class="more">By project type →</span></a>
-        <a class="deep" href="/approach"><span class="k">Our approach</span><span class="d">The thermal path, return-water grade and the three clocks of leak risk.</span><span class="more">How we think →</span></a>
-        <a class="deep" href="/evidence"><span class="k">Evidence</span><span class="d">Commissioning criteria, the turnover package and the ten leak points.</span><span class="more">What we hand over →</span></a>
-        <a class="deep" href="/insights"><span class="k">Insights</span><span class="d">{latest ? latest.data.title : 'Long-form writing on power, liquid cooling and heat reuse.'}</span><span class="more">Latest article →</span></a>
+        <a class="card pad-s deep" href="/solutions"><span class="card-title">Solutions</span><span class="d">New build, retrofit, heat reuse, cold climate and edge, each with what to decide early.</span><span class="more">By project type →</span></a>
+        <a class="card pad-s deep" href="/approach"><span class="card-title">Our approach</span><span class="d">The thermal path, return-water grade and the three clocks of leak risk.</span><span class="more">How we think →</span></a>
+        <a class="card pad-s deep" href="/evidence"><span class="card-title">Evidence</span><span class="d">Commissioning criteria, the turnover package and the ten leak points.</span><span class="more">What we hand over →</span></a>
+        <a class="card pad-s deep" href="/insights"><span class="card-title">Insights</span><span class="d">{latest ? latest.data.title : 'Long-form writing on power, liquid cooling and heat reuse.'}</span><span class="more">Latest article →</span></a>
       </div>
     </div>
   </section>
 
   <section class="section ink cta">
-    <div class="wrap" style="text-align:center">
+    <div class="wrap center">
       <h2>Bring us your project.</h2>
-      <p class="lede" style="margin-inline:auto">A new build, a retrofit, a heat-reuse scheme, a hall that needs commissioning, or a turnover package you would like verified. Start with your system diagram, equipment list and existing records.</p>
+      <p class="lede">A new build, a retrofit, a heat-reuse scheme, a hall that needs commissioning, or a turnover package you would like verified. Start with your system diagram, equipment list and existing records.</p>
       <div class="btn-row" style="justify-content:center;align-items:center"><a class="btn ghost" href="/company/contact">Talk to our team</a><CallLink onDark /></div>
     </div>
   </section>
 </Base>
 <style>
-  .deeper { display: grid; gap: 1.25rem; grid-template-columns: 1fr; margin-top: 1.8rem; }
+  .deeper { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; margin-top: var(--sp-6); }
   @media (min-width: 640px) { .deeper { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1000px) { .deeper { grid-template-columns: repeat(4, 1fr); } }
-  .deep { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem; background: var(--white); border: 1px solid var(--line-2); border-radius: var(--r); color: inherit; }
-  .deep:hover { border-color: var(--ink-3); }
-  .deep .k { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; color: var(--ink); }
-  .deep .d { color: var(--ink-2); font-size: 0.95rem; }
-  .deep .more { margin-top: auto; padding-top: 0.6rem; font-size: 0.9rem; font-weight: 600; color: var(--water); }
-  .deep:hover .more { color: var(--heat); }
+  .deep .d { color: var(--ink-2); }
   .home-hero { padding-bottom: clamp(2rem, 4vw, 3rem); }
   .hero.home-hero h1 { max-width: none; }
   .hero-grid { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }
@@ -142,42 +137,30 @@ import CallLink from '@/components/CallLink.astro';
   .hero-fig { margin: 0; }
   .hero-fig { background: var(--white); border: 1px solid var(--line-2); border-radius: var(--r); padding: clamp(1rem, 2.5vw, 2rem); }
   .hero-fig img { width: 100%; height: auto; }
-  .hero-fig figcaption { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.6rem; }
-  .chain { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; margin-top: clamp(1.8rem, 3vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
+  .hero-fig figcaption { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.6rem; }
+  .chain { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; margin-top: clamp(1.8rem, 3vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-2); }
   .chain .step { display: inline-flex; gap: 0.9rem; align-items: baseline; }
   .chain .arrow { color: var(--heat); }
 
-  .lines { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 2rem; }
+  .lines { display: grid; gap: var(--sp-5); grid-template-columns: 1fr; margin-top: var(--sp-6); }
   @media (min-width: 820px) { .lines { grid-template-columns: 1fr 1fr; } }
-  .line { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; color: inherit; }
-  .line:hover { border-color: var(--ink-3); }
-  .line-img { background: var(--white); aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--line-2); }
-  .line-img img { width: 100%; height: 100%; object-fit: cover; }
-  .line-img.render { padding: 1.5rem 2rem; }
-  .line-img.render img { object-fit: contain; }
-  .line-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-  @media (max-width: 600px) { .line-body { padding: 1.5rem 1.5rem 1.6rem; } .line-img.render { padding: 1rem 1.25rem; } }
-  .line-body .num { font-family: var(--mono); font-size: 0.75rem; color: var(--heat); letter-spacing: 0.1em; }
-  .line-body h3 { margin: 0; font-size: 1.3rem; }
-  .line-body p { margin: 0; color: var(--ink-2); font-size: 0.97rem; }
   .chips { list-style: none; padding: 0; margin: auto 0 0; padding-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .chips li { font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 999px; background: var(--paper-2); color: var(--ink); }
-  .line-body .more { margin-top: 0; padding-top: 0.9rem; font-size: 0.9rem; font-weight: 600; color: var(--water); }
-  .line:hover .more { color: var(--heat); }
+  .chips li { font-size: var(--fs-xs); font-weight: 600; padding: 0.3rem 0.6rem; border-radius: var(--r-pill); background: var(--paper-2); color: var(--ink); }
+  .line .more { margin-top: 0; }
 
   .stats { display: grid; gap: 1.5rem 2.5rem; grid-template-columns: 1fr; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
   @media (min-width: 720px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-  .stat .v { display: block; font-family: var(--serif); font-size: 1.7rem; line-height: 1; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
-  .stat .l { display: block; color: var(--ink-2); font-size: 0.95rem; }
-  .stat .cond { display: block; font-size: 0.78rem; line-height: 1.45; color: var(--ink-3); margin-top: 0.45rem; }
+  .stat .v { display: block; font-family: var(--font-figure); font-size: var(--fs-lg); line-height: 1; font-weight: var(--fw-figure); color: var(--ink); margin-bottom: 0.4rem; }
+  .stat .l { display: block; color: var(--ink-2); font-size: var(--fs-sm); }
+  .stat .cond { display: block; font-size: var(--fs-xs); line-height: 1.45; color: var(--ink-3); margin-top: 0.45rem; max-width: var(--measure-wide); }
   .stat .cond b { color: var(--ink-2); font-weight: 600; }
 
   .laptop { display: block; width: 100%; max-width: 680px; margin: 0 auto; padding: 0 5%; align-self: center; }
-  .laptop .screen { display: block; background: #0b0f17; border: 1px solid #36405a; border-bottom: 0; border-radius: 16px 16px 0 0; padding: 14px 14px 16px; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.7); }
+  .laptop .screen { display: block; background: var(--device-screen); border: 1px solid var(--device-edge); border-bottom: 0; border-radius: 16px 16px 0 0; padding: 14px 14px 16px; box-shadow: var(--shadow-2); }
   .laptop .screen img { display: block; width: 100%; height: auto; border-radius: 6px; }
-  .laptop .base { display: block; position: relative; height: 16px; margin: 0 -5%; background: linear-gradient(#e6eaf1, #b8c1d1 60%, #8f9ab0); border-radius: 3px 3px 14px 14px; }
-  .laptop .base::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 16%; height: 6px; background: #7c879d; border-radius: 0 0 8px 8px; }
-  .laptop:hover .screen { border-color: #6f7c9a; }
+  .laptop .base { display: block; position: relative; height: 16px; margin: 0 -5%; background: var(--device-base); border-radius: 3px 3px 14px 14px; }
+  .laptop .base::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 16%; height: 6px; background: var(--device-notch); border-radius: 0 0 8px 8px; }
+  .laptop:hover .screen { border-color: var(--device-edge-hover); }
   @media (min-width: 900px) { .sim .split { align-items: center; } }
-  .sim .lede { font-size: 1.05rem; line-height: 1.6; }
+  .sim .lede { font-size: var(--fs-base); line-height: var(--lh-loose); }
 </style>

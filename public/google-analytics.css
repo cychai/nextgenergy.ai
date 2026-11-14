@@ -78,3 +78,51 @@
     flex-wrap: wrap;
   }
 }
+
+/* Phones: a compact full-width bar pinned to the bottom edge. Copy and behaviour unchanged. */
+@media (max-width: 720px) {
+  .analytics-consent {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
+    border-width: 1px 0 0;
+  }
+
+  .analytics-consent p {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .analytics-consent__actions {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .analytics-consent button {
+    flex: 1 1 auto;
+    min-height: 2.75rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .analytics-consent__actions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Touch devices: the "Analytics choices" control in the footer gets a 44 px target. */
+@media (pointer: coarse), (max-width: 900px) {
+  .analytics-manage {
+    min-height: 2.75rem;
+  }
+
+  .analytics-consent p a {
+    padding-block: 0.875rem;
+  }
+}

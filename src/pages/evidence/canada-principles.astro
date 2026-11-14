@@ -33,7 +33,7 @@ const ld = [techArticleLd(path, { headline: "The numbers Canada's data centre pr
         {rows.map((r) => (
           <div class="card">
             <span class="num">{r.t}</span>
-            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:0.95rem">{r.items.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}</ul>
+            <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:var(--fs-sm)">{r.items.map((it) => <li style="margin-bottom:0.4rem">{it}</li>)}</ul>
           </div>
         ))}
       </div>
