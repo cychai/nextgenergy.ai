@@ -2,10 +2,11 @@
 import Icon from '@/components/Icon.astro';
 import { nav, site } from '@/data/site';
 import { menu } from '@/data/menu';
-const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const under = (p: string) => path === p || path.startsWith(p + '/');
 const isCurrent = (n: { href: string; match?: string[] }) => (n.match ?? [n.href]).some(under);
-const here = (href: string) => (href === path ? 'page' : undefined);
+// aria-current: "page" on the link to this very page, "true" on the links to the sections it sits in.
+const cur = (href: string, on = under(href)) => (href === path ? 'page' : on ? 'true' : undefined);
 const sub = (label: string) => `${label} submenu`;
 ---
 <header class="hdr">
@@ -14,19 +15,20 @@ const sub = (label: string) => `${label} submenu`;
     <nav class="nav" aria-label="Primary">
       {nav.map((n, i) => menu[n.href] ? (
         <div class="nav-item" data-dd>
-          <a href={n.href} aria-current={isCurrent(n) ? 'page' : undefined}>{n.label}</a>
-          <button type="button" class="dd-btn" aria-expanded="false" aria-controls={`dd-${i}`} aria-label={sub(n.label)}><Icon name="chevron-down" /></button>
+          <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
+          <button type="button" class="dd-btn" aria-expanded="false" aria-controls={`dd-${i}`} aria-label={sub(n.label)}><Icon name="caret" /></button>
           <div class:list={['dd', menu[n.href].length > 1 && 'mega']} id={`dd-${i}`}>
             {menu[n.href].map((g) => (
               <div class="dd-g">
-                {g.title && <a class="dd-h" href={g.href} aria-current={here(g.href!)}>{g.title}</a>}
-                {g.links.map(([href, label]) => <a href={href} aria-current={here(href)}>{label}</a>)}
+                {g.title && <a class="dd-h" href={g.href} aria-current={cur(g.href!)}>{g.title}</a>}
+                {g.lede && <p class="dd-p">{g.lede}</p>}
+                {g.links.map(([href, label]) => <a href={href} aria-current={cur(href)}>{label}</a>)}
               </div>
             ))}
           </div>
         </div>
       ) : (
-        <a href={n.href} aria-current={isCurrent(n) ? 'page' : undefined}>{n.label}</a>
+        <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
       ))}
     </nav>
     <div class="hdr-end">
@@ -35,31 +37,32 @@ const sub = (label: string) => `${label} submenu`;
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" data-menu data-label-open="Close" data-label-closed="Menu"><span class="menu-ico" aria-hidden="true"><i></i><i></i><i></i></span><span data-menu-label>Menu</span></button>
     </div>
   </div>
-  <div class="mnav" id="mnav">
+  <nav class="mnav" id="mnav" aria-label="Menu">
     <div class="wrap">
-      <button type="button" class="msrch" data-search aria-haspopup="dialog" aria-controls="srch"><Icon name="search" />Search</button>
       {nav.map((n) => menu[n.href] ? (
         <div class="mrow">
-          <a href={n.href} aria-current={isCurrent(n) ? 'page' : undefined}>{n.label}</a>
+          <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
           <details name="mnav" open={isCurrent(n)}>
-            <summary aria-label={sub(n.label)}><Icon name="chevron-down" /></summary>
+            <summary aria-label={sub(n.label)}><Icon name="caret" /></summary>
             <div class="msub">
               {menu[n.href].map((g) => (
                 <>
-                  {g.title && <a class="msub-h" href={g.href} aria-current={here(g.href!)}>{g.title}</a>}
-                  {g.links.map(([href, label]) => <a href={href} aria-current={here(href)}>{label}</a>)}
+                  {g.title && <a class="msub-h" href={g.href} aria-current={cur(g.href!)}>{g.title}</a>}
+                  {g.links.map(([href, label]) => <a href={href} aria-current={cur(href)}>{label}</a>)}
                 </>
               ))}
             </div>
           </details>
         </div>
       ) : (
-        <a href={n.href} aria-current={isCurrent(n) ? 'page' : undefined}>{n.label}</a>
+        <a href={n.href} aria-current={cur(n.href, isCurrent(n))}>{n.label}</a>
       ))}
-      <a href="/company/contact" aria-current={under('/company/contact') ? 'page' : undefined}>Contact</a>
     </div>
-  </div>
-  <div class="mnav-scrim" data-menu-scrim hidden></div>
+    <div class="mbar">
+      <a class="mcta" href="/company/contact" aria-current={cur('/company/contact')}>Contact</a>
+    </div>
+  </nav>
+  <div class="mnav-scrim" data-menu-scrim></div>
 </header>
 <noscript><style is:inline>[data-search] { display: none !important; }</style></noscript>
 <dialog class="srch" id="srch" aria-label="Search this site" data-hint="Type a word or two. Up and down arrows choose a result, Enter opens it, Esc closes." data-none="No results for “{q}”." data-count="{n} results" data-error="Search is unavailable right now. Please use the menu or the footer links.">
