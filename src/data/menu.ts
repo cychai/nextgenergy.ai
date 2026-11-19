@@ -21,7 +21,7 @@ export const menu: Record<string, MenuGroup[]> = {
   '/solutions': [{ links: subs('/solutions', solutions) }],
   '/resources': [
     { title: 'Approach', href: '/approach', lede: 'How we decide what to build, what to test and what to write down.', links: corePages[0].pages.map(([h, t]) => [h, t]) },
-    { title: 'Evidence', href: '/evidence', lede: 'What we hand over, and the criteria it is tested against.', links: foot('Evidence') },
+    { title: 'Evidence', href: '/evidence', lede: 'What we hand over, and the criteria it is tested against.', links: [...foot('Evidence'), ['/resources/commissioning-white-paper', 'Commissioning white paper'] as Link] },
     { title: 'Tools', href: '/tools', lede: 'Check your own numbers before you bring them to us or anyone else.', links: foot('Tools') },
     { title: 'Insights', href: '/insights', lede: 'Every Watt Counts: long-form writing on power, liquid cooling and heat reuse.', links: [] },
   ],

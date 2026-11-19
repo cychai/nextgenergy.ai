@@ -1,0 +1,155 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/PageHero.astro';
+import { site } from '@/data/site';
+// Gated white paper. The form posts to /api/whitepaper (worker/index.js), which emails the lead to the sales
+// mailbox and returns a signed seven-day link to /download/commissioning-white-paper. Copy is taken from the
+// press release of the paper; no figure here is new.
+const inside: [string, string][] = [
+  ['Six functional boundaries (B1–B6).', 'From the facility water interface to the cold-plate interface. Each boundary has a named provider, receiver, test lead, witness and approver, so interface responsibilities are assigned across suppliers before procurement.'],
+  ['Four release gates (G1–G4).', 'Before shipment, before fill, before production and before handover. Each gate is a signed decision for a defined scope against criteria approved in advance.'],
+  ['A controlled commissioning permit.', 'For energising load emulators and actual IT equipment batch by batch. It is explicitly not a production release.'],
+  ['Four kinds of determination.', 'Pass, Fail, Not demonstrated and Not applicable by approval. Measurement uncertainty is handled with a stated decision rule.'],
+  ['The role and the limits of simulation.', 'Models help choose test conditions and explain deviations. They do not replace measurement, and model evidence carries its own applicability statement.'],
+  ['Appendices for project teams.', 'An acceptance criteria register, a model and data applicability statement, dynamic test and release records, a minimum handover package, and an evidence index by interface and stage.'],
+];
+---
+<Base title="Liquid Cooling Commissioning and Site Acceptance" description="White paper: interface verification and release for single-phase cold-plate systems. Six boundaries, four release gates, a controlled commissioning permit and the evidence each release requires. Free download after registration.">
+  <PageHero eyebrow="White paper" title="Liquid Cooling Commissioning and Site Acceptance" lede="Interface verification and release for single-phase cold-plate systems" crumbs={[['/resources', 'Resources']]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="split main">
+        <div class="wp-body">
+          <p>Equipment on site, piping installed, a coolant distribution unit (CDU) running and servers powering on are four different facts at four different stages. None of them shows that a system can carry a training run, ride through a fault, or be taken over by an operator. This paper treats these as separate questions and asks what evidence answers each one.</p>
+          <p>It sets out a method for commissioning planning, test design, evidence review and handover on liquid-cooled AI data centre projects, written for owners, designers, equipment suppliers, contractors, integrators, commissioning teams and operators.</p>
+          <h2>What's inside</h2>
+          <ul class="inside">
+            {inside.map(([h, t]) => <li><strong>{h}</strong> {t}</li>)}
+          </ul>
+          <p class="small muted">The paper draws on public industry work, including guidance from the Open Compute Project, ASHRAE, the Energy Efficient HPC Working Group and DMTF, and on published case studies from U.S. national laboratories. It cites 21 sources. It is a method paper, not a standard or a field work instruction. In English, 41 pages, PDF.</p>
+          <p class="small muted">OCP, ASHRAE, DMTF and other names are the property of their respective owners. Their mention does not imply endorsement or affiliation.</p>
+          <p class="small">Related: <a href="/evidence/commissioning">Commissioning and acceptance criteria</a> · <a href="/approach/thermal-path">The whole thermal path, in six boundaries</a> · <a href="/services/field">Field testing and operations</a></p>
+        </div>
+        <form id="form" class="tool" data-wp data-to={site.email} novalidate>
+          <p class="wp-form-h">Download the white paper</p>
+          <p class="small muted" style="margin:0 0 1.2rem">Free. Fill in the form and the download link appears here; we also email it to you.</p>
+          <div class="pair">
+            <div class="field"><label for="first">First name<span class="req">required</span></label><input id="first" name="first" type="text" required maxlength="80" autocomplete="given-name" aria-describedby="first-err" data-req="Enter your first name." /><p class="field-err" id="first-err" hidden></p></div>
+            <div class="field"><label for="last">Last name<span class="req">required</span></label><input id="last" name="last" type="text" required maxlength="80" autocomplete="family-name" aria-describedby="last-err" data-req="Enter your last name." /><p class="field-err" id="last-err" hidden></p></div>
+          </div>
+          <div class="field"><label for="email">Work email<span class="req">required</span></label><input id="email" name="email" type="email" required maxlength="200" autocomplete="email" aria-describedby="email-err" data-req="Enter your work email address." data-fmt="Enter a valid email address, for example name@company.com." /><p class="field-err" id="email-err" hidden></p></div>
+          <div class="field"><label for="org">Organisation<span class="req">required</span></label><input id="org" name="org" type="text" required maxlength="160" autocomplete="organization" aria-describedby="org-err" data-req="Enter your organisation." /><p class="field-err" id="org-err" hidden></p></div>
+          <div class="field"><label for="title">Job title<span class="req">required</span></label><input id="title" name="title" type="text" required maxlength="120" autocomplete="organization-title" aria-describedby="title-err" data-req="Enter your job title." /><p class="field-err" id="title-err" hidden></p></div>
+          <div class="field"><label for="country">Country/region<span class="req">required</span></label>
+            <select id="country" name="country" required aria-describedby="country-err" data-req="Choose a country or region.">
+              <option value="" selected disabled>Choose one</option><option>Canada</option><option>United States</option><option>Other</option>
+            </select><p class="field-err" id="country-err" hidden></p></div>
+          <div class="field"><label for="work">What are you working on? <span class="opt">optional</span></label><textarea id="work" name="work" rows="3" maxlength="1000" placeholder="e.g. a cold-plate retrofit, with commissioning planned next year"></textarea></div>
+          <div class="consent">
+            <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-err" data-req="Tick this box to receive the paper." />
+            <label for="consent">NextGenergy may email me about this paper and related work. I can unsubscribe at any time. See our <a href="/company/privacy">privacy notice</a>.</label>
+          </div>
+          <p class="field-err" id="consent-err" hidden></p>
+          <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+          <p class="form-status" data-status role="status" hidden></p>
+          <div class="receipt" data-receipt hidden></div>
+          <div class="btn-row" style="margin-top:0.8rem;align-items:center"><button class="btn primary" type="submit" data-send>Get the white paper</button></div>
+          <p class="small muted" style="margin:1rem 0 0">Your details are sent over HTTPS and forwarded as an email to our team; the website does not store them. The download link is valid for seven days. Problems with the form? Email <a href={`mailto:${site.email}`}>{site.email}</a> for a copy.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+<script>
+  const f = document.querySelector<HTMLFormElement>('[data-wp]');
+  const status = f?.querySelector<HTMLElement>('[data-status]');
+  const btn = f?.querySelector<HTMLButtonElement>('[data-send]');
+  const receipt = f?.querySelector<HTMLElement>('[data-receipt]');
+  const opened = Date.now();
+  const to = f?.dataset.to || 'sales@nextgenergy.ai';
+  const say = (msg: string, kind: string) => { if (!status) return; status.textContent = msg; status.dataset.kind = kind; status.hidden = false; };
+  // Fallback: plain text plus a mailto link built with DOM methods (no innerHTML).
+  const fallback = (lead: string) => {
+    if (!status) return;
+    status.replaceChildren(document.createTextNode(`${lead} Please email `));
+    const a = document.createElement('a'); a.href = `mailto:${to}?subject=${encodeURIComponent('White paper: Liquid Cooling Commissioning and Site Acceptance')}`; a.textContent = to;
+    status.append(a, document.createTextNode(' for a copy.'));
+    status.dataset.kind = 'error'; status.hidden = false;
+  };
+  const need = f ? [...f.querySelectorAll<HTMLInputElement | HTMLSelectElement>('[required]')] : [];
+  const mark = (el: HTMLElement, m: string) => {
+    const p = document.getElementById(el.id + '-err');
+    if (p) { p.textContent = m; p.hidden = !m; }
+    el.setAttribute('aria-invalid', m ? 'true' : 'false');
+  };
+  const check = (el: HTMLInputElement | HTMLSelectElement) => {
+    const ds = el.dataset;
+    let m = '';
+    if (el instanceof HTMLInputElement && el.type === 'checkbox') m = el.checked ? '' : ds.req || '';
+    else {
+      const v = el.value.trim();
+      m = !v ? ds.req || '' : el instanceof HTMLInputElement && el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? ds.fmt || '' : '';
+    }
+    mark(el, m);
+    return !m;
+  };
+  need.forEach((el) => {
+    el.addEventListener('blur', () => { if (el.value.trim() && !(el instanceof HTMLInputElement && el.type === 'checkbox')) check(el); });
+    el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+    el.addEventListener('change', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+  });
+  f?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (receipt) receipt.hidden = true;
+    const bad = need.filter((el) => !check(el));
+    if (bad.length) { bad[0].focus(); say('Please complete the highlighted fields.', 'error'); return; }
+    const d = new FormData(f);
+    const g = (k: string) => String(d.get(k) ?? '').trim();
+    const payload = { first: g('first'), last: g('last'), email: g('email'), org: g('org'), title: g('title'), country: g('country'), work: g('work'), consent: (f.querySelector('#consent') as HTMLInputElement).checked, website: g('website'), elapsed: Date.now() - opened };
+    if (btn) btn.disabled = true;
+    say('Sending…', 'info');
+    try {
+      const r = await fetch('/api/whitepaper', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.ok && typeof j.link === 'string' && j.link.startsWith('/download/')) {
+        if (status) status.hidden = true;
+        if (receipt) {
+          receipt.replaceChildren();
+          const h = document.createElement('p'); h.className = 'r-h'; h.textContent = 'Thank you. Your copy is ready.'; receipt.append(h);
+          const a = document.createElement('a'); a.className = 'btn primary'; a.href = j.link; a.textContent = 'Download the PDF'; a.setAttribute('download', ''); receipt.append(a);
+          const n = document.createElement('p'); n.className = 'small';
+          n.textContent = `The link is valid until ${j.until || 'seven days from now'}.${j.mailed ? ` We have also emailed it to ${payload.email}.` : ''}`;
+          receipt.append(n);
+          receipt.hidden = false; receipt.setAttribute('tabindex', '-1'); receipt.focus();
+        }
+        f.reset(); need.forEach((el) => mark(el, '')); if (btn) btn.disabled = false; return;
+      }
+      if (r.ok && j.ok) { fallback('Your request was received but no download link was issued.'); }
+      else if (j.error === 'validation') say('Please check the highlighted fields and send again.', 'error');
+      else if (j.error === 'not_configured') fallback('Downloads are not available from this page right now.');
+      else fallback('Your request did not go through.');
+    } catch {
+      fallback('Your request did not go through.');
+    }
+    if (btn) btn.disabled = false;
+  });
+</script>
+<style>
+  .wp-body h2 { font-size: var(--fs-md); margin-top: 2rem; }
+  .inside { padding-left: 1.1rem; }
+  .inside li { margin-bottom: 0.7rem; }
+  .wp-form-h { font-weight: 600; font-size: var(--fs-md); margin: 0 0 0.3rem; color: var(--ink); }
+  .pair { display: grid; gap: 0 1rem; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 420px) { .pair { grid-template-columns: 1fr; } }
+  .opt { font-weight: 400; text-transform: none; letter-spacing: 0; margin-left: 0.3rem; }
+  .consent { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: start; margin: 0.4rem 0 0.2rem; }
+  .consent input { width: 1.2rem; height: 1.2rem; margin: 0.15rem 0 0; accent-color: var(--water); }
+  .tool .consent label { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: var(--fs-sm); color: var(--ink); margin: 0; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .form-status { margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--blue); background: var(--water-2); font-size: var(--fs-sm); }
+  .form-status[data-kind="error"] { border-color: var(--danger); background: var(--danger-bg); color: var(--danger-text); }
+  .tool select:invalid { color: var(--ink-3); }
+  .receipt { margin: 0.8rem 0 0; padding: 0.9rem 1rem; border-left: 3px solid var(--green); background: var(--ok-bg); }
+  .receipt .r-h { margin: 0 0 0.6rem; font-weight: 600; }
+  .receipt p.small { margin: 0.6rem 0 0; }
+</style>

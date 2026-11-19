@@ -29,6 +29,36 @@ export const newsPlain = (n: NewsItem) => n.body.filter(isPara).map((p) => p.rep
 // Keep historical entries at their original publication dates.
 const items: NewsItem[] = [
 {
+  slug: 'commissioning-white-paper',
+  title: 'NextGenergy publishes a white paper on commissioning and site acceptance for liquid-cooled AI data centres',
+  date: '2026-11-18',
+  summary: 'A method for deciding, with evidence, when a single-phase cold-plate system is ready to carry production compute. Free to download after registration.',
+  cover: { img: '/news/commissioning-white-paper/cover.jpg', alt: 'Cover of the NextGenergy white paper Liquid Cooling Commissioning and Site Acceptance', w: 1600, h: 900 },
+  body: [
+    { img: '/news/commissioning-white-paper/cover.jpg', alt: 'Cover of the NextGenergy white paper Liquid Cooling Commissioning and Site Acceptance', w: 1600, h: 900, caption: 'Liquid Cooling Commissioning and Site Acceptance, first English edition, November 2026. Source: NextGenergy.' },
+    'Toronto, November 18, 2026. NextGenergy today published <em>Liquid Cooling Commissioning and Site Acceptance: Interface verification and release for single-phase cold-plate systems</em>. The white paper sets out a method for commissioning planning, test design, evidence review and handover on liquid-cooled AI data centre projects. It is written for owners, designers, equipment suppliers, contractors, integrators, commissioning teams and operators. The paper is free to <a href="/resources/commissioning-white-paper">download</a> after registration.',
+    'Liquid cooling has moved commissioning from the end of a project to its centre. Equipment on site, piping installed, a coolant distribution unit (CDU) running and servers powering on are four different facts at four different stages. None of them shows that a system can carry a training run, ride through a fault, or be taken over by an operator. The paper treats these as separate questions and asks what evidence answers each one.',
+    { h2: 'What the paper covers' },
+    '<strong>Six functional boundaries (B1–B6).</strong> These run from the facility water interface to the cold-plate interface. Each boundary has a named provider, receiver, test lead, witness and approver. The paper uses them to assign interface responsibilities across suppliers before procurement.',
+    '<strong>Four release gates (G1–G4).</strong> These are placed before shipment, before fill, before production and before handover. Each gate is a signed decision for a defined scope against criteria approved in advance.',
+    '<strong>A controlled commissioning permit</strong> for energising load emulators and actual IT equipment batch by batch. It is explicitly not a production release.',
+    '<strong>Four kinds of determination:</strong> Pass, Fail, Not demonstrated and Not applicable by approval. Measurement uncertainty is handled with a stated decision rule.',
+    '<strong>The role and the limits of simulation.</strong> Models help choose test conditions and explain deviations. They do not replace measurement, and model evidence carries its own applicability statement.',
+    '<strong>Appendices for project teams.</strong> These include an acceptance criteria register, a model and data applicability statement, dynamic test and release records, a minimum handover package, and an evidence index by interface and stage.',
+    'The paper draws on public industry work, including guidance from the Open Compute Project, ASHRAE, the Energy Efficient HPC Working Group and DMTF, and on published case studies from U.S. national laboratories. It cites 21 sources. It is a method paper, not a standard or a field work instruction.',
+    { h2: 'Quote' },
+    '“A liquid-cooled hall can be powered on, pass a walk-through and still not be ready for production,” said Jim Li, Founder and Chief Executive Officer of NextGenergy. “What closes that gap is criteria agreed before the work and evidence collected against them, interface by interface and batch by batch. We wrote this paper so that owners, suppliers and commissioning teams can agree on what each release requires before the equipment arrives, not after.”',
+    { h2: 'Availability' },
+    'The white paper is available in English at <a href="/resources/commissioning-white-paper">nextgenergy.ai/resources/commissioning-white-paper</a>. Readers register with their name, organisation and work email to download it.',
+  ],
+  links: [
+    ['/resources/commissioning-white-paper', 'Download the white paper'],
+    ['/evidence/commissioning', 'Commissioning and acceptance criteria'],
+    ['/services/field', 'Field testing and operations'],
+  ],
+  legalAttribution: 'OCP, ASHRAE, DMTF and other names are the property of their respective owners. Their mention does not imply endorsement or affiliation.',
+},
+{
   slug: 'gdcc-canada-2026-recap',
   title: 'NextGenergy at GDCC 2026',
   date: '2026-10-23',

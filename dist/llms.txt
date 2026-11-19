@@ -15,6 +15,7 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [Ten leak points](https://nextgenergy.ai/evidence/leak-points): The ten places a loop can leak, in coolant order, with the record each should have.
 - [The turnover package](https://nextgenergy.ai/evidence/turnover): Three questions for each of ten boundaries: tested, against what, where is the record.
 - [Commissioning and acceptance criteria](https://nextgenergy.ai/evidence/commissioning): Four gates from factory release to handover, with criteria written before the work.
+- [White paper: Liquid Cooling Commissioning and Site Acceptance](https://nextgenergy.ai/resources/commissioning-white-paper): Method paper for single-phase cold-plate systems: six functional boundaries (B1–B6), four release gates (G1–G4), a controlled commissioning permit, four kinds of determination and the limits of simulation; free PDF after registration.
 - [Standards we follow](https://nextgenergy.ai/evidence/standards): ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them.
 - [The numbers Canada's principles ask for](https://nextgenergy.ai/evidence/canada-principles): Principles 3 and 4 ask developers for measured, verifiable water, heat and power figures; what the supplier measures, where, and who signs.
 
@@ -47,11 +48,11 @@ Terms used consistently on this site: the whole thermal path; return-water grade
 - [Power Is the Real Ceiling — and the Fastest Megawatt Is Already Plugged In](https://nextgenergy.ai/insights/power-is-the-real-ceiling-and-the.md): 2026-07-06 — Not for lack of capital — but because capital could not turn into usable megawatts fast enough.
 
 ## News (latest)
+- [NextGenergy publishes a white paper on commissioning and site acceptance for liquid-cooled AI data centres](https://nextgenergy.ai/company/news/commissioning-white-paper): 2026-11-18 — A method for deciding, with evidence, when a single-phase cold-plate system is ready to carry production compute. Free to download after registration.
 - [NextGenergy at GDCC 2026](https://nextgenergy.ai/company/news/gdcc-canada-2026-recap): 2026-10-23 — At Booth A20, NextGenergy presented prefabricated liquid cooling and a whole-system view of data centre infrastructure, from core equipment and on-site verification to heat reuse and simulation.
 - [NextGenergy joins NVIDIA Inception](https://nextgenergy.ai/company/news/nvidia-inception-membership): 2026-10-07 — NextGenergy joined NVIDIA Inception on 30 September 2026. The Toronto-based company provides prefabricated liquid cooling and field services for AI data centres.
 - [NextGenergy at GDCC Canada 2026, Booth A20](https://nextgenergy.ai/company/news/gdcc-canada-2026-booth-a20): 2026-10-01 — NextGenergy will exhibit at Global Data Centre & Cloud Expo Canada 2026 on 20–21 October at the International Centre in Mississauga, booth A20.
 - [Liquid Cooling Academy opens registration](https://nextgenergy.ai/company/news/liquid-cooling-academy-registration): 2026-10-01 — The Liquid Cooling Academy at lca.nextgenergy.ai is open for registration. The Level 1 technician course is free and offered in English and Chinese.
-- [Free liquid cooling simulator now online](https://nextgenergy.ai/company/news/liquid-cooling-simulator-online): 2026-09-14 — NextGenergy has published a free, browser-based liquid cooling simulator at sim.nextgenergy.ai, in English and Chinese.
 
 ## Optional
 - [Full text of the core pages and all articles](https://nextgenergy.ai/llms-full.txt)

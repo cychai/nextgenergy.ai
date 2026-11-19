@@ -151,6 +151,10 @@ A: Gate 1, before release from the factory: pressure and leak tests per skid and
 
 A: They are written into the contract before the work, by the party accountable for the whole thermal path, and reviewed by the operator and the commissioning agent. A criterion agreed after a test only describes what happened; one agreed before is a specification that a supplier can be held to. (https://nextgenergy.ai/approach/thermal-path)
 
+### White paper: Liquid Cooling Commissioning and Site Acceptance
+
+Method paper for single-phase cold-plate systems: six functional boundaries (B1–B6), four release gates (G1–G4), a controlled commissioning permit, four kinds of determination and the limits of simulation; free PDF after registration. (https://nextgenergy.ai/resources/commissioning-white-paper)
+
 ### Standards we follow
 
 ERF, ERE, EU 2024/1364, ASHRAE W-classes and OCP drafts, and what is asked of them. (https://nextgenergy.ai/evidence/standards)
