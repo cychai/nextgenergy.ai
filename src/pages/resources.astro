@@ -12,6 +12,7 @@ const groups = [
   ] },
   { href: '/evidence', title: 'Evidence', lede: 'What we hand over, and the criteria it is tested against.', links: [
     ['/evidence/commissioning', 'Commissioning and acceptance criteria'],
+    ['/resources/commissioning-white-paper', 'White paper: Liquid Cooling Commissioning and Site Acceptance'],
     ['/evidence/turnover', 'The turnover package'],
     ['/evidence/samples', 'Sample records (templates)'],
     ['/evidence/leak-points', 'Ten leak points'],
@@ -33,6 +34,11 @@ const groups = [
   <PageHero eyebrow="Resources" title="Approach, evidence, tools and insights." lede="The thinking and the records behind our products and field services, the tools we use ourselves, and company news." />
   <section class="section">
     <div class="wrap">
+      <a class="card wp-feature" href="/resources/commissioning-white-paper">
+        <span class="eyebrow plain">White paper</span>
+        <strong>Liquid Cooling Commissioning and Site Acceptance</strong>
+        <span class="muted">Interface verification and release for single-phase cold-plate systems. Six boundaries, four release gates and the evidence each release requires. Free download.</span>
+      </a>
       <div class="hub">
         {groups.map((g) => (
           <div class="card hub-card">
@@ -48,6 +54,10 @@ const groups = [
   </section>
 </Base>
 <style>
+  .wp-feature { display: grid; gap: 0.3rem; margin-bottom: 1.5rem; text-decoration: none; border-left: 3px solid var(--water); }
+  .wp-feature .eyebrow { margin: 0; }
+  .wp-feature strong { color: var(--ink); font-size: var(--fs-md); }
+  .wp-feature:hover strong { color: var(--water); }
   .hub { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
   @media (min-width: 800px) { .hub { grid-template-columns: 1fr 1fr; } }
   .hub-card { gap: 0; }

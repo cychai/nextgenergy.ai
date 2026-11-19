@@ -3,3 +3,8 @@ node_modules/
 .wrangler/
 .DS_Store
 .env
+
+.dev.vars
+# Gated white paper PDFs: the repository is public, so the files never enter git (served from R2 or a local dist only).
+public/_gated/
+dist/_gated/

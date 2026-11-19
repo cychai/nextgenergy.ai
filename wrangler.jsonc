@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "nextgenergy-ai",
   "compatibility_date": "2026-08-04",
-  // worker/index.js serves ./dist and handles POST /api/contact (see the header comment there for the secrets it needs).
+  // worker/index.js serves ./dist and handles POST /api/contact, POST /api/whitepaper and the gated download (see the header comment there for the secrets it needs).
   "main": "worker/index.js",
   "routes": [
     { "pattern": "nextgenergy.ai", "custom_domain": true },
@@ -11,5 +11,11 @@
   // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main and
   // uploads ./dist as static assets. dist/ is committed (rebuilt locally with
   // `npm run build` before each push) so the deploy does not depend on the build image.
-  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page" }
+  // The Worker runs first on its own routes. /_gated/* holds files served only through a signed download link
+  // (worker/index.js), and the Worker answers 404 there. With a run_worker_first list, paths not in the list never
+  // reach the Worker (wrangler 4.129 local test: POST /api/contact got 405), so every Worker route is listed.
+  "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/api/*", "/download/*", "/_gated/*"] },
+  // Gated PDF from a private R2 bucket (preferred, since the GitHub repository is public and the PDF is not committed).
+  // Create the bucket, upload commissioning-white-paper.pdf, then uncomment:
+  // "r2_buckets": [{ "binding": "GATED_FILES", "bucket_name": "nextgenergy-gated" }]
 }
