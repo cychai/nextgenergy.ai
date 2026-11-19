@@ -26,7 +26,7 @@ const inside: [string, string][] = [
           <ul class="inside">
             {inside.map(([h, t]) => <li><strong>{h}</strong> {t}</li>)}
           </ul>
-          <p class="small muted">The paper draws on public industry work, including guidance from the Open Compute Project, ASHRAE, the Energy Efficient HPC Working Group and DMTF, and on published case studies from U.S. national laboratories. It cites 21 sources. It is a method paper, not a standard or a field work instruction. In English, 41 pages, PDF.</p>
+          <p class="small muted">The paper draws on public industry work, including guidance from the Open Compute Project, ASHRAE, the Energy Efficient HPC Working Group and DMTF, and on published case studies from U.S. national laboratories. It cites 21 sources. It is a method paper, not a standard or a field work instruction. In English, 41 pages, PDF. A Chinese edition (37 pages, PDF) is also available: choose it in the form.</p>
           <p class="small muted">OCP, ASHRAE, DMTF and other names are the property of their respective owners. Their mention does not imply endorsement or affiliation.</p>
           <p class="small">Related: <a href="/evidence/commissioning">Commissioning and acceptance criteria</a> · <a href="/approach/thermal-path">The whole thermal path, in six boundaries</a> · <a href="/services/field">Field testing and operations</a></p>
         </div>
@@ -44,6 +44,10 @@ const inside: [string, string][] = [
             <select id="country" name="country" required aria-describedby="country-err" data-req="Choose a country or region.">
               <option value="" selected disabled>Choose one</option><option>Canada</option><option>United States</option><option>Other</option>
             </select><p class="field-err" id="country-err" hidden></p></div>
+          <div class="field"><label for="edition">Edition<span class="req">required</span></label>
+            <select id="edition" name="edition" required aria-describedby="edition-err" data-req="Choose an edition.">
+              <option value="en" selected>English</option><option value="zh" lang="zh-CN">中文 (Chinese)</option>
+            </select><p class="field-err" id="edition-err" hidden></p></div>
           <div class="field"><label for="work">What are you working on? <span class="opt">optional</span></label><textarea id="work" name="work" rows="3" maxlength="1000" placeholder="e.g. a cold-plate retrofit, with commissioning planned next year"></textarea></div>
           <div class="consent">
             <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-err" data-req="Tick this box to receive the paper." />
@@ -105,7 +109,7 @@ const inside: [string, string][] = [
     if (bad.length) { bad[0].focus(); say('Please complete the highlighted fields.', 'error'); return; }
     const d = new FormData(f);
     const g = (k: string) => String(d.get(k) ?? '').trim();
-    const payload = { first: g('first'), last: g('last'), email: g('email'), org: g('org'), title: g('title'), country: g('country'), work: g('work'), consent: (f.querySelector('#consent') as HTMLInputElement).checked, website: g('website'), elapsed: Date.now() - opened };
+    const payload = { first: g('first'), last: g('last'), email: g('email'), org: g('org'), title: g('title'), country: g('country'), edition: g('edition') === 'zh' ? 'zh' : 'en', work: g('work'), consent: (f.querySelector('#consent') as HTMLInputElement).checked, website: g('website'), elapsed: Date.now() - opened };
     if (btn) btn.disabled = true;
     say('Sending…', 'info');
     try {
@@ -116,7 +120,7 @@ const inside: [string, string][] = [
         if (receipt) {
           receipt.replaceChildren();
           const h = document.createElement('p'); h.className = 'r-h'; h.textContent = 'Thank you. Your copy is ready.'; receipt.append(h);
-          const a = document.createElement('a'); a.className = 'btn primary'; a.href = j.link; a.textContent = 'Download the PDF'; a.setAttribute('download', ''); receipt.append(a);
+          const a = document.createElement('a'); a.className = 'btn primary'; a.href = j.link; a.textContent = payload.edition === 'zh' ? 'Download the PDF (Chinese edition)' : 'Download the PDF'; a.setAttribute('download', ''); receipt.append(a);
           const n = document.createElement('p'); n.className = 'small';
           n.textContent = `The link is valid until ${j.until || 'seven days from now'}.${j.mailed ? ` We have also emailed it to ${payload.email}.` : ''}`;
           receipt.append(n);
