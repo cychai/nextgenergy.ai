@@ -34,7 +34,9 @@ const items: NewsItem[] = [
   // Publication date to be confirmed by Jim.
   date: '2026-11-20',
   summary: 'A method for deciding, with evidence, when a single-phase cold-plate system is ready to carry production compute. Free to download after registration.',
+  cover: { img: '/news/commissioning-white-paper/cover.jpg', alt: 'Cover of the NextGenergy white paper Liquid Cooling Commissioning and Site Acceptance', w: 1600, h: 900 },
   body: [
+    { img: '/news/commissioning-white-paper/cover.jpg', alt: 'Cover of the NextGenergy white paper Liquid Cooling Commissioning and Site Acceptance', w: 1600, h: 900, caption: 'Liquid Cooling Commissioning and Site Acceptance, first English edition, November 2026. Source: NextGenergy.' },
     'NextGenergy today published <em>Liquid Cooling Commissioning and Site Acceptance: Interface verification and release for single-phase cold-plate systems</em>. The white paper sets out a method for commissioning planning, test design, evidence review and handover on liquid-cooled AI data centre projects. It is written for owners, designers, equipment suppliers, contractors, integrators, commissioning teams and operators. The paper is free to <a href="/resources/commissioning-white-paper">download</a> after registration.',
     'Liquid cooling has moved commissioning from the end of a project to its centre. Equipment on site, piping installed, a coolant distribution unit (CDU) running and servers powering on are four different facts at four different stages. None of them shows that a system can carry a training run, ride through a fault, or be taken over by an operator. The paper treats these as separate questions and asks what evidence answers each one.',
     { h2: 'What the paper covers' },
