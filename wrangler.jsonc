@@ -17,5 +17,5 @@
   "assets": { "directory": "./dist", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/api/*", "/download/*", "/_gated/*"] },
   // Gated PDF from a private R2 bucket (preferred, since the GitHub repository is public and the PDF is not committed).
   // Create the bucket, upload commissioning-white-paper.pdf, then uncomment:
-  // "r2_buckets": [{ "binding": "GATED_FILES", "bucket_name": "nextgenergy-gated" }]
+  "r2_buckets": [{ "binding": "GATED_FILES", "bucket_name": "nextgenergy-gated" }]
 }
